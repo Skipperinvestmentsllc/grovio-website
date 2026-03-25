@@ -2,6 +2,15 @@
   "rewrites": [
     { "source": "/guide", "destination": "/guide/index.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/support", "destination": "/support.html" }
+    { "source": "/support", "destination": "/support.html" },
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" }
+      ]
+    }
   ]
 }
