@@ -3,6 +3,7 @@
     { "source": "/guide", "destination": "/guide/index.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/support", "destination": "/support.html" },
+    { "source": "/faq", "destination": "/faq.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" }
   ],
   "headers": [
