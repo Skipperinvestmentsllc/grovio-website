@@ -1,0 +1,150 @@
+/* Grovio Shared Design System — styles.css */
+:root {
+  /* Core palette */
+  --sage: #4A6E4E;
+  --sage-m: #7A9E7E;
+  --sage-l: #B8D4BB;
+  --sage-p: #EBF3EC;
+  --clay: #C4845A;
+  --clay-l: #E8C4A8;
+  --clay-p: #FAF0E8;
+  --sky: #4A8FA0;
+  --sky-l: #7BAEBB;
+  --sky-p: #EBF4F6;
+  --amber: #C4843A;
+  --amber-p: #FBF3E4;
+  --rose: #B06080;
+  --rose-p: #F8EEF3;
+  --bark: #5C4A3A;
+  --bark-l: #8C7A6A;
+
+  /* Backgrounds */
+  --parch: #F7F4EE;
+  --white: #FDFCFA;
+
+  /* Text */
+  --t1: #2C2218;
+  --t2: #7A6A5A;
+  --t3: #A89A8A;
+
+  /* Borders and shadows */
+  --br: rgba(92,74,58,0.12);
+  --brm: rgba(92,74,58,0.22);
+  --sh: 0 2px 16px rgba(92,74,58,0.08);
+
+  /* Fonts */
+  --ff: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --ff-serif: 'Source Serif 4', Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--ff);
+  color: var(--t1);
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: var(--white);
+  border-bottom: 1px solid var(--br);
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.site-nav a { text-decoration: none; }
+.nav-logo {
+  font-family: var(--ff-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--t1);
+}
+.nav-link {
+  font-size: 13px;
+  color: var(--t2);
+  transition: color 0.15s;
+}
+.nav-link:hover { color: var(--sage); }
+.nav-cta {
+  background: var(--sage);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-family: var(--ff);
+}
+.nav-cta:hover { opacity: 0.9; }
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background: var(--sage);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--ff);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.9; }
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--t1);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1.5px solid var(--br);
+  cursor: pointer;
+  font-family: var(--ff);
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.btn-secondary:hover { border-color: var(--sage); color: var(--sage); }
+
+/* Cards */
+.card {
+  background: var(--white);
+  border: 1px solid var(--br);
+  border-radius: 16px;
+  box-shadow: var(--sh);
+  padding: 24px;
+}
+
+/* Footer */
+.site-footer {
+  padding: 36px 32px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--t2);
+  background: var(--white);
+  border-top: 1px solid var(--br);
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.site-footer a { color: var(--t2); text-decoration: none; }
+.site-footer a:hover { color: var(--sage); }
+
+/* Motion */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+}
