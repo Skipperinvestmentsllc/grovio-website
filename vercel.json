@@ -4,6 +4,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/support", "destination": "/support.html" },
     { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/links", "destination": "/links/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" }
   ],
   "headers": [
