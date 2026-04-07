@@ -44,7 +44,7 @@
       <a href="/guide/" style="font-size:13px;color:#6B6458;text-decoration:none;">The Guide</a>
       <a href="/faq.html" style="font-size:13px;color:#6B6458;text-decoration:none;">FAQ</a>
       <!-- TODO: Replace with Kit form URL -->
-<a href="#waitlist" style="background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
+<a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" style="background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
     </div>
   </nav>
 
@@ -88,7 +88,7 @@
       <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;font-weight:600;color:#F7F3EC;margin-bottom:8px;">Read more in the Grovio app</h2>
       <p style="font-size:13px;color:#8C7A6A;margin-bottom:20px;line-height:1.6;">All 25 Guide articles live inside Grovio — alongside your attendance records, planner, and portfolio.</p>
       <!-- TODO: Replace with Kit form URL -->
-<a href="#waitlist" style="display:inline-block;background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:11px 24px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
+<a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" style="display:inline-block;background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:11px 24px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
     </div>
 
     <div style="display:flex;justify-content:space-between;margin-top:40px;padding-top:24px;border-top:1px solid rgba(92,74,58,0.1);">
@@ -109,5 +109,6 @@ else if(h>=17&&h<21){t={bg:'linear-gradient(168deg,#E2D2BE 0%,#E0D6C8 30%,#E8E2D
 else{t={bg:'linear-gradient(172deg,#C8C0B6 0%,#D0CAC2 28%,#DAD4CC 50%,#E4DED6 100%)',g1:{top:'24px',right:'10vw',left:'auto',width:'68px',height:'68px',background:'radial-gradient(circle at 62% 40%,rgba(180,172,162,0.55) 0%,rgba(160,152,142,0.15) 48%,transparent 66%)'},g2:{top:'28px',right:'11vw',left:'auto',width:'44px',height:'48px',background:'radial-gradient(ellipse at 68% 38%,rgba(212,206,198,0.8) 0%,transparent 48%)'},g3:{top:'14px',right:'8vw',left:'auto',width:'106px',height:'90px',background:'radial-gradient(circle,rgba(160,152,142,0.06) 0%,transparent 55%)'}}}
 a.style.background=t.bg;[g1,g2,g3].forEach(function(el,i){var g=t['g'+(i+1)];Object.keys(g).forEach(function(k){el.style[k]=g[k]})})})();
 </script>
+<script src="/waitlist-modal.js"></script>
 </body>
 </html>
