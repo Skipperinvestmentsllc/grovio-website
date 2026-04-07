@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Answers to the most common questions about Grovio — attendance tracking, portfolios, daily rhythm, accounts, and more.">
   <title>FAQ &amp; Help Center — Grovio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <link rel="canonical" href="https://grovioapp.com/faq.html">
   <meta property="og:type" content="website">
@@ -34,266 +34,278 @@
   }
   </script>
 </head>
-<body>
-  <header class="site-nav">
-  <div class="nav-inner">
-    <a href="/" class="wordmark">grovio</a>
-    <nav class="nav-links">
-      <a href="/guide/" class="nav-text">The Guide</a>
-      <a href="/faq.html" class="nav-text">FAQ</a>
-      <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="nav-cta">Join the waitlist &rarr;</a>
-    </nav>
-  </div>
-</header>
+<body style="margin:0;background:transparent;font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
+<!-- Atmosphere -->
+<div id="atmosphere" style="position:fixed;inset:0;z-index:0;pointer-events:none;transition:background 1s ease;"></div>
+<div id="sun-glow-1" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
+<div id="sun-glow-2" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
+<div id="sun-glow-3" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
+
+  <nav style="display:flex;align-items:center;justify-content:space-between;padding:18px 32px;background:rgba(247,244,238,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #EDE7DA;max-width:860px;margin:0 auto;position:relative;z-index:1;">
+    <a href="/" style="text-decoration:none;"><img src="/assets/grovio-logo.png" alt="grovio" style="height:24px;object-fit:contain;"></a>
+    <div style="display:flex;gap:20px;align-items:center;">
+      <a href="/guide/" style="font-size:13px;color:#6B6458;text-decoration:none;">The Guide</a>
+      <a href="/faq.html" style="font-size:13px;color:#6B6458;text-decoration:none;">FAQ</a>
+      <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" style="background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
+    </div>
+  </nav>
 
   <main style="max-width:720px;margin:0 auto;padding:60px 32px 80px;position:relative;z-index:1;">
 
-    <h1 style="font-family:'Source Serif 4',Georgia,serif;font-size:36px;font-weight:600;color:#2C2218;margin-bottom:12px;">Help Center &amp; FAQ</h1>
-    <p style="font-size:16px;color:#7A6A5A;line-height:1.7;margin-bottom:40px;">Most questions answered here — and we're always reachable at <a href="mailto:hello@grovioapp.com" style="color:#4A6E4E;text-decoration:none;">hello@grovioapp.com</a> if you need more.</p>
+    <h1 style="font-family:'Source Serif 4',Georgia,serif;font-size:36px;font-weight:600;color:#3E3A32;margin-bottom:12px;">Help Center &amp; FAQ</h1>
+    <p style="font-size:16px;color:#6B6458;line-height:1.7;margin-bottom:40px;">Most questions answered here — and we're always reachable at <a href="mailto:hello@grovioapp.com" style="color:#5E8753;text-decoration:none;">hello@grovioapp.com</a> if you need more.</p>
 
     <!-- Jump links -->
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;">
-      <a href="#getting-started" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Getting Started</a>
-      <a href="#setting-up" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Setting Up Your Family</a>
-      <a href="#attendance" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Attendance</a>
-      <a href="#daily-rhythm" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Daily Rhythm &amp; Planner</a>
-      <a href="#portfolio" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Portfolio</a>
-      <a href="#guide" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">The Grovio Guide</a>
-      <a href="#account-privacy" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Account &amp; Privacy</a>
-      <a href="#troubleshooting" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Troubleshooting</a>
+      <a href="#getting-started" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Getting Started</a>
+      <a href="#setting-up" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Setting Up Your Family</a>
+      <a href="#attendance" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Attendance</a>
+      <a href="#daily-rhythm" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Daily Rhythm &amp; Planner</a>
+      <a href="#portfolio" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Portfolio</a>
+      <a href="#guide" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">The Grovio Guide</a>
+      <a href="#account-privacy" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Account &amp; Privacy</a>
+      <a href="#troubleshooting" style="font-size:12px;color:#5E8753;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Troubleshooting</a>
     </div>
 
     <!-- ══ GETTING STARTED ══ -->
     <div id="getting-started" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Getting Started</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Getting Started</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What is Grovio, exactly?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Grovio is a homeschool companion app that helps you track attendance, plan your family's daily rhythm, build a learning portfolio, and access practical articles through The Grovio Guide. It's designed for homeschool parents who want a simple, warm tool — not another complicated system to manage.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">What is Grovio, exactly?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Grovio is a homeschool companion app that helps you track attendance, plan your family's daily rhythm, build a learning portfolio, and access practical articles through The Grovio Guide. It's designed for homeschool parents who want a simple, warm tool — not another complicated system to manage.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Is Grovio free?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Grovio is free to get started. As the app grows, some advanced features may move to a paid plan, but there will always be a meaningful free experience and you'll never be surprised by a charge.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Is Grovio free?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Grovio is free to get started. As the app grows, some advanced features may move to a paid plan, but there will always be a meaningful free experience and you'll never be surprised by a charge.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Do I need to create an account?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">You don't. You can use Grovio without an account, and your data will stay on your device only. However, creating an account lets you save your data to the cloud so it's backed up and accessible if you switch devices. We'd recommend signing in if you plan to use Grovio regularly.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Do I need to create an account?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">You don't. You can use Grovio without an account, and your data will stay on your device only. However, creating an account lets you save your data to the cloud so it's backed up and accessible if you switch devices. We'd recommend signing in if you plan to use Grovio regularly.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">How do I create an account?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Tap &quot;Sign In&quot; and use Sign in with Apple for a fast, secure one-tap experience. No passwords, no codes — just your Apple ID. Your account is created automatically the first time you sign in.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">How do I create an account?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Tap &quot;Sign In&quot; and use Sign in with Apple for a fast, secure one-tap experience. No passwords, no codes — just your Apple ID. Your account is created automatically the first time you sign in.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">I'm having trouble signing in. What should I do?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Sign in with Apple should work instantly with a single tap. If you're having trouble, make sure you're connected to the internet and running the latest version of the app. If the issue persists, email us at <a href="mailto:hello@grovioapp.com" style="color:#4A6E4E;">hello@grovioapp.com</a> and we'll help.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">I'm having trouble signing in. What should I do?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Sign in with Apple should work instantly with a single tap. If you're having trouble, make sure you're connected to the internet and running the latest version of the app. If the issue persists, email us at <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a> and we'll help.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can I use Grovio on my phone and my computer?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">grovio is currently in final testing and will be available on iOS and the web soon. Once launched, grovio is available as an iOS app and as a web app you can use in any browser. When you're signed in, your data syncs across both, so you can add a portfolio photo from your phone and review your planner on your laptop later.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can I use Grovio on my phone and my computer?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">grovio is currently in final testing and will be available on iOS and the web soon. Once launched, grovio is available as an iOS app and as a web app you can use in any browser. When you're signed in, your data syncs across both, so you can add a portfolio photo from your phone and review your planner on your laptop later.</p>
       </div>
     </div>
 
     <!-- ══ SETTING UP YOUR FAMILY ══ -->
     <div id="setting-up" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Setting Up Your Family</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Setting Up Your Family</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">How do I add my kids to Grovio?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">During onboarding, Grovio will walk you through adding your learners. You'll enter each child's name and some basic details like age or grade level. You can always add, edit, or remove learners later from within the app. All learner information is entered by you — your kids never need their own accounts.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">How do I add my kids to Grovio?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">During onboarding, Grovio will walk you through adding your learners. You'll enter each child's name and some basic details like age or grade level. You can always add, edit, or remove learners later from within the app. All learner information is entered by you — your kids never need their own accounts.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">I homeschool multiple children. Can I manage them all in one account?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Absolutely. Grovio is built with multi-learner families in mind. You add each child as a separate learner under your single parent account, and their attendance, rhythm, and portfolio data are all tracked individually. You don't need a separate account for each child.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">I homeschool multiple children. Can I manage them all in one account?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Absolutely. Grovio is built with multi-learner families in mind. You add each child as a separate learner under your single parent account, and their attendance, rhythm, and portfolio data are all tracked individually. You don't need a separate account for each child.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can two parents share the same account?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Right now, Grovio accounts are tied to a single Apple ID. The simplest approach is for both parents to sign in using the same Apple ID. Shared or family accounts with separate logins are something we're considering for the future, but it's not available yet.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can two parents share the same account?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Right now, Grovio accounts are tied to a single Apple ID. The simplest approach is for both parents to sign in using the same Apple ID. Shared or family accounts with separate logins are something we're considering for the future, but it's not available yet.</p>
       </div>
     </div>
 
     <!-- ══ ATTENDANCE ══ -->
     <div id="attendance" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Attendance</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Attendance</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">How does attendance tracking work?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Grovio's attendance tracker lets you mark each day as a school day with a single tap. You can also log field trip days, which count toward your attendance total. At a glance, you can see how many days you've completed — helpful for staying on track with your state's requirements.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">How does attendance tracking work?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Grovio's attendance tracker lets you mark each day as a school day with a single tap. You can also log field trip days, which count toward your attendance total. At a glance, you can see how many days you've completed — helpful for staying on track with your state's requirements.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">How do I export my attendance records?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Go to the Record tab, tap the export button in the top right corner, and choose your format. Grovio generates a clean PDF attendance record you can save, print, or share — formatted for compliance purposes so it's ready if you ever need to present it to an evaluator or administrator.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">How do I export my attendance records?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Go to the Record tab, tap the export button in the top right corner, and choose your format. Grovio generates a clean PDF attendance record you can save, print, or share — formatted for compliance purposes so it's ready if you ever need to present it to an evaluator or administrator.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Do sick days count toward my attendance total?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">No. Sick days are tracked separately and do not count toward your attendance total. This is intentional — you should be able to log an honest record of your year without worrying that a stomach bug is throwing off your numbers.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Do sick days count toward my attendance total?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">No. Sick days are tracked separately and do not count toward your attendance total. This is intentional — you should be able to log an honest record of your year without worrying that a stomach bug is throwing off your numbers.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Do field trips count as school days?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Yes. When you log a field trip day, it counts toward your attendance total. Field trips are real learning, and Grovio treats them that way.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Do field trips count as school days?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Yes. When you log a field trip day, it counts toward your attendance total. Field trips are real learning, and Grovio treats them that way.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can I edit or undo an attendance entry?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Yes. If you accidentally marked the wrong day or need to make a correction, you can tap on any attendance entry to update or remove it. Mistakes happen — that's totally normal.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can I edit or undo an attendance entry?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Yes. If you accidentally marked the wrong day or need to make a correction, you can tap on any attendance entry to update or remove it. Mistakes happen — that's totally normal.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">How many school days does my state require?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">This varies by state and sometimes by district. Grovio does not provide legal advice, but The Grovio Guide includes articles on compliance and record-keeping that can point you in the right direction. For your specific situation, your state's Department of Education website or a local homeschool association are the best resources.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">How many school days does my state require?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">This varies by state and sometimes by district. Grovio does not provide legal advice, but The Grovio Guide includes articles on compliance and record-keeping that can point you in the right direction. For your specific situation, your state's Department of Education website or a local homeschool association are the best resources.</p>
       </div>
     </div>
 
     <!-- ══ DAILY RHYTHM & PLANNER ══ -->
     <div id="daily-rhythm" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Daily Rhythm &amp; Planner</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Daily Rhythm &amp; Planner</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What is a "daily rhythm" and how is it different from a schedule?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">A schedule is rigid — math at 9:00, reading at 10:00. A rhythm is the natural flow of your day: morning time, then focused work, then outside time, then lunch. Grovio's planner is built around rhythms because that's how most homeschool days actually work. You set the shape of your day, not a minute-by-minute agenda.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">What is a "daily rhythm" and how is it different from a schedule?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">A schedule is rigid — math at 9:00, reading at 10:00. A rhythm is the natural flow of your day: morning time, then focused work, then outside time, then lunch. Grovio's planner is built around rhythms because that's how most homeschool days actually work. You set the shape of your day, not a minute-by-minute agenda.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">How do I set up my planner?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">During onboarding, you'll be guided through setting up your family's rhythm — adding anchor activities (the big beats of your day), subjects, and any routines that structure your time. You can adjust everything after setup, so don't feel pressure to get it perfect on the first try. Your rhythm will evolve, and Grovio is built to evolve with it.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">How do I set up my planner?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">During onboarding, you'll be guided through setting up your family's rhythm — adding anchor activities (the big beats of your day), subjects, and any routines that structure your time. You can adjust everything after setup, so don't feel pressure to get it perfect on the first try. Your rhythm will evolve, and Grovio is built to evolve with it.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can I plan different schedules for different kids?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Each learner has their own rhythm and subject data, so you can customize the daily flow for each child individually. If your kids share some activities (like morning read-aloud) but diverge for others (like math levels), Grovio can handle that.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can I plan different schedules for different kids?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Each learner has their own rhythm and subject data, so you can customize the daily flow for each child individually. If your kids share some activities (like morning read-aloud) but diverge for others (like math levels), Grovio can handle that.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can I see a weekly or monthly view of my plan?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Grovio's planner is currently focused on the daily view, which aligns with how most homeschool families actually plan — one day at a time. Expanded views are something we're exploring for the future.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can I see a weekly or monthly view of my plan?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Grovio's planner is currently focused on the daily view, which aligns with how most homeschool families actually plan — one day at a time. Expanded views are something we're exploring for the future.</p>
       </div>
     </div>
 
     <!-- ══ PORTFOLIO ══ -->
     <div id="portfolio" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Portfolio</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Portfolio</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What is the portfolio for?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">The portfolio is a place to capture and save evidence of your child's learning — photos of projects, notes about breakthroughs, descriptions of activities, field trip memories. Think of it as a keepsake, not an audit. Some families also use it to satisfy state evaluation or documentation requirements, but at its heart, it's a record of the beautiful, messy, real work your kids are doing.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">What is the portfolio for?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">The portfolio is a place to capture and save evidence of your child's learning — photos of projects, notes about breakthroughs, descriptions of activities, field trip memories. Think of it as a keepsake, not an audit. Some families also use it to satisfy state evaluation or documentation requirements, but at its heart, it's a record of the beautiful, messy, real work your kids are doing.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What can I add to a portfolio entry?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Each entry can include a photo, a written note or description, and relevant details like the date and subject area. You capture entries using the camera or photo library on your device. Keep it simple — a quick snapshot of a drawing, a sentence about what clicked during a math lesson, a photo from a nature walk. It doesn't need to be polished.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">What can I add to a portfolio entry?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Each entry can include a photo, a written note or description, and relevant details like the date and subject area. You capture entries using the camera or photo library on your device. Keep it simple — a quick snapshot of a drawing, a sentence about what clicked during a math lesson, a photo from a nature walk. It doesn't need to be polished.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Where are my photos stored?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">When you're signed in, portfolio photos are stored securely in Supabase Storage (a cloud platform based in the United States). Photos are compressed on your device before uploading to save storage space and bandwidth. If you're using Grovio without an account, photos stay on your device only.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Where are my photos stored?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">When you're signed in, portfolio photos are stored securely in Supabase Storage (a cloud platform based in the United States). Photos are compressed on your device before uploading to save storage space and bandwidth. If you're using Grovio without an account, photos stay on your device only.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can I share portfolio entries with someone else?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Yes. Grovio lets you create shareable links to portfolio entries so you can show them to a family member, an evaluator, or anyone you choose. Sharing is always opt-in — nothing is shared unless you specifically create a link. You control who sees what, and you can deactivate any sharing link at any time directly within the app.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can I share portfolio entries with someone else?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Yes. Grovio lets you create shareable links to portfolio entries so you can show them to a family member, an evaluator, or anyone you choose. Sharing is always opt-in — nothing is shared unless you specifically create a link. You control who sees what, and you can deactivate any sharing link at any time directly within the app.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can I delete a portfolio entry?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Yes. You can delete any portfolio entry at any time. Once deleted, the entry and its associated photo are permanently removed.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can I delete a portfolio entry?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Yes. You can delete any portfolio entry at any time. Once deleted, the entry and its associated photo are permanently removed.</p>
       </div>
     </div>
 
     <!-- ══ THE GROVIO GUIDE ══ -->
     <div id="guide" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">The Grovio Guide</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">The Grovio Guide</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What is The Grovio Guide?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">The Grovio Guide is a library of practical articles written for homeschool parents — especially those who are newer to homeschooling or looking for reassurance that they're on the right track. Articles cover topics like getting started, building a daily routine, handling resistance, and record-keeping basics. They're written by Claire, Grovio's guide voice, in a warm and grounded tone.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">What is The Grovio Guide?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">The Grovio Guide is a library of practical articles written for homeschool parents — especially those who are newer to homeschooling or looking for reassurance that they're on the right track. Articles cover topics like getting started, building a daily routine, handling resistance, and record-keeping basics. They're written by Claire, Grovio's guide voice, in a warm and grounded tone.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Is the Guide included for free?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Yes. The Grovio Guide is available to all users at no cost. You can also read all Guide articles on the web at <a href="/guide/" style="color:#4A6E4E;">grovioapp.com/guide</a> without downloading the app.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Is the Guide included for free?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Yes. The Grovio Guide is available to all users at no cost. You can also read all Guide articles on the web at <a href="/guide/" style="color:#5E8753;">grovioapp.com/guide</a> without downloading the app.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Does The Grovio Guide give legal advice about my state?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">No. The Guide offers general information and practical tips about compliance and record-keeping, but it does not replace legal advice specific to your state or situation. Articles covering compliance topics include a disclaimer to that effect. For legal questions, please consult your state's Department of Education or a qualified professional.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Does The Grovio Guide give legal advice about my state?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">No. The Guide offers general information and practical tips about compliance and record-keeping, but it does not replace legal advice specific to your state or situation. Articles covering compliance topics include a disclaimer to that effect. For legal questions, please consult your state's Department of Education or a qualified professional.</p>
       </div>
     </div>
 
     <!-- ══ ACCOUNT, PRIVACY & DATA ══ -->
     <div id="account-privacy" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Account, Privacy &amp; Data</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Account, Privacy &amp; Data</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What data does Grovio collect?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">When you create an account, Grovio collects your email address for sign-in purposes. Beyond that, Grovio stores the data you choose to enter: learner names and details, attendance records, planner data, and portfolio entries (including photos). Grovio does not sell your data, does not run ads, and does not share your information with advertising partners. For full details, see our <a href="/privacy.html" style="color:#4A6E4E;">Privacy Policy</a>.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">What data does Grovio collect?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">When you create an account, Grovio collects your email address for sign-in purposes. Beyond that, Grovio stores the data you choose to enter: learner names and details, attendance records, planner data, and portfolio entries (including photos). Grovio does not sell your data, does not run ads, and does not share your information with advertising partners. For full details, see our <a href="/privacy.html" style="color:#5E8753;">Privacy Policy</a>.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Is my data safe?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Grovio takes your privacy seriously. All data is encrypted in transit (HTTPS) and at rest in our database. We use one-time code authentication so no passwords are ever stored. Your data is hosted in the United States through Supabase and Vercel, both of which maintain robust security practices.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Is my data safe?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Grovio takes your privacy seriously. All data is encrypted in transit (HTTPS) and at rest in our database. We use one-time code authentication so no passwords are ever stored. Your data is hosted in the United States through Supabase and Vercel, both of which maintain robust security practices.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Can I delete my account and all my data?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Yes. To delete your account and all associated data, email <a href="mailto:hello@grovioapp.com" style="color:#4A6E4E;">hello@grovioapp.com</a> with your request. We will process the deletion within 30 days, after which your account, learner information, attendance records, planner data, and portfolio entries (including photos) will be permanently removed from our servers.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Can I delete my account and all my data?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Yes. To delete your account and all associated data, email <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a> with your request. We will process the deletion within 30 days, after which your account, learner information, attendance records, planner data, and portfolio entries (including photos) will be permanently removed from our servers.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Do my kids need their own accounts?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">No. Grovio is designed for parents. You manage everything from your single account. Your children never need to sign in, create an account, or interact with the app directly. All learner data is entered and controlled by you.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">Do my kids need their own accounts?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">No. Grovio is designed for parents. You manage everything from your single account. Your children never need to sign in, create an account, or interact with the app directly. All learner data is entered and controlled by you.</p>
       </div>
     </div>
 
     <!-- ══ TROUBLESHOOTING ══ -->
     <div id="troubleshooting" style="margin-bottom:56px;">
-      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Troubleshooting</h2>
+      <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5E8753;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #F4F7F2;">Troubleshooting</h2>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">The app looks different on my phone than on the web. Is that normal?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Grovio is designed to work across devices, but the layout may adapt to your screen size. If something looks off or broken, try refreshing the page (on web) or closing and reopening the app (on iOS). If the issue persists, email us at <a href="mailto:hello@grovioapp.com" style="color:#4A6E4E;">hello@grovioapp.com</a> with a screenshot and we'll look into it.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">The app looks different on my phone than on the web. Is that normal?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Grovio is designed to work across devices, but the layout may adapt to your screen size. If something looks off or broken, try refreshing the page (on web) or closing and reopening the app (on iOS). If the issue persists, email us at <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a> with a screenshot and we'll look into it.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">My data isn't syncing between my phone and computer.</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Make sure you're signed in on both devices with the same email address. Data only syncs to the cloud when you have an account — if you've been using Grovio without signing in, your data is stored locally on that device only. If you're signed in and still experiencing issues, try signing out and back in. If the problem continues, reach out to us at <a href="mailto:hello@grovioapp.com" style="color:#4A6E4E;">hello@grovioapp.com</a>.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">My data isn't syncing between my phone and computer.</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Make sure you're signed in on both devices with the same email address. Data only syncs to the cloud when you have an account — if you've been using Grovio without signing in, your data is stored locally on that device only. If you're signed in and still experiencing issues, try signing out and back in. If the problem continues, reach out to us at <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a>.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">The app is running slowly or freezing.</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Try closing and reopening the app, or refreshing the browser. If you're on iOS, make sure you're running the latest version of the app. Large portfolios with many photos can occasionally cause slowness on older devices. If performance issues continue, let us know at <a href="mailto:hello@grovioapp.com" style="color:#4A6E4E;">hello@grovioapp.com</a> and include your device type so we can investigate.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">The app is running slowly or freezing.</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Try closing and reopening the app, or refreshing the browser. If you're on iOS, make sure you're running the latest version of the app. Large portfolios with many photos can occasionally cause slowness on older devices. If performance issues continue, let us know at <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a> and include your device type so we can investigate.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">I accidentally deleted something. Can I get it back?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#7A6A5A;line-height:1.7;margin:0;">Unfortunately, once an entry is deleted, it's permanently removed. We're exploring the idea of a brief undo window for deletions in a future update, but for now, deletions are final.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#3E3A32;margin-bottom:8px;line-height:1.35;">I accidentally deleted something. Can I get it back?</h3>
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Unfortunately, once an entry is deleted, it's permanently removed. We're exploring the idea of a brief undo window for deletions in a future update, but for now, deletions are final.</p>
       </div>
     </div>
 
     <!-- ══ CLOSING CTA ══ -->
-    <div style="background:#2C2218;border-radius:20px;padding:36px;text-align:center;margin-top:56px;">
+    <div style="background:#3E3A32;border-radius:20px;padding:36px;text-align:center;margin-top:56px;">
       <p style="font-family:'Source Serif 4',Georgia,serif;font-size:22px;font-weight:600;color:#F7F3EC;margin-bottom:12px;">Still need help?</p>
       <p style="font-size:15px;color:#8C7A6A;line-height:1.7;margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto;">We're a small team and we read every email. If you didn't find your answer here, reach out — there's a real person on the other end.</p>
-      <a href="mailto:hello@grovioapp.com" style="display:inline-block;background:#4A6E4E;color:#FDFCF8;font-size:14px;font-weight:500;padding:12px 28px;border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;">Email us &rarr;</a>
-      <p style="font-size:12px;color:#7A6A5A;margin-top:16px;margin-bottom:0;">We typically reply within one business day.</p>
+      <a href="mailto:hello@grovioapp.com" style="display:inline-block;background:#5E8753;color:#FDFCF8;font-size:14px;font-weight:500;padding:12px 28px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Email us &rarr;</a>
+      <p style="font-size:12px;color:#6B6458;margin-top:16px;margin-bottom:0;">We typically reply within one business day.</p>
     </div>
 
   </main>
 
-    <footer class="site-footer">
-    <a href="/" class="footer-wordmark">grovio</a>
-    <p class="footer-tagline">Grow Simply. Homeschool Confidently.</p>
-    <p class="footer-links">&copy; 2026 Grovio &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/support.html">Support</a> &middot; <a href="/faq.html">FAQ</a></p>
+  <footer style="padding:36px 32px;text-align:center;font-size:12px;color:#EDE7DA;background:#24362A;max-width:860px;margin:0 auto;position:relative;z-index:1;">
+    <div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;font-weight:400;color:#F7F3EC;margin-bottom:6px;">grovio</div>
+    <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;color:#9B9484;">Grow Simply. Homeschool Confidently.</p>
+    <p style="margin-top:8px;font-size:11px;color:#9B9484;">&copy; 2026 Grovio &middot; <a href="/privacy.html" style="color:#EDE7DA;">Privacy</a> &middot; <a href="/support.html" style="color:#EDE7DA;">Support</a></p>
   </footer>
 
+<script>
+(function(){var h=new Date().getHours(),a=document.getElementById('atmosphere'),g1=document.getElementById('sun-glow-1'),g2=document.getElementById('sun-glow-2'),g3=document.getElementById('sun-glow-3'),t;
+if(h>=6&&h<11){t={bg:'linear-gradient(175deg,#ECE0C2 0%,#E6EDDA 30%,#EDE9DF 60%,#F5F2EC 100%)',g1:{top:'20px',left:'8vw',width:'80px',height:'80px',background:'radial-gradient(circle at 44% 44%,rgba(210,168,110,0.85) 0%,rgba(196,132,90,0.4) 35%,transparent 65%)'},g2:{top:'8px',left:'5vw',width:'120px',height:'110px',background:'radial-gradient(circle,rgba(196,132,90,0.14) 0%,transparent 60%)'},g3:{top:'-10px',left:'2vw',width:'180px',height:'140px',background:'radial-gradient(ellipse at 50% 55%,rgba(242,226,192,0.45) 0%,transparent 55%)'}}}
+else if(h>=11&&h<17){t={bg:'linear-gradient(178deg,#E8E0CC 0%,#E6EBD8 28%,#EDE9DF 55%,#F5F2EC 100%)',g1:{top:'16px',left:'42vw',width:'86px',height:'84px',background:'radial-gradient(circle at 50% 48%,rgba(196,142,90,0.7) 0%,rgba(196,132,90,0.25) 38%,transparent 64%)'},g2:{top:'4px',left:'38vw',width:'130px',height:'116px',background:'radial-gradient(circle,rgba(196,132,90,0.1) 0%,transparent 55%)'},g3:{top:'-8px',left:'34vw',width:'190px',height:'140px',background:'radial-gradient(ellipse at 50% 50%,rgba(238,228,206,0.38) 0%,transparent 55%)'}}}
+else if(h>=17&&h<21){t={bg:'linear-gradient(168deg,#E2D2BE 0%,#E0D6C8 30%,#E8E2D8 55%,#EEE8E0 100%)',g1:{top:'20px',right:'10vw',left:'auto',width:'76px',height:'76px',background:'radial-gradient(circle at 56% 44%,rgba(186,152,118,0.65) 0%,rgba(168,140,110,0.2) 44%,transparent 68%)'},g2:{top:'26px',right:'11vw',left:'auto',width:'50px',height:'54px',background:'radial-gradient(ellipse at 62% 42%,rgba(240,228,214,0.72) 0%,transparent 50%)'},g3:{top:'10px',right:'8vw',left:'auto',width:'120px',height:'100px',background:'radial-gradient(circle,rgba(186,152,118,0.1) 0%,transparent 55%)'}}}
+else{t={bg:'linear-gradient(172deg,#C8C0B6 0%,#D0CAC2 28%,#DAD4CC 50%,#E4DED6 100%)',g1:{top:'24px',right:'10vw',left:'auto',width:'68px',height:'68px',background:'radial-gradient(circle at 62% 40%,rgba(180,172,162,0.55) 0%,rgba(160,152,142,0.15) 48%,transparent 66%)'},g2:{top:'28px',right:'11vw',left:'auto',width:'44px',height:'48px',background:'radial-gradient(ellipse at 68% 38%,rgba(212,206,198,0.8) 0%,transparent 48%)'},g3:{top:'14px',right:'8vw',left:'auto',width:'106px',height:'90px',background:'radial-gradient(circle,rgba(160,152,142,0.06) 0%,transparent 55%)'}}}
+a.style.background=t.bg;[g1,g2,g3].forEach(function(el,i){var g=t['g'+(i+1)];Object.keys(g).forEach(function(k){el.style[k]=g[k]})})})();
+</script>
 <script src="/waitlist-modal.js"></script>
 </body>
 </html>
