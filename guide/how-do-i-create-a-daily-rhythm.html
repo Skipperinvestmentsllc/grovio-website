@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Three anchor points is all you need. Here's how to find yours.">
   <title>How do I create a simple daily rhythm that works? — The Grovio Guide</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://grovioapp.com/guide/how-do-i-create-a-daily-rhythm.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Grovio">
@@ -32,21 +32,17 @@
   </script>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body style="margin:0;background:transparent;">
-<!-- Atmosphere -->
-<div id="atmosphere" style="position:fixed;inset:0;z-index:0;pointer-events:none;transition:background 1s ease;"></div>
-<div id="sun-glow-1" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
-<div id="sun-glow-2" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
-<div id="sun-glow-3" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
-  <nav style="position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;background:rgba(247,244,238,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #EDE7DA;max-width:860px;margin:0 auto;">
-    <a href="/" style="text-decoration:none;"><img src="/assets/grovio-logo.png" alt="grovio" style="height:24px;object-fit:contain;"></a>
-    <div style="display:flex;gap:20px;align-items:center;">
-      <a href="/guide/" style="font-size:13px;color:#6B6458;text-decoration:none;">The Guide</a>
-      <a href="/faq.html" style="font-size:13px;color:#6B6458;text-decoration:none;">FAQ</a>
-      <!-- TODO: Replace with Kit form URL -->
-<a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" style="background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
-    </div>
-  </nav>
+<body>
+  <header class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="wordmark">grovio</a>
+    <nav class="nav-links">
+      <a href="/guide/" class="nav-text">The Guide</a>
+      <a href="/faq.html" class="nav-text">FAQ</a>
+      <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="nav-cta">Join the waitlist &rarr;</a>
+    </nav>
+  </div>
+</header>
 
   <main style="position:relative;z-index:1;max-width:680px;margin:0 auto;padding:48px 32px 80px;">
     <p style="font-size:12px;color:#9B9484;margin-bottom:32px;">
@@ -55,64 +51,56 @@
       Daily Rhythm &amp; Time
     </p>
 
-    <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;color:#5E8753;text-transform:uppercase;margin-bottom:12px;">📅 Daily Rhythm &amp; Time</p>
+    <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;color:#4A6E4E;text-transform:uppercase;margin-bottom:12px;">📅 Daily Rhythm &amp; Time</p>
 
-    <h1 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:600;color:#3E3A32;line-height:1.25;margin-bottom:20px;">How do I create a simple daily rhythm that works?</h1>
+    <h1 style="font-family:'Source Serif 4',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:600;color:#2C2218;line-height:1.25;margin-bottom:20px;">How do I create a simple daily rhythm that works?</h1>
 
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid rgba(92,74,58,0.1);">
       <div style="width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;"><img src="/assets/claire.png" alt="Claire" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;"></div>
       <div>
-        <p style="font-size:13px;font-weight:600;color:#5E8753;margin:0 0 1px;">Claire</p>
+        <p style="font-size:13px;font-weight:600;color:#4A6E4E;margin:0 0 1px;">Claire</p>
         <p style="font-size:11px;color:#9B9484;margin:0;">3 min read · The Grovio Guide</p>
       </div>
     </div>
 
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">My first-year mistake: a schedule with fifteen-minute increments.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">It lasted three days. Then someone got sick, and the whole thing fell apart.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">What eventually clicked for me is that a rhythm and a schedule are different things. A schedule is minute-by-minute. A rhythm is just the shape of the day.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">That distinction turned out to be the whole game.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">Now we have three anchor points. A morning start, a midday transition, and a clear ending signal. Everything else flows around those depending on the day.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">Three to four blocks is enough for most families. Morning focus, a break, afternoon lighter work. You don't need more structure than that.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">One thing that surprised me: when the kids could see the rhythm too, it ran smoother. Less "what are we doing next?" energy. We keep ours in Grovio — the kids know what's coming without me having to repeat it. A whiteboard or piece of paper works exactly the same way.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;color:#3E3A32;line-height:1.75;margin-bottom:20px;">If something's not working, you don't need to overhaul everything. Pick the one transition that feels roughest and smooth just that part. Build from small wins.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">My first-year mistake: a schedule with fifteen-minute increments.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">It lasted three days. Then someone got sick, and the whole thing fell apart.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">What eventually clicked for me is that a rhythm and a schedule are different things. A schedule is minute-by-minute. A rhythm is just the shape of the day.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">That distinction turned out to be the whole game.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">Now we have three anchor points. A morning start, a midday transition, and a clear ending signal. Everything else flows around those depending on the day.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">Three to four blocks is enough for most families. Morning focus, a break, afternoon lighter work. You don't need more structure than that.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">One thing that surprised me: when the kids could see the rhythm too, it ran smoother. Less "what are we doing next?" energy. We keep ours in Grovio — the kids know what's coming without me having to repeat it. A whiteboard or piece of paper works exactly the same way.</p>
+    <p style="font-family:'Inter',sans-serif;font-size:16px;color:#2C2218;line-height:1.75;margin-bottom:20px;">If something's not working, you don't need to overhaul everything. Pick the one transition that feels roughest and smooth just that part. Build from small wins.</p>
 
     <!-- Nudge -->
-    <div style="border-left:3px solid #5E8753;padding-left:16px;margin:32px 0;background:#F4F7F2;border-radius:0 10px 10px 0;padding:16px 16px 16px 20px;">
-      <p style="font-size:14px;color:#5E8753;font-style:italic;margin:0;line-height:1.6;">🌱 Grovio's Planner keeps your rhythm visible for the whole family — no more "what are we doing next?" energy.</p>
+    <div style="border-left:3px solid #4A6E4E;padding-left:16px;margin:32px 0;background:#F4F7F2;border-radius:0 10px 10px 0;padding:16px 16px 16px 20px;">
+      <p style="font-size:14px;color:#4A6E4E;font-style:italic;margin:0;line-height:1.6;">🌱 Grovio's Planner keeps your rhythm visible for the whole family — no more "what are we doing next?" energy.</p>
     </div>
 
     <!-- Links -->
     <div style="border-top:1px solid rgba(92,74,58,0.12);padding-top:24px;margin-top:8px;">
       <h2 style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#9B9484;margin-bottom:12px;">Helpful links</h2>
-      <a href="https://www.simplicityparenting.com" target="_blank" rel="noopener noreferrer" style="display:block;font-size:14px;color:#5E8753;text-decoration:none;margin-bottom:8px;">— Simplicity Parenting</a>
-      <a href="https://hslda.org/homeschooling" target="_blank" rel="noopener noreferrer" style="display:block;font-size:14px;color:#5E8753;text-decoration:none;margin-bottom:8px;">— HSLDA — homeschool approaches</a>
+      <a href="https://www.simplicityparenting.com" target="_blank" rel="noopener noreferrer" style="display:block;font-size:14px;color:#4A6E4E;text-decoration:none;margin-bottom:8px;">— Simplicity Parenting</a>
+      <a href="https://hslda.org/homeschooling" target="_blank" rel="noopener noreferrer" style="display:block;font-size:14px;color:#4A6E4E;text-decoration:none;margin-bottom:8px;">— HSLDA — homeschool approaches</a>
     </div>
 
-    <div style="background:#3E3A32;border-radius:16px;padding:28px;text-align:center;margin-top:48px;">
+    <div style="background:#2C2218;border-radius:16px;padding:28px;text-align:center;margin-top:48px;">
       <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;font-weight:600;color:#F7F3EC;margin-bottom:8px;">Read more in the Grovio app</h2>
       <p style="font-size:13px;color:#8C7A6A;margin-bottom:20px;line-height:1.6;">All 25 Guide articles live inside Grovio — alongside your attendance records, planner, and portfolio.</p>
       <!-- TODO: Replace with Kit form URL -->
-<a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" style="display:inline-block;background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:11px 24px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
+<a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" style="display:inline-block;background:#4A6E4E;color:#FDFCF8;font-size:13px;font-weight:500;padding:11px 24px;border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;">Join the waitlist &rarr;</a>
     </div>
 
     <div style="display:flex;justify-content:space-between;margin-top:40px;padding-top:24px;border-top:1px solid rgba(92,74,58,0.1);">
-      <a href="/guide/" style="font-size:13px;color:#5E8753;text-decoration:none;">← All articles</a>
+      <a href="/guide/" style="font-size:13px;color:#4A6E4E;text-decoration:none;">← All articles</a>
     </div>
   </main>
 
-  <footer style="position:relative;z-index:1;padding:36px 32px;text-align:center;font-size:12px;color:#EDE7DA;background:#24362A;max-width:860px;margin:0 auto;">
-    <div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;font-weight:400;color:#F7F3EC;margin-bottom:6px;">grovio</div>
-    <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;color:#9B9484;">Grow Simply. Homeschool Confidently.</p>
-    <p style="margin-top:8px;font-size:11px;color:#9B9484;">&copy; 2026 Grovio &middot; <a href="/privacy.html" style="color:#EDE7DA;">Privacy</a> &middot; <a href="/support.html" style="color:#EDE7DA;">Support</a></p>
+    <footer class="site-footer">
+    <a href="/" class="footer-wordmark">grovio</a>
+    <p class="footer-tagline">Grow Simply. Homeschool Confidently.</p>
+    <p class="footer-links">&copy; 2026 Grovio &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/support.html">Support</a> &middot; <a href="/faq.html">FAQ</a></p>
   </footer>
-<script>
-(function(){var h=new Date().getHours(),a=document.getElementById('atmosphere'),g1=document.getElementById('sun-glow-1'),g2=document.getElementById('sun-glow-2'),g3=document.getElementById('sun-glow-3'),t;
-if(h>=6&&h<11){t={bg:'linear-gradient(175deg,#ECE0C2 0%,#E6EDDA 30%,#EDE9DF 60%,#F5F2EC 100%)',g1:{top:'20px',left:'8vw',width:'80px',height:'80px',background:'radial-gradient(circle at 44% 44%,rgba(210,168,110,0.85) 0%,rgba(196,132,90,0.4) 35%,transparent 65%)'},g2:{top:'8px',left:'5vw',width:'120px',height:'110px',background:'radial-gradient(circle,rgba(196,132,90,0.14) 0%,transparent 60%)'},g3:{top:'-10px',left:'2vw',width:'180px',height:'140px',background:'radial-gradient(ellipse at 50% 55%,rgba(242,226,192,0.45) 0%,transparent 55%)'}}}
-else if(h>=11&&h<17){t={bg:'linear-gradient(178deg,#E8E0CC 0%,#E6EBD8 28%,#EDE9DF 55%,#F5F2EC 100%)',g1:{top:'16px',left:'42vw',width:'86px',height:'84px',background:'radial-gradient(circle at 50% 48%,rgba(196,142,90,0.7) 0%,rgba(196,132,90,0.25) 38%,transparent 64%)'},g2:{top:'4px',left:'38vw',width:'130px',height:'116px',background:'radial-gradient(circle,rgba(196,132,90,0.1) 0%,transparent 55%)'},g3:{top:'-8px',left:'34vw',width:'190px',height:'140px',background:'radial-gradient(ellipse at 50% 50%,rgba(238,228,206,0.38) 0%,transparent 55%)'}}}
-else if(h>=17&&h<21){t={bg:'linear-gradient(168deg,#E2D2BE 0%,#E0D6C8 30%,#E8E2D8 55%,#EEE8E0 100%)',g1:{top:'20px',right:'10vw',left:'auto',width:'76px',height:'76px',background:'radial-gradient(circle at 56% 44%,rgba(186,152,118,0.65) 0%,rgba(168,140,110,0.2) 44%,transparent 68%)'},g2:{top:'26px',right:'11vw',left:'auto',width:'50px',height:'54px',background:'radial-gradient(ellipse at 62% 42%,rgba(240,228,214,0.72) 0%,transparent 50%)'},g3:{top:'10px',right:'8vw',left:'auto',width:'120px',height:'100px',background:'radial-gradient(circle,rgba(186,152,118,0.1) 0%,transparent 55%)'}}}
-else{t={bg:'linear-gradient(172deg,#C8C0B6 0%,#D0CAC2 28%,#DAD4CC 50%,#E4DED6 100%)',g1:{top:'24px',right:'10vw',left:'auto',width:'68px',height:'68px',background:'radial-gradient(circle at 62% 40%,rgba(180,172,162,0.55) 0%,rgba(160,152,142,0.15) 48%,transparent 66%)'},g2:{top:'28px',right:'11vw',left:'auto',width:'44px',height:'48px',background:'radial-gradient(ellipse at 68% 38%,rgba(212,206,198,0.8) 0%,transparent 48%)'},g3:{top:'14px',right:'8vw',left:'auto',width:'106px',height:'90px',background:'radial-gradient(circle,rgba(160,152,142,0.06) 0%,transparent 55%)'}}}
-a.style.background=t.bg;[g1,g2,g3].forEach(function(el,i){var g=t['g'+(i+1)];Object.keys(g).forEach(function(k){el.style[k]=g[k]})})})();
-</script>
 <script src="/waitlist-modal.js"></script>
 </body>
 </html>
