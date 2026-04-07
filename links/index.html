@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>grovio — Links</title>
   <meta name="description" content="The calm homeschool companion. Explore the grovio Guide, try the app, or join the waitlist.">
   <meta property="og:title" content="grovio — Links">
@@ -22,7 +22,6 @@
       --sage-l: #B8D4BB;
       --sage-p: #EBF3EC;
       --clay: #C4845A;
-      --clay-l: #E8C4A8;
       --clay-p: #FAF0E8;
       --amber: #C4843A;
       --amber-p: #FBF3E4;
@@ -36,10 +35,11 @@
       --sh: 0 2px 16px rgba(92,74,58,0.08);
     }
 
-    html {
+    html, body {
       background: var(--parch);
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      width: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -49,7 +49,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 24px;
+      padding: 32px 20px;
+      padding-top: max(32px, env(safe-area-inset-top, 0px));
+      padding-bottom: max(32px, env(safe-area-inset-bottom, 0px));
     }
 
     .container {
@@ -58,7 +60,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
     }
 
     /* ---- Header ---- */
@@ -66,40 +68,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
       text-align: center;
     }
 
-    .logo-mark {
-      width: 72px;
-      height: 72px;
-      background: var(--white);
-      border: 1px solid var(--br);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--sh);
-    }
-
-    .logo-mark span {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-weight: 700;
-      font-size: 1.75rem;
-      color: var(--sage);
-      letter-spacing: -0.03em;
-    }
-
-    .brand-name {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-weight: 700;
-      font-size: 1.375rem;
-      color: var(--t1);
-      letter-spacing: -0.02em;
+    .header img {
+      height: 36px;
+      object-fit: contain;
     }
 
     .tagline {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       line-height: 1.5;
       color: var(--t2);
       max-width: 280px;
@@ -110,55 +89,55 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .link-card {
       display: flex;
-      align-items: center;
-      gap: 16px;
+      align-items: flex-start;
+      gap: 14px;
       width: 100%;
-      padding: 18px 22px;
+      padding: 16px 18px;
       background: var(--white);
       border: 1px solid var(--br);
-      border-radius: 16px;
+      border-radius: 14px;
       box-shadow: var(--sh);
       text-decoration: none;
       color: var(--t1);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
     }
 
     .link-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 24px rgba(92,74,58,0.12);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(92,74,58,0.1);
     }
 
-    .link-card:active {
-      transform: translateY(0);
-    }
+    .link-card:active { transform: translateY(0); }
 
     .link-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      font-size: 1.125rem;
+      font-size: 1rem;
+      margin-top: 1px;
     }
 
     .link-icon.guide { background: var(--sage-p); }
     .link-icon.app   { background: var(--amber-p); }
-    .link-icon.email  { background: var(--clay-p); }
 
     .link-text {
       flex: 1;
+      min-width: 0;
     }
 
     .link-title {
       font-weight: 600;
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       line-height: 1.3;
       color: var(--t1);
     }
@@ -174,71 +153,30 @@
       flex-shrink: 0;
       color: var(--t3);
       font-size: 0.875rem;
+      margin-top: 2px;
     }
-
-    /* ---- Footer ---- */
-    .footer {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .footer-tagline {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-style: italic;
-      font-size: 0.875rem;
-      color: var(--t3);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-    }
-
-    .footer-links a {
-      font-size: 0.75rem;
-      color: var(--t3);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--t2);
-    }
-
-    /* ---- Staggered load animation ---- */
-    .header, .link-card, .footer {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.5s ease forwards;
-    }
-
-    .header          { animation-delay: 0.05s; }
-    .link-card:nth-child(1) { animation-delay: 0.15s; }
-    .link-card:nth-child(2) { animation-delay: 0.25s; }
-    .footer          { animation-delay: 0.35s; }
 
     /* ---- Waitlist form ---- */
     .waitlist-inputs {
       display: flex;
+      flex-direction: column;
       gap: 8px;
     }
     .waitlist-email {
-      flex: 1;
-      min-width: 0;
+      width: 100%;
       padding: 10px 14px;
       border: 1px solid var(--br);
       border-radius: 10px;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.875rem;
+      font-size: 16px; /* prevents iOS zoom */
       color: var(--t1);
       background: var(--white);
       outline: none;
       box-sizing: border-box;
+      -webkit-appearance: none;
     }
     .waitlist-btn {
+      width: 100%;
       padding: 10px 18px;
       background: var(--sage);
       color: white;
@@ -248,28 +186,69 @@
       font-size: 0.875rem;
       font-weight: 600;
       cursor: pointer;
-      white-space: nowrap;
       transition: background 0.15s;
-      flex-shrink: 0;
     }
     .waitlist-btn:hover { background: #3d5e41; }
 
-    @media (max-width: 480px) {
-      .waitlist-inputs {
-        flex-direction: column;
-      }
-      .waitlist-email {
-        width: 100%;
-      }
-      .waitlist-btn {
-        width: 100%;
-      }
+    /* ---- Footer ---- */
+    .footer {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
+    .footer-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      font-size: 0.8125rem;
+      color: var(--t3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 0.6875rem;
+      color: var(--t3);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover { color: var(--t2); }
+
+    /* ---- Staggered load animation ---- */
+    .header, .link-card, .footer {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeUp 0.45s ease forwards;
+    }
+
+    .header                 { animation-delay: 0.05s; }
+    .link-card:nth-child(1) { animation-delay: 0.12s; }
+    .link-card:nth-child(2) { animation-delay: 0.2s; }
+    .footer                 { animation-delay: 0.28s; }
+
     @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- Desktop: side-by-side form ---- */
+    @media (min-width: 481px) {
+      .waitlist-inputs {
+        flex-direction: row;
+      }
+      .waitlist-email {
+        flex: 1;
+        width: auto;
+        font-size: 0.875rem;
+      }
+      .waitlist-btn {
+        width: auto;
+        flex-shrink: 0;
       }
     }
   </style>
@@ -278,7 +257,7 @@
   <div class="container">
 
     <div class="header">
-      <img src="/assets/grovio-logo.png" alt="grovio" style="height:40px;object-fit:contain;margin-bottom:4px;">
+      <img src="/assets/grovio-logo.png" alt="grovio">
       <p class="tagline">The calm homeschool companion.<br>Planning, records & portfolio in one quiet app.</p>
     </div>
 
@@ -297,12 +276,12 @@
         <div class="link-text">
           <div class="link-title">Coming soon for iOS &amp; web</div>
           <div class="link-desc" id="waitlist-desc">Join the waitlist — we'll let you know the moment it's ready.</div>
-          <div id="waitlist-form" style="display:none;margin-top:12px;" onclick="event.stopPropagation()">
+          <div id="waitlist-form" style="display:none;margin-top:10px;" onclick="event.stopPropagation()">
             <div class="waitlist-inputs">
-              <input id="waitlist-email" type="email" placeholder="your@email.com" class="waitlist-email">
+              <input id="waitlist-email" type="email" placeholder="your@email.com" class="waitlist-email" autocomplete="email" inputmode="email">
               <button id="waitlist-btn" onclick="submitWaitlist()" class="waitlist-btn">Notify me</button>
             </div>
-            <div id="waitlist-msg" style="display:none;margin-top:8px;font-size:0.8125rem;line-height:1.4;"></div>
+            <div id="waitlist-msg" style="display:none;margin-top:6px;font-size:0.8125rem;line-height:1.4;"></div>
           </div>
         </div>
         <span class="link-arrow" id="waitlist-arrow">→</span>
@@ -322,13 +301,12 @@
 <script>
 var waitlistOpen=false,waitlistDone=false;
 function openWaitlist(){
-  if(waitlistDone)return;
-  if(waitlistOpen)return;
+  if(waitlistDone||waitlistOpen)return;
   waitlistOpen=true;
   document.getElementById('waitlist-form').style.display='block';
   document.getElementById('waitlist-arrow').style.display='none';
   document.getElementById('waitlist-card').style.cursor='default';
-  setTimeout(function(){document.getElementById('waitlist-email').focus();},100);
+  setTimeout(function(){document.getElementById('waitlist-email').focus();},150);
 }
 function submitWaitlist(){
   var email=document.getElementById('waitlist-email').value.trim();
@@ -342,7 +320,7 @@ function submitWaitlist(){
   }).then(function(r){return r.json();}).then(function(d){
     if(d.ok){
       waitlistDone=true;
-      document.getElementById('waitlist-form').innerHTML='<div style="color:var(--t2);font-size:0.8125rem;line-height:1.4;">You\'re on the list. We\'ll be in touch.</div>';
+      document.getElementById('waitlist-form').innerHTML='<div style="color:var(--t2);font-size:0.8125rem;line-height:1.4;padding-top:2px;">You\'re on the list. We\'ll be in touch.</div>';
     }else{throw new Error();}
   }).catch(function(){
     msg.style.display='block';msg.style.color='var(--amber)';msg.textContent='Something went wrong \u2014 try again.';
