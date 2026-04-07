@@ -252,9 +252,9 @@
           <div class="link-title">Coming soon for iOS &amp; web</div>
           <div class="link-desc" id="waitlist-desc">Join the waitlist — we'll let you know the moment it's ready.</div>
           <div id="waitlist-form" style="display:none;margin-top:12px;" onclick="event.stopPropagation()">
-            <div style="display:flex;gap:8px;">
-              <input id="waitlist-email" type="email" placeholder="your@email.com" style="flex:1;padding:10px 14px;border:1px solid var(--br);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;color:var(--t1);background:var(--white);outline:none;">
-              <button id="waitlist-btn" onclick="submitWaitlist()" style="padding:10px 18px;background:var(--sage);color:white;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:background 0.15s;">Notify me</button>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <input id="waitlist-email" type="email" placeholder="your@email.com" style="width:100%;padding:10px 14px;border:1px solid var(--br);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;color:var(--t1);background:var(--white);outline:none;box-sizing:border-box;">
+              <button id="waitlist-btn" onclick="submitWaitlist()" style="width:100%;padding:10px 18px;background:var(--sage);color:white;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:background 0.15s;">Notify me</button>
             </div>
             <div id="waitlist-msg" style="display:none;margin-top:8px;font-size:0.8125rem;line-height:1.4;"></div>
           </div>
