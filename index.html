@@ -54,8 +54,32 @@
       color: #4A6E4E;
       text-transform: lowercase;
       text-decoration: none;
-      font-size: 22px;
+      font-size: 26px;
       letter-spacing: -0.02em;
+    }
+
+    /* ── Hero wordmark display ── */
+    .hero-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: clamp(52px, 8vw, 80px);
+      color: #4A6E4E;
+      text-transform: lowercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .hero-wordmark-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #B8D4BB;
+      border-radius: 50%;
+      margin-left: 4px;
+      vertical-align: middle;
+      position: relative;
+      top: -6px;
     }
 
     /* ── Texture overlay ── */
@@ -785,7 +809,7 @@
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
       color: #B8D4BB;
-      font-size: 22px;
+      font-size: 28px;
       text-decoration: none;
       display: inline-block;
       margin-bottom: 0.5rem;
@@ -884,9 +908,10 @@
       <div class="container">
         <div class="hero-inner">
           <div class="hero-content">
-            <div class="hero-eyebrow">The calm homeschool companion</div>
+            <div class="hero-eyebrow">Introducing</div>
+            <span class="hero-wordmark">grovio<span class="hero-wordmark-dot"></span></span>
             <h1 class="hero-headline">Grow simply.<br><em>Homeschool<br>confidently.</em></h1>
-            <p class="hero-sub">Planning, records, and portfolio in one quiet app — so you can focus on what matters most.</p>
+            <p class="hero-sub">Grovio puts planning, records, and portfolio in one quiet app — so you can focus on what matters most.</p>
             <div class="hero-actions">
               <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-primary">Join the waitlist</a>
               <a href="/guide/" class="btn-secondary">Explore the Guide</a>
@@ -963,6 +988,7 @@
         <div class="callout-text-wrap">
           <div class="callout-title">Not a planner. A rhythm.</div>
           <p class="callout-body">Grovio doesn't give you a rigid schedule. It gives you a gentle daily rhythm — a flow of activities you can check off, rearrange, or skip. Because real homeschool days aren't linear.</p>
+          <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:rgba(247,244,238,0.55);margin-top:0.875rem;letter-spacing:-0.01em;">That's grovio.</p>
         </div>
       </div>
     </section>
@@ -1128,7 +1154,7 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <p class="testimonial-quote">"The Guide alone is worth it. I finally understand what my state requires without reading 45 blog posts."</p>
+            <p class="testimonial-quote">"I finally understand what my state requires. Grovio made it simple — I didn't have to read 45 blog posts to figure it out."</p>
             <div class="testimonial-author-row">
               <div class="testimonial-avatar">D</div>
               <div class="testimonial-author">
@@ -1227,7 +1253,7 @@
       <div class="final-cta-overlay">
         <div class="final-cta-content">
           <div class="final-cta-title">Ready to simplify<br>your <em>homeschool?</em></div>
-          <p class="final-cta-sub">Free to start. No credit card. No overwhelm.<br>Just a calm place for your homeschool life.</p>
+          <p class="final-cta-sub">Free to start. No credit card. No overwhelm.<br>That's what <strong style="font-family:'Nunito',sans-serif;font-weight:800;letter-spacing:-0.01em;">grovio</strong> is for.</p>
           <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-final">Get notified when we launch</a>
           <span class="final-cta-secondary">Or <a href="/guide/">read the Guide first</a></span>
         </div>
