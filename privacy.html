@@ -3,95 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Grovio</title>
+  <title>Privacy Policy — grovio</title>
+  <meta name="description" content="grovio privacy policy. How we handle your family's data — written in plain English.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://grovioapp.com/privacy.html">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { background: #F7F4EE; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #2C2218; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: #4A6E4E; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; background: rgba(247,244,238,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #B8D4BB; max-width: 860px; margin: 0 auto; position: sticky; top: 0; z-index: 10; }
+    .nav-wordmark { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 18px; color: #4A6E4E; text-decoration: none; letter-spacing: -0.01em; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { font-size: 13px; color: #7A6A5A; text-decoration: none; }
+    .nav-cta { background: #4A6E4E; color: #F7F4EE !important; font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 100px; }
+    main { max-width: 680px; margin: 0 auto; padding: 56px 32px 80px; }
+    h1 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 32px; color: #2C2218; margin-bottom: 6px; }
+    .subtitle { font-size: 15px; color: #7A6A5A; margin-bottom: 4px; font-style: italic; }
+    .last-updated { font-size: 13px; color: #A89A8A; margin-bottom: 48px; }
+    h2 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 19px; color: #4A6E4E; margin: 40px 0 12px; }
+    p { font-size: 15px; color: #2C2218; line-height: 1.75; margin-bottom: 18px; }
+    p strong { color: #2C2218; }
+    ul { margin: 0 0 18px 0; padding-left: 1.25rem; }
+    li { font-size: 15px; color: #2C2218; line-height: 1.75; margin-bottom: 6px; }
+    li a { font-size: 13px; color: #A89A8A; }
+    footer { padding: 36px 32px; text-align: center; background: #2C2218; max-width: 860px; margin: 0 auto; }
+    .footer-wordmark { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; color: #B8D4BB; margin-bottom: 6px; }
+    .footer-tagline { font-family: 'Inter', sans-serif; font-style: italic; font-size: 13px; color: #A89A8A; margin-bottom: 8px; }
+    .footer-links { font-size: 11px; color: #A89A8A; }
+    .footer-links a { color: #B8D4BB; text-decoration: none; }
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 60px; }
+      h1 { font-size: 26px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
 </head>
-<body style="margin:0;background:transparent;font-family:'Plus Jakarta Sans',system-ui,sans-serif;">
-<!-- Atmosphere -->
-<div id="atmosphere" style="position:fixed;inset:0;z-index:0;pointer-events:none;transition:background 1s ease;"></div>
-<div id="sun-glow-1" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
-<div id="sun-glow-2" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
-<div id="sun-glow-3" style="position:fixed;border-radius:50%;z-index:0;pointer-events:none;transition:all 1s ease;"></div>
-
-  <nav style="display:flex;align-items:center;justify-content:space-between;padding:18px 32px;background:rgba(247,244,238,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #EDE7DA;max-width:860px;margin:0 auto;position:relative;z-index:1;">
-    <a href="/" style="text-decoration:none;"><img src="/assets/grovio-logo.png" alt="grovio" style="height:24px;object-fit:contain;"></a>
-    <div style="display:flex;gap:20px;align-items:center;">
-      <a href="/guide/" style="font-size:13px;color:#6B6458;text-decoration:none;">The Guide</a>
-      <a href="/faq.html" style="font-size:13px;color:#6B6458;text-decoration:none;">FAQ</a>
-      <a href="#waitlist" style="background:#5E8753;color:#FDFCF8;font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;">Join the waitlist &rarr;</a>
+<body>
+  <nav>
+    <a href="/" class="nav-wordmark">grovio</a>
+    <div class="nav-links">
+      <a href="/guide/">The Guide</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/#waitlist" class="nav-cta">Join the waitlist &rarr;</a>
     </div>
   </nav>
 
-  <main style="max-width:680px;margin:0 auto;padding:60px 32px 80px;position:relative;z-index:1;">
-    <h1 style="font-family:'Source Serif 4',Georgia,serif;font-size:36px;font-weight:600;color:#3E3A32;margin-bottom:8px;">Privacy Policy</h1>
-    <p style="font-size:15px;color:#6B6458;margin-bottom:4px;">Grow Simply. Homeschool Confidently.</p>
-    <p style="font-size:13px;color:#9B9484;margin-bottom:48px;">Last updated: March 2026</p>
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Grow Simply. Homeschool Confidently.</p>
+    <p class="last-updated">Last updated: April 2026</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Introduction — Who We Are</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio is a homeschool companion app designed to help families track attendance, plan their daily rhythm, build a learning portfolio, and access educational articles through The Grovio Guide. Grovio is built and operated by Sondra Kilian, doing business as Skipperinvestmentsllc, based in the United States.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">This privacy policy explains what information Grovio collects, how that information is used, and what choices you have. It is written in plain English on purpose — you should not need a law degree to understand how your data is handled. If anything in this policy is unclear, please reach out at <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a> and I will be happy to explain.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">This policy applies to both the Grovio web application (hosted at grovioapp.com) and the Grovio iOS application. By creating an account or using the app, you agree to the practices described below.</p>
+    <h2>Introduction</h2>
+    <p>grovio is a homeschool companion app designed to help families track attendance, plan their daily rhythm, build a learning portfolio, and access educational articles through the grovio Guide. grovio is operated as a United States-based application.</p>
+    <p>This privacy policy explains what information grovio collects, how that information is used, and what choices you have. It is written in plain English on purpose — you should not need a law degree to understand how your data is handled. If anything in this policy is unclear, please reach out at <a href="mailto:hello@grovioapp.com">hello@grovioapp.com</a>.</p>
+    <p>This policy applies to both the grovio web application (hosted at grovioapp.com) and the grovio iOS application. By creating an account or using the app, you agree to the practices described below.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Information We Collect</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio collects only the information needed to provide you with a useful homeschool companion. There are two ways you can use Grovio, and the data collected depends on which you choose.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;"><strong style="color:#3E3A32;">Without an account:</strong> You can use Grovio without creating an account. In this case, all data you enter — including any learner information, planner entries, or attendance records — stays on your device only. Grovio does not transmit or store this data on any server.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;"><strong style="color:#3E3A32;">With an account:</strong> When you create an account, Grovio collects your email address for authentication purposes. Once signed in, you may also enter the following information, all of which is stored on our servers: learner names and basic details (such as age or grade level) as entered by you; attendance records including dates marked as school days, sick days, and field trips; portfolio entries including photos, notes, and descriptions of your learner's work; planner and rhythm data including subjects, schedules, and daily routines; and any preferences or settings you configure within the app.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio also collects basic app usage data through its hosting and database infrastructure (Vercel and Supabase). This includes standard server logs such as IP addresses, browser or device type, and timestamps of requests. This data is used solely for maintaining and improving the app's performance and is not used for advertising, profiling, or behavioral tracking of any kind.</p>
+    <h2>Information We Collect</h2>
+    <p>grovio collects only the information needed to provide you with a useful homeschool companion. There are two ways you can use grovio, and the data collected depends on which you choose.</p>
+    <p><strong>Without an account:</strong> You can use grovio without creating an account. In this case, all data you enter — including any learner information, planner entries, or attendance records — stays on your device only. grovio does not transmit or store this data on any server.</p>
+    <p><strong>With an account:</strong> When you create an account, grovio collects your email address for authentication purposes. Once signed in, you may also enter the following information, all of which is stored on our servers: learner names and basic details (such as age or grade level) as entered by you; attendance records including dates marked as school days, sick days, and field trips; portfolio entries including photos, notes, and descriptions of your learner's work; planner and rhythm data including subjects, schedules, and daily routines; and any preferences or settings you configure within the app.</p>
+    <p>grovio also collects basic app usage data through its hosting and database infrastructure. This includes standard server logs such as IP addresses, browser or device type, and timestamps of requests. This data is used solely for maintaining and improving the app's performance and is not used for advertising, profiling, or behavioral tracking of any kind.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">How We Use Your Information</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio uses the information you provide for a short list of straightforward purposes: to authenticate your account and keep it secure via Sign in with Apple; to store and display your attendance records, planner data, portfolio entries, and learner information so you can access them across sessions and devices; to generate and display portfolio sharing links when you choose to create them; and to maintain, troubleshoot, and improve the Grovio app.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio does not use your information for advertising. Grovio does not sell your personal data to any third party. Grovio does not build behavioral profiles or use your data for any purpose beyond operating the app as described in this policy.</p>
+    <h2>How We Use Your Information</h2>
+    <p>grovio uses the information you provide for a short list of straightforward purposes: to authenticate your account and keep it secure via Sign in with Apple; to store and display your attendance records, planner data, portfolio entries, and learner information so you can access them across sessions and devices; to generate and display portfolio sharing links when you choose to create them; to generate optional AI-powered weekly summaries of your learning activity when you request them; and to maintain, troubleshoot, and improve the grovio app.</p>
+    <p>grovio does not use your information for advertising. grovio does not sell your personal data to any third party. grovio does not build behavioral profiles or use your data for any purpose beyond operating the app as described in this policy.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Children's Privacy</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio is designed for use by parents and guardians — not by children. The app is directed at adults who are managing their family's homeschool experience. While the app stores information about learners (such as names and portfolio entries), all of this information is entered and managed by a parent or guardian. Grovio does not knowingly collect personal information directly from children under the age of 13.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Because the app is parent-directed, Grovio does not require verifiable parental consent under the Children's Online Privacy Protection Act (COPPA) for the information parents choose to enter about their children. Parents maintain full control over what learner information they add and can request deletion of any or all of this data at any time.</p>
+    <h2>AI-Powered Features</h2>
+    <p>grovio offers an optional feature that generates a brief summary of your week's learning activity using artificial intelligence. When you choose to use this feature, the titles and descriptions of your portfolio entries from that week are sent to Anthropic, PBC (the provider of the Claude AI model) solely for the purpose of generating your summary. This data is not stored or used by Anthropic for any other purpose. This feature is entirely opt-in — it only runs when you tap the "Summarize our week" button. If you do not use this feature, no data is ever sent to Anthropic.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Data Storage and Security</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">When you create an account, your data is stored in Supabase, a cloud database platform with servers located in the United States. Photos uploaded to your portfolio are stored in Supabase Storage. The Grovio web application is hosted on Vercel, also based in the United States.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">All data transmitted between your device and Grovio's servers is encrypted in transit using HTTPS/TLS. Data stored in Supabase is encrypted at rest. Grovio uses Sign in with Apple for authentication — a fast, secure one-tap experience. No password is ever created or stored.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">While Grovio takes reasonable measures to protect your information, no system connected to the internet can guarantee absolute security. If you ever believe your account has been compromised, please contact <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a> immediately.</p>
+    <h2>Children's Privacy</h2>
+    <p>grovio is designed for use by parents and guardians — not by children. The app is directed at adults who are managing their family's homeschool experience. While the app stores information about learners (such as names and portfolio entries), all of this information is entered and managed by a parent or guardian. grovio does not knowingly collect personal information directly from children under the age of 13.</p>
+    <p>Because the app is parent-directed, grovio does not require verifiable parental consent under the Children's Online Privacy Protection Act (COPPA) for the information parents choose to enter about their children. Parents maintain full control over what learner information they add and can request deletion of any or all of this data at any time.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Data Sharing</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio does not sell, rent, or trade your personal information. Grovio does not share your data with advertising partners because Grovio has no advertising partners. There are no ads in the app and there never will be.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio does rely on a small number of third-party service providers to operate the app. These providers have access to your data only to the extent necessary to provide their services: Supabase (<a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" style="color:#5E8753;">supabase.com/privacy</a>) provides authentication, database, and file storage services; Vercel (<a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:#5E8753;">vercel.com/legal/privacy-policy</a>) provides web application hosting; and Apple (<a href="https://apple.com/legal/privacy" target="_blank" rel="noopener noreferrer" style="color:#5E8753;">apple.com/legal/privacy</a>) provides iOS app distribution through the App Store. Each of these providers maintains their own privacy policies and security practices.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio may also disclose your information if required to do so by law, such as in response to a valid subpoena, court order, or government request.</p>
+    <h2>Data Storage and Security</h2>
+    <p>When you create an account, your data is stored in Supabase, a cloud database platform with servers located in the United States. Photos and portfolio content are stored as part of your portfolio data in our database. The grovio web application is hosted on Vercel, also based in the United States.</p>
+    <p>All data transmitted between your device and grovio's servers is encrypted in transit using HTTPS/TLS. Data stored in Supabase is encrypted at rest. grovio uses Sign in with Apple for authentication — a fast, secure one-tap experience. No password is ever created or stored.</p>
+    <p>While grovio takes reasonable measures to protect your information, no system connected to the internet can guarantee absolute security. If you ever believe your account has been compromised, please contact <a href="mailto:hello@grovioapp.com">hello@grovioapp.com</a> immediately.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Portfolio Sharing Links</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio allows you to create shareable links to portfolio entries so you can show your learner's work to family members, evaluators, or others you choose. This feature is entirely opt-in — no portfolio content is publicly accessible unless you specifically generate a sharing link.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">When you create a sharing link, anyone who has that link can view the shared portfolio content. You are responsible for deciding who you share these links with. You can deactivate any sharing link at any time directly within the app — once deactivated, the link will no longer display portfolio content to anyone who opens it. You can also generate a new link at any time after deactivating an existing one.</p>
+    <h2>Data Sharing</h2>
+    <p>grovio does not sell, rent, or trade your personal information. grovio does not share your data with advertising partners because grovio has no advertising partners. There are no ads in the app and there never will be.</p>
+    <p>grovio relies on a small number of third-party service providers to operate the app. These providers have access to your data only to the extent necessary to provide their services:</p>
+    <ul>
+      <li><strong>Supabase</strong> — authentication, database, and file storage <a href="https://supabase.com/privacy" target="_blank" rel="noopener">(supabase.com/privacy)</a></li>
+      <li><strong>Vercel</strong> — web application hosting <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">(vercel.com/legal/privacy-policy)</a></li>
+      <li><strong>Apple</strong> — iOS app distribution and Sign in with Apple <a href="https://apple.com/legal/privacy" target="_blank" rel="noopener">(apple.com/legal/privacy)</a></li>
+      <li><strong>Anthropic, PBC</strong> — AI model used for optional weekly summaries only <a href="https://anthropic.com/privacy" target="_blank" rel="noopener">(anthropic.com/privacy)</a></li>
+    </ul>
+    <p>grovio may also disclose your information if required to do so by law, such as in response to a valid subpoena, court order, or government request.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Your Rights and Data Deletion</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">You have the right to access, correct, or delete the personal information Grovio holds about you. Within the app, you can view and edit your learner information, attendance records, planner data, and portfolio entries at any time.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">If you would like to delete your account and all associated data, you can do so by emailing <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a>. Grovio will process your deletion request within 30 days. Once deletion is complete, your account information, learner data, attendance records, planner data, and portfolio entries (including photos) will be permanently removed from Grovio's servers.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">If you are located in a jurisdiction that grants additional privacy rights — such as the right to data portability, the right to restrict processing, or rights under the European General Data Protection Regulation (GDPR) or the California Consumer Privacy Act (CCPA) — please contact <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a> and Grovio will make a good-faith effort to honor your request.</p>
+    <h2>Portfolio Sharing Links</h2>
+    <p>grovio allows you to create shareable links to portfolio entries so you can show your learner's work to family members, evaluators, or others you choose. This feature is entirely opt-in — no portfolio content is publicly accessible unless you specifically generate a sharing link.</p>
+    <p>When you create a sharing link, anyone who has that link can view the shared portfolio content. You are responsible for deciding who you share these links with. You can deactivate any sharing link at any time directly within the app — once deactivated, the link will no longer display portfolio content to anyone who opens it.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Changes to This Policy</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Grovio may update this privacy policy from time to time to reflect changes in the app, legal requirements, or business practices. When changes are made, the "Last updated" date at the top of this policy will be revised. If a change is material — for example, if Grovio begins collecting a new type of information or sharing data with a new service provider — Grovio will make reasonable efforts to notify you, such as through an in-app notice or an email to your registered address.</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Your continued use of Grovio after any changes take effect constitutes your acceptance of the updated policy. If you do not agree with a change, you may stop using the app and request deletion of your data.</p>
+    <h2>Your Rights and Data Deletion</h2>
+    <p>You have the right to access, correct, or delete the personal information grovio holds about you. Within the app, you can view and edit your learner information, attendance records, planner data, and portfolio entries at any time.</p>
+    <p>If you would like to delete your account and all associated data, please email <a href="mailto:hello@grovioapp.com">hello@grovioapp.com</a>. grovio will process your deletion request within 30 days. Once deletion is complete, your account information, learner data, attendance records, planner data, and portfolio entries (including photos) will be permanently removed from grovio's servers.</p>
+    <p>If you are located in a jurisdiction that grants additional privacy rights — such as rights under the European General Data Protection Regulation (GDPR) or the California Consumer Privacy Act (CCPA) — please contact <a href="mailto:hello@grovioapp.com">hello@grovioapp.com</a> and grovio will make a good-faith effort to honor your request.</p>
 
-    <h2 style="font-family:'Source Serif 4',Georgia,serif;font-size:20px;color:#5E8753;margin-bottom:12px;margin-top:36px;">Contact Information</h2>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">If you have questions about this privacy policy, want to request deletion of your data, or just want to understand more about how Grovio handles your information, please get in touch:</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin-bottom:20px;">Sondra Kilian<br>Skipperinvestmentsllc<br>Email: <a href="mailto:hello@grovioapp.com" style="color:#5E8753;">hello@grovioapp.com</a></p>
+    <h2>Changes to This Policy</h2>
+    <p>grovio may update this privacy policy from time to time to reflect changes in the app, legal requirements, or business practices. When changes are made, the "Last updated" date at the top of this policy will be revised. If a change is material, grovio will make reasonable efforts to notify you through an in-app notice or email.</p>
+    <p>Your continued use of grovio after any changes take effect constitutes your acceptance of the updated policy.</p>
 
-    <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;color:#9B9484;font-style:italic;line-height:1.7;margin-top:40px;margin-bottom:0;">Thank you for trusting Grovio with your family's homeschool journey. Your privacy matters, and this policy is a reflection of that commitment.</p>
+    <h2>Contact</h2>
+    <p>For questions about this privacy policy, data deletion requests, or any privacy concerns:</p>
+    <p><strong>Email:</strong> <a href="mailto:hello@grovioapp.com">hello@grovioapp.com</a></p>
   </main>
 
-  <footer style="padding:36px 32px;text-align:center;font-size:12px;color:#EDE7DA;background:#24362A;max-width:860px;margin:0 auto;position:relative;z-index:1;">
-    <div style="font-family:'Source Serif 4',Georgia,serif;font-size:16px;font-weight:400;color:#F7F3EC;margin-bottom:6px;">grovio</div>
-    <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;color:#9B9484;">Grow Simply. Homeschool Confidently.</p>
-    <p style="margin-top:8px;font-size:11px;color:#9B9484;">&copy; 2026 Grovio &middot; <a href="/privacy.html" style="color:#EDE7DA;">Privacy</a> &middot; <a href="/support.html" style="color:#EDE7DA;">Support</a></p>
+  <footer>
+    <div class="footer-wordmark">grovio</div>
+    <p class="footer-tagline">Grow Simply. Homeschool Confidently.</p>
+    <p class="footer-links">&copy; 2026 grovio &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/support.html">Support</a></p>
   </footer>
-
-<script>
-(function(){var h=new Date().getHours(),a=document.getElementById('atmosphere'),g1=document.getElementById('sun-glow-1'),g2=document.getElementById('sun-glow-2'),g3=document.getElementById('sun-glow-3'),t;
-if(h>=6&&h<11){t={bg:'linear-gradient(175deg,#ECE0C2 0%,#E6EDDA 30%,#EDE9DF 60%,#F5F2EC 100%)',g1:{top:'20px',left:'8vw',width:'80px',height:'80px',background:'radial-gradient(circle at 44% 44%,rgba(210,168,110,0.85) 0%,rgba(196,132,90,0.4) 35%,transparent 65%)'},g2:{top:'8px',left:'5vw',width:'120px',height:'110px',background:'radial-gradient(circle,rgba(196,132,90,0.14) 0%,transparent 60%)'},g3:{top:'-10px',left:'2vw',width:'180px',height:'140px',background:'radial-gradient(ellipse at 50% 55%,rgba(242,226,192,0.45) 0%,transparent 55%)'}}}
-else if(h>=11&&h<17){t={bg:'linear-gradient(178deg,#E8E0CC 0%,#E6EBD8 28%,#EDE9DF 55%,#F5F2EC 100%)',g1:{top:'16px',left:'42vw',width:'86px',height:'84px',background:'radial-gradient(circle at 50% 48%,rgba(196,142,90,0.7) 0%,rgba(196,132,90,0.25) 38%,transparent 64%)'},g2:{top:'4px',left:'38vw',width:'130px',height:'116px',background:'radial-gradient(circle,rgba(196,132,90,0.1) 0%,transparent 55%)'},g3:{top:'-8px',left:'34vw',width:'190px',height:'140px',background:'radial-gradient(ellipse at 50% 50%,rgba(238,228,206,0.38) 0%,transparent 55%)'}}}
-else if(h>=17&&h<21){t={bg:'linear-gradient(168deg,#E2D2BE 0%,#E0D6C8 30%,#E8E2D8 55%,#EEE8E0 100%)',g1:{top:'20px',right:'10vw',left:'auto',width:'76px',height:'76px',background:'radial-gradient(circle at 56% 44%,rgba(186,152,118,0.65) 0%,rgba(168,140,110,0.2) 44%,transparent 68%)'},g2:{top:'26px',right:'11vw',left:'auto',width:'50px',height:'54px',background:'radial-gradient(ellipse at 62% 42%,rgba(240,228,214,0.72) 0%,transparent 50%)'},g3:{top:'10px',right:'8vw',left:'auto',width:'120px',height:'100px',background:'radial-gradient(circle,rgba(186,152,118,0.1) 0%,transparent 55%)'}}}
-else{t={bg:'linear-gradient(172deg,#C8C0B6 0%,#D0CAC2 28%,#DAD4CC 50%,#E4DED6 100%)',g1:{top:'24px',right:'10vw',left:'auto',width:'68px',height:'68px',background:'radial-gradient(circle at 62% 40%,rgba(180,172,162,0.55) 0%,rgba(160,152,142,0.15) 48%,transparent 66%)'},g2:{top:'28px',right:'11vw',left:'auto',width:'44px',height:'48px',background:'radial-gradient(ellipse at 68% 38%,rgba(212,206,198,0.8) 0%,transparent 48%)'},g3:{top:'14px',right:'8vw',left:'auto',width:'106px',height:'90px',background:'radial-gradient(circle,rgba(160,152,142,0.06) 0%,transparent 55%)'}}}
-a.style.background=t.bg;[g1,g2,g3].forEach(function(el,i){var g=t['g'+(i+1)];Object.keys(g).forEach(function(k){el.style[k]=g[k]})})})();
-</script>
 </body>
 </html>
