@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>grovio — Links</title>
-  <meta name="description" content="The calm homeschool companion. Explore the grovio Guide, try the app, or join the waitlist.">
+  <meta name="description" content="The calm homeschool companion. Visit the website, explore the Grovio Guide, or join the waitlist.">
   <meta property="og:title" content="grovio — Links">
   <meta property="og:description" content="The calm homeschool companion. Planning, records &amp; portfolio in one quiet app.">
   <meta property="og:type" content="website">
@@ -12,27 +12,25 @@
   <link rel="canonical" href="https://grovioapp.com/links/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --sage: #4A6E4E;
-      --sage-m: #7A9E7E;
-      --sage-l: #B8D4BB;
-      --sage-p: #EBF3EC;
-      --clay: #C4845A;
-      --clay-p: #FAF0E8;
-      --amber: #C4843A;
+      --sage:    #4A6E4E;
+      --sage-m:  #7A9E7E;
+      --sage-l:  #B8D4BB;
+      --sage-p:  #EBF3EC;
+      --amber:   #C4843A;
       --amber-p: #FBF3E4;
-      --bark: #5C4A3A;
-      --parch: #F7F4EE;
-      --white: #FDFCFA;
-      --t1: #2C2218;
-      --t2: #7A6A5A;
-      --t3: #A89A8A;
-      --br: rgba(92,74,58,0.12);
-      --sh: 0 2px 16px rgba(92,74,58,0.08);
+      --bark:    #2C2218;
+      --bark-m:  #7A6A5A;
+      --bark-l:  #A89A8A;
+      --parch:   #F7F4EE;
+      --parch-l: #FCFAF8;
+      --br:      rgba(184,212,187,0.7);
+      --br-m:    rgba(44,34,24,0.1);
+      --sh:      0 2px 16px rgba(44,34,24,0.06);
     }
 
     html, body {
@@ -42,16 +40,29 @@
       overflow-x: hidden;
     }
 
+    /* Paper grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
     body {
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      color: var(--t1);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--bark);
       min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 32px 20px;
-      padding-top: max(32px, env(safe-area-inset-top, 0px));
-      padding-bottom: max(32px, env(safe-area-inset-bottom, 0px));
+      padding: 40px 20px;
+      padding-top: max(40px, env(safe-area-inset-top, 0px));
+      padding-bottom: max(40px, env(safe-area-inset-bottom, 0px));
+      position: relative;
+      z-index: 1;
     }
 
     .container {
@@ -63,28 +74,40 @@
       gap: 28px;
     }
 
-    /* ---- Header ---- */
+    /* ── Header ── */
     .header {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-align: center;
     }
 
-    .header img {
-      height: 36px;
-      object-fit: contain;
+    .wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 38px;
+      color: var(--sage);
+      text-transform: lowercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .wordmark-dot {
+      display: none;
     }
 
     .tagline {
-      font-size: 0.875rem;
-      line-height: 1.5;
-      color: var(--t2);
-      max-width: 280px;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--bark-m);
+      max-width: 260px;
     }
 
-    /* ---- Links ---- */
+    /* ── Link cards ── */
     .links {
       width: 100%;
       display: flex;
@@ -98,37 +121,44 @@
       gap: 14px;
       width: 100%;
       padding: 16px 18px;
-      background: var(--white);
+      background: var(--parch-l);
       border: 1px solid var(--br);
-      border-radius: 14px;
+      border-radius: 12px;
       box-shadow: var(--sh);
       text-decoration: none;
-      color: var(--t1);
+      color: var(--bark);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       overflow: hidden;
     }
 
     .link-card:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(92,74,58,0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(44,34,24,0.09);
     }
 
     .link-card:active { transform: translateY(0); }
 
     .link-icon {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-top: 1px;
     }
 
-    .link-icon.guide { background: var(--sage-p); }
-    .link-icon.app   { background: var(--amber-p); }
+    .link-icon.website { background: var(--sage-p); }
+    .link-icon.guide   { background: #EEF3E8; }
+    .link-icon.app     { background: var(--amber-p); }
+
+    /* SVG icons */
+    .link-icon svg {
+      width: 20px;
+      height: 20px;
+    }
 
     .link-text {
       flex: 1;
@@ -136,61 +166,73 @@
     }
 
     .link-title {
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
       font-size: 0.875rem;
       line-height: 1.3;
-      color: var(--t1);
+      color: var(--bark);
     }
 
     .link-desc {
+      font-family: 'Inter', sans-serif;
       font-size: 0.8125rem;
-      line-height: 1.4;
-      color: var(--t2);
+      line-height: 1.45;
+      color: var(--bark-m);
       margin-top: 2px;
     }
 
     .link-arrow {
       flex-shrink: 0;
-      color: var(--t3);
+      color: var(--bark-l);
       font-size: 0.875rem;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
-    /* ---- Waitlist form ---- */
+    /* ── Waitlist form ── */
     .waitlist-inputs {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin-top: 10px;
     }
+
     .waitlist-email {
       width: 100%;
       padding: 10px 14px;
       border: 1px solid var(--br);
-      border-radius: 10px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 16px; /* prevents iOS zoom */
-      color: var(--t1);
-      background: var(--white);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: var(--bark);
+      background: var(--parch);
       outline: none;
       box-sizing: border-box;
       -webkit-appearance: none;
+      transition: border-color 0.15s;
     }
+
+    .waitlist-email:focus {
+      border-color: var(--sage-m);
+    }
+
     .waitlist-btn {
       width: 100%;
       padding: 10px 18px;
       background: var(--sage);
-      color: white;
+      color: #F7F4EE;
       border: none;
-      border-radius: 10px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
       font-size: 0.875rem;
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
       transition: background 0.15s;
+      letter-spacing: 0.01em;
     }
-    .waitlist-btn:hover { background: #3d5e41; }
 
-    /* ---- Footer ---- */
+    .waitlist-btn:hover { background: #3d5c41; }
+
+    /* ── Footer ── */
     .footer {
       text-align: center;
       display: flex;
@@ -202,7 +244,7 @@
       font-family: 'Source Serif 4', Georgia, serif;
       font-style: italic;
       font-size: 0.8125rem;
-      color: var(--t3);
+      color: var(--bark-l);
     }
 
     .footer-links {
@@ -213,14 +255,14 @@
 
     .footer-links a {
       font-size: 0.6875rem;
-      color: var(--t3);
+      color: var(--bark-l);
       text-decoration: none;
       transition: color 0.15s ease;
     }
 
-    .footer-links a:hover { color: var(--t2); }
+    .footer-links a:hover { color: var(--bark-m); }
 
-    /* ---- Staggered load animation ---- */
+    /* ── Staggered load animation ── */
     .header, .link-card, .footer {
       opacity: 0;
       transform: translateY(10px);
@@ -229,14 +271,15 @@
 
     .header                 { animation-delay: 0.05s; }
     .link-card:nth-child(1) { animation-delay: 0.12s; }
-    .link-card:nth-child(2) { animation-delay: 0.2s; }
-    .footer                 { animation-delay: 0.28s; }
+    .link-card:nth-child(2) { animation-delay: 0.19s; }
+    .link-card:nth-child(3) { animation-delay: 0.26s; }
+    .footer                 { animation-delay: 0.33s; }
 
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ---- Desktop: side-by-side form ---- */
+    /* ── Desktop: side-by-side form ── */
     @media (min-width: 481px) {
       .waitlist-inputs {
         flex-direction: row;
@@ -251,19 +294,51 @@
         flex-shrink: 0;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .header, .link-card, .footer {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
 
+    <!-- Header -->
     <div class="header">
-      <img src="/assets/grovio-logo.png" alt="grovio">
-      <p class="tagline">The calm homeschool companion.<br>Planning, records & portfolio in one quiet app.</p>
+      <a href="https://grovioapp.com" class="wordmark">grovio</a>
+      <p class="tagline">The calm homeschool companion.<br>Planning, records &amp; portfolio in one quiet app.</p>
     </div>
 
+    <!-- Links -->
     <div class="links">
+
+      <!-- Website -->
+      <a href="https://grovioapp.com" class="link-card">
+        <div class="link-icon website">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-title">Visit the grovio website</div>
+          <div class="link-desc">Learn about the app and what it does</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <!-- Guide -->
       <a href="https://grovioapp.com/guide/" class="link-card">
-        <div class="link-icon guide">📚</div>
+        <div class="link-icon guide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+        </div>
         <div class="link-text">
           <div class="link-title">Read the grovio Guide</div>
           <div class="link-desc">Free articles for homeschool parents</div>
@@ -271,12 +346,17 @@
         <span class="link-arrow">→</span>
       </a>
 
+      <!-- Waitlist -->
       <div class="link-card" id="waitlist-card" onclick="openWaitlist()" style="cursor:pointer;">
-        <div class="link-icon app">🌱</div>
+        <div class="link-icon app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4843A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
         <div class="link-text">
           <div class="link-title">Coming soon for iOS &amp; web</div>
           <div class="link-desc" id="waitlist-desc">Join the waitlist — we'll let you know the moment it's ready.</div>
-          <div id="waitlist-form" style="display:none;margin-top:10px;" onclick="event.stopPropagation()">
+          <div id="waitlist-form" style="display:none;" onclick="event.stopPropagation()">
             <div class="waitlist-inputs">
               <input id="waitlist-email" type="email" placeholder="your@email.com" class="waitlist-email" autocomplete="email" inputmode="email">
               <button id="waitlist-btn" onclick="submitWaitlist()" class="waitlist-btn">Notify me</button>
@@ -286,46 +366,59 @@
         </div>
         <span class="link-arrow" id="waitlist-arrow">→</span>
       </div>
+
     </div>
 
+    <!-- Footer -->
     <div class="footer">
       <p class="footer-tagline">Grow simply. Homeschool confidently.</p>
       <div class="footer-links">
-        <a href="https://grovioapp.com">grovioapp.com</a>
         <a href="https://grovioapp.com/privacy.html">Privacy</a>
         <a href="https://grovioapp.com/support.html">Support</a>
+        <a href="https://grovioapp.com/faq.html">FAQ</a>
       </div>
     </div>
 
   </div>
+
 <script src="/waitlist-modal.js"></script>
 <script>
-var waitlistOpen=false,waitlistDone=false;
-function openWaitlist(){
-  if(waitlistDone||waitlistOpen)return;
-  waitlistOpen=true;
-  document.getElementById('waitlist-form').style.display='block';
-  document.getElementById('waitlist-arrow').style.display='none';
-  document.getElementById('waitlist-card').style.cursor='default';
-  setTimeout(function(){document.getElementById('waitlist-email').focus();},150);
+var waitlistOpen = false, waitlistDone = false;
+
+function openWaitlist() {
+  if (waitlistDone || waitlistOpen) return;
+  waitlistOpen = true;
+  document.getElementById('waitlist-form').style.display = 'block';
+  document.getElementById('waitlist-arrow').style.display = 'none';
+  document.getElementById('waitlist-card').style.cursor = 'default';
+  setTimeout(function() { document.getElementById('waitlist-email').focus(); }, 150);
 }
-function submitWaitlist(){
-  var email=document.getElementById('waitlist-email').value.trim();
-  if(!email||email.indexOf('@')<1)return;
-  var btn=document.getElementById('waitlist-btn');
-  var msg=document.getElementById('waitlist-msg');
-  btn.textContent='Sending...';btn.disabled=true;
-  fetch('https://trqqcvevrfuijjxsqqlt.supabase.co/functions/v1/waitlist-subscribe',{
-    method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({email:email})
-  }).then(function(r){return r.json();}).then(function(d){
-    if(d.ok){
-      waitlistDone=true;
-      document.getElementById('waitlist-form').innerHTML='<div style="color:var(--t2);font-size:0.8125rem;line-height:1.4;padding-top:2px;">You\'re on the list. We\'ll be in touch.</div>';
-    }else{throw new Error();}
-  }).catch(function(){
-    msg.style.display='block';msg.style.color='var(--amber)';msg.textContent='Something went wrong \u2014 try again.';
-    btn.textContent='Notify me';btn.disabled=false;
+
+function submitWaitlist() {
+  var email = document.getElementById('waitlist-email').value.trim();
+  if (!email || email.indexOf('@') < 1) return;
+  var btn = document.getElementById('waitlist-btn');
+  var msg = document.getElementById('waitlist-msg');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  fetch('https://trqqcvevrfuijjxsqqlt.supabase.co/functions/v1/waitlist-subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  }).then(function(r) {
+    return r.json();
+  }).then(function(d) {
+    if (d.ok) {
+      waitlistDone = true;
+      document.getElementById('waitlist-form').innerHTML =
+        '<div style="color:var(--bark-m);font-size:0.8125rem;line-height:1.4;padding-top:4px;">You\'re on the list. We\'ll be in touch.</div>';
+    } else { throw new Error(); }
+  }).catch(function() {
+    msg.style.display = 'block';
+    msg.style.color = 'var(--amber)';
+    msg.textContent = 'Something went wrong — try again.';
+    btn.textContent = 'Notify me';
+    btn.disabled = false;
   });
 }
 </script>

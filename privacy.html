@@ -7,7 +7,7 @@
   <meta name="description" content="grovio privacy policy. How we handle your family's data — written in plain English.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://grovioapp.com/privacy.html">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,6 +38,137 @@
       main { padding: 40px 20px 60px; }
       h1 { font-size: 26px; }
       .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+
+  <style>
+    /* ── Grovio shared brand tokens ── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      background: #F7F4EE;
+      color: #2C2218;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Paper grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* ── Navigation ── */
+    .grovio-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,244,238,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184,212,187,0.6);
+    }
+    .grovio-nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .grovio-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #4A6E4E;
+      text-transform: lowercase;
+      text-decoration: none;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .grovio-nav-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    .grovio-nav-links a.nav-text {
+      font-size: 0.875rem;
+      color: #5C4A3A;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .grovio-nav-links a.nav-text:hover { color: #4A6E4E; }
+    .grovio-nav-cta {
+      background: #4A6E4E;
+      color: #F7F4EE !important;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      text-decoration: none !important;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .grovio-nav-cta:hover {
+      background: #3d5c41;
+      box-shadow: 0 2px 12px rgba(74,110,78,0.25);
+    }
+
+    /* ── Footer ── */
+    .grovio-footer {
+      background: #2C2218;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .grovio-footer-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #B8D4BB;
+      font-size: 28px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .grovio-footer-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      color: rgba(247,244,238,0.55);
+      font-size: 14px;
+      margin-bottom: 1.25rem;
+    }
+    .grovio-footer-links {
+      font-size: 12.5px;
+      color: rgba(247,244,238,0.35);
+    }
+    .grovio-footer-links a {
+      color: rgba(184,212,187,0.7);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .grovio-footer-links a:hover { color: #B8D4BB; }
+
+    /* ── Page content wrapper ── */
+    .page-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 640px) {
+      .grovio-nav-inner { height: 52px; padding: 0 1.25rem; }
+      .grovio-wordmark { font-size: 22px; }
+      .grovio-nav-links a.nav-text { display: none; }
     }
   </style>
 </head>

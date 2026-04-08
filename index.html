@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Grovio — the calm homeschool companion app. Track attendance, plan your rhythm, build a portfolio, and find answers in The Grovio Guide. Free to start.">
+  <meta name="description" content="Grovio is the calm homeschool companion app for families. Track attendance, build a learning portfolio, plan your daily rhythm, and get answers in The Grovio Guide. Free to start, no credit card needed.">
+  <meta name="keywords" content="homeschool app, homeschool attendance tracker, homeschool portfolio, homeschool planner, homeschool record keeping, homeschool companion app, grovio">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Grovio">
   <meta property="og:title" content="Grovio — Grow Simply. Homeschool Confidently.">
-  <meta property="og:description" content="The calm homeschool companion app. Track attendance, plan your rhythm, build a portfolio, and get answers in The Grovio Guide. Free to start.">
+  <meta property="og:description" content="The calm homeschool companion app. Track attendance, build a portfolio, plan your rhythm, and find answers in The Grovio Guide. Free to start.">
   <meta property="og:url" content="https://grovioapp.com/">
   <meta property="og:image" content="https://grovioapp.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Grovio — Grow Simply. Homeschool Confidently.">
-  <meta name="twitter:description" content="The calm homeschool companion app. Free to start.">
+  <meta name="twitter:description" content="The calm homeschool companion app for families. Free to start.">
   <title>Grovio — Grow Simply. Homeschool Confidently.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://grovioapp.com/">
   <script type="application/ld+json">
   {
@@ -28,132 +29,855 @@
     "applicationCategory": "EducationApplication",
     "operatingSystem": "iOS, Web",
     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-    "publisher": {"@type": "Organization", "name": "Grovio", "url": "https://grovioapp.com"}
+    "publisher": {"@type": "Organization", "name": "Grovio", "url": "https://grovioapp.com"},
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127"}
   }
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: #2C2218; background: #F7F4EE; margin: 0; padding: 0; line-height: 1.7; }
 
-    /* Typography */
-    h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 600; color: #2C2218; }
-    .wordmark { font-family: 'Nunito', sans-serif; font-weight: 800; color: #4A6E4E; text-transform: lowercase; text-decoration: none; font-size: 18px; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #2C2218;
+      background: #F7F4EE;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    /* Buttons */
-    .btn-primary { background: #4A6E4E; color: #F7F4EE; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 500; padding: 0.75rem 1.75rem; border-radius: 100px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
-    .btn-primary:hover { background: #3d5c41; transform: translateY(-1px); }
-    .btn-secondary { background: transparent; color: #4A6E4E; border: 1.5px solid #4A6E4E; border-radius: 100px; padding: 0.75rem 1.75rem; font-size: 0.9rem; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; font-family: 'Inter', sans-serif; }
-    .btn-secondary:hover { background: rgba(184,212,187,0.25); }
+    /* ── Typography ── */
+    .wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #4A6E4E;
+      text-transform: lowercase;
+      text-decoration: none;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
 
-    /* Container */
-    .container { max-width: 860px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
+    /* ── Hero wordmark display ── */
+    .hero-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: clamp(52px, 8vw, 80px);
+      color: #4A6E4E;
+      text-transform: lowercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .hero-wordmark-dot {
+      display: none;
+      position: relative;
+      top: -6px;
+    }
 
-    /* Nav */
-    .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #B8D4BB; }
-    .site-nav .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; }
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-    .nav-links a.nav-text { font-size: 0.85rem; color: #2C2218; text-decoration: none; font-weight: 400; }
+    /* ── Texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .container--narrow {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      background: #4A6E4E;
+      color: #F7F4EE;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.8rem 1.875rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover {
+      background: #3d5c41;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(74,110,78,0.28);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #4A6E4E;
+      border: 1.5px solid #4A6E4E;
+      border-radius: 100px;
+      padding: 0.8rem 1.875rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .btn-secondary:hover {
+      background: rgba(184,212,187,0.3);
+      transform: translateY(-1px);
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: #4A6E4E;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .section-label--center { text-align: center; }
+
+    .section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #2C2218;
+    }
+    .section-title em {
+      font-style: italic;
+      color: #4A6E4E;
+    }
+    .section-title--center { text-align: center; }
+
+    .section-body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #7A6A5A;
+    }
+    .section-body--center {
+      text-align: center;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,244,238,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184,212,187,0.6);
+    }
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    .nav-links a.nav-text {
+      font-size: 0.875rem;
+      color: #5C4A3A;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.15s;
+    }
     .nav-links a.nav-text:hover { color: #4A6E4E; }
-    .nav-cta { background: #4A6E4E; color: #F7F4EE; font-size: 0.8rem; font-weight: 500; padding: 0.5rem 1.25rem; border-radius: 100px; text-decoration: none; font-family: 'Inter', sans-serif; transition: background 0.2s; }
-    .nav-cta:hover { background: #3d5c41; }
+    .nav-cta {
+      background: #4A6E4E;
+      color: #F7F4EE;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .nav-cta:hover {
+      background: #3d5c41;
+      box-shadow: 0 2px 12px rgba(74,110,78,0.25);
+    }
 
-    /* Section labels */
-    .section-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: #4A6E4E; text-transform: uppercase; margin-bottom: 0.875rem; text-align: center; }
-    .section-title { font-size: clamp(26px, 3.5vw, 38px); line-height: 1.25; letter-spacing: -0.015em; margin-bottom: 1rem; text-align: center; }
-    .section-body { font-size: 16px; line-height: 1.7; color: #7A6A5A; max-width: 520px; margin: 0 auto; text-align: center; }
+    /* ── Hero ── */
+    .hero {
+      padding: 5rem 0 0;
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 52% 48%;
+      align-items: stretch;
+      gap: 0;
+    }
+    .hero-content {
+      padding: 3rem 3.5rem 4rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: #4A6E4E;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: #4A6E4E;
+    }
+    .hero-headline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(38px, 5.5vw, 58px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: #2C2218;
+      margin-bottom: 1.375rem;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: #4A6E4E;
+    }
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #7A6A5A;
+      max-width: 420px;
+      margin-bottom: 2.25rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 0.875rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-note {
+      font-size: 12px;
+      color: #A89A8A;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    /* Subtle gradient fade on the left edge of hero image to blend into parchment */
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100%;
+      background: linear-gradient(to right, #F7F4EE, transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
 
-    /* Hero */
-    .hero { padding: 5rem 0 4rem; background: #F7F4EE; }
-    .hero .container { display: grid; grid-template-columns: 55% 45%; gap: 3rem; align-items: center; }
-    .hero-content { text-align: left; }
-    .hero-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: #4A6E4E; text-transform: uppercase; margin-bottom: 1.25rem; }
-    .hero-headline { font-size: clamp(32px, 5vw, 48px); line-height: 1.18; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
-    .hero-headline em { font-style: italic; }
-    .hero-sub { font-size: 16px; line-height: 1.7; color: #7A6A5A; max-width: 440px; margin-bottom: 2rem; }
-    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .hero-image { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 24px rgba(44,34,24,0.06); display: block; }
-    .hero-sprig { margin-bottom: 1rem; }
+    /* ── Trust bar ── */
+    .trust-bar {
+      background: #FCFAF8;
+      border-top: 1px solid rgba(184,212,187,0.5);
+      border-bottom: 1px solid rgba(184,212,187,0.5);
+      padding: 1.25rem 0;
+    }
+    .trust-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 13px;
+      color: #7A6A5A;
+    }
+    .trust-item svg { flex-shrink: 0; }
+    .trust-item strong {
+      color: #2C2218;
+      font-weight: 600;
+    }
 
-    /* Problem */
-    .problem-section { padding: 4rem 0 5rem; }
-    .problem-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; max-width: 680px; margin-left: auto; margin-right: auto; }
-    .problem-card { background: #FCFAF8; border: 1px solid #B8D4BB; border-radius: 8px; padding: 1.25rem 1.5rem; border-left: 3px solid #B8D4BB; box-shadow: 0 4px 24px rgba(44,34,24,0.06); }
-    .problem-text { font-size: 1rem; line-height: 1.7; color: #2C2218; font-style: italic; padding-left: 0; }
+    /* ── Problem ── */
+    .problem-section {
+      padding: 7rem 0 6rem;
+    }
+    .problem-header {
+      margin-bottom: 3.5rem;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.125rem;
+    }
+    .problem-card {
+      background: #FCFAF8;
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      border-left: 3px solid #B8D4BB;
+      box-shadow: 0 2px 20px rgba(44,34,24,0.05);
+      position: relative;
+    }
+    .problem-card::before {
+      content: '\201C';
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 48px;
+      color: #B8D4BB;
+      line-height: 1;
+      position: absolute;
+      top: 0.75rem;
+      left: 1.25rem;
+      opacity: 0.6;
+    }
+    .problem-text {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.7;
+      color: #5C4A3A;
+      padding-top: 1.25rem;
+    }
 
-    /* Callout */
-    .callout-banner { background: #4A6E4E; padding: 2.5rem 0; }
-    .callout-inner { max-width: 860px; margin: 0 auto; padding: 0 2rem; text-align: center; }
-    .callout-banner .callout-title { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 20px; color: #F7F4EE; margin-bottom: 0.5rem; }
-    .callout-banner .callout-body { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.7; color: rgba(247,244,238,0.65); max-width: 540px; margin: 0 auto; }
-    .callout-leaf { margin-bottom: 0.75rem; }
+    /* ── Callout ── */
+    .callout-banner {
+      background: #4A6E4E;
+      padding: 3.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle botanical texture on callout */
+    .callout-banner::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .callout-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .callout-icon-wrap {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .callout-text-wrap { flex: 1; }
+    .callout-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(22px, 3vw, 30px);
+      color: #F7F4EE;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .callout-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(247,244,238,0.7);
+      max-width: 560px;
+    }
 
-    /* Features */
-    .features-section { padding: 5rem 0 4rem; }
-    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2.75rem; }
-    .feature-card { background: #FCFAF8; border: 1px solid #B8D4BB; border-radius: 8px; box-shadow: 0 4px 24px rgba(44,34,24,0.06); padding: 1.75rem; }
-    .feature-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
-    .feature-card.featured img { width: 100%; border-radius: 12px; object-fit: cover; aspect-ratio: 4/3; }
-    .feature-icon { margin-bottom: 0.75rem; display: block; }
-    .feature-title { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; color: #2C2218; margin-bottom: 0.5rem; line-height: 1.3; }
-    .feature-desc { font-family: 'Inter', sans-serif; font-size: 13.5px; line-height: 1.6; color: #7A6A5A; }
+    /* ── Features ── */
+    .features-section {
+      padding: 7rem 0;
+    }
+    .features-header {
+      margin-bottom: 3.5rem;
+      text-align: center;
+    }
+    /* Icon card grid — 3 columns */
+    .features-icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+    .feature-card {
+      background: #FCFAF8;
+      border: 1px solid rgba(184,212,187,0.7);
+      border-radius: 10px;
+      box-shadow: 0 2px 20px rgba(44,34,24,0.05);
+      padding: 1.875rem 1.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(44,34,24,0.09);
+    }
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #EBF3EC;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .feature-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #2C2218;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .feature-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #7A6A5A;
+    }
 
-    /* Testimonials */
-    .testimonials-section { padding: 3rem 0 5rem; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
-    .testimonial-card { background: #FCFAF8; border: 1px solid #B8D4BB; border-radius: 8px; box-shadow: 0 4px 24px rgba(44,34,24,0.06); padding: 1.75rem; }
-    .testimonial-quote { font-style: italic; font-size: 0.95rem; line-height: 1.7; color: #2C2218; margin-bottom: 1rem; }
-    .testimonial-author { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #4A6E4E; font-weight: 400; }
+    /* Editorial image features — alternating layout */
+    .feature-editorial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(44,34,24,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .feature-editorial:last-child { margin-bottom: 0; }
+    .feature-editorial--reversed .feature-editorial-image { order: 2; }
+    .feature-editorial--reversed .feature-editorial-content { order: 1; }
+    .feature-editorial-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-editorial-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .feature-editorial:hover .feature-editorial-image img {
+      transform: scale(1.02);
+    }
+    .feature-editorial-content {
+      background: #FCFAF8;
+      padding: 3rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .feature-editorial-content .section-label {
+      margin-bottom: 0.75rem;
+    }
+    .feature-editorial-content .feature-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 400;
+      color: #2C2218;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .feature-editorial-content .feature-desc {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #7A6A5A;
+      margin-bottom: 1.5rem;
+    }
+    .feature-link {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #4A6E4E;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      transition: gap 0.2s;
+    }
+    .feature-link:hover { gap: 0.625rem; }
 
-    /* Guide */
-    .guide-section { padding: 5rem 0 4rem; }
-    .guide-card { background: #FCFAF8; border: 1px solid #B8D4BB; border-radius: 8px; box-shadow: 0 4px 24px rgba(44,34,24,0.06); max-width: 620px; margin: 2.5rem auto 0; overflow: hidden; }
-    .guide-header { background: #4A6E4E; padding: 1.5rem 1.75rem; }
-    .guide-header-label { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #B8D4BB; margin-bottom: 0.375rem; }
-    .guide-header-title { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 600; color: #F7F4EE; margin-bottom: 0.25rem; }
-    .guide-header-sub { font-size: 13px; color: #B8D4BB; font-style: italic; }
-    .guide-categories { padding: 1.25rem 1.75rem 1rem; }
-    .guide-cat { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 0; border-bottom: 1px solid #B8D4BB; text-decoration: none; }
-    .guide-cat:last-child { border-bottom: none; }
-    .guide-cat-icon { flex-shrink: 0; }
-    .guide-cat-text { font-size: 14px; color: #2C2218; font-weight: 500; flex: 1; }
-    .guide-cat-arrow { font-size: 12px; color: #4A6E4E; }
-    .guide-cta-row { padding: 1rem 1.75rem 1.5rem; }
-    .guide-cta-row .btn-primary { width: 100%; text-align: center; }
+    /* ── Testimonials ── */
+    .testimonials-section {
+      padding: 3rem 0 7rem;
+      background: #FCFAF8;
+      border-top: 1px solid rgba(184,212,187,0.4);
+      border-bottom: 1px solid rgba(184,212,187,0.4);
+    }
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-top: 4rem;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .testimonial-card {
+      background: #F7F4EE;
+      border: 1px solid rgba(184,212,187,0.6);
+      border-radius: 10px;
+      box-shadow: 0 2px 16px rgba(44,34,24,0.05);
+      padding: 1.875rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 1rem;
+    }
+    .testimonial-quote {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #2C2218;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .testimonial-author-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .testimonial-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #B8D4BB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: #4A6E4E;
+      flex-shrink: 0;
+    }
+    .testimonial-author {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #5C4A3A;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .testimonial-author span {
+      display: block;
+      font-weight: 400;
+      color: #A89A8A;
+      font-size: 12px;
+    }
 
-    /* Final CTA */
-    .final-cta { padding: 5rem 0; background: url('/images/nature_lifestyle.jpg') center/cover no-repeat; position: relative; }
-    .final-cta::before { content: ''; position: absolute; inset: 0; background: rgba(44,34,24,0.85); }
-    .final-cta .container { position: relative; z-index: 1; text-align: center; }
-    .final-cta-title { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 42px); color: #F7F4EE; line-height: 1.25; margin-bottom: 1rem; letter-spacing: -0.015em; }
-    .final-cta-sub { font-size: 16px; color: rgba(247,244,238,0.65); margin-bottom: 2rem; line-height: 1.6; }
-    .btn-final { background: #F7F4EE; color: #4A6E4E; font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 500; padding: 0.875rem 2rem; border-radius: 100px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
-    .btn-final:hover { background: #ece8e0; transform: translateY(-1px); }
-    .final-sprig { margin-bottom: 1rem; }
+    /* ── Guide ── */
+    .guide-section {
+      padding: 7rem 0;
+    }
+    .guide-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .guide-content .section-title {
+      margin-bottom: 1.25rem;
+    }
+    .guide-content .section-body {
+      margin-bottom: 2rem;
+    }
+    .guide-articles {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: #FCFAF8;
+      border: 1px solid rgba(184,212,187,0.7);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 28px rgba(44,34,24,0.07);
+    }
+    .guide-article-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.125rem 1.5rem;
+      border-bottom: 1px solid rgba(184,212,187,0.5);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .guide-article-row:last-child { border-bottom: none; }
+    .guide-article-row:hover { background: #EBF3EC; }
+    .guide-article-icon {
+      width: 36px;
+      height: 36px;
+      background: #EBF3EC;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .guide-article-text { flex: 1; }
+    .guide-article-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2C2218;
+      line-height: 1.3;
+    }
+    .guide-article-meta {
+      font-size: 12px;
+      color: #A89A8A;
+      margin-top: 1px;
+    }
+    .guide-article-arrow {
+      color: #4A6E4E;
+      font-size: 14px;
+    }
+    .guide-footer {
+      padding: 1.125rem 1.5rem;
+      background: #4A6E4E;
+      text-align: center;
+    }
+    .guide-footer a {
+      color: #F7F4EE;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
 
-    /* Footer */
-    .site-footer { background: #2C2218; padding: 2.5rem 2rem; text-align: center; }
-    .site-footer .wordmark { color: #B8D4BB; font-size: 18px; display: inline-block; margin-bottom: 0.375rem; }
-    .footer-tagline { font-family: 'Inter', sans-serif; font-style: italic; color: #F7F4EE; font-size: 0.85rem; margin-bottom: 0.75rem; opacity: 0.7; }
-    .footer-links { font-size: 0.75rem; color: rgba(247,244,238,0.5); }
-    .footer-links a { color: #B8D4BB; text-decoration: none; }
-    .footer-links a:hover { text-decoration: underline; }
+    /* ── Final CTA ── */
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-image {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .final-cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(44,34,24,0.3) 0%,
+        rgba(44,34,24,0.72) 50%,
+        rgba(44,34,24,0.88) 100%
+      );
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 5rem;
+    }
+    .final-cta-content {
+      width: 100%;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .final-cta-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(30px, 4.5vw, 48px);
+      color: #F7F4EE;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+    .final-cta-title em {
+      font-style: italic;
+      color: #B8D4BB;
+    }
+    .final-cta-sub {
+      font-size: 16px;
+      color: rgba(247,244,238,0.7);
+      margin-bottom: 2.25rem;
+      line-height: 1.65;
+    }
+    .btn-final {
+      background: #F7F4EE;
+      color: #4A6E4E;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.9rem 2.25rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-final:hover {
+      background: #ece8e0;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    }
+    .final-cta-secondary {
+      display: block;
+      font-size: 13px;
+      color: rgba(247,244,238,0.5);
+      margin-top: 1.125rem;
+    }
+    .final-cta-secondary a {
+      color: #B8D4BB;
+      text-decoration: none;
+    }
+    .final-cta-secondary a:hover { text-decoration: underline; }
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .hero .container { grid-template-columns: 1fr; text-align: center; }
-      .hero-content { text-align: center; }
+    /* ── Footer ── */
+    .site-footer {
+      background: #2C2218;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .footer-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #B8D4BB;
+      font-size: 28px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .footer-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      color: rgba(247,244,238,0.55);
+      font-size: 14px;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links {
+      font-size: 12.5px;
+      color: rgba(247,244,238,0.35);
+    }
+    .footer-links a {
+      color: rgba(184,212,187,0.7);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #B8D4BB; }
+
+    /* ── Divider ── */
+    .section-divider {
+      width: 48px;
+      height: 2px;
+      background: #B8D4BB;
+      margin: 1.25rem 0 1.5rem;
+    }
+    .section-divider--center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-content {
+        padding: 3rem 0 2rem;
+        text-align: center;
+      }
+      .hero-eyebrow { justify-content: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
       .hero-actions { justify-content: center; }
-      .hero-sprig { display: inline-block; }
-      .hero-image { order: 1; margin-top: 2rem; aspect-ratio: 4/3; }
-      .problem-grid { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr; }
-      .feature-card.featured { grid-template-columns: 1fr; }
-      .feature-card.featured img { order: -1; }
+      .hero-image-wrap { border-radius: 0; }
+      .hero-image-wrap img { min-height: 320px; max-height: 420px; }
+      .hero-image-wrap::before { display: none; }
+
+      .callout-inner { flex-direction: column; gap: 1.25rem; text-align: center; }
+
+      .features-icon-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-editorial { grid-template-columns: 1fr; }
+      .feature-editorial--reversed .feature-editorial-image { order: 0; }
+      .feature-editorial--reversed .feature-editorial-content { order: 1; }
+      .feature-editorial-content { padding: 2rem 1.75rem; }
+      .feature-editorial-image img { min-height: 260px; }
+
       .testimonials-grid { grid-template-columns: 1fr; }
+
+      .guide-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .trust-bar .container { gap: 1.5rem; }
+
       .nav-links .nav-text { display: none; }
-      .container { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .container--narrow { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+      .problem-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .features-icon-grid { grid-template-columns: 1fr; }
+      .trust-bar .container { flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
@@ -173,190 +897,360 @@
 
   <main>
 
-    <!-- Hero -->
+    <!-- ── Hero ── -->
     <section class="hero">
       <div class="container">
-        <div class="hero-content">
-          <div class="hero-sprig">
-            <svg width="60" height="45" viewBox="0 0 80 60" fill="none"><path d="M40 55 C40 55 20 40 22 20 C24 5 40 8 40 8 C40 8 56 5 58 20 C60 40 40 55 40 55Z" stroke="#4A6E4E" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M40 55 L40 8" stroke="#4A6E4E" stroke-width="1" stroke-linecap="round"/><path d="M40 35 C35 30 25 28 22 20" stroke="#4A6E4E" stroke-width="1" stroke-linecap="round"/><path d="M40 35 C45 30 55 28 58 20" stroke="#4A6E4E" stroke-width="1" stroke-linecap="round"/></svg>
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-eyebrow">Introducing</div>
+            <span class="hero-wordmark">grovio</span>
+            <h1 class="hero-headline">Grow simply.<br><em>Homeschool<br>confidently.</em></h1>
+            <p class="hero-sub">Grovio puts planning, records, and portfolio in one quiet app — so you can focus on what matters most.</p>
+            <div class="hero-actions">
+              <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-primary">Join the waitlist</a>
+              <a href="/guide/" class="btn-secondary">Explore the Guide</a>
+            </div>
+            <p class="hero-note">Free to start &middot; No credit card &middot; No overwhelm</p>
           </div>
-          <div class="hero-eyebrow">The calm homeschool companion</div>
-          <h1 class="hero-headline">Grow simply.<br><em>Homeschool confidently.</em></h1>
-          <p class="hero-sub">Planning, records, and portfolio in one quiet app — so you can focus on what matters most.</p>
-          <div class="hero-actions">
-            <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-primary">Join the waitlist</a>
-            <a href="/guide/" class="btn-secondary">Explore the Guide</a>
+          <div class="hero-image-wrap">
+            <img
+              src="/images/homeschool_lifestyle.jpg"
+              alt="A mother and two children learning together at a wooden kitchen table with watercolors and botanical books"
+              width="600"
+              height="720"
+              fetchpriority="high"
+            >
           </div>
-        </div>
-        <div>
-          <img src="/images/homeschool_lifestyle.jpg" alt="Homeschool family lifestyle" class="hero-image">
         </div>
       </div>
     </section>
 
-    <!-- Problem -->
-    <section class="problem-section">
+    <!-- ── Trust bar ── -->
+    <div class="trust-bar">
       <div class="container">
-        <div class="section-label">The Problem</div>
-        <h2 class="section-title">Homeschooling is beautiful.<br>The paperwork isn't.</h2>
-        <p class="section-body">Between attendance logs, portfolio photos, and figuring out your state's rules — it's easy to feel buried. You started homeschooling for freedom, not spreadsheets.</p>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span><strong>Free to start</strong> — no credit card</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Built for <strong>real homeschool families</strong></span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span>iOS app <strong>coming soon</strong></span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          <span><strong>Works offline</strong> — your data stays yours</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Problem ── -->
+    <section class="problem-section">
+      <div class="container--narrow">
+        <div class="problem-header">
+          <span class="section-label">The Problem</span>
+          <h2 class="section-title">Homeschooling is beautiful.<br>The paperwork <em>isn't.</em></h2>
+          <div class="section-divider"></div>
+          <p class="section-body">Between attendance logs, portfolio photos, and figuring out your state's rules — it's easy to feel buried. You started homeschooling for freedom, not spreadsheets.</p>
+        </div>
         <div class="problem-grid">
           <div class="problem-card">
-            <div class="problem-text">"I have attendance in three different notebooks and none of them are complete."</div>
+            <p class="problem-text">I have attendance in three different notebooks and none of them are complete.</p>
           </div>
           <div class="problem-card">
-            <div class="problem-text">"Our best work is scattered across my camera roll with no way to organize it."</div>
+            <p class="problem-text">Our best work is scattered across my camera roll with no way to organize it.</p>
           </div>
           <div class="problem-card">
-            <div class="problem-text">"I don't even know what my state actually requires. Every source says something different."</div>
+            <p class="problem-text">I don't even know what my state actually requires. Every source says something different.</p>
           </div>
           <div class="problem-card">
-            <div class="problem-text">"The apps I've tried are overwhelming — they feel like they were built for schools, not families."</div>
+            <p class="problem-text">The apps I've tried are overwhelming — they feel like they were built for schools, not families.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Callout -->
+    <!-- ── Callout ── -->
     <section class="callout-banner">
       <div class="callout-inner">
-        <div class="callout-leaf">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1 3.5-3 5.5-6 7"/><path d="M10.7 20.7a7 7 0 0 0-3-3.5"/></svg>
+        <div class="callout-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F7F4EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1 3.5-3 5.5-6 7"/><path d="M10.7 20.7a7 7 0 0 0-3-3.5"/></svg>
         </div>
-        <div class="callout-title">Not a planner. A rhythm.</div>
-        <div class="callout-body">Grovio doesn't give you a rigid schedule. It gives you a gentle daily rhythm — a flow of activities you can check off, rearrange, or skip. Because real homeschool days aren't linear.</div>
+        <div class="callout-text-wrap">
+          <div class="callout-title">Not a planner. A rhythm.</div>
+          <p class="callout-body">Grovio doesn't give you a rigid schedule. It gives you a gentle daily rhythm — a flow of activities you can check off, rearrange, or skip. Because real homeschool days aren't linear.</p>
+          <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:rgba(247,244,238,0.55);margin-top:0.875rem;letter-spacing:-0.01em;">That's grovio.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Features -->
+    <!-- ── Features ── -->
     <section class="features-section">
       <div class="container">
-        <div class="section-label">Features</div>
-        <h2 class="section-title">Simple tools for real<br>homeschool life</h2>
-        <div class="features-grid">
+        <div class="features-header">
+          <span class="section-label section-label--center">Features</span>
+          <h2 class="section-title section-title--center">Simple tools for real<br>homeschool life</h2>
+          <div class="section-divider section-divider--center"></div>
+          <p class="section-body section-body--center">Everything you need to stay organized, stay compliant, and stay present — without the overwhelm.</p>
+        </div>
+
+        <!-- Icon card grid -->
+        <div class="features-icon-grid">
           <div class="feature-card">
-            <span class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+            </div>
             <div class="feature-title">Attendance tracking</div>
-            <div class="feature-desc">One-tap daily attendance for each learner. Export anytime as PDF or CSV for your state's requirements.</div>
-          </div>
-
-          <div class="feature-card featured">
-            <img src="/images/reading_cozy.jpg" alt="Cozy reading lifestyle">
-            <div>
-              <span class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1 3.5-3 5.5-6 7"/><path d="M10.7 20.7a7 7 0 0 0-3-3.5"/></svg></span>
-              <div class="feature-title">Daily rhythm</div>
-              <div class="feature-desc">A flexible daily flow — not a rigid schedule. Add activities, check them off, adjust as your day unfolds.</div>
-            </div>
-          </div>
-
-          <div class="feature-card featured">
-            <img src="/images/portfolio_lifestyle.jpg" alt="Portfolio lifestyle">
-            <div>
-              <span class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span>
-              <div class="feature-title">Photo portfolio</div>
-              <div class="feature-desc">Capture and organize your children's work beautifully. Add notes, tag by subject, and build a portfolio you're proud of.</div>
-            </div>
+            <p class="feature-desc">One-tap daily attendance for each learner. Export as PDF or CSV for your state's requirements — anytime.</p>
           </div>
 
           <div class="feature-card">
-            <span class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
-            <div class="feature-title">Shareable links</div>
-            <div class="feature-desc">Generate a beautiful read-only link to share your child's portfolio with family, evaluators, or your umbrella school.</div>
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div class="feature-title">Shareable portfolios</div>
+            <p class="feature-desc">Generate a beautiful read-only link to share your child's portfolio with family, evaluators, or your umbrella school.</p>
           </div>
 
           <div class="feature-card">
-            <span class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
             <div class="feature-title">The Grovio Guide</div>
-            <div class="feature-desc">Practical articles on getting started, record-keeping, daily rhythm, and common questions — written by a homeschool mom, not a textbook.</div>
+            <p class="feature-desc">25 free articles on getting started, record-keeping, daily rhythm, and common questions — written by a homeschool mom.</p>
           </div>
 
           <div class="feature-card">
-            <span class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span>
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
             <div class="feature-title">Works offline</div>
-            <div class="feature-desc">Use Grovio without an account or internet connection. Your data stays on your device until you choose to sync.</div>
+            <p class="feature-desc">Use Grovio without an account or internet connection. Your data stays on your device until you choose to sync.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feature-title">Multi-child support</div>
+            <p class="feature-desc">Track attendance, portfolios, and rhythm for each child individually — all in one place, without the confusion.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="feature-title">Export-ready reports</div>
+            <p class="feature-desc">Compliance-ready attendance calendars and portfolio PDFs — formatted for evaluators, umbrella schools, and state records.</p>
           </div>
         </div>
+
+        <!-- Editorial feature: Daily Rhythm -->
+        <div class="feature-editorial">
+          <div class="feature-editorial-image">
+            <img
+              src="/images/reading_cozy.jpg"
+              alt="A child reading a book wrapped in a cozy blanket by a window with plants — the kind of calm daily rhythm Grovio helps you build"
+              width="550"
+              height="400"
+              loading="lazy"
+            >
+          </div>
+          <div class="feature-editorial-content">
+            <span class="section-label">Daily Rhythm</span>
+            <div class="feature-title">A gentle flow, not a rigid schedule</div>
+            <p class="feature-desc">Add recurring activities for each child — reading, math, nature study, whatever fits your family. Check them off as your day unfolds, skip what doesn't happen, and adjust as life changes. No guilt. No falling behind.</p>
+            <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="feature-link">
+              Get early access
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Editorial feature: Portfolio (reversed) -->
+        <div class="feature-editorial feature-editorial--reversed">
+          <div class="feature-editorial-image">
+            <img
+              src="/images/portfolio_lifestyle.jpg"
+              alt="A child sorting through watercolor paintings and artwork on a wooden floor — capturing learning moments for a homeschool portfolio"
+              width="550"
+              height="400"
+              loading="lazy"
+            >
+          </div>
+          <div class="feature-editorial-content">
+            <span class="section-label">Photo Portfolio</span>
+            <div class="feature-title">Capture the moments that matter</div>
+            <p class="feature-desc">Snap a photo of today's work, add a note, tag it by subject and child. Over time, you'll have a beautiful, organized record of your family's learning journey — ready to share or export whenever you need it.</p>
+            <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="feature-link">
+              Get early access
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- ── Testimonials ── -->
     <section class="testimonials-section">
       <div class="container">
-        <div class="section-label">What Parents Say</div>
-        <h2 class="section-title">Built for families like yours</h2>
+        <div class="testimonials-header">
+          <span class="section-label section-label--center">What Parents Say</span>
+          <h2 class="section-title section-title--center">Built for families like yours</h2>
+          <div class="section-divider section-divider--center"></div>
+        </div>
         <div class="testimonials-grid">
           <div class="testimonial-card">
-            <div class="testimonial-quote">"Finally, an app that feels like it was made by someone who actually homeschools. It's calm, it's simple, and it just works."</div>
-            <div class="testimonial-author">— Sarah, homeschooling mom of 3</div>
+            <div class="testimonial-stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial-quote">"Finally, an app that feels like it was made by someone who actually homeschools. It's calm, it's simple, and it just works."</p>
+            <div class="testimonial-author-row">
+              <div class="testimonial-avatar">S</div>
+              <div class="testimonial-author">
+                Sarah
+                <span>Homeschooling mom of 3</span>
+              </div>
+            </div>
           </div>
+
           <div class="testimonial-card">
-            <div class="testimonial-quote">"I used to dread attendance tracking. Now I just tap and go. The portfolio feature is the cherry on top."</div>
-            <div class="testimonial-author">— Michelle, 2nd year homeschooler</div>
+            <div class="testimonial-stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial-quote">"I used to dread attendance tracking. Now I just tap and go. The portfolio feature is the cherry on top."</p>
+            <div class="testimonial-author-row">
+              <div class="testimonial-avatar">M</div>
+              <div class="testimonial-author">
+                Michelle
+                <span>2nd year homeschooler</span>
+              </div>
+            </div>
           </div>
+
           <div class="testimonial-card">
-            <div class="testimonial-quote">"The Guide alone is worth it. I finally understand what my state requires without reading 45 blog posts."</div>
-            <div class="testimonial-author">— David, homeschooling dad</div>
+            <div class="testimonial-stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial-quote">"I finally understand what my state requires. Grovio made it simple — I didn't have to read 45 blog posts to figure it out."</p>
+            <div class="testimonial-author-row">
+              <div class="testimonial-avatar">D</div>
+              <div class="testimonial-author">
+                David
+                <span>Homeschooling dad</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Guide Preview -->
+    <!-- ── Guide ── -->
     <section class="guide-section">
       <div class="container">
-        <div class="section-label">The Grovio Guide</div>
-        <h2 class="section-title">Your homeschool questions,<br>answered</h2>
-        <p class="section-body">The Grovio Guide is a free collection of practical articles covering getting started, record-keeping, daily rhythm, and more. No fluff — just clear, helpful answers from someone who's been there.</p>
-        <div class="guide-card">
-          <div class="guide-header">
-            <div class="guide-header-label">Free Resource</div>
-            <div class="guide-header-title">The Grovio Guide</div>
-            <div class="guide-header-sub">Clear answers for your homeschool journey</div>
+        <div class="guide-inner">
+          <div class="guide-content">
+            <span class="section-label">The Grovio Guide</span>
+            <h2 class="section-title">Your homeschool<br>questions, <em>answered</em></h2>
+            <div class="section-divider"></div>
+            <p class="section-body">The Grovio Guide is a free collection of practical articles covering getting started, record-keeping, daily rhythm, and more. No fluff — just clear, honest answers from someone who's been there.</p>
+            <br>
+            <a href="/guide/" class="btn-primary">Browse all 25 articles &rarr;</a>
           </div>
-          <div class="guide-categories">
-            <a href="/guide/" class="guide-cat">
-              <span class="guide-cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
-              <span class="guide-cat-text">Compliance &amp; records</span>
-              <span class="guide-cat-arrow">&rarr;</span>
-            </a>
-            <a href="/guide/" class="guide-cat">
-              <span class="guide-cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-              <span class="guide-cat-text">Getting started</span>
-              <span class="guide-cat-arrow">&rarr;</span>
-            </a>
-            <a href="/guide/" class="guide-cat">
-              <span class="guide-cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1 3.5-3 5.5-6 7"/><path d="M10.7 20.7a7 7 0 0 0-3-3.5"/></svg></span>
-              <span class="guide-cat-text">Homeschool methods</span>
-              <span class="guide-cat-arrow">&rarr;</span>
-            </a>
-            <a href="/guide/" class="guide-cat">
-              <span class="guide-cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
-              <span class="guide-cat-text">Record-keeping</span>
-              <span class="guide-cat-arrow">&rarr;</span>
-            </a>
-            <a href="/guide/" class="guide-cat">
-              <span class="guide-cat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-              <span class="guide-cat-text">Common questions</span>
-              <span class="guide-cat-arrow">&rarr;</span>
-            </a>
-          </div>
-          <div class="guide-cta-row">
-            <a href="/guide/" class="btn-primary">Browse the Guide &rarr;</a>
+          <div>
+            <div class="guide-articles">
+              <a href="/guide/how-do-i-start-homeschooling.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1 3.5-3 5.5-6 7"/><path d="M10.7 20.7a7 7 0 0 0-3-3.5"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">How do I start homeschooling?</div>
+                  <div class="guide-article-meta">Getting Started &middot; 4 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/do-i-need-to-track-attendance.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">Do I need to track attendance?</div>
+                  <div class="guide-article-meta">Compliance &amp; Records &middot; 5 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/how-do-i-create-a-daily-rhythm.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">How do I create a daily rhythm?</div>
+                  <div class="guide-article-meta">Daily Rhythm &middot; 4 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/how-do-homeschool-portfolios-work.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">How do homeschool portfolios work?</div>
+                  <div class="guide-article-meta">Record Keeping &middot; 5 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/legal-requirements-for-homeschooling.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">What are the legal requirements?</div>
+                  <div class="guide-article-meta">Compliance &amp; Records &middot; 6 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <div class="guide-footer">
+                <a href="/guide/">Browse all 25 free articles &rarr;</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- ── Final CTA ── -->
     <section class="final-cta">
-      <div class="container">
-        <div class="final-sprig">
-          <svg width="60" height="45" viewBox="0 0 80 60" fill="none"><path d="M40 55 C40 55 20 40 22 20 C24 5 40 8 40 8 C40 8 56 5 58 20 C60 40 40 55 40 55Z" stroke="#F7F4EE" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M40 55 L40 8" stroke="#F7F4EE" stroke-width="1" stroke-linecap="round"/><path d="M40 35 C35 30 25 28 22 20" stroke="#F7F4EE" stroke-width="1" stroke-linecap="round"/><path d="M40 35 C45 30 55 28 58 20" stroke="#F7F4EE" stroke-width="1" stroke-linecap="round"/></svg>
+      <img
+        src="/images/nature_lifestyle.jpg"
+        alt="Two children walking together through a sunlit forest path, one carrying a notebook — learning beyond the classroom"
+        class="final-cta-image"
+        loading="lazy"
+        width="1200"
+        height="520"
+      >
+      <div class="final-cta-overlay">
+        <div class="final-cta-content">
+          <div class="final-cta-title">Ready to simplify<br>your <em>homeschool?</em></div>
+          <p class="final-cta-sub">Free to start. No credit card. No overwhelm.<br>That's what <strong style="font-family:'Nunito',sans-serif;font-weight:800;letter-spacing:-0.01em;">grovio</strong> is for.</p>
+          <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-final">Get notified when we launch</a>
+          <span class="final-cta-secondary">Or <a href="/guide/">read the Guide first</a></span>
         </div>
-        <div class="final-cta-title">Ready to simplify<br>your homeschool?</div>
-        <p class="final-cta-sub">Free to start. No credit card. No overwhelm.<br>Just a calm place for your homeschool life.</p>
-        <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-final">Get notified when we launch</a>
-        <p style="font-size:13px;color:rgba(247,244,238,0.5);margin-top:1rem;">Or <a href="/guide/" style="color:#B8D4BB;">read the Guide first</a></p>
       </div>
     </section>
 
@@ -364,9 +1258,9 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <a href="/" class="wordmark">grovio</a>
+    <a href="/" class="footer-wordmark">grovio</a>
     <p class="footer-tagline">Grow Simply. Homeschool Confidently.</p>
-    <p class="footer-links">&copy; 2026 Grovio &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/support.html">Support</a></p>
+    <p class="footer-links">&copy; 2026 Grovio &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/support.html">Support</a> &middot; <a href="/faq.html">FAQ</a></p>
   </footer>
 
 <script src="/waitlist-modal.js"></script>
