@@ -181,16 +181,38 @@
     </div>
 
     <!-- CLAIRE INTRO -->
-    <div style="background:#F4F7F2;border-radius:16px;padding:20px;display:flex;gap:14px;margin-bottom:48px;">
+    <div onclick="openClaireBio()" style="background:#F4F7F2;border-radius:16px;padding:20px;display:flex;gap:14px;margin-bottom:48px;cursor:pointer;transition:box-shadow 0.15s;">
       <div style="width:44px;height:44px;min-width:44px;border-radius:50%;overflow:hidden;">
         <img src="/assets/claire.png" alt="Claire" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;">
       </div>
       <div>
-        <div style="font-size:13px;font-weight:600;color:#5E8753;font-family:'Plus Jakarta Sans',sans-serif;">Claire</div>
-        <div style="font-size:12px;color:#6B6458;margin-bottom:8px;font-family:'Plus Jakarta Sans',sans-serif;">Still learning. Everything here comes from real life — mine and the moms around me.</div>
-        <div style="font-style:italic;font-size:14px;color:#3E3A32;line-height:1.6;font-family:'Plus Jakarta Sans',sans-serif;">"I'm Claire — a homeschool mom of two who learned most of this the hard way."</div>
+        <div style="font-size:13px;font-weight:600;color:#5E8753;font-family:'Inter',sans-serif;">Claire</div>
+        <div style="font-size:12px;color:#6B6458;font-family:'Inter',sans-serif;">Still learning. Everything here comes from real life — mine and the moms around me.</div>
       </div>
     </div>
+
+    <!-- CLAIRE BIO MODAL -->
+    <div id="claire-overlay" onclick="closeClaireBio()" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(44,34,24,0.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px;">
+      <div onclick="event.stopPropagation()" style="background:#FCFAF8;border:1px solid #B8D4BB;border-radius:16px;max-width:420px;width:100%;padding:32px 28px;position:relative;box-shadow:0 8px 40px rgba(44,34,24,0.15);">
+        <button onclick="closeClaireBio()" style="position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;font-size:20px;color:#A89A8A;line-height:1;padding:4px;">&times;</button>
+        <div style="text-align:center;margin-bottom:16px;">
+          <div style="width:64px;height:64px;border-radius:50%;overflow:hidden;margin:0 auto 12px;">
+            <img src="/assets/claire.png" alt="Claire" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;">
+          </div>
+          <div style="font-family:'Inter',sans-serif;font-weight:600;font-size:16px;color:#4A6E4E;">Claire</div>
+          <div style="font-family:'Inter',sans-serif;font-size:12px;color:#A89A8A;margin-top:2px;">Still learning. Everything here comes from real life — mine and the moms around me.</div>
+        </div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:#2C2218;line-height:1.7;margin:0 0 12px;">I'm Claire — a homeschool mom of two who learned most of this the hard way. We stepped away from traditional school five years ago, and honestly? The first year was a lot of Googling at midnight and second-guessing everything.</p>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:#2C2218;line-height:1.7;margin:0 0 12px;">These days I also help run our local homeschool co-op, which means I get to learn alongside a whole community of moms who are figuring this out together. That's made me a much better guide than I ever could have been on my own.</p>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;color:#2C2218;line-height:1.7;margin:0;">The grovio Guide is everything I wish someone had handed me in year one — no jargon, no judgment, just what actually works for real families.</p>
+        <button onclick="closeClaireBio()" style="margin-top:20px;width:100%;padding:12px;background:#4A6E4E;color:#F7F4EE;border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;">Got it</button>
+      </div>
+    </div>
+    <script>
+    function openClaireBio(){document.getElementById('claire-overlay').style.display='flex';}
+    function closeClaireBio(){document.getElementById('claire-overlay').style.display='none';}
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeClaireBio();});
+    </script>
 
     <!-- CATEGORY: Getting Started -->
     <div style="margin-bottom:48px;">
