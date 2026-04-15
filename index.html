@@ -562,78 +562,6 @@
     }
     .feature-link:hover { gap: 0.625rem; }
 
-    /* ── Testimonials ── */
-    .testimonials-section {
-      padding: 3rem 0 7rem;
-      background: #FCFAF8;
-      border-top: 1px solid rgba(184,212,187,0.4);
-      border-bottom: 1px solid rgba(184,212,187,0.4);
-    }
-    .testimonials-header {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding-top: 4rem;
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-    .testimonial-card {
-      background: #F7F4EE;
-      border: 1px solid rgba(184,212,187,0.6);
-      border-radius: 10px;
-      box-shadow: 0 2px 16px rgba(44,34,24,0.05);
-      padding: 1.875rem;
-      display: flex;
-      flex-direction: column;
-    }
-    .testimonial-stars {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 1rem;
-    }
-    .testimonial-quote {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-style: italic;
-      font-size: 15px;
-      line-height: 1.75;
-      color: #2C2218;
-      margin-bottom: 1.25rem;
-      flex: 1;
-    }
-    .testimonial-author-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .testimonial-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #B8D4BB;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 800;
-      font-size: 14px;
-      color: #4A6E4E;
-      flex-shrink: 0;
-    }
-    .testimonial-author {
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      color: #5C4A3A;
-      font-weight: 500;
-      line-height: 1.3;
-    }
-    .testimonial-author span {
-      display: block;
-      font-weight: 400;
-      color: #A89A8A;
-      font-size: 12px;
-    }
 
     /* ── Guide ── */
     .guide-section {
@@ -862,7 +790,6 @@
       .feature-editorial-content { padding: 2rem 1.75rem; }
       .feature-editorial-image img { min-height: 260px; }
 
-      .testimonials-grid { grid-template-columns: 1fr; }
 
       .guide-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 
@@ -1108,72 +1035,6 @@
         <p style="font-family:'Inter',sans-serif;font-size:16px;color:#7A6A5A;line-height:1.7;max-width:580px;margin:0 auto 1.5rem;">grovio is designed for the way most U.S. families homeschool. Whether your state is completely hands-off or asks for an annual notice and assessment, you'll have organized attendance records, a beautiful portfolio, and clean exports ready whenever you need them.</p>
         <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:14px;color:#A89A8A;max-width:520px;margin:0 auto 1.5rem;line-height:1.65;">The only families who may need additional tools are those in states with highly structured requirements like mandatory curriculum approval or supervised home visits — and even then, grovio is still a solid foundation.</p>
         <a href="https://hslda.org/legal" target="_blank" rel="noopener noreferrer" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#4A6E4E;text-decoration:none;">Find your state's homeschool laws &rarr;</a>
-      </div>
-    </section>
-
-    <!-- ── Testimonials ── -->
-    <section class="testimonials-section">
-      <div class="container">
-        <div class="testimonials-header">
-          <span class="section-label section-label--center">What Parents Say</span>
-          <h2 class="section-title section-title--center">Built for families like yours</h2>
-          <div class="section-divider section-divider--center"></div>
-        </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <p class="testimonial-quote">"I used to have notes in three places and still felt behind. Now I just log it once and I'm done."</p>
-            <div class="testimonial-author-row">
-              <div class="testimonial-avatar">S</div>
-              <div class="testimonial-author">
-                Sarah
-                <span>Homeschooling mom of 3</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <p class="testimonial-quote">"This is the first thing that actually matches how our days look. It doesn't fight me."</p>
-            <div class="testimonial-author-row">
-              <div class="testimonial-avatar">M</div>
-              <div class="testimonial-author">
-                Michelle
-                <span>2nd year homeschooler</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#C4843A" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <p class="testimonial-quote">"I stopped Googling 'what does my state require' every few weeks. The Guide pointed me to the right place in 5 minutes."</p>
-            <div class="testimonial-author-row">
-              <div class="testimonial-avatar">D</div>
-              <div class="testimonial-author">
-                David
-                <span>Homeschooling dad</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
