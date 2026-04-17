@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grovio is the calm homeschool companion app for families. Track attendance, build a learning portfolio, plan your daily rhythm, and get answers in The Grovio Guide. Free to start, no credit card needed.">
+  <meta name="keywords" content="homeschool app, homeschool attendance tracker, homeschool portfolio, homeschool planner, homeschool record keeping, homeschool companion app, grovio">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Grovio">
+  <meta property="og:title" content="Grovio — Grow Simply. Homeschool Confidently.">
+  <meta property="og:description" content="The calm homeschool companion app. Track attendance, build a portfolio, plan your rhythm, and find answers in The Grovio Guide. Free to start.">
+  <meta property="og:url" content="https://grovioapp.com/">
+  <meta property="og:image" content="https://grovioapp.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grovio — Grow Simply. Homeschool Confidently.">
+  <meta name="twitter:description" content="The calm homeschool companion app for families. Free to start.">
+  <title>Grovio — Grow Simply. Homeschool Confidently.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://grovioapp.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Grovio",
+    "url": "https://grovioapp.com",
+    "description": "A homeschool companion app that helps families track attendance, plan their daily rhythm, build a learning portfolio, and access The Grovio Guide.",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "iOS, Web",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "publisher": {"@type": "Organization", "name": "Grovio", "url": "https://grovioapp.com"},
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127"}
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #2C2218;
+      background: #F7F4EE;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Typography ── */
+    .wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #4A6E4E;
+      text-transform: lowercase;
+      text-decoration: none;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Hero wordmark display ── */
+    .hero-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: clamp(52px, 8vw, 80px);
+      color: #4A6E4E;
+      text-transform: lowercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .hero-wordmark-dot {
+      display: none;
+      position: relative;
+      top: -6px;
+    }
+
+    /* ── Texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .container--narrow {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      background: #4A6E4E;
+      color: #F7F4EE;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.8rem 1.875rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover {
+      background: #3d5c41;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(74,110,78,0.28);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #4A6E4E;
+      border: 1.5px solid #4A6E4E;
+      border-radius: 100px;
+      padding: 0.8rem 1.875rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .btn-secondary:hover {
+      background: rgba(184,212,187,0.3);
+      transform: translateY(-1px);
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: #4A6E4E;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .section-label--center { text-align: center; }
+
+    .section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #2C2218;
+    }
+    .section-title em {
+      font-style: italic;
+      color: #4A6E4E;
+    }
+    .section-title--center { text-align: center; }
+
+    .section-body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #7A6A5A;
+    }
+    .section-body--center {
+      text-align: center;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,244,238,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184,212,187,0.6);
+    }
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    .nav-links a.nav-text {
+      font-size: 0.875rem;
+      color: #5C4A3A;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.15s;
+    }
+    .nav-links a.nav-text:hover { color: #4A6E4E; }
+    .nav-cta {
+      background: #4A6E4E;
+      color: #F7F4EE;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .nav-cta:hover {
+      background: #3d5c41;
+      box-shadow: 0 2px 12px rgba(74,110,78,0.25);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 5rem 0 0;
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 52% 48%;
+      align-items: stretch;
+      gap: 0;
+    }
+    .hero-content {
+      padding: 3rem 3.5rem 4rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: #4A6E4E;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: #4A6E4E;
+    }
+    .hero-headline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(38px, 5.5vw, 58px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: #2C2218;
+      margin-bottom: 1.375rem;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: #4A6E4E;
+    }
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #7A6A5A;
+      max-width: 420px;
+      margin-bottom: 2.25rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 0.875rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-note {
+      font-size: 12px;
+      color: #A89A8A;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    /* Subtle gradient fade on the left edge of hero image to blend into parchment */
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100%;
+      background: linear-gradient(to right, #F7F4EE, transparent);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ── Trust bar ── */
+    .trust-bar {
+      background: #FCFAF8;
+      border-top: 1px solid rgba(184,212,187,0.5);
+      border-bottom: 1px solid rgba(184,212,187,0.5);
+      padding: 1.25rem 0;
+    }
+    .trust-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 13px;
+      color: #7A6A5A;
+    }
+    .trust-item svg { flex-shrink: 0; }
+    .trust-item strong {
+      color: #2C2218;
+      font-weight: 600;
+    }
+
+    /* ── Problem ── */
+    .problem-section {
+      padding: 7rem 0 6rem;
+    }
+    .problem-header {
+      margin-bottom: 3.5rem;
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.125rem;
+    }
+    .problem-card {
+      background: #FCFAF8;
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      border-left: 3px solid #B8D4BB;
+      box-shadow: 0 2px 20px rgba(44,34,24,0.05);
+      position: relative;
+    }
+    .problem-card::before {
+      content: '\201C';
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 48px;
+      color: #B8D4BB;
+      line-height: 1;
+      position: absolute;
+      top: 0.75rem;
+      left: 1.25rem;
+      opacity: 0.6;
+    }
+    .problem-text {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 1.7;
+      color: #5C4A3A;
+      padding-top: 1.25rem;
+    }
+
+    /* ── Callout ── */
+    .callout-banner {
+      background: #4A6E4E;
+      padding: 3.5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle botanical texture on callout */
+    .callout-banner::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .callout-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+    .callout-icon-wrap {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .callout-text-wrap { flex: 1; }
+    .callout-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(22px, 3vw, 30px);
+      color: #F7F4EE;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .callout-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(247,244,238,0.7);
+      max-width: 560px;
+    }
+
+    /* ── Features ── */
+    .features-section {
+      padding: 7rem 0;
+    }
+    .features-header {
+      margin-bottom: 3.5rem;
+      text-align: center;
+    }
+    /* Icon card grid — 3 columns */
+    .features-icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+    .feature-card {
+      background: #FCFAF8;
+      border: 1px solid rgba(184,212,187,0.7);
+      border-radius: 10px;
+      box-shadow: 0 2px 20px rgba(44,34,24,0.05);
+      padding: 1.875rem 1.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(44,34,24,0.09);
+    }
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #EBF3EC;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .feature-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #2C2218;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .feature-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #7A6A5A;
+    }
+
+    /* Editorial image features — alternating layout */
+    .feature-editorial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(44,34,24,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .feature-editorial:last-child { margin-bottom: 0; }
+    .feature-editorial--reversed .feature-editorial-image { order: 2; }
+    .feature-editorial--reversed .feature-editorial-content { order: 1; }
+    .feature-editorial-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-editorial-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .feature-editorial:hover .feature-editorial-image img {
+      transform: scale(1.02);
+    }
+    .feature-editorial-content {
+      background: #FCFAF8;
+      padding: 3rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .feature-editorial-content .section-label {
+      margin-bottom: 0.75rem;
+    }
+    .feature-editorial-content .feature-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 400;
+      color: #2C2218;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+    .feature-editorial-content .feature-desc {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #7A6A5A;
+      margin-bottom: 1.5rem;
+    }
+    .feature-link {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #4A6E4E;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      transition: gap 0.2s;
+    }
+    .feature-link:hover { gap: 0.625rem; }
+
+
+    /* ── Guide ── */
+    .guide-section {
+      padding: 7rem 0;
+    }
+    .guide-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .guide-content .section-title {
+      margin-bottom: 1.25rem;
+    }
+    .guide-content .section-body {
+      margin-bottom: 2rem;
+    }
+    .guide-articles {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: #FCFAF8;
+      border: 1px solid rgba(184,212,187,0.7);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 28px rgba(44,34,24,0.07);
+    }
+    .guide-article-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.125rem 1.5rem;
+      border-bottom: 1px solid rgba(184,212,187,0.5);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .guide-article-row:last-child { border-bottom: none; }
+    .guide-article-row:hover { background: #EBF3EC; }
+    .guide-article-icon {
+      width: 36px;
+      height: 36px;
+      background: #EBF3EC;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .guide-article-text { flex: 1; }
+    .guide-article-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2C2218;
+      line-height: 1.3;
+    }
+    .guide-article-meta {
+      font-size: 12px;
+      color: #A89A8A;
+      margin-top: 1px;
+    }
+    .guide-article-arrow {
+      color: #4A6E4E;
+      font-size: 14px;
+    }
+    .guide-footer {
+      padding: 1.125rem 1.5rem;
+      background: #4A6E4E;
+      text-align: center;
+    }
+    .guide-footer a {
+      color: #F7F4EE;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-image {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .final-cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(44,34,24,0.3) 0%,
+        rgba(44,34,24,0.72) 50%,
+        rgba(44,34,24,0.88) 100%
+      );
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 5rem;
+    }
+    .final-cta-content {
+      width: 100%;
+      text-align: center;
+      padding: 0 2rem;
+    }
+    .final-cta-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(30px, 4.5vw, 48px);
+      color: #F7F4EE;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+    .final-cta-title em {
+      font-style: italic;
+      color: #B8D4BB;
+    }
+    .final-cta-sub {
+      font-size: 16px;
+      color: rgba(247,244,238,0.7);
+      margin-bottom: 2.25rem;
+      line-height: 1.65;
+    }
+    .btn-final {
+      background: #F7F4EE;
+      color: #4A6E4E;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.9rem 2.25rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .btn-final:hover {
+      background: #ece8e0;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    }
+    .final-cta-secondary {
+      display: block;
+      font-size: 13px;
+      color: rgba(247,244,238,0.5);
+      margin-top: 1.125rem;
+    }
+    .final-cta-secondary a {
+      color: #B8D4BB;
+      text-decoration: none;
+    }
+    .final-cta-secondary a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    .site-footer {
+      background: #2C2218;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .footer-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #B8D4BB;
+      font-size: 28px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .footer-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      color: rgba(247,244,238,0.55);
+      font-size: 14px;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links {
+      font-size: 12.5px;
+      color: rgba(247,244,238,0.35);
+    }
+    .footer-links a {
+      color: rgba(184,212,187,0.7);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #B8D4BB; }
+
+    /* ── Divider ── */
+    .section-divider {
+      width: 48px;
+      height: 2px;
+      background: #B8D4BB;
+      margin: 1.25rem 0 1.5rem;
+    }
+    .section-divider--center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-content {
+        padding: 3rem 0 2rem;
+        text-align: center;
+      }
+      .hero-eyebrow { justify-content: center; }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-image-wrap { border-radius: 0; }
+      .hero-image-wrap img { min-height: 320px; max-height: 420px; }
+      .hero-image-wrap::before { display: none; }
+
+      .callout-inner { flex-direction: column; gap: 1.25rem; text-align: center; }
+
+      .features-icon-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-editorial { grid-template-columns: 1fr; }
+      .feature-editorial--reversed .feature-editorial-image { order: 0; }
+      .feature-editorial--reversed .feature-editorial-content { order: 1; }
+      .feature-editorial-content { padding: 2rem 1.75rem; }
+      .feature-editorial-image img { min-height: 260px; }
+
+
+      .guide-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .trust-bar .container { gap: 1.5rem; }
+
+      .nav-links .nav-text { display: none; }
+      .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .container--narrow { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+      .problem-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .features-icon-grid { grid-template-columns: 1fr; }
+      .trust-bar .container { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" class="wordmark">grovio</a>
+      <div class="nav-links">
+        <a href="/guide/" class="nav-text">The Guide</a>
+        <a href="/faq.html" class="nav-text">FAQ</a>
+        <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="nav-cta">Join the waitlist &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-eyebrow">Introducing</div>
+            <span class="hero-wordmark">grovio</span>
+            <h1 class="hero-headline">Grow simply.<br><em>Homeschool<br>confidently.</em></h1>
+            <p class="hero-sub">grovio gives you a calm, simple system to track learning, capture moments, and stay compliant — without turning your day into admin work.</p>
+            <p style="font-size:13px;font-style:italic;color:#7A6A5A;margin-bottom:2rem;">Built by a homeschool mom who got tired of piecing it all together.</p>
+            <div class="hero-actions">
+              <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-primary">Start Simply</a>
+              <a href="/guide/" class="btn-secondary">Explore the Guide</a>
+            </div>
+            <p class="hero-note">Free to start &middot; No credit card &middot; No overwhelm</p>
+          </div>
+          <div class="hero-image-wrap">
+            <img
+              src="/assets/homeschool_lifestyle-B3EWf8hD.jpg"
+              alt="A mother and two children learning together at a wooden kitchen table with watercolors and botanical books"
+              width="600"
+              height="720"
+              fetchpriority="high"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Trust bar ── -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span><strong>Free to start</strong> — no credit card</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Built for <strong>real homeschool families</strong></span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span>iOS app <strong>coming soon</strong></span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          <span><strong>Works offline</strong> — your data stays yours</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Problem ── -->
+    <section class="problem-section">
+      <div class="container--narrow">
+        <div class="problem-header">
+          <span class="section-label">The Problem</span>
+          <h2 class="section-title">Homeschooling is beautiful.<br>The paperwork <em>isn't.</em></h2>
+          <div class="section-divider"></div>
+          <p class="section-body">You're not just teaching. You're tracking attendance. Saving work samples. Trying to remember what counted as "school" today. And somehow… keeping it all organized.</p>
+          <p class="section-body" style="margin-top:0.75rem;">Most tools weren't built for this kind of life. They expect structure. You're living something much more fluid.</p>
+          <p style="font-size:1.125rem;font-weight:600;color:#2C2218;margin:2rem 0;">Most homeschool tools are built like school systems. grovio isn't.</p>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <p class="problem-text">I have attendance in three different notebooks and none of them are complete.</p>
+          </div>
+          <div class="problem-card">
+            <p class="problem-text">Our best work is scattered across my camera roll with no way to organize it.</p>
+          </div>
+          <div class="problem-card">
+            <p class="problem-text">The apps I've tried are overwhelming — they feel like they were built for schools, not families.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Callout ── -->
+    <section class="callout-banner">
+      <div class="callout-inner">
+        <div class="callout-icon-wrap">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F7F4EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1 3.5-3 5.5-6 7"/><path d="M10.7 20.7a7 7 0 0 0-3-3.5"/></svg>
+        </div>
+        <div class="callout-text-wrap">
+          <div class="callout-title">Not a planner. A rhythm.</div>
+          <p class="callout-body">grovio works the way your days actually unfold: slow mornings, spontaneous learning, deep dives, and off days. You don't have to force structure just to prove learning happened.</p>
+          <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:18px;color:rgba(247,244,238,0.55);margin-top:0.875rem;letter-spacing:-0.01em;">That's grovio.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Features ── -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-header">
+          <span class="section-label section-label--center">Features</span>
+          <h2 class="section-title section-title--center">Simple tools for real<br>homeschool life</h2>
+          <div class="section-divider section-divider--center"></div>
+          <p class="section-body section-body--center">What actually matters — without the stuff that doesn't.</p>
+        </div>
+
+        <!-- Icon card grid -->
+        <div class="features-icon-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+            </div>
+            <div class="feature-title">Attendance tracking</div>
+            <p class="feature-desc">No spreadsheets. No second-guessing. Just tap the day and move on.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div class="feature-title">Shareable portfolios</div>
+            <p class="feature-desc">Snap a photo. Add a quick note. That's your record — done. Share a read-only link with family or evaluators whenever you need to.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div class="feature-title">The Grovio Guide</div>
+            <p class="feature-desc">Clear, simple guidance so you don't have to Google everything at 10pm. 25 free articles written by a homeschool mom.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <div class="feature-title">Works offline</div>
+            <p class="feature-desc">Use grovio without internet or phone service. Your data stays on your device until you're ready to sync.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feature-title">Multi-child support</div>
+            <p class="feature-desc">Attendance, portfolios, and rhythm for each kid — all in one place, no toggling between apps.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="feature-title">Export-ready reports</div>
+            <p class="feature-desc">Attendance calendars and portfolio PDFs formatted for evaluators, umbrella schools, and state records. Ready when you need them.</p>
+          </div>
+        </div>
+
+        <!-- Editorial feature: Daily Rhythm -->
+        <div class="feature-editorial">
+          <div class="feature-editorial-image">
+            <img
+              src="/assets/reading_cozy-DyQ1pFkz.jpg"
+              alt="A child reading a book wrapped in a cozy blanket by a window with plants — the kind of calm daily rhythm Grovio helps you build"
+              width="550"
+              height="400"
+              loading="lazy"
+            >
+          </div>
+          <div class="feature-editorial-content">
+            <span class="section-label">Daily Rhythm</span>
+            <div class="feature-title">A gentle flow, not a rigid schedule</div>
+            <p class="feature-desc">A flexible rhythm that bends with your life — not the other way around. Add activities for each child, check them off as the day unfolds, and skip what doesn't happen. No guilt. No falling behind.</p>
+            <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="feature-link">
+              Start Simply
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Editorial feature: Portfolio (reversed) -->
+        <div class="feature-editorial feature-editorial--reversed">
+          <div class="feature-editorial-image">
+            <img
+              src="/assets/portfolio_lifestyle-lkN5_99C.jpg"
+              alt="A child sorting through watercolor paintings and artwork on a wooden floor — capturing learning moments for a homeschool portfolio"
+              width="550"
+              height="400"
+              loading="lazy"
+            >
+          </div>
+          <div class="feature-editorial-content">
+            <span class="section-label">Photo Portfolio</span>
+            <div class="feature-title">Capture the moments that matter</div>
+            <p class="feature-desc">Snap a photo of today's work, add a quick note, and tag it. Over time, you'll have a real record of your family's learning — not a scrapbook project, just an honest log of what happened.</p>
+            <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="feature-link">
+              Start Simply
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Works Where You Homeschool ── -->
+    <section style="padding:6rem 0;">
+      <div class="container--narrow" style="text-align:center;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:1rem;">
+          <div style="width:24px;height:1px;background:#A89A8A;"></div>
+          <span style="font-family:'Inter',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.14em;color:#A89A8A;text-transform:uppercase;">Built for the way you homeschool</span>
+          <div style="width:24px;height:1px;background:#A89A8A;"></div>
+        </div>
+        <h2 class="section-title section-title--center" style="margin-bottom:1.25rem;">Works where you <em>homeschool.</em></h2>
+        <div class="section-divider section-divider--center"></div>
+        <p style="font-family:'Inter',sans-serif;font-size:16px;color:#7A6A5A;line-height:1.7;max-width:580px;margin:0 auto 1.5rem;">grovio is designed for the way most U.S. families homeschool. Whether your state is completely hands-off or asks for an annual notice and assessment, you'll have organized attendance records, a beautiful portfolio, and clean exports ready whenever you need them.</p>
+        <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:14px;color:#A89A8A;max-width:520px;margin:0 auto 1.5rem;line-height:1.65;">The only families who may need additional tools are those in states with highly structured requirements like mandatory curriculum approval or supervised home visits — and even then, grovio is still a solid foundation.</p>
+        <a href="https://hslda.org/legal" target="_blank" rel="noopener noreferrer" style="font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#4A6E4E;text-decoration:none;">Find your state's homeschool laws &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ── Guide ── -->
+    <section class="guide-section">
+      <div class="container">
+        <div class="guide-inner">
+          <div class="guide-content">
+            <span class="section-label">The Grovio Guide</span>
+            <h2 class="section-title">Your homeschool<br>questions, <em>answered</em></h2>
+            <div class="section-divider"></div>
+            <p class="section-body">The Grovio Guide is a free collection of practical articles covering getting started, record-keeping, daily rhythm, and more. No fluff — just clear, honest answers from someone who's been there.</p>
+            <br>
+            <a href="/guide/" class="btn-primary">Browse all 25 articles &rarr;</a>
+          </div>
+          <div>
+            <div class="guide-articles">
+              <a href="/guide/how-do-i-start-homeschooling.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1 3.5-3 5.5-6 7"/><path d="M10.7 20.7a7 7 0 0 0-3-3.5"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">How do I start homeschooling?</div>
+                  <div class="guide-article-meta">Getting Started &middot; 4 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/do-i-need-to-track-attendance.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">Do I need to track attendance?</div>
+                  <div class="guide-article-meta">Compliance &amp; Records &middot; 5 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/how-do-i-create-a-daily-rhythm.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">How do I create a daily rhythm?</div>
+                  <div class="guide-article-meta">Daily Rhythm &middot; 4 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/how-do-homeschool-portfolios-work.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">How do homeschool portfolios work?</div>
+                  <div class="guide-article-meta">Record Keeping &middot; 5 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <a href="/guide/legal-requirements-for-homeschooling.html" class="guide-article-row">
+                <div class="guide-article-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <div class="guide-article-text">
+                  <div class="guide-article-title">What are the legal requirements?</div>
+                  <div class="guide-article-meta">Compliance &amp; Records &middot; 6 min read</div>
+                </div>
+                <span class="guide-article-arrow">&rarr;</span>
+              </a>
+              <div class="guide-footer">
+                <a href="/guide/">Browse all 25 free articles &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Final CTA ── -->
+    <section class="final-cta">
+      <img
+        src="/assets/nature_lifestyle-DFJQtW0k.jpg"
+        alt="Two children walking together through a sunlit forest path, one carrying a notebook — learning beyond the classroom"
+        class="final-cta-image"
+        loading="lazy"
+        width="1200"
+        height="520"
+      >
+      <div class="final-cta-overlay">
+        <div class="final-cta-content">
+          <div class="final-cta-title">You don't need a better system.<br>You need a <em>simpler one.</em></div>
+          <p class="final-cta-sub">Start with <strong style="font-family:'Nunito',sans-serif;font-weight:800;letter-spacing:-0.01em;">grovio</strong>.</p>
+          <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="btn-final">Start Simply</a>
+          <span class="final-cta-secondary">Or <a href="/guide/">read the Guide first</a></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <a href="/" class="footer-wordmark">grovio</a>
+    <p class="footer-tagline">Grow Simply. Homeschool Confidently.</p>
+    <p class="footer-links">&copy; 2026 Grovio &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/support.html">Support</a> &middot; <a href="/faq.html">FAQ</a></p>
+  </footer>
+
+<script src="/waitlist-modal.js"></script>
+</body>
+</html>
