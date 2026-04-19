@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "CB7L9Z36SZ.com.grovioapp.app",
+        "paths": ["/share/*"]
+      }
+    ]
+  }
+}
