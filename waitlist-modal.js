@@ -89,6 +89,10 @@
         if (typeof gtag !== 'undefined') {
           gtag('event', 'sign_up', { method: 'waitlist' });
         }
+        // Meta Pixel conversion event
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead');
+        }
         contentEl.innerHTML=
           '<div style="text-align:center;padding:20px 0;">'+
             '<div style="font-size:28px;margin-bottom:12px;">🌿</div>'+
