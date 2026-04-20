@@ -93,6 +93,10 @@
         if (typeof fbq !== 'undefined') {
           fbq('track', 'Lead');
         }
+        // Pinterest conversion event
+        if (typeof pintrk !== 'undefined') {
+          pintrk('track', 'lead');
+        }
         contentEl.innerHTML=
           '<div style="text-align:center;padding:20px 0;">'+
             '<div style="font-size:28px;margin-bottom:12px;">🌿</div>'+
