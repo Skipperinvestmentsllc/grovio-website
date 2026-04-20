@@ -85,6 +85,10 @@
     .then(function(d){
       if(d.ok){
         done=true;
+        // Google Analytics conversion event
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'sign_up', { method: 'waitlist' });
+        }
         contentEl.innerHTML=
           '<div style="text-align:center;padding:20px 0;">'+
             '<div style="font-size:28px;margin-bottom:12px;">🌿</div>'+
