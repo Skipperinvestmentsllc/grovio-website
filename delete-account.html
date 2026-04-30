@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZM2WLE995S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZM2WLE995S');
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1483572783552950');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1483572783552950&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <!-- Pinterest Tag -->
+  <script>
+  !function(e){if(!window.pintrk){window.pintrk=function(){
+  window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];
+  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+  pintrk('load', '2613547423528');
+  pintrk('page');
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt=""
+  src="https://ct.pinterest.com/v3/?event=init&tid=2613547423528&noscript=1" />
+  </noscript>
+  <!-- end Pinterest Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Your Account &mdash; grovio</title>
+  <meta name="description" content="Instructions for deleting your grovio account and all associated data, either from inside the app or by emailing support.">
+  <link rel="canonical" href="https://grovioapp.com/delete-account">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    /* ── grovio shared brand tokens ── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      background: #F7F4EE;
+      color: #2C2218;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Paper grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* ── Navigation ── */
+    .grovio-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,244,238,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(184,212,187,0.6);
+    }
+    .grovio-nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .grovio-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #4A6E4E;
+      text-transform: lowercase;
+      text-decoration: none;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .grovio-nav-links {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    .grovio-nav-links a.nav-text {
+      font-size: 0.875rem;
+      color: #5C4A3A;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.15s;
+      font-family: 'Inter', sans-serif;
+    }
+    .grovio-nav-links a.nav-text:hover { color: #4A6E4E; }
+    .grovio-nav-cta {
+      background: #4A6E4E;
+      color: #F7F4EE !important;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      text-decoration: none !important;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .grovio-nav-cta:hover {
+      background: #3d5c41;
+      box-shadow: 0 2px 12px rgba(74,110,78,0.25);
+    }
+
+    /* ── Footer ── */
+    .grovio-footer {
+      background: #2C2218;
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .grovio-footer-wordmark {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      color: #B8D4BB;
+      font-size: 28px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .grovio-footer-tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      color: rgba(247,244,238,0.55);
+      font-size: 14px;
+      margin-bottom: 1.25rem;
+    }
+    .grovio-footer-links {
+      font-size: 12.5px;
+      color: rgba(247,244,238,0.35);
+    }
+    .grovio-footer-links a {
+      color: rgba(184,212,187,0.7);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .grovio-footer-links a:hover { color: #B8D4BB; }
+
+    /* ── Page content ── */
+    main.page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+      position: relative;
+      z-index: 1;
+    }
+    main.page h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: #3E3A32;
+      line-height: 1.2;
+      margin: 0 0 20px;
+      letter-spacing: -0.01em;
+    }
+    main.page p.intro {
+      font-size: 16px;
+      color: #6B6458;
+      line-height: 1.75;
+      margin: 0 0 40px;
+    }
+    main.page h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #3E3A32;
+      line-height: 1.3;
+      margin: 0 0 14px;
+    }
+    main.page section {
+      background: #FDFCF8;
+      border: 1px solid rgba(92,74,58,0.1);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    main.page ol, main.page ul {
+      margin: 0;
+      padding-left: 22px;
+      font-size: 15px;
+      color: #5C4A3A;
+      line-height: 1.8;
+    }
+    main.page ol li, main.page ul li { margin-bottom: 6px; }
+    main.page ol li::marker { color: #4A6E4E; font-weight: 600; }
+    main.page ul li::marker { color: #4A6E4E; }
+    main.page p {
+      font-size: 15px;
+      color: #5C4A3A;
+      line-height: 1.75;
+      margin: 0 0 12px;
+    }
+    main.page p:last-child { margin-bottom: 0; }
+    main.page a.email {
+      color: #4A6E4E;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(74,110,78,0.35);
+    }
+    main.page a.email:hover { border-bottom-color: #4A6E4E; }
+    main.page .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: #F7F4EE;
+      border-left: 3px solid #C49B4F;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #5C4A3A;
+      line-height: 1.65;
+    }
+    main.page .legal-footnote {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 13px;
+      color: #8C7A6A;
+      font-style: italic;
+    }
+
+    @media (max-width: 640px) {
+      .grovio-nav-inner { height: 52px; padding: 0 1.25rem; }
+      .grovio-wordmark { font-size: 22px; }
+      .grovio-nav-links a.nav-text { display: none; }
+      main.page { padding: 40px 20px 64px; }
+      main.page h1 { font-size: 28px; }
+      main.page section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="grovio-nav">
+    <div class="grovio-nav-inner">
+      <a href="/" class="grovio-wordmark">grovio</a>
+      <div class="grovio-nav-links">
+        <a href="/guide/" class="nav-text">The Guide</a>
+        <a href="/faq.html" class="nav-text">FAQ</a>
+        <a href="javascript:void(0)" onclick="openWaitlistModal(); return false;" class="grovio-nav-cta">Join the waitlist &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>Delete Your grovio Account</h1>
+    <p class="intro">We're sorry to see you go. You can delete your grovio account and all associated data directly from within the app. This permanently removes all your learner profiles, portfolio moments, attendance records, planner content, and authentication data.</p>
+
+    <section>
+      <h2>How to delete your account in the app</h2>
+      <ol>
+        <li>Open grovio and go to Settings (tap the gear icon).</li>
+        <li>Scroll to the bottom of the Settings screen.</li>
+        <li>Tap <strong>Delete Account</strong>.</li>
+        <li>Confirm deletion in the sheet that appears.</li>
+        <li>Your account and all data will be permanently deleted immediately.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Can't access the app?</h2>
+      <p>If you're unable to access the app to delete your account, email us at <a class="email" href="mailto:hello@grovioapp.com?subject=Delete%20my%20grovio%20account">hello@grovioapp.com</a> and we will manually delete your account and all associated data within 30 days.</p>
+    </section>
+
+    <section>
+      <h2>What gets deleted</h2>
+      <ul>
+        <li>Learner profiles</li>
+        <li>Portfolio moments and photos</li>
+        <li>Attendance records</li>
+        <li>Planner series and entries</li>
+        <li>Friday Wrap-Up history</li>
+        <li>Your account credentials</li>
+      </ul>
+      <div class="note">Deletion is permanent and cannot be undone.</div>
+    </section>
+
+    <p class="legal-footnote">grovio is operated by Skipper Investments LLC.</p>
+  </main>
+
+  <footer class="grovio-footer">
+    <a href="/" class="grovio-footer-wordmark">grovio</a>
+    <p class="grovio-footer-tagline">Grow Simply. Homeschool Confidently.</p>
+    <p class="grovio-footer-links">&copy; 2026 grovio &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a> &middot; <a href="/support.html">Support</a> &middot; <a href="/faq.html">FAQ</a></p>
+  </footer>
+
+  <script src="/waitlist-modal.js"></script>
+</body>
+</html>
