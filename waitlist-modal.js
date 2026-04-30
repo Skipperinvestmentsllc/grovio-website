@@ -79,7 +79,7 @@
     fetch('https://trqqcvevrfuijjxsqqlt.supabase.co/functions/v1/waitlist-subscribe',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({email:email})
+      body:JSON.stringify({email:email,tag:'website-waitlist'})
     })
     .then(function(r){ return r.json(); })
     .then(function(d){
