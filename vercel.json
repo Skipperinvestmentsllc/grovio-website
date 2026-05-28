@@ -8,7 +8,7 @@
     { "source": "/delete-account", "destination": "/delete-account.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/share/:token", "destination": "/share.html" }
+    { "source": "/share/:token", "destination": "/share" }
   ],
   "headers": [
     {
