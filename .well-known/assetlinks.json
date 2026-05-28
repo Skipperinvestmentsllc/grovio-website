@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.grovioapp.app",
+      "sha256_cert_fingerprints": [
+        "92:34:77:44:5C:5B:5B:97:1A:7A:F4:14:17:71:01:A8:8C:D8:BB:03:59:A8:0A:21:D7:C0:A8:EC:6A:9D:68:AE",
+        "36:26:8C:8B:D4:0E:BB:A7:0F:45:90:C2:F6:8E:F3:37:91:A3:D1:21:9C:A1:36:EF:7D:21:75:F9:12:81:D6:F5"
+      ]
+    }
+  }
+]
