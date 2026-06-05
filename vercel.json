@@ -6,6 +6,7 @@
     { "source": "/support", "destination": "/support.html" },
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/delete-account", "destination": "/delete-account.html" },
+    { "source": "/compare", "destination": "/compare.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/share/:token", "destination": "/share" }

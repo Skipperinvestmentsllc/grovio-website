@@ -49,7 +49,7 @@
   <!-- end Pinterest Tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Grovio — Homeschool Planner App · Links</title>
-  <meta name="description" content="Grovio — the calm homeschool planner app. Visit the website, explore the homeschool guide, or join the waitlist for our attendance tracker, portfolio app, and daily rhythm planner.">
+  <meta name="description" content="Grovio — the calm homeschool planner app. Visit the website, explore the homeschool guide, or download grovio free on the App Store. Attendance tracker, portfolio app, and daily rhythm planner.">
   <meta name="keywords" content="grovio links, homeschool planner app, homeschool attendance tracker, homeschool portfolio app, homeschool record keeping">
   <link rel="canonical" href="https://grovioapp.com/links/">
   <meta property="og:type" content="website">
@@ -242,50 +242,6 @@
       margin-top: 3px;
     }
 
-    /* ── Waitlist form ── */
-    .waitlist-inputs {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .waitlist-email {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid var(--br);
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      color: var(--bark);
-      background: var(--parch);
-      outline: none;
-      box-sizing: border-box;
-      -webkit-appearance: none;
-      transition: border-color 0.15s;
-    }
-
-    .waitlist-email:focus {
-      border-color: var(--sage-m);
-    }
-
-    .waitlist-btn {
-      width: 100%;
-      padding: 10px 18px;
-      background: var(--sage);
-      color: #F7F4EE;
-      border: none;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.15s;
-      letter-spacing: 0.01em;
-    }
-
-    .waitlist-btn:hover { background: #3d5c41; }
-
     /* ── Footer ── */
     .footer {
       text-align: center;
@@ -331,22 +287,6 @@
 
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── Desktop: side-by-side form ── */
-    @media (min-width: 481px) {
-      .waitlist-inputs {
-        flex-direction: row;
-      }
-      .waitlist-email {
-        flex: 1;
-        width: auto;
-        font-size: 0.875rem;
-      }
-      .waitlist-btn {
-        width: auto;
-        flex-shrink: 0;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -400,26 +340,19 @@
         <span class="link-arrow">→</span>
       </a>
 
-      <!-- Waitlist -->
-      <div class="link-card" id="waitlist-card" onclick="openWaitlist()" style="cursor:pointer;">
+      <!-- Download -->
+      <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537" class="link-card">
         <div class="link-icon app">
           <svg viewBox="0 0 24 24" fill="none" stroke="#C4843A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
         </div>
         <div class="link-text">
-          <div class="link-title">Coming soon to iOS and Android</div>
-          <div class="link-desc" id="waitlist-desc">Join the waitlist — we'll let you know the moment it's ready.</div>
-          <div id="waitlist-form" style="display:none;" onclick="event.stopPropagation()">
-            <div class="waitlist-inputs">
-              <input id="waitlist-email" type="email" placeholder="your@email.com" class="waitlist-email" autocomplete="email" inputmode="email">
-              <button id="waitlist-btn" onclick="submitWaitlist()" class="waitlist-btn">Notify me</button>
-            </div>
-            <div id="waitlist-msg" style="display:none;margin-top:6px;font-size:0.8125rem;line-height:1.4;"></div>
-          </div>
+          <div class="link-title">Download grovio free</div>
+          <div class="link-desc">Available on iOS. Android coming soon.</div>
         </div>
-        <span class="link-arrow" id="waitlist-arrow">→</span>
-      </div>
+        <span class="link-arrow">→</span>
+      </a>
 
     </div>
 
@@ -438,46 +371,5 @@
 
   </div>
 
-<script src="/waitlist-modal.js"></script>
-<script>
-var waitlistOpen = false, waitlistDone = false;
-
-function openWaitlist() {
-  if (waitlistDone || waitlistOpen) return;
-  waitlistOpen = true;
-  document.getElementById('waitlist-form').style.display = 'block';
-  document.getElementById('waitlist-arrow').style.display = 'none';
-  document.getElementById('waitlist-card').style.cursor = 'default';
-  setTimeout(function() { document.getElementById('waitlist-email').focus(); }, 150);
-}
-
-function submitWaitlist() {
-  var email = document.getElementById('waitlist-email').value.trim();
-  if (!email || email.indexOf('@') < 1) return;
-  var btn = document.getElementById('waitlist-btn');
-  var msg = document.getElementById('waitlist-msg');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  fetch('https://trqqcvevrfuijjxsqqlt.supabase.co/functions/v1/waitlist-subscribe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email })
-  }).then(function(r) {
-    return r.json();
-  }).then(function(d) {
-    if (d.ok) {
-      waitlistDone = true;
-      document.getElementById('waitlist-form').innerHTML =
-        '<div style="color:var(--bark-m);font-size:0.8125rem;line-height:1.4;padding-top:4px;">You\'re on the list. We\'ll be in touch.</div>';
-    } else { throw new Error(); }
-  }).catch(function() {
-    msg.style.display = 'block';
-    msg.style.color = 'var(--amber)';
-    msg.textContent = 'Something went wrong — try again.';
-    btn.textContent = 'Notify me';
-    btn.disabled = false;
-  });
-}
-</script>
 </body>
 </html>
