@@ -206,20 +206,37 @@
       text-transform:uppercase;
       margin-bottom:12px;
     }
-    .extras-chips {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:8px;
-    }
-    .extras-chips span {
-      background:rgba(184,212,187,0.32);
-      color:#3E3A32;
+    .extras-list {
+      background:#FDFCF8;
       border:1px solid rgba(184,212,187,0.6);
-      padding:6px 14px;
-      border-radius:100px;
-      font-size:12.5px;
-      font-weight:500;
+      border-radius:14px;
+      padding:18px 22px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:13px 20px;
+      text-align:left;
+    }
+    .extras-item {
+      display:flex;
+      align-items:center;
+      gap:9px;
+      font-size:13.5px;
+      color:#3E3A32;
+      line-height:1.3;
+    }
+    .extras-check {
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:#5E8753;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-shrink:0;
+    }
+    .extras-check svg { display:block; }
+    @media (max-width:560px) {
+      .extras-list { grid-template-columns:1fr; gap:12px; padding:16px 18px; }
     }
 
     footer {
@@ -239,6 +256,29 @@
       .cta-wrap { padding:28px 22px 48px; }
       .cta-card { padding:28px 20px 26px; }
       .cta-headline { font-size:21px; }
+    }
+
+    /* ── WSJ-style fade: article trails off so it's clear there's more ── */
+    .article-fade {
+      position:absolute;
+      left:0; right:0; bottom:0;
+      height:240px;
+      pointer-events:none;
+      z-index:2;
+      background:linear-gradient(to bottom,
+        rgba(247,244,238,0) 0%,
+        rgba(247,244,238,0.55) 50%,
+        rgba(247,244,238,0.92) 80%,
+        #F7F4EE 100%);
+    }
+    .article-fade::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      -webkit-backdrop-filter:blur(2px);
+      backdrop-filter:blur(2px);
+      -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 65%);
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 65%);
     }
   </style>
 </head>
@@ -264,7 +304,11 @@
       <p>I'd watch my kids spend an entire afternoon building something out of cardboard and tape, and part of me would think, "But we didn't do any real school today."</p>
       <p>It took me a while to unlearn that.</p>
       <p>That project was engineering, problem-solving, planning, persistence, and negotiation. That's a lot of learning. It just didn't come with a worksheet.</p>
+      <p>Once I started looking for it, I saw learning everywhere. The grocery trip where we doubled a recipe was math. The argument over whose turn it was, talked through to a fair ending, was reasoning and communication. The whole afternoon spent watching ants in the driveway was biology and patience.</p>
+      <p>None of it looked like school. All of it was learning. And the more I trusted that, the less I felt that constant low hum of we're not doing enough.</p>
+      <p>That doesn't mean anything goes, or that you never sit down with a math book. It means the real definition of a productive day is far wider than you were taught to believe. The part that took me longest to actually trust was</p>
     </div>
+    <div class="article-fade"></div>
   </main>
 
   <div class="cta-wrap">
@@ -272,18 +316,19 @@
       <div class="cta-eyebrow">Keep reading in grovio</div>
       <div class="cta-headline">There's more to <em>this story.</em></div>
       <p class="cta-body">The rest of this guide lives in the grovio app — along with 24 others on the honest parts of homeschooling. All free, on the dashboard after a quick setup.</p>
-      <a href="/get?src=p_what-counts-as-learning" class="cta-btn">Download grovio &rarr;</a>
-      <div class="cta-reassure">Available on iOS today &middot; Android coming soon</div>
+      <a href="/get?src=p_what-counts-as-learning" class="cta-btn">Download grovio &mdash; Free &rarr;</a>
+      <div class="cta-reassure">Free to download &middot; iOS today, Android coming soon</div>
     </div>
 
     <div class="extras">
       <div class="extras-label">Inside grovio, you'll also find</div>
-      <div class="extras-chips">
-        <span>Attendance tracking</span>
-        <span>Daily rhythm planner</span>
-        <span>Portfolio moments</span>
-        <span>Friday Wrap-Up</span>
-        <span>All 25 Guide articles, free</span>
+      <div class="extras-list">
+        <div class="extras-item"><span class="extras-check"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Attendance tracking</div>
+        <div class="extras-item"><span class="extras-check"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Daily rhythm planner</div>
+        <div class="extras-item"><span class="extras-check"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Portfolio moments</div>
+        <div class="extras-item"><span class="extras-check"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Friday Wrap-Up</div>
+        <div class="extras-item"><span class="extras-check"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Year goal tracking</div>
+        <div class="extras-item"><span class="extras-check"><svg width="9" height="9" viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-4.9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>All 25 Guide articles, free</div>
       </div>
     </div>
   </div>
