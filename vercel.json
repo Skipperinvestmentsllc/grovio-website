@@ -10,9 +10,16 @@
     { "source": "/get", "destination": "/get.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/share/:token", "destination": "/share" }
+    { "source": "/share/:token", "destination": "/share" },
+    { "source": "/p/:slug", "destination": "/p/:slug.html" }
   ],
   "headers": [
+    {
+      "source": "/p/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [

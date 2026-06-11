@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- noindex: never compete with /guide/what-if-my-child-is-ahead-or-behind for search -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What if my child is ahead or behind in certain subjects? — grovio</title>
+  <meta name="description" content="Is your homeschool child ahead or behind in certain subjects? Here&#x27;s the reframe that changes everything — and what to actually do about it.">
+  <!-- No canonical: this is a Pinterest funnel page, not the article. -->
+
+  <!-- OG/Twitter on for nice Pinterest preview cards -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="grovio">
+  <meta property="og:title" content="What if my child is ahead or behind in certain subjects?">
+  <meta property="og:description" content="Is your homeschool child ahead or behind in certain subjects? Here&#x27;s the reframe that changes everything — and what to actually do about it.">
+  <meta property="og:url" content="https://grovioapp.com/p/what-if-my-child-is-ahead-or-behind">
+  <meta property="og:image" content="https://grovioapp.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What if my child is ahead or behind in certain subjects?">
+  <meta name="twitter:description" content="Is your homeschool child ahead or behind in certain subjects? Here&#x27;s the reframe that changes everything — and what to actually do about it.">
+  <meta name="twitter:image" content="https://grovioapp.com/og-image.png">
+
+  <!-- Pinterest scraper picks up these as well as the og:* tags -->
+  <meta name="pinterest-rich-pin" content="true">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html, body {
+      background:#F7F4EE;
+      color:#3E3A32;
+      font-family:'Plus Jakarta Sans',sans-serif;
+      -webkit-font-smoothing:antialiased;
+      min-height:100vh;
+    }
+    body::before {
+      content:'';
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      opacity:0.022;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    /* ── Minimal top bar — just the wordmark. No nav distraction. ── */
+    .top-bar {
+      position:sticky;
+      top:0;
+      z-index:10;
+      padding:18px 24px;
+      text-align:center;
+      background:rgba(247,244,238,0.94);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(184,212,187,0.5);
+    }
+    .wordmark {
+      font-family:'Nunito',sans-serif;
+      font-weight:800;
+      color:#4A6E4E;
+      text-transform:lowercase;
+      text-decoration:none;
+      font-size:22px;
+      letter-spacing:-0.02em;
+    }
+
+    /* ── Article preview ── */
+    main {
+      position:relative;
+      z-index:1;
+      max-width:680px;
+      margin:0 auto;
+      padding:48px 32px 0;
+    }
+    .category {
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:0.1em;
+      color:#5E8753;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    h1 {
+      font-family:'Source Serif 4',Georgia,serif;
+      font-size:clamp(28px,4vw,40px);
+      font-weight:600;
+      color:#3E3A32;
+      line-height:1.25;
+      margin-bottom:20px;
+    }
+    .byline {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:36px;
+      padding-bottom:24px;
+      border-bottom:1px solid rgba(92,74,58,0.1);
+    }
+    .byline .avatar {
+      width:36px; height:36px; border-radius:50%;
+      overflow:hidden; flex-shrink:0;
+    }
+    .byline .avatar img { width:100%; height:100%; object-fit:cover; object-position:center 5%; display:block; }
+    .byline .name { font-size:13px; font-weight:600; color:#5E8753; margin:0 0 1px; }
+    .byline .meta { font-size:11px; color:#9B9484; margin:0; }
+
+    .body p {
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:16px;
+      color:#3E3A32;
+      line-height:1.75;
+      margin-bottom:20px;
+    }
+    .body p a { color:#5E8753; }
+
+    /* ── CTA card ── */
+    .cta-wrap {
+      max-width:680px;
+      margin:0 auto;
+      padding:40px 32px 64px;
+      position:relative;
+      z-index:1;
+    }
+    .cta-card {
+      background:#FDFCF8;
+      border:1px solid rgba(184,212,187,0.6);
+      border-radius:18px;
+      padding:32px 28px 30px;
+      text-align:center;
+      box-shadow:0 6px 28px rgba(44,34,24,0.05);
+    }
+    .cta-eyebrow {
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:0.14em;
+      color:#5E8753;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .cta-headline {
+      font-family:'Source Serif 4',Georgia,serif;
+      font-size:24px;
+      font-weight:600;
+      color:#3E3A32;
+      line-height:1.3;
+      margin-bottom:12px;
+    }
+    .cta-headline em { font-style:italic; color:#4A6E4E; }
+    .cta-body {
+      font-size:15px;
+      color:#6B6458;
+      line-height:1.6;
+      max-width:440px;
+      margin:0 auto 22px;
+    }
+    .cta-btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:14px 30px;
+      background:#4A6E4E;
+      color:#F7F4EE;
+      border-radius:100px;
+      text-decoration:none;
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:15px;
+      font-weight:600;
+      letter-spacing:0.01em;
+      transition:background 0.18s, transform 0.18s, box-shadow 0.18s;
+    }
+    .cta-btn:hover {
+      background:#3d5c41;
+      transform:translateY(-1px);
+      box-shadow:0 8px 20px rgba(74,110,78,0.25);
+    }
+    .cta-reassure {
+      margin-top:16px;
+      font-size:12px;
+      color:#9B9484;
+      letter-spacing:0.02em;
+    }
+
+    /* ── Inside grovio you'll also find ── */
+    .extras {
+      max-width:560px;
+      margin:36px auto 0;
+      text-align:center;
+    }
+    .extras-label {
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:0.12em;
+      color:#9B9484;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .extras-chips {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+    }
+    .extras-chips span {
+      background:rgba(184,212,187,0.32);
+      color:#3E3A32;
+      border:1px solid rgba(184,212,187,0.6);
+      padding:6px 14px;
+      border-radius:100px;
+      font-size:12.5px;
+      font-weight:500;
+    }
+
+    footer {
+      max-width:680px;
+      margin:0 auto;
+      padding:24px 32px 40px;
+      position:relative;
+      z-index:1;
+      text-align:center;
+      font-size:11px;
+      color:#A89A8A;
+    }
+    footer a { color:#7A6A5A; text-decoration:none; }
+
+    @media (max-width:560px) {
+      main { padding:36px 22px 0; }
+      .cta-wrap { padding:28px 22px 48px; }
+      .cta-card { padding:28px 20px 26px; }
+      .cta-headline { font-size:21px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="/" class="wordmark">grovio</a>
+  </div>
+
+  <main>
+    <p class="category">📚 Learning &amp; Academics</p>
+    <h1>What if my child is ahead or behind in certain subjects?</h1>
+
+    <div class="byline">
+      <div class="avatar"><img src="/assets/claire.png" alt="Claire"></div>
+      <div>
+        <p class="name">Claire</p>
+        <p class="meta">A preview from the grovio Guide</p>
+      </div>
+    </div>
+
+    <div class="body">
+      <p>My older child was reading chapter books at five but still counting on fingers at seven.</p>
+      <p>My younger one was the opposite.</p>
+      <p>For a while, I worried about both of them.</p>
+      <p>Then I realized: this is completely normal. And honestly, it's one of the best reasons to homeschool.</p>
+    </div>
+  </main>
+
+  <div class="cta-wrap">
+    <div class="cta-card">
+      <div class="cta-eyebrow">Keep reading in grovio</div>
+      <div class="cta-headline">There's more to <em>this story.</em></div>
+      <p class="cta-body">The rest of this guide lives in the grovio app — along with 24 others on the honest parts of homeschooling. All free, on the dashboard after a quick setup.</p>
+      <a href="/get?src=p_what-if-my-child-is-ahead-or-behind" class="cta-btn">Download grovio &rarr;</a>
+      <div class="cta-reassure">Available on iOS today &middot; Android coming soon</div>
+    </div>
+
+    <div class="extras">
+      <div class="extras-label">Inside grovio, you'll also find</div>
+      <div class="extras-chips">
+        <span>Attendance tracking</span>
+        <span>Daily rhythm planner</span>
+        <span>Portfolio moments</span>
+        <span>Friday Wrap-Up</span>
+        <span>All 25 Guide articles, free</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Skipper Investments LLC &middot;
+    <a href="/">grovioapp.com</a>
+  </footer>
+</body>
+</html>
