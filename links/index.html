@@ -14,6 +14,20 @@
     gtag('js', new Date());
     gtag('config', 'G-ZM2WLE995S');
   </script>
+  <!-- Device detection for the download card. Mirrors /get (get.html). Sets
+       data-view synchronously before first paint so the correct store variant
+       shows with no flash. This is a link hub, so it does NOT redirect. -->
+  <script>
+  (function(){
+    var ua = navigator.userAgent || navigator.vendor || '';
+    var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+    if (!isIOS && /Macintosh/.test(ua) && typeof navigator.maxTouchPoints === 'number' && navigator.maxTouchPoints > 1) {
+      isIOS = true;
+    }
+    var isAndroid = /android/i.test(ua);
+    document.documentElement.setAttribute('data-view', isIOS ? 'ios' : (isAndroid ? 'android' : 'desktop'));
+  })();
+  </script>
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -242,56 +256,6 @@
       margin-top: 3px;
     }
 
-    /* ── Mailing list form ── */
-    .mailing-inputs {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .mailing-email {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid var(--br);
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      color: var(--bark);
-      background: var(--parch);
-      outline: none;
-      box-sizing: border-box;
-      -webkit-appearance: none;
-      transition: border-color 0.15s;
-    }
-
-    .mailing-email:focus {
-      border-color: var(--sage-m);
-    }
-
-    .mailing-btn {
-      width: 100%;
-      padding: 10px 18px;
-      background: var(--sage);
-      color: #F7F4EE;
-      border: none;
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.15s;
-      letter-spacing: 0.01em;
-    }
-
-    .mailing-btn:hover { background: #3d5c41; }
-
-    @media (min-width: 481px) {
-      .mailing-inputs { flex-direction: row; }
-      .mailing-email { flex: 1; width: auto; font-size: 0.875rem; }
-      .mailing-btn { width: auto; flex-shrink: 0; }
-    }
-
     /* ── Footer ── */
     .footer {
       text-align: center;
@@ -348,6 +312,18 @@
         transform: none;
       }
     }
+    /* Device-aware download card. data-view is set synchronously in <head>
+       before first paint (no flash). Default / no-JS falls back to the
+       desktop "both stores" card so a link is always present. */
+    .dl-ios, .dl-android { display: none; }
+    html[data-view="ios"]     .dl-ios     { display: flex; }
+    html[data-view="ios"]     .dl-desktop { display: none; }
+    html[data-view="android"] .dl-android { display: flex; }
+    html[data-view="android"] .dl-desktop { display: none; }
+    .dl-store-links { margin-top: 6px; font-size: 0.8125rem; font-weight: 600; }
+    .dl-store-links a { color: var(--sage); text-decoration: none; }
+    .dl-store-links a:hover { text-decoration: underline; }
+    .dl-store-links span { color: var(--bark-l); margin: 0 6px; }
   </style>
 </head>
 <body>
@@ -362,40 +338,50 @@
     <!-- Links -->
     <div class="links">
 
-      <!-- Download (primary) -->
-      <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537" class="link-card">
+      <!-- Download — device-aware (iOS → App Store, Android → Google Play,
+           desktop/no-JS → both). Only one variant is visible per device via
+           the data-view CSS above. -->
+      <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537" class="link-card dl-ios">
         <div class="link-icon app">
           <svg viewBox="0 0 24 24" fill="none" stroke="#C4843A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
         </div>
         <div class="link-text">
-          <div class="link-title">Download grovio (iOS)</div>
+          <div class="link-title">Download grovio</div>
           <div class="link-desc">Free on the App Store</div>
         </div>
         <span class="link-arrow">→</span>
       </a>
 
-      <!-- Android mailing list -->
-      <div class="link-card" id="mailing-card" onclick="openMailing()" style="cursor:pointer;">
-        <div class="link-icon guide">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
+      <a href="https://play.google.com/store/apps/details?id=com.grovioapp.app" class="link-card dl-android">
+        <div class="link-icon app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4843A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>
         </div>
         <div class="link-text">
-          <div class="link-title">Android coming soon</div>
-          <div class="link-desc" id="mailing-desc">Join the mailing list — we'll let you know the moment it's ready.</div>
-          <div id="mailing-form" style="display:none;" onclick="event.stopPropagation()">
-            <div class="mailing-inputs">
-              <input id="mailing-email" type="email" placeholder="your@email.com" class="mailing-email" autocomplete="email" inputmode="email">
-              <button id="mailing-btn" onclick="submitMailing()" class="mailing-btn">Notify me</button>
-            </div>
-            <div id="mailing-msg" style="display:none;margin-top:6px;font-size:0.8125rem;line-height:1.4;"></div>
+          <div class="link-title">Download grovio</div>
+          <div class="link-desc">Free on Google Play</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <div class="link-card dl-desktop">
+        <div class="link-icon app">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C4843A" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-title">Download grovio</div>
+          <div class="link-desc">Available on iOS and Android</div>
+          <div class="dl-store-links">
+            <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537">App Store</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://play.google.com/store/apps/details?id=com.grovioapp.app">Google Play</a>
           </div>
         </div>
-        <span class="link-arrow" id="mailing-arrow">→</span>
       </div>
 
       <!-- Guide -->
@@ -461,45 +447,5 @@
 
   </div>
 
-<script>
-var mailingOpen = false, mailingDone = false;
-
-function openMailing() {
-  if (mailingDone || mailingOpen) return;
-  mailingOpen = true;
-  document.getElementById('mailing-form').style.display = 'block';
-  document.getElementById('mailing-arrow').style.display = 'none';
-  document.getElementById('mailing-card').style.cursor = 'default';
-  setTimeout(function() { document.getElementById('mailing-email').focus(); }, 150);
-}
-
-function submitMailing() {
-  var email = document.getElementById('mailing-email').value.trim();
-  if (!email || email.indexOf('@') < 1) return;
-  var btn = document.getElementById('mailing-btn');
-  var msg = document.getElementById('mailing-msg');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  fetch('https://trqqcvevrfuijjxsqqlt.supabase.co/functions/v1/waitlist-subscribe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email: email })
-  }).then(function(r) {
-    return r.json();
-  }).then(function(d) {
-    if (d.ok) {
-      mailingDone = true;
-      document.getElementById('mailing-form').innerHTML =
-        '<div style="color:var(--bark-m);font-size:0.8125rem;line-height:1.4;padding-top:4px;">You\'re on the list. We\'ll be in touch when Android is ready.</div>';
-    } else { throw new Error(); }
-  }).catch(function() {
-    msg.style.display = 'block';
-    msg.style.color = 'var(--amber)';
-    msg.textContent = 'Something went wrong — try again.';
-    btn.textContent = 'Notify me';
-    btn.disabled = false;
-  });
-}
-</script>
 </body>
 </html>
