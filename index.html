@@ -795,7 +795,7 @@
     }
     .feature-summary-card .feature-desc { margin-bottom: 1rem; }
     .homepage-visual-feature {
-      margin-top: 3.5rem;
+      margin: 0 0 3.5rem;
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 0;
@@ -808,6 +808,7 @@
     }
     .homepage-app-preview-visual {
       background: linear-gradient(180deg, #EFE7D2 0%, #F7F4EE 100%);
+      overflow: hidden;
       min-height: 600px;
       display: flex;
       align-items: center;
@@ -1076,9 +1077,15 @@
 
       .features-icon-grid { grid-template-columns: repeat(2, 1fr); }
       .feature-editorial { grid-template-columns: 1fr; }
-      .homepage-visual-feature { grid-template-columns: 1fr; }
-      .homepage-app-preview-copy { padding: 2rem 1.75rem; }
-      .homepage-app-preview-visual { min-height: auto; padding: 2rem 1.5rem; }
+      .homepage-visual-feature { grid-template-columns: 1fr; width: 100%; max-width: 100%; margin: 0 0 3rem; }
+      .homepage-app-preview-copy { padding: 2rem 1.75rem; min-width: 0; overflow-wrap: anywhere; }
+      .homepage-app-preview-visual { min-height: auto; padding: 1.75rem 1rem 1.5rem; }
+      .app-carousel { width: min(100%, 360px); }
+      .app-carousel-stage { aspect-ratio: auto; min-height: 500px; overflow: hidden; }
+      .app-carousel-slide img { width: min(228px, 58vw); border-radius: 24px; }
+      .app-carousel-slide[data-position="prev"] { transform: translate3d(-20%,0,0) scale(0.66); opacity: 0.3; }
+      .app-carousel-slide[data-position="next"] { transform: translate3d(20%,0,0) scale(0.66); opacity: 0.3; }
+      .app-carousel-controls { inset: 48% 0 auto; }
       .feature-editorial--reversed .feature-editorial-image { order: 0; }
       .feature-editorial--reversed .feature-editorial-content { order: 1; }
       .feature-editorial-content { padding: 2rem 1.75rem; }
@@ -1413,55 +1420,6 @@
     <!-- ── Features ── -->
     <section class="features-section features-section--simple">
       <div class="container">
-        <div class="features-header">
-          <span class="section-label section-label--center">What is inside grovio?</span>
-          <h2 class="section-title section-title--center">Everything you need to homeschool confidently</h2>
-          <div class="section-divider section-divider--center"></div>
-          <p class="section-body section-body--center">A focused set of planning, records, and reassurance tools for the homeschool you are actually living.</p>
-        </div>
-
-        <div class="features-icon-grid feature-summary-grid">
-          <a href="/features#plan" class="feature-card feature-summary-card">
-            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div class="feature-title">Weekly planning</div>
-            <p class="feature-desc">Choose a rhythm or schedule that fits real family life.</p>
-            <span class="feature-link">See planning &rarr;</span>
-          </a>
-          <a href="/features#records" class="feature-card feature-summary-card">
-            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg></div>
-            <div class="feature-title">Records & attendance</div>
-            <p class="feature-desc">Track school days and keep the records your year needs.</p>
-            <span class="feature-link">See records &rarr;</span>
-          </a>
-          <a href="/features#capture" class="feature-card feature-summary-card">
-            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></div>
-            <div class="feature-title">Learning portfolio</div>
-            <p class="feature-desc">Save photos, notes, subjects, and moments as proof grows.</p>
-            <span class="feature-link">See portfolio &rarr;</span>
-          </a>
-          <a href="/guide/" class="feature-card feature-summary-card">
-            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-            <div class="feature-title">The grovio Guide</div>
-            <p class="feature-desc">Find calm answers when the next homeschool question feels blurry.</p>
-            <span class="feature-link">Browse the Guide &rarr;</span>
-          </a>
-          <a href="/features#review" class="feature-card feature-summary-card">
-            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-            <div class="feature-title">Reports</div>
-            <p class="feature-desc">Export organized attendance and portfolio records when needed.</p>
-            <span class="feature-link">See reports &rarr;</span>
-          </a>
-          <a href="/features" class="feature-card feature-summary-card">
-            <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div class="feature-title">Family dashboard</div>
-            <p class="feature-desc">Keep multiple learners, today&apos;s plan, and progress in one place.</p>
-            <span class="feature-link">See the app &rarr;</span>
-          </a>
-        </div>
-        <div style="text-align:center;margin:-0.5rem 0 3rem;">
-          <a href="/features" class="feature-link">Explore all features &rarr;</a>
-        </div>
-
         <div class="homepage-visual-feature">
           <div class="homepage-app-preview-visual">
             <div class="app-carousel" data-app-carousel>
@@ -1486,9 +1444,9 @@
             </div>
           </div>
           <div class="homepage-app-preview-copy">
-            <span class="section-label">App preview</span>
-            <h2 class="section-title">Oh, that is what the app looks like.</h2>
-            <p class="section-body">grovio keeps the moving parts of homeschool visible without asking you to manage a complicated system.</p>
+            <span class="section-label">App features</span>
+            <h2 class="section-title">See what grovio helps you keep together.</h2>
+            <p class="section-body">Swipe through the planner, portfolio, attendance, records, and Guide. Each preview opens the matching feature when you want a closer look.</p>
             <div class="homepage-callouts">
               <a href="/features#plan" class="homepage-callout"><strong>Plan your rhythm</strong><span>See what is next without over-planning every minute.</span></a>
               <a href="/features#capture" class="homepage-callout"><strong>Capture learning moments</strong><span>Save the photos and notes that show real progress.</span></a>
