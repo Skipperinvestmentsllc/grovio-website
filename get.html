@@ -2,18 +2,10 @@
 <html lang="en">
 <head>
   <!-- ────────────────────────────────────────────────────────────────────
-       Device routing. iOS always redirects to the App Store. Android only
-       redirects when ANDROID_LIVE is true — until the Play listing is
-       approved, Android visitors see a branded "coming soon" capture page
-       that wires their email into Kit (form ID below). Desktop always sees
-       the chooser, with the Play badge shown live or as "coming soon"
-       based on the same flag.
-
-       When the Play listing goes live, flip ANDROID_LIVE to true and
-       update ANDROID_PLAY_URL if needed — no other change required.
+       Device routing. iOS redirects to the App Store, Android redirects to
+       Google Play, and desktop sees both store choices.
        ──────────────────────────────────────────────────────────────────── -->
   <script>
-  // ── FLIP THIS BOOLEAN WHEN ANDROID IS LIVE IN PLAY STORE ──
   var ANDROID_LIVE = true;
   var ANDROID_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.grovioapp.app';
   var APP_STORE_URL = 'https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537';
@@ -52,18 +44,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Get grovio — Calm Homeschool Planner App</title>
-  <meta name="description" content="Download grovio on iOS, or get notified when the Android app launches. The calm homeschool companion — capture portfolio moments, track attendance, and stay in your weekly rhythm.">
+  <meta name="description" content="Download grovio on iOS and Android. The calm homeschool companion — capture portfolio moments, track attendance, and stay in your weekly rhythm.">
   <link rel="canonical" href="https://grovioapp.com/get">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="grovio">
   <meta property="og:title" content="Get grovio — Calm Homeschool Planner App">
-  <meta property="og:description" content="Download grovio on iOS, or get notified when Android launches. The calm homeschool companion.">
+  <meta property="og:description" content="Download grovio on iOS and Android. The calm homeschool companion.">
   <meta property="og:url" content="https://grovioapp.com/get">
   <meta property="og:image" content="https://grovioapp.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Get grovio">
-  <meta name="twitter:description" content="Download grovio on iOS, or get notified when Android launches.">
+  <meta name="twitter:description" content="Download grovio on iOS and Android.">
   <meta name="twitter:image" content="https://grovioapp.com/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
