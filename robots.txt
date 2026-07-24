@@ -2,4 +2,16 @@ User-agent: *
 Allow: /
 Disallow: /assets/social/
 
+User-agent: Googlebot
+Allow: /
+Disallow: /assets/social/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /assets/social/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /assets/social/
+
 Sitemap: https://grovioapp.com/sitemap.xml
