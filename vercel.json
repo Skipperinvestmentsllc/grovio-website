@@ -10,6 +10,7 @@
     { "source": "/features", "destination": "/features.html" },
     { "source": "/pricing", "destination": "/pricing.html" },
     { "source": "/podcast", "destination": "/podcast.html" },
+    { "source": "/podcast/:slug", "destination": "/podcast/:slug.html" },
     { "source": "/get", "destination": "/get.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
