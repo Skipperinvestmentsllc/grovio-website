@@ -401,11 +401,14 @@
       border-radius: 12px;
       border: 1px solid #E8E2D5;
       background: #FDFBF5;
+      width: min(1040px, calc(100vw - 64px));
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
 
     .compare-table {
       width: 100%;
-      min-width: 720px;
+      min-width: 900px;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
       font-size: 13.5px;
@@ -549,6 +552,67 @@
       .article h1 { font-size: 32px; }
       .article h2 { font-size: 22px; margin-top: 2.25rem; }
       .article p { font-size: 16px; }
+      .table-wrap {
+        overflow: visible;
+        width: 100%;
+        margin-left: 0;
+        transform: none;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+      }
+      .compare-table {
+        min-width: 0;
+        display: block;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .compare-table thead { display: none; }
+      .compare-table tbody,
+      .compare-table tr,
+      .compare-table th,
+      .compare-table td {
+        display: block;
+        width: 100%;
+      }
+      .compare-table tr {
+        background: #FDFBF5;
+        border: 1px solid #E8E2D5;
+        border-radius: 12px;
+        margin-bottom: 0.9rem;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(44,34,24,0.04);
+      }
+      .compare-table th,
+      .compare-table td {
+        border-bottom: 1px solid #EFE9DC;
+        padding: 11px 14px;
+        white-space: normal;
+      }
+      .compare-table tbody tr:last-child td { border-bottom: 1px solid #EFE9DC; }
+      .compare-table tr > *:last-child { border-bottom: 0 !important; }
+      .compare-table td:first-child,
+      .compare-table tbody th {
+        background: #F2EBDB;
+        color: #2C2218;
+        font-size: 14px;
+        white-space: normal;
+      }
+      .compare-table td:not(:first-child)::before,
+      .compare-table tbody th[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        color: #7A6A5A;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+      .compare-table .grovio-col {
+        background: rgba(74,110,78,0.08);
+      }
       .cta-card { padding: 28px 20px; }
     }
   </style>
@@ -691,57 +755,57 @@
         <tbody>
           <tr>
             <td>"Am I doing enough?"</td>
-            <td class="grovio-col">Friday Wrap-Up (weekly reflection)</td>
-            <td>AI writes your documentation</td>
-            <td>Grades and assignment tracking</td>
-            <td>Activity journals</td>
-            <td>AI summaries</td>
-            <td>AI SMS logging (Plus) or manual</td>
+            <td class="grovio-col" data-label="grovio">Friday Wrap-Up (weekly reflection)</td>
+            <td data-label="Homeschool Moment">AI writes your documentation</td>
+            <td data-label="Homeschool Tracker">Grades and assignment tracking</td>
+            <td data-label="Homeschool Panda">Activity journals</td>
+            <td data-label="Strew">AI summaries</td>
+            <td data-label="HomeTrail">AI SMS logging (Plus) or manual</td>
           </tr>
           <tr>
             <td>"Records are a mess"</td>
-            <td class="grovio-col">One-tap attendance and PDF export</td>
-            <td>No attendance</td>
-            <td>Full compliance suite (20 years)</td>
-            <td>Basic attendance and planning</td>
-            <td>No attendance</td>
-            <td>Attendance + portfolio reports (free)</td>
+            <td class="grovio-col" data-label="grovio">One-tap attendance and PDF export</td>
+            <td data-label="Homeschool Moment">No attendance</td>
+            <td data-label="Homeschool Tracker">Full compliance suite (20 years)</td>
+            <td data-label="Homeschool Panda">Basic attendance and planning</td>
+            <td data-label="Strew">No attendance</td>
+            <td data-label="HomeTrail">Attendance + portfolio reports (free)</td>
           </tr>
           <tr>
             <td>"What do we do tomorrow?"</td>
-            <td class="grovio-col">Rhythm + individual items (no grades)</td>
-            <td>No planner</td>
-            <td>Lesson-level scheduling with grades</td>
-            <td>Lesson planning and scheduling</td>
-            <td>No planner</td>
-            <td>Planner + activity discovery (free)</td>
+            <td class="grovio-col" data-label="grovio">Rhythm + individual items (no grades)</td>
+            <td data-label="Homeschool Moment">No planner</td>
+            <td data-label="Homeschool Tracker">Lesson-level scheduling with grades</td>
+            <td data-label="Homeschool Panda">Lesson planning and scheduling</td>
+            <td data-label="Strew">No planner</td>
+            <td data-label="HomeTrail">Planner + activity discovery (free)</td>
           </tr>
           <tr>
             <td>"I can't find the proof"</td>
-            <td class="grovio-col">Portfolio by date and subject</td>
-            <td>AI-tagged photo portfolio</td>
-            <td>Assignment and grade database</td>
-            <td>Multi-category logs</td>
-            <td>Rolling activity feed</td>
-            <td>Portfolio reports + SMS AI logging</td>
+            <td class="grovio-col" data-label="grovio">Portfolio by date and subject</td>
+            <td data-label="Homeschool Moment">AI-tagged photo portfolio</td>
+            <td data-label="Homeschool Tracker">Assignment and grade database</td>
+            <td data-label="Homeschool Panda">Multi-category logs</td>
+            <td data-label="Strew">Rolling activity feed</td>
+            <td data-label="HomeTrail">Portfolio reports + SMS AI logging</td>
           </tr>
           <tr>
             <td>"Nobody sees this"</td>
-            <td class="grovio-col">Shareable cards (always free)</td>
-            <td>PDF export</td>
-            <td>Transcripts and reports</td>
-            <td>Community features</td>
-            <td>None</td>
-            <td>Reports</td>
+            <td class="grovio-col" data-label="grovio">Shareable cards (always free)</td>
+            <td data-label="Homeschool Moment">PDF export</td>
+            <td data-label="Homeschool Tracker">Transcripts and reports</td>
+            <td data-label="Homeschool Panda">Community features</td>
+            <td data-label="Strew">None</td>
+            <td data-label="HomeTrail">Reports</td>
           </tr>
           <tr>
             <td>"This app is too much"</td>
-            <td class="grovio-col">5 min/day</td>
-            <td>Simple (photos only)</td>
-            <td>Steep learning curve</td>
-            <td>Feature-heavy</td>
-            <td>Simple</td>
-            <td>Growing feature set</td>
+            <td class="grovio-col" data-label="grovio">5 min/day</td>
+            <td data-label="Homeschool Moment">Simple (photos only)</td>
+            <td data-label="Homeschool Tracker">Steep learning curve</td>
+            <td data-label="Homeschool Panda">Feature-heavy</td>
+            <td data-label="Strew">Simple</td>
+            <td data-label="HomeTrail">Growing feature set</td>
           </tr>
         </tbody>
       </table>
@@ -766,63 +830,63 @@
         <tbody>
           <tr>
             <th>grovio</th>
-            <td>Yes</td>
-            <td>Rhythm + individual items</td>
-            <td>Yes</td>
-            <td>Friday Wrap-Up</td>
-            <td>PDF</td>
-            <td>Yes (free)</td>
-            <td>Generous</td>
+            <td data-label="Attendance">Yes</td>
+            <td data-label="Planner">Rhythm + individual items</td>
+            <td data-label="Portfolio">Yes</td>
+            <td data-label="Weekly Reflection">Friday Wrap-Up</td>
+            <td data-label="Compliance Export">PDF</td>
+            <td data-label="Shareable Cards">Yes (free)</td>
+            <td data-label="Free Tier">Generous</td>
           </tr>
           <tr>
             <th>Homeschool Moment</th>
-            <td>No</td>
-            <td>No</td>
-            <td>Yes (AI)</td>
-            <td>No</td>
-            <td>No</td>
-            <td>No</td>
-            <td>5/month</td>
+            <td data-label="Attendance">No</td>
+            <td data-label="Planner">No</td>
+            <td data-label="Portfolio">Yes (AI)</td>
+            <td data-label="Weekly Reflection">No</td>
+            <td data-label="Compliance Export">No</td>
+            <td data-label="Shareable Cards">No</td>
+            <td data-label="Free Tier">5/month</td>
           </tr>
           <tr>
             <th>Homeschool Tracker</th>
-            <td>Yes</td>
-            <td>Lesson-level</td>
-            <td>Basic</td>
-            <td>No</td>
-            <td>Full suite</td>
-            <td>No</td>
-            <td>Trial only</td>
+            <td data-label="Attendance">Yes</td>
+            <td data-label="Planner">Lesson-level</td>
+            <td data-label="Portfolio">Basic</td>
+            <td data-label="Weekly Reflection">No</td>
+            <td data-label="Compliance Export">Full suite</td>
+            <td data-label="Shareable Cards">No</td>
+            <td data-label="Free Tier">Trial only</td>
           </tr>
           <tr>
             <th>Homeschool Panda</th>
-            <td>Yes</td>
-            <td>Lesson-level</td>
-            <td>Yes</td>
-            <td>No</td>
-            <td>Basic</td>
-            <td>No</td>
-            <td>Limited</td>
+            <td data-label="Attendance">Yes</td>
+            <td data-label="Planner">Lesson-level</td>
+            <td data-label="Portfolio">Yes</td>
+            <td data-label="Weekly Reflection">No</td>
+            <td data-label="Compliance Export">Basic</td>
+            <td data-label="Shareable Cards">No</td>
+            <td data-label="Free Tier">Limited</td>
           </tr>
           <tr>
             <th>Strew</th>
-            <td>No</td>
-            <td>No</td>
-            <td>Yes</td>
-            <td>AI summaries</td>
-            <td>No</td>
-            <td>No</td>
-            <td>Free</td>
+            <td data-label="Attendance">No</td>
+            <td data-label="Planner">No</td>
+            <td data-label="Portfolio">Yes</td>
+            <td data-label="Weekly Reflection">AI summaries</td>
+            <td data-label="Compliance Export">No</td>
+            <td data-label="Shareable Cards">No</td>
+            <td data-label="Free Tier">Free</td>
           </tr>
           <tr>
             <th>HomeTrail</th>
-            <td>Yes (free)</td>
-            <td>Yes (free)</td>
-            <td>Yes + AI SMS (Plus)</td>
-            <td>No</td>
-            <td>Reports (free), transcripts (Plus)</td>
-            <td>No</td>
-            <td>Free tier + Plus $19.99/mo</td>
+            <td data-label="Attendance">Yes (free)</td>
+            <td data-label="Planner">Yes (free)</td>
+            <td data-label="Portfolio">Yes + AI SMS (Plus)</td>
+            <td data-label="Weekly Reflection">No</td>
+            <td data-label="Compliance Export">Reports (free), transcripts (Plus)</td>
+            <td data-label="Shareable Cards">No</td>
+            <td data-label="Free Tier">Free tier + Plus $19.99/mo</td>
           </tr>
         </tbody>
       </table>
