@@ -529,7 +529,6 @@
       text-decoration-thickness: 1px;
       text-underline-offset: 4px;
     }
-    .guide-featured-answer p {
     .guide-pilot-states {
       border-top: 1px solid rgba(74,110,78,0.23);
       color: #4A6E4E !important;
@@ -540,8 +539,22 @@
       padding-top: 0.8rem;
     }
     .guide-related-answers { list-style: none; margin: 0; padding-left: 0; }
-    .guide-related-answers li { border-bottom: 1px solid rgba(74,110,78,0.22); padding: 0 0 0.8rem; margin-bottom: 0.75rem; }
+    .guide-related-answers li {
+      border-bottom: 1px solid rgba(74,110,78,0.22);
+      margin-bottom: 0.75rem;
+      padding: 0 0 0.8rem 1.1rem;
+      position: relative;
+    }
     .guide-related-answers li:last-child { margin-bottom: 0; }
+    .guide-related-answers li::before {
+      color: #4A6E4E;
+      content: '→';
+      font-size: 14px;
+      left: 0;
+      line-height: 1.4;
+      position: absolute;
+      top: 0;
+    }
     .guide-related-answers a {
       color: #3E3A32;
       display: block;
