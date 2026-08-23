@@ -12,6 +12,7 @@
     { "source": "/podcast", "destination": "/podcast.html" },
     { "source": "/podcast/:slug", "destination": "/podcast/:slug.html" },
     { "source": "/get", "destination": "/get.html" },
+    { "source": "/start", "destination": "/start.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/partner-admin", "destination": "/partner-admin/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
@@ -19,6 +20,12 @@
     { "source": "/p/:slug", "destination": "/p/:slug.html" }
   ],
   "headers": [
+    {
+      "source": "/start",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
     {
       "source": "/partner-admin/(.*)",
       "headers": [
