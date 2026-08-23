@@ -105,7 +105,10 @@
       var rawCreative=query.get('utm_content')||'';
       var creative=/^ad_0[1-3]$/.test(rawCreative)?rawCreative:'landing_page';
       var campaign=query.get('utm_campaign')||'us_acq_v1';
-      var linkParams=new URLSearchParams({pid:'chatgpt_ads',c:campaign,deep_link_value:'acquisition',af_dp:'com.grovioapp.app:///acquisition',af_force_deeplink:'true',af_sub1:angle,af_sub2:creative});
+      // AppsFlyer omits media_source for deferred iOS installs. This explicit
+      // marker is returned through UDL and lets the native app retain the
+      // ChatGPT first-touch source without collecting personal data.
+      var linkParams=new URLSearchParams({pid:'chatgpt_ads',c:campaign,deep_link_value:'chatgpt_ads',af_dp:'com.grovioapp.app:///acquisition',af_force_deeplink:'true',af_sub1:angle,af_sub2:creative});
       var oppref=query.get('oppref');
       if(oppref){linkParams.set('oppref',oppref);linkParams.set('af_sub3',oppref);}
       var oneLink='https://grovio.onelink.me/7Juf/?'+linkParams.toString();
