@@ -14,4 +14,8 @@ User-agent: OAI-SearchBot
 Allow: /
 Disallow: /assets/social/
 
+User-agent: OAI-AdsBot
+Allow: /
+Disallow: /assets/social/
+
 Sitemap: https://grovioapp.com/sitemap.xml
