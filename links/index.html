@@ -189,39 +189,49 @@
     @media (max-width: 680px) {
       .page { padding-right: 16px; padding-left: 16px; }
       .masthead { padding-bottom: 15px; }
-      .intro { padding: 50px 10px 34px; }
-      h1 { font-size: clamp(2.7rem, 14vw, 4.1rem); }
-      .feature-card { min-height: 535px; grid-template-columns: 1fr; }
-      .feature-photo { position: absolute; inset: 0; }
-      .feature-photo::after { background: linear-gradient(180deg, rgba(24,24,20,.16), rgba(24,24,20,.93) 70%); }
+      .intro { padding: 34px 4px 24px; }
+      h1 { font-size: clamp(2.45rem, 10.6vw, 3.3rem); line-height: .93; }
+      .intro-copy { margin-top: 15px; font-size: 1rem; }
+      /* A separate image panel keeps the hero copy readable in every browser. */
+      .feature-card { min-height: 0; grid-template-columns: 1fr; grid-template-rows: 154px auto; }
+      .feature-photo { position: relative; min-height: 154px; grid-row: 1; }
+      .feature-photo::after { background: linear-gradient(180deg, rgba(24,24,20,.04), rgba(24,24,20,.22)); }
       .feature-photo img { object-position: 50% 48%; }
-      .feature-copy { z-index: 2; min-height: 535px; padding: 27px 20px; justify-content: flex-end; }
-      .feature-title { max-width: 300px; font-size: clamp(2.7rem, 12vw, 3.5rem); }
-      .feature-text { max-width: 260px; }
+      .feature-copy { z-index: 2; min-height: 0; padding: 19px 20px 20px; background: var(--sage); grid-row: 2; justify-content: flex-start; }
+      .feature-title { max-width: 310px; margin: 13px 0 8px; font-size: clamp(2.2rem, 9.7vw, 2.95rem); line-height: .92; }
+      .feature-text { max-width: 310px; color: rgba(253,252,250,.88); font-size: .94rem; line-height: 1.4; }
       .feature-art { display: none; }
-      .store-badges { display: grid; width: 100%; max-width: 310px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .store-badges { display: grid; width: 100%; max-width: 310px; margin-top: 17px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
       .store-badge { width: 100%; }
       .store-badge svg { width: 100%; min-height: 40px; }
-      .rail-section { margin-top: 35px; }
+      .rail-section { margin-top: 25px; }
       .section-kicker span { display: none; }
       .story-rail { display: flex; width: calc(100% + 16px); padding: 0 16px 4px 0; overflow-x: auto; overscroll-behavior-x: contain; scroll-padding-left: 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .story-rail::-webkit-scrollbar { display: none; }
-      .story-card, .story-card:first-child { width: 262px; min-width: 262px; min-height: 338px; scroll-snap-align: start; }
-      .toolkit { margin-top: 37px; }
+      .story-card, .story-card:first-child { width: min(84vw, 330px); min-width: min(84vw, 330px); min-height: 304px; scroll-snap-align: start; }
+      /* Photo cards become simple cover + copy spreads on phones—no text sits on an image. */
+      .story-card.podcast, .story-card.guide { display: grid; min-height: 325px; grid-template-columns: 1fr; grid-template-rows: 125px auto; }
+      .story-card.podcast::after, .story-card.guide::after { display: none; }
+      .story-card.podcast .podcast-cover, .story-card.guide .guide-art { position: static; z-index: 0; width: 100%; height: 125px; grid-row: 1; filter: none; object-fit: cover; }
+      .story-card.podcast .story-content, .story-card.guide .story-content { z-index: 1; padding: 16px; color: var(--ink); background: var(--paper-light); grid-row: 2; }
+      .story-card.podcast .story-label, .story-card.guide .story-label { color: var(--clay); }
+      .story-card.podcast .story-text, .story-card.guide .story-text { max-width: none; color: var(--ink-soft); }
+      .story-card.podcast .story-title, .story-card.guide .story-title { max-width: none; margin-top: 7px; font-size: 1.62rem; }
+      .story-card.podcast .story-text, .story-card.guide .story-text { margin-top: 6px; font-size: .79rem; }
+      .story-card.podcast .story-arrow, .story-card.guide .story-arrow { border-color: var(--rule); color: var(--ink); background: var(--paper-light); }
+      .toolkit { margin-top: 27px; }
       .toolkit-heading span { display: none; }
       .quick-links { grid-template-columns: 1fr; }
-      .quick-link { min-height: 77px; flex-direction: row; align-items: center; }
+      .quick-link { min-height: 64px; padding: 13px 15px; flex-direction: row; align-items: center; }
       .quick-link strong { width: 63%; align-items: center; }
       footer { align-items: flex-start; flex-direction: column; }
       .footer-links { justify-content: flex-start; }
     }
     @media (max-width: 390px) {
-      .feature-card, .feature-copy { min-height: 505px; }
       .feature-title { font-size: 2.58rem; }
     }
     @media (max-width: 350px) {
       .page { padding-right: 12px; padding-left: 12px; }
-      .feature-card, .feature-copy { min-height: 520px; }
       .feature-copy { padding-right: 18px; padding-left: 18px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -280,7 +290,7 @@
     <section class="rail-section" aria-labelledby="more-title">
       <div class="section-kicker"><p id="more-title">More from grovio</p><span>Explore →</span></div>
       <div class="story-rail">
-        <a class="story-card podcast" href="https://grovioapp.com/podcast/the-day-i-pulled-him-out"><div class="story-content"><span class="story-label">Podcast</span><h2 class="story-title">Grow Simply with Claire</h2><p class="story-text">Honest notes for the days you need a little reassurance.</p><span class="story-arrow" aria-hidden="true">→</span></div><img class="podcast-cover" src="/assets/optimized/claire-192.jpg" alt="Claire, host of Grow Simply"></a>
+        <a class="story-card podcast" href="https://grovioapp.com/podcast/the-day-i-pulled-him-out"><div class="story-content"><span class="story-label">Podcast</span><h2 class="story-title">Grow Simply with Claire</h2><p class="story-text">Honest notes for the days you need a little reassurance.</p><span class="story-arrow" aria-hidden="true">→</span></div><img class="podcast-cover" src="/assets/optimized/grow-simply-with-claire-podcast-1200.jpg" alt="Grow Simply with Claire podcast artwork"></a>
         <a class="story-card guide" href="https://grovioapp.com/guide/"><div class="story-content"><span class="story-label">The grovio Guide</span><h2 class="story-title">Free homeschool guidance</h2><p class="story-text">Practical answers for the questions parents actually carry.</p><span class="story-arrow" aria-hidden="true">→</span></div><img class="guide-art" src="/images/optimized/reading_cozy-1200.jpg" alt="A cozy reading moment at home"></a>
         <a class="story-card compare" href="https://grovioapp.com/compare"><div class="story-content"><span class="story-label">Compare</span><h2 class="story-title">Compare homeschool apps</h2><p class="story-text">An honest look at what each one does.</p><span class="story-arrow" aria-hidden="true">→</span></div><span class="compare-mark" aria-hidden="true">?</span></a>
       </div>
