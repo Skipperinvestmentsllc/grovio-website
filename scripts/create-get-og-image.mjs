@@ -1,9 +1,11 @@
+import { copyFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import sharp from '/Users/skipperkilian/grovio-app/node_modules/sharp/lib/index.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const output = join(root, 'og-get.png');
+const defaultOutput = join(root, 'og-image.png');
 const logoPath = join(root, 'assets', 'grovio-logo.png');
 const homeScreenPath = join(root, 'assets', 'feature-home-toast.png');
 
@@ -58,4 +60,6 @@ await sharp({
   .png({ compressionLevel: 9, palette: true, quality: 95 })
   .toFile(output);
 
-console.log(`Created ${output}`);
+await copyFile(output, defaultOutput);
+
+console.log(`Created ${output} and ${defaultOutput}`);
