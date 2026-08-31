@@ -383,6 +383,9 @@
       margin-top: 1rem;
       font-style: italic;
     }
+    .hero-pace-badge { align-self: flex-start; display: inline-flex; margin: -0.9rem 0 1.35rem; padding: 0.32rem 0.7rem; border: 1px solid rgba(74,110,78,0.28); border-radius: 999px; background: #EBF3EC; color: #4A6E4E; font-size: 12px; font-weight: 600; }
+    .hero-guide-link { margin-top: 0.8rem; color: #7A6A5A; font-size: 13px; }
+    .hero-guide-link a { color: #4A6E4E; font-weight: 600; }
     .hero-image-wrap {
       position: relative;
       overflow: hidden;
@@ -429,11 +432,25 @@
       font-size: 13px;
       color: #7A6A5A;
     }
+    a.trust-item { text-decoration: none; }
+    a.trust-item:hover span { color: #4A6E4E; }
     .trust-item svg { flex-shrink: 0; }
     .trust-item strong {
       color: #2C2218;
       font-weight: 600;
     }
+    .app-store-reviews { padding: 0 0 6rem; }
+    .app-store-reviews-header { max-width: 650px; margin: 0 auto 2rem; text-align: center; }
+    .app-store-reviews-grid, .why-different-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .app-store-review, .why-different-card { background: #FCFAF8; border: 1px solid rgba(184,212,187,0.7); border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 20px rgba(44,34,24,0.05); }
+    .app-store-review { display: flex; flex-direction: column; }
+    .app-store-review blockquote { margin: 0 0 1rem; color: #5C4A3A; font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; font-style: italic; line-height: 1.45; }
+    .app-store-review footer { margin-top: auto; color: #7A6A5A; font-size: 12px; }
+    .app-store-review .stars { color: #4A6E4E; font-size: 13px; letter-spacing: 0.08em; }
+    .why-different { padding: 0 0 6rem; }
+    .why-different-header { max-width: 680px; margin: 0 auto 2rem; text-align: center; }
+    .why-different-card h3 { margin: 0 0 0.5rem; color: #2C2218; font-family: 'Source Serif 4', Georgia, serif; font-size: 23px; font-weight: 400; line-height: 1.25; }
+    .why-different-card p { color: #7A6A5A; font-size: 14px; line-height: 1.65; }
 
     /* ── Problem ── */
     .problem-section {
@@ -911,7 +928,7 @@
     .supporting-paths { padding: 5rem 0; }
     .supporting-paths-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
     .supporting-path-card {
@@ -1069,6 +1086,7 @@
       }
       .hero-eyebrow { justify-content: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-pace-badge { align-self: center; }
       .hero-actions { justify-content: center; }
       .hero-image-wrap { border-radius: 0; }
       .hero-image-wrap img { min-height: 320px; max-height: 420px; }
@@ -1096,6 +1114,7 @@
       .guide-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .start-panel { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
       .supporting-paths-grid { grid-template-columns: 1fr; }
+      .app-store-reviews-grid, .why-different-grid { grid-template-columns: 1fr; }
 
       .trust-bar .container { gap: 1.5rem; }
 
@@ -1151,6 +1170,9 @@
       align-items: center;
       gap: 0.75rem;
     }
+    .grovio-nav-links { display: flex; align-items: center; gap: 1.15rem; margin-left: auto; margin-right: 1.25rem; }
+    .grovio-nav-links a { color: #5C4A3A; font-size: 13px; text-decoration: none; white-space: nowrap; }
+    .grovio-nav-links a:hover { color: #4A6E4E; }
     .grovio-nav-cta {
       background: #4A6E4E;
       color: #F7F4EE !important;
@@ -1288,6 +1310,7 @@
       .grovio-nav-inner { height: 52px; padding: 0 1.25rem; }
       .grovio-wordmark { font-size: 22px; }
     }
+    @media (max-width: 900px) { .grovio-nav-links { display: none; } }
   </style>
 </head>
 <body>
@@ -1296,6 +1319,9 @@
   <header class="grovio-nav">
   <div class="grovio-nav-inner">
     <a href="/" class="grovio-wordmark">grovio</a>
+    <nav class="grovio-nav-links" aria-label="Primary navigation">
+      <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/guide/">Guide</a><a href="/compare">Compare apps</a>
+    </nav>
     <div class="grovio-nav-right">
       <a href="/get" class="grovio-nav-cta">Download free</a>
       <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open menu" aria-expanded="false" aria-controls="grovioNavPanel">
@@ -1324,10 +1350,11 @@
       <div class="container">
         <div class="hero-inner">
           <div class="hero-content">
-            <div class="hero-eyebrow">Homeschool companion app</div>
+            <div class="hero-eyebrow">Homeschool attendance &amp; record-keeping app</div>
             <span class="hero-wordmark">grovio</span>
-            <h1 class="hero-headline">Learn to trust<br><em>the homeschool<br>you’re building.</em></h1>
-            <p class="hero-sub">grovio is a calm companion app for overwhelmed homeschool moms who wonder, “Am I doing enough?” Track attendance, capture learning moments, find your rhythm, and build confidence one real day at a time.</p>
+            <h1 class="hero-headline">Homeschool attendance and records that help you <em>trust your day.</em></h1>
+            <p class="hero-sub">grovio is a calm homeschool attendance tracker and record-keeping app for overwhelmed moms who wonder, “Am I doing enough?” Track attendance, save learning from scattered notebooks and your camera roll, find your rhythm, and build confidence one real day at a time.</p>
+            <span class="hero-pace-badge">Five minutes a day. No streaks or guilt-trip notifications.</span>
             <div class="hero-actions" aria-label="Download grovio">
               <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537" class="store-badge-link" aria-label="Download grovio on the App Store">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64" role="img" aria-hidden="true">
@@ -1351,6 +1378,7 @@
               </a>
             </div>
             <p class="hero-note">Available on iOS and Android. Free to start, no credit card needed.</p>
+            <p class="hero-guide-link">Or <a href="/guide/">read the Guide first</a></p>
           </div>
           <div class="hero-image-wrap">
             <img
@@ -1359,6 +1387,8 @@
               width="600"
               height="720"
               fetchpriority="high"
+              srcset="/images/optimized/homeschool_lifestyle-1200.jpg 1200w, /images/homeschool_lifestyle.jpg 2752w"
+              sizes="(max-width: 900px) 100vw, 50vw"
             >
           </div>
         </div>
@@ -1366,6 +1396,7 @@
     </section>
 
     <!-- ── Trust bar ── -->
+    <!-- Store proof is kept to public, verified App Store data. -->
     <div class="trust-bar">
       <div class="container">
         <div class="trust-item">
@@ -1384,6 +1415,14 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
           <span><strong>Works offline</strong> — your data stays yours</span>
         </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span><strong>Encrypted</strong> in transit and at rest</span>
+        </div>
+        <a class="trust-item" href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537#productRatings" aria-label="Read grovio's App Store ratings and reviews">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A6E4E" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg>
+          <span><strong>5.0 on the App Store</strong> — 5 ratings</span>
+        </a>
       </div>
     </div>
 
@@ -1451,6 +1490,8 @@
             <div class="homepage-callouts">
               <a href="/features#plan" class="homepage-callout"><strong>Follow your family’s real flow</strong><span>See what is next without over-planning every minute.</span></a>
               <a href="/features#capture" class="homepage-callout"><strong>Save the proof learning happened</strong><span>Keep the photos and notes that show real progress.</span></a>
+              <a href="/compare" class="homepage-callout"><strong>Share the proof that learning happened</strong><span>Make a shareable card in ten seconds for Instagram or your people. Always free.</span></a>
+              <a href="/features#review" class="homepage-callout"><strong>End Friday knowing it counted</strong><span>Turn your week into an AI-written Wrap-Up with a seasonal share card.</span></a>
               <a href="/features#records" class="homepage-callout"><strong>Mark the day and move on</strong><span>Attendance, portfolios, and exports stay close when you need them.</span></a>
             </div>
             <a href="/features" class="feature-link">See every feature &rarr;</a>
@@ -1459,17 +1500,30 @@
       </div>
     </section>
 
-    <!-- ── Claire + Podcast ── -->
-    <section class="podcast-teaser">
-      <div class="container--narrow">
-        <span class="section-label section-label--center">Built by Claire</span>
-        <h2 class="section-title section-title--center">A steady voice for the days homeschooling feels heavy.</h2>
-        <div class="section-divider section-divider--center"></div>
-        <p class="section-body section-body--center">I&apos;m Claire, homeschool mom and creator of grovio. Every week on <em>Grow Simply with Claire: Letters to the Homeschool Mom</em>, I share short encouragement and practical perspective for the days you need reassurance that you are not alone in this.</p>
-        <a href="/podcast" class="podcast-art-link" aria-label="Visit the Dear Homeschool Mom: Grow Simply with Claire podcast page">
-          <img src="/assets/optimized/grow-simply-with-claire-podcast-1200.jpg" alt="Dear Homeschool Mom: Grow Simply with Claire podcast artwork. Honest notes for the days you need a little reassurance." width="1678" height="937" loading="lazy">
-        </a>
-        <p class="section-body section-body--center" style="margin-top: 1rem; font-size: 14px;"><a href="/about/claire" class="podcast-claire-link">Meet Claire &rarr;</a> <span style="color:#A89A8A;margin:0 0.35rem;">&middot;</span> <a href="/podcast" class="podcast-claire-link">Listen to the podcast &rarr;</a></p>
+    <!-- ── App Store reviews ── -->
+    <section class="app-store-reviews" aria-labelledby="app-store-reviews-title">
+      <div class="container">
+        <div class="app-store-reviews-header">
+          <span class="section-label section-label--center">From the App Store</span>
+          <h2 class="section-title section-title--center" id="app-store-reviews-title">A few words from families using grovio.</h2>
+        </div>
+        <div class="app-store-reviews-grid">
+          <article class="app-store-review"><blockquote>“I love being able to document learning experiences through photos and track events and activities in one place instead of trying to keep up.”</blockquote><footer><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><br>Leigh Skipper · App Store review</footer></article>
+          <article class="app-store-review"><blockquote>“It makes record-keeping more personal and helps capture our learning experiences in a meaningful way.”</blockquote><footer><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><br>Chelsea Lindsay · App Store review</footer></article>
+          <article class="app-store-review"><blockquote>“It’s just a summary of what we did that week, but it makes me feel like we’re doing more than I realized.”</blockquote><footer><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><br>WhitneyLeigh39 · App Store review</footer></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why grovio ── -->
+    <section class="why-different">
+      <div class="container">
+        <div class="why-different-header"><span class="section-label section-label--center">Why grovio feels different</span><h2 class="section-title section-title--center">Enough structure to keep records. Not enough to make you feel behind.</h2></div>
+        <div class="why-different-grid">
+          <article class="why-different-card"><h3>Five minutes, not a whole new system.</h3><p>Mark attendance, glance at your rhythm, and capture a moment when it matters. No streaks to maintain and no guilt when life gets full.</p></article>
+          <article class="why-different-card"><h3>Proof you can actually share.</h3><p>Share a simple card from a learning moment in ten seconds. It is a small way to let family see what your days hold — and it is always free.</p></article>
+          <article class="why-different-card"><h3>A Friday ending that feels good.</h3><p>Your weekly Wrap-Up turns the attendance and moments you saved into an AI-written summary and seasonal share card, so you can see that the week counted.</p></article>
+        </div>
       </div>
     </section>
 
@@ -1488,6 +1542,12 @@
             <h2 class="section-title">Still deciding what fits?</h2>
             <p class="section-body">Read the honest comparison, including when another homeschool app may fit better for the way your family works.</p>
             <span class="feature-link">Read the comparison &rarr;</span>
+          </a>
+          <a href="/podcast" class="supporting-path-card">
+            <span class="section-label">Grow Simply with Claire</span>
+            <h2 class="section-title">A steady voice for the heavy days.</h2>
+            <p class="section-body">Short encouragement and practical perspective from Claire, homeschool mom and creator of grovio.</p>
+            <span class="feature-link">Listen to the podcast &rarr;</span>
           </a>
         </div>
       </div>

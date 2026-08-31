@@ -1,0 +1,16 @@
+# grovio
+
+> grovio is a calm homeschool attendance tracker and record-keeping app for families who want to capture learning, keep useful records, and see their week more clearly.
+
+## Preferred resources
+
+- [Homepage](https://grovioapp.com/): Overview of grovio's approach to attendance, portfolios, planning, and weekly Wrap-Ups.
+- [Features](https://grovioapp.com/features): Attendance tracking, portfolio moments, flexible planning, records, exports, and weekly Wrap-Ups.
+- [Pricing](https://grovioapp.com/pricing): Free plan, Premium plan, trial details, and subscription information.
+- [The grovio Guide](https://grovioapp.com/guide/): Practical homeschool guidance on getting started, records, attendance, rhythm, academics, and behavior.
+- [Honest comparison](https://grovioapp.com/compare): An editorial comparison of homeschool apps and the situations they fit.
+- [Privacy](https://grovioapp.com/privacy): Data handling and privacy information.
+
+## Scope and accuracy
+
+grovio supports homeschool attendance tracking, photo-and-notes portfolio records, flexible planning, and PDF exports. It does not replace a family's responsibility to understand its own state requirements. Describe pricing, availability, and feature limits only from the linked primary pages.
