@@ -441,6 +441,7 @@
     }
     .app-store-reviews { padding: 0 0 6rem; }
     .app-store-reviews-header { max-width: 650px; margin: 0 auto 2rem; text-align: center; }
+    .app-store-proof-link { display: inline-block; margin-top: 0.9rem; color: #4A6E4E; font-size: 13px; font-weight: 700; }
     .app-store-reviews-grid, .why-different-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .app-store-review, .why-different-card { background: #FCFAF8; border: 1px solid rgba(184,212,187,0.7); border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 20px rgba(44,34,24,0.05); }
     .app-store-review { display: flex; flex-direction: column; }
@@ -451,6 +452,10 @@
     .why-different-header { max-width: 680px; margin: 0 auto 2rem; text-align: center; }
     .why-different-card h3 { margin: 0 0 0.5rem; color: #2C2218; font-family: 'Source Serif 4', Georgia, serif; font-size: 23px; font-weight: 400; line-height: 1.25; }
     .why-different-card p { color: #7A6A5A; font-size: 14px; line-height: 1.65; }
+    .scope-callout { padding: 0 0 5rem; }
+    .scope-callout-card { max-width: 760px; margin: 0 auto; padding: 1.5rem 2rem; text-align: center; background: #EBF3EC; border: 1px solid rgba(74,110,78,0.22); border-radius: 12px; }
+    .scope-callout-card p { margin: 0; color: #5C4A3A; font-size: 15px; line-height: 1.7; }
+    .scope-callout-card a { color: #4A6E4E; font-weight: 700; }
 
     /* ── Problem ── */
     .problem-section {
@@ -1310,7 +1315,8 @@
       .grovio-nav-inner { height: 52px; padding: 0 1.25rem; }
       .grovio-wordmark { font-size: 22px; }
     }
-    @media (max-width: 900px) { .grovio-nav-links { display: none; } }
+    @media (min-width: 761px) { .grovio-nav-burger { display: none; } }
+    @media (max-width: 760px) { .grovio-nav-links { display: none; } }
   </style>
   <script type="module" src="/heycatch.js"></script>
 </head>
@@ -1351,10 +1357,10 @@
       <div class="container">
         <div class="hero-inner">
           <div class="hero-content">
-            <div class="hero-eyebrow">Homeschool attendance &amp; record-keeping app</div>
+            <div class="hero-eyebrow">Your calm homeschool companion</div>
             <span class="hero-wordmark">grovio</span>
-            <h1 class="hero-headline">Homeschool attendance and records that help you <em>trust your day.</em></h1>
-            <p class="hero-sub">grovio is a calm homeschool attendance tracker and record-keeping app for overwhelmed moms who wonder, “Am I doing enough?” Track attendance, save learning from scattered notebooks and your camera roll, find your rhythm, and build confidence one real day at a time.</p>
+            <h1 class="hero-headline">Trust the homeschool <em>you&rsquo;re building.</em></h1>
+            <p class="hero-sub">Plan your rhythm, keep attendance, capture the moments that matter, and feel confident in the learning you&rsquo;re already doing.</p>
             <span class="hero-pace-badge">Five minutes a day. No streaks or guilt-trip notifications.</span>
             <div class="hero-actions" aria-label="Download grovio">
               <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537" class="store-badge-link" aria-label="Download grovio on the App Store">
@@ -1487,13 +1493,13 @@
           <div class="homepage-app-preview-copy">
             <span class="section-label">App features</span>
             <h2 class="section-title">See your homeschool instead of second-guessing it.</h2>
-            <p class="section-body">Swipe through the rhythm, portfolio, attendance, records, and Guide. Each screen gives shape to the learning that can feel invisible in the middle of a real day.</p>
+            <p class="section-body">See the rhythm, portfolio, attendance, and records that make a real homeschool day easier to trust.</p>
             <div class="homepage-callouts">
-              <a href="/features#plan" class="homepage-callout"><strong>Follow your family’s real flow</strong><span>See what is next without over-planning every minute.</span></a>
-              <a href="/features#capture" class="homepage-callout"><strong>Save the proof learning happened</strong><span>Keep the photos and notes that show real progress.</span></a>
-              <a href="/compare" class="homepage-callout"><strong>Share the proof that learning happened</strong><span>Make a shareable card in ten seconds for Instagram or your people. Always free.</span></a>
-              <a href="/features#review" class="homepage-callout"><strong>End Friday knowing it counted</strong><span>Turn your week into an AI-written Wrap-Up with a seasonal share card.</span></a>
-              <a href="/features#records" class="homepage-callout"><strong>Mark the day and move on</strong><span>Attendance, portfolios, and exports stay close when you need them.</span></a>
+              <a href="/features#plan" class="homepage-callout"><strong>Follow your family’s flow</strong><span>See what is next, without planning every minute.</span></a>
+              <a href="/features#capture" class="homepage-callout"><strong>Save what counted</strong><span>Keep the photos and notes that show real learning.</span></a>
+              <a href="/compare" class="homepage-callout"><strong>Share the proof</strong><span>Make a shareable card in ten seconds. Always free.</span></a>
+              <a href="/features#review" class="homepage-callout"><strong>End Friday feeling good</strong><span>Your Wrap-Up helps you see that the week counted.</span></a>
+              <a href="/features#records" class="homepage-callout"><strong>Mark the day and move on</strong><span>Records are ready when an evaluator or state asks.</span></a>
             </div>
             <a href="/features" class="feature-link">See every feature &rarr;</a>
           </div>
@@ -1507,6 +1513,7 @@
         <div class="app-store-reviews-header">
           <span class="section-label section-label--center">From the App Store</span>
           <h2 class="section-title section-title--center" id="app-store-reviews-title">A few words from families using grovio.</h2>
+          <a class="app-store-proof-link" href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537#productRatings">Read all 5 ratings and reviews on the App Store &rarr;</a>
         </div>
         <div class="app-store-reviews-grid">
           <article class="app-store-review"><blockquote>“I love being able to document learning experiences through photos and track events and activities in one place instead of trying to keep up.”</blockquote><footer><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><br>Leigh Skipper · App Store review</footer></article>
@@ -1519,12 +1526,18 @@
     <!-- ── Why grovio ── -->
     <section class="why-different">
       <div class="container">
-        <div class="why-different-header"><span class="section-label section-label--center">Why grovio feels different</span><h2 class="section-title section-title--center">Enough structure to keep records. Not enough to make you feel behind.</h2></div>
+        <div class="why-different-header"><span class="section-label section-label--center">Why grovio feels different</span><h2 class="section-title section-title--center">Enough structure to feel steady. Not enough to make you feel behind.</h2></div>
         <div class="why-different-grid">
-          <article class="why-different-card"><h3>Five minutes, not a whole new system.</h3><p>Mark attendance, glance at your rhythm, and capture a moment when it matters. No streaks to maintain and no guilt when life gets full.</p></article>
-          <article class="why-different-card"><h3>Proof you can actually share.</h3><p>Share a simple card from a learning moment in ten seconds. It is a small way to let family see what your days hold — and it is always free.</p></article>
-          <article class="why-different-card"><h3>A Friday ending that feels good.</h3><p>Your weekly Wrap-Up turns the attendance and moments you saved into an AI-written summary and seasonal share card, so you can see that the week counted.</p></article>
+          <article class="why-different-card"><h3>Five minutes, not a whole new system.</h3><p>Mark attendance, save a moment, and get on with your day. No streaks, no guilt, no scrambling.</p></article>
+          <article class="why-different-card"><h3>Proof you can share.</h3><p>Share a learning moment in ten seconds, so the people who love your family can see what your days hold.</p></article>
+          <article class="why-different-card"><h3>A Friday ending that feels good.</h3><p>Your Wrap-Up reflects the week back to you, so you can see that it counted.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="scope-callout" aria-label="Who grovio is for">
+      <div class="container">
+        <div class="scope-callout-card"><p><strong>Built for homeschool families in low-to-moderate regulation states.</strong> Not sure if that is you? <a href="/guide/homeschool-records-by-state">Check our state guide.</a></p></div>
       </div>
     </section>
 
