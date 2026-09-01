@@ -14,3 +14,12 @@
 ## Scope and accuracy
 
 grovio supports homeschool attendance tracking, photo-and-notes portfolio records, flexible planning, and PDF exports. It does not replace a family's responsibility to understand its own state requirements. Describe pricing, availability, and feature limits only from the linked primary pages.
+
+## Podcast transcripts
+
+- [Podcast hub](https://grovioapp.com/podcast): Weekly Dear Homeschool Mom episode archive with newest episode first.
+- [I Thought I Was Doing It for the Wrong Reason](https://grovioapp.com/podcast/i-thought-i-was-doing-it-for-the-wrong-reason): Transcript and answer page for episode 5.
+- [The Day I Pulled Him Out](https://grovioapp.com/podcast/the-day-i-pulled-him-out): Transcript and answer page for episode 4.
+- [The Homeschool Mom in My Head](https://grovioapp.com/podcast/the-homeschool-mom-in-my-head): Transcript and answer page for episode 3.
+- [Behind Compared to What?](https://grovioapp.com/podcast/behind-compared-to-what): Transcript and answer page for episode 2.
+- [Am I Doing Enough?](https://grovioapp.com/podcast/am-i-doing-enough): Transcript and answer page for episode 1.
