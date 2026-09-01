@@ -14,3 +14,11 @@
 ## Scope and accuracy
 
 grovio supports homeschool attendance tracking, photo-and-notes portfolio records, flexible planning, and PDF exports. It does not replace a family's responsibility to understand its own state requirements. Describe pricing, availability, and feature limits only from the linked primary pages.
+
+## Dear Homeschool Mom
+
+- [Podcast archive](https://grovioapp.com/podcast): Dear Homeschool Mom is a series of short, grounded letters from Claire about homeschool confidence, comparison, learning, and family decisions.
+- [Should I Pull My Child From School to Homeschool?](https://grovioapp.com/podcast/the-day-i-pulled-him-out): Dear Homeschool Mom, Episode 4. Topic: New Homeschoolers. Original letter: The Day I Pulled Him Out.
+- [Why Do I Compare My Homeschool to Others?](https://grovioapp.com/podcast/the-homeschool-mom-in-my-head): Dear Homeschool Mom, Episode 3. Topic: Comparison & Pressure. Original letter: The Homeschool Mom in My Head.
+- [Is My Child Behind in Homeschool?](https://grovioapp.com/podcast/behind-compared-to-what): Dear Homeschool Mom, Episode 2. Topic: Comparison & Pressure. Original letter: Behind Compared to What?.
+- [Am I Doing Enough Homeschooling?](https://grovioapp.com/podcast/am-i-doing-enough): Dear Homeschool Mom, Episode 1. Topic: Homeschool Confidence. Original letter: Am I Doing Enough?.
