@@ -1,10 +1,8 @@
-name: Publish approved Holo Guide articles
+name: Sync approved Holo Guide articles
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/holo-guide/**"
+  schedule:
+    - cron: "17 */2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -26,15 +24,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Build approved Guide articles
+      - name: Sync approved Holo articles
+        run: node scripts/sync-holo-guide-feed.mjs
+      - name: Build Guide pages
         run: node scripts/publish-holo-guide-article.mjs
-      - name: Commit generated Guide pages
+      - name: Commit synced Guide pages
         run: |
-          git add guide sitemap.xml
+          git add .github/holo-guide guide sitemap.xml
           if git diff --cached --quiet; then
             exit 0
           fi
           git config user.name "grovio publishing"
           git config user.email "actions@github.com"
-          git commit -m "Publish approved Holo Guide article"
+          git commit -m "Sync approved Holo Guide articles"
           git push
