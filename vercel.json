@@ -9,6 +9,7 @@
   ],
   "rewrites": [
     { "source": "/guide", "destination": "/guide/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/support", "destination": "/support.html" },
     { "source": "/faq", "destination": "/faq.html" },
