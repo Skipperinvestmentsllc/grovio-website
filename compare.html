@@ -74,7 +74,7 @@
       {"@type": "Question", "name": "Which homeschool app is best for portfolios?", "acceptedAnswer": {"@type": "Answer", "text": "grovio and Homeschool Moment both focus on portfolio documentation, but they work differently. Moment uses AI to generate captions from your photos. grovio has you write a short description yourself. Both approaches work. The question is whether you want the app to tell your story or whether you want to tell it."}},
       {"@type": "Question", "name": "Do I need a homeschool tracking app?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your state. Some states require attendance records and periodic evaluations. Others just ask for a letter of intent. If your state asks for documentation, a tracking app saves you from the end-of-year scramble. Even in relaxed states, having a record helps you see patterns in your own year that you'd otherwise miss."}},
       {"@type": "Question", "name": "What's the difference between a homeschool planner and a homeschool tracker?", "acceptedAnswer": {"@type": "Answer", "text": "A planner looks forward (what are we doing this week). A tracker looks backward (what did we do). Some apps do both. grovio does both through a rhythm-based planner (with room for one-off items like a Friday math test) and a portfolio that fills in as the year happens. Tracker and Panda also cover both sides, with grading and curriculum integration that grovio doesn't have."}},
-      {"@type": "Question", "name": "Is grovio free?", "acceptedAnswer": {"@type": "Answer", "text": "grovio has a generous free tier: 15 portfolio moments, daily attendance tracking, 3 planner series, shareable cards, and all 25 Guide articles. Premium adds unlimited moments, weekly Wrap-Ups, and cloud backup. You get 14 days of Premium automatically when you set up. No credit card needed."}},
+      {"@type": "Question", "name": "Is grovio free?", "acceptedAnswer": {"@type": "Answer", "text": "grovio has a generous free tier: 15 portfolio moments, daily attendance tracking, 3 planner series, shareable cards, and the free grovio Guide on the web. Premium adds unlimited moments, weekly Wrap-Ups, and cloud backup. You get 14 days of Premium automatically when you set up. No credit card needed."}},
       {"@type": "Question", "name": "Which homeschool app is best for state compliance?", "acceptedAnswer": {"@type": "Answer", "text": "Homeschool Tracker has the deepest homeschool compliance toolset (transcripts, report cards, detailed logs). grovio handles attendance tracking and PDF export, which covers what most states actually require. If you're in a heavily regulated state, check your specific requirements before choosing."}}
     ]
   }
@@ -210,6 +210,8 @@
       right: 0;
       width: min(320px, 86vw);
       height: 100dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       background: #FDFBF5;
       box-shadow: -8px 0 32px rgba(44,34,24,0.18);
       transform: translateX(100%);
@@ -632,11 +634,16 @@
 </header>
 <div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
 <nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true">
+  <a href="/" class="grovio-nav-panel-link">Home</a>
+  <a href="/features" class="grovio-nav-panel-link">Features</a>
+  <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
+  <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
   <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
   <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
   <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
   <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
   <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
+  <a href="/support" class="grovio-nav-panel-link">Support</a>
   <p class="grovio-nav-panel-tagline">Grow simply. Homeschool confidently.</p>
 </nav>
 
@@ -730,7 +737,7 @@
 
     <p>Complexity is not a feature. It's a cost. And for a lot of families, that cost is higher than the benefit. I've watched it happen in my co-op. Someone recommends the "most complete" app. Everyone downloads it. By October, two people are still using it and the rest feel guilty about quitting.</p>
 
-    <p>grovio is five minutes a day. Mark attendance, glance at your rhythm, maybe capture a moment if something good happened. That's it. There is no dashboard with twelve widgets. No notification telling you that you haven't logged science this week. No onboarding tutorial that takes an hour. And the free tier is genuinely usable: 15 portfolio moments, daily attendance, 3 planner series, shareable cards, and every Guide article. Premium is $79.99 a year if you want everything, which is less than most curriculum workbooks and a fraction of what some of these apps charge.</p>
+    <p>grovio is five minutes a day. Mark attendance, glance at your rhythm, maybe capture a moment if something good happened. That's it. There is no dashboard with twelve widgets. No notification telling you that you haven't logged science this week. No onboarding tutorial that takes an hour. And the free tier is genuinely usable: 15 portfolio moments, daily attendance, 3 planner series, shareable cards, and the free grovio Guide on the web. Premium is $79.99 a year if you want everything, which is less than most curriculum workbooks and a fraction of what some of these apps charge.</p>
 
     <p><a href="https://homeschoolmoment.com" rel="nofollow">Homeschool Moment</a> is also genuinely simple. Take a photo, done. If you don't need attendance or a planner and just want to document, Moment is easy to stick with.</p>
 
@@ -905,7 +912,7 @@
 
     <p>grovio doesn't use AI to write your portfolio entries. If you want to take a photo and have the app describe what happened, Homeschool Moment does that well. grovio asks you to write the line yourself. Some people want that. Some don't.</p>
 
-    <p>grovio doesn't have a community feature. If connecting with other homeschool families inside the app matters to you, Panda offers that.</p>
+    <p>Community Hub, an optional private space for homeschool groups, is coming soon to grovio. Until it launches, families who need an in-app community today may prefer Panda.</p>
 
     <h2>When grovio is exactly what you need</h2>
 
@@ -934,7 +941,7 @@
     <p>A planner looks forward (what are we doing this week). A tracker looks backward (what did we do). Some apps do both. grovio does both through a rhythm-based planner (with room for one-off items like a Friday math test) and a portfolio that fills in as the year happens. Tracker and Panda also cover both sides, with grading and curriculum integration that grovio doesn't have.</p>
 
     <p class="faq-q">Is grovio free?</p>
-    <p>grovio has a generous free tier: 15 portfolio moments, daily attendance tracking, 3 planner series, shareable cards, and all 25 Guide articles. Premium adds unlimited moments, weekly Wrap-Ups, and cloud backup. You get 14 days of Premium automatically when you set up. No credit card needed.</p>
+    <p>grovio has a generous free tier: 15 portfolio moments, daily attendance tracking, 3 planner series, shareable cards, and the free grovio Guide on the web. Premium adds unlimited moments, weekly Wrap-Ups, and cloud backup. You get 14 days of Premium automatically when you set up. No credit card needed.</p>
 
     <p class="faq-q">Which homeschool app is best for state compliance?</p>
     <p>Homeschool Tracker has the deepest homeschool compliance toolset (transcripts, report cards, detailed logs). grovio handles attendance tracking and PDF export, which covers what most states actually require. If you're in a heavily regulated state, check your specific requirements before choosing.</p>

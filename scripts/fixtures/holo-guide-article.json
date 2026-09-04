@@ -1,0 +1,17 @@
+{
+  "source": "holo",
+  "receivedAt": "2026-09-04T19:00:00.000Z",
+  "article": {
+    "id": "fixture-article-id",
+    "slug": "a-calm-way-to-keep-homeschool-records",
+    "title": "A Calm Way to Keep Homeschool Records",
+    "excerpt": "A short, practical place to begin when records feel heavier than they need to.",
+    "contentHtml": "<h1>A Calm Way to Keep Homeschool Records</h1><p>Start with the proof you already have, then keep only what helps your family see the learning that happened.</p><h2>Begin with one calm place</h2><p>You do not need a perfect system before you begin. You need one place you can return to.</p>",
+    "metaTitle": "A Calm Way to Keep Homeschool Records",
+    "metaDescription": "A simple, steady way to keep homeschool records without trying to recreate school at home.",
+    "featuredImage": null,
+    "images": [],
+    "publishedAt": "2026-09-04T19:00:00.000Z",
+    "isRepublish": false
+  }
+}

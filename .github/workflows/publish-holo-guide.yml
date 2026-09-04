@@ -1,0 +1,40 @@
+name: Publish approved Holo Guide articles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/holo-guide/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: holo-guide-publishing-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Build approved Guide articles
+        run: node scripts/publish-holo-guide-article.mjs
+      - name: Commit generated Guide pages
+        run: |
+          git add guide sitemap.xml
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "grovio publishing"
+          git config user.email "actions@github.com"
+          git commit -m "Publish approved Holo Guide article"
+          git push

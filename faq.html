@@ -71,8 +71,8 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type": "Question", "name": "What is grovio, exactly?", "acceptedAnswer": {"@type": "Answer", "text": "grovio is a homeschool companion app for iPhone and Android. It helps you plan with a Schedule or Rhythm, track attendance, build a learning portfolio, and access practical articles through The grovio Guide. It's designed for homeschool parents who want a simple, warm tool — not another complicated system to manage."}},
-      {"@type": "Question", "name": "Is grovio free?", "acceptedAnswer": {"@type": "Answer", "text": "grovio is free to download — no credit card required. When you finish setup, you'll automatically get 14 days of full Premium access so you can try everything. After that, you can subscribe to keep Premium, or continue on the free tier with attendance, the Guide, and up to 15 portfolio moments. Paid plans are $9.99/month or $79.99/year."}},
+      {"@type": "Question", "name": "What is grovio, exactly?", "acceptedAnswer": {"@type": "Answer", "text": "grovio is a homeschool companion app for iPhone and Android. It helps you plan with a Schedule or Rhythm, track attendance, and build a learning portfolio. The grovio Guide is a free web library of practical articles from Claire. Community Hub, an optional private space for homeschool groups, is coming soon."}},
+      {"@type": "Question", "name": "Is grovio free?", "acceptedAnswer": {"@type": "Answer", "text": "grovio is free to download — no credit card required. When you finish setup, you'll automatically get 14 days of full Premium access so you can try everything. After that, you can subscribe to keep Premium, or continue on the free tier with attendance, up to 15 portfolio moments, and simple Schedule or Rhythm planning. The grovio Guide is always free to read on the web. Paid plans are $9.99/month or $79.99/year."}},
       {"@type": "Question", "name": "Do I need to create an account?", "acceptedAnswer": {"@type": "Answer", "text": "You don't. You can use grovio without an account and your data stays on your device. When you start a Premium subscription (including during your 14-day trial), you'll sign in with your Apple ID on iOS or Google account on Android so your data can sync to the cloud — that's what lets you switch devices, reinstall, or take a phone break without losing anything."}},
       {"@type": "Question", "name": "How do I create an account?", "acceptedAnswer": {"@type": "Answer", "text": "Open Settings and tap Sign in. On iOS, grovio uses Sign in with Apple; on Android, grovio uses Sign in with Google. No password to remember, no verification codes, no email forms — one tap and you're in."}},
       {"@type": "Question", "name": "What states is grovio best for?", "acceptedAnswer": {"@type": "Answer", "text": "grovio is built for families in states with low to moderate homeschool regulation — places where your main obligations are keeping attendance records, maintaining basic documentation, and having evidence of your child's learning. That covers roughly 35 states."}},
@@ -81,7 +81,8 @@
       {"@type": "Question", "name": "What is the Ideas queue?", "acceptedAnswer": {"@type": "Answer", "text": "The Ideas queue is a holding pen for activities you're thinking about but aren't ready to plan yet. Drop it in the queue so you don't forget it, then promote it to your Schedule or Rhythm when you're ready. The free tier includes up to 10 ideas."}},
       {"@type": "Question", "name": "What is the portfolio for?", "acceptedAnswer": {"@type": "Answer", "text": "The portfolio is a place to capture and save evidence of your child's learning — photos of projects, notes about breakthroughs, descriptions of activities, field trip memories. Think of it as a keepsake, not an audit."}},
       {"@type": "Question", "name": "What is the Friday Wrap-Up?", "acceptedAnswer": {"@type": "Answer", "text": "On Fridays, if you've been logging attendance and capturing portfolio moments, grovio's Friday Wrap-Up generates a short AI-written summary of your family's week and a beautifully designed share card with a seasonal emblem. You can save it, edit it, share it to Instagram or save it to your photos, and the Wrap-Up gets added to your portfolio as a weekly keepsake. The free tier includes one Friday Wrap-Up so you can see how it works; Premium unlocks weekly Wrap-Ups all year."}},
-      {"@type": "Question", "name": "Is the Guide included for free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — always. The grovio Guide is free for everyone, whether or not you have an account. You can also read all Guide articles on the web at grovioapp.com/guide without downloading the app."}},
+      {"@type": "Question", "name": "Where can I read The grovio Guide?", "acceptedAnswer": {"@type": "Answer", "text": "The grovio Guide is free for everyone at grovioapp.com/guide. You do not need to download the app or create an account to read it."}},
+      {"@type": "Question", "name": "What is Community Hub?", "acceptedAnswer": {"@type": "Answer", "text": "Community Hub is coming soon. It will be an optional, private place for homeschool co-ops, groups, and local communities to share updates, events, and conversation. It will be separate from your personal homeschool records."}},
       {"@type": "Question", "name": "Can I delete my account and all my data?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Open Settings, scroll to the bottom, tap Delete Account, and confirm in the sheet that appears — your account and all data are permanently deleted immediately. If you can't access the app, email hello@grovioapp.com and we'll process the deletion within 30 days."}},
       {"@type": "Question", "name": "What's the free trial and how does it work?", "acceptedAnswer": {"@type": "Answer", "text": "When you finish setting up your homeschool, you automatically get 14 days of full Premium access — no card, no commitment. Around day 12 you'll see a gentle reminder that the trial is wrapping up so you can decide whether to subscribe before it ends. If you'd like to keep Premium features (unlimited portfolio moments, cloud backup, attendance export, weekly Wrap-Ups), you can subscribe any time. If you stay on the free tier, everything you've added is still yours — your local data isn't touched."}},
       {"@type": "Question", "name": "I subscribed but I'm on a new device or reinstalled. How do I get my Premium back?", "acceptedAnswer": {"@type": "Answer", "text": "Open Settings and tap 'Restore purchases' — your Apple ID on iOS or Google account on Android will reconnect the subscription tied to that store account. If you're brand new to grovio on this device, tap 'Already have an account? Sign in' on the welcome screen and we'll restore everything automatically."}},
@@ -222,6 +223,8 @@
       right: 0;
       width: min(320px, 86vw);
       height: 100dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       background: #FDFBF5;
       box-shadow: -8px 0 32px rgba(44,34,24,0.18);
       transform: translateX(100%);
@@ -345,11 +348,16 @@
 </header>
 <div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
 <nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true">
+  <a href="/" class="grovio-nav-panel-link">Home</a>
+  <a href="/features" class="grovio-nav-panel-link">Features</a>
+  <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
+  <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
   <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
   <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
   <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
   <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
   <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
+  <a href="/support" class="grovio-nav-panel-link">Support</a>
   <p class="grovio-nav-panel-tagline">Grow simply. Homeschool confidently.</p>
 </nav>
 
@@ -367,6 +375,7 @@
       <a href="#daily-rhythm" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Daily Rhythm &amp; Planner</a>
       <a href="#portfolio" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Portfolio</a>
       <a href="#guide" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">The grovio Guide</a>
+      <a href="#community" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Community Hub</a>
       <a href="#features-settings" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Features &amp; Settings</a>
       <a href="#account-privacy" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Account &amp; Privacy</a>
       <a href="#troubleshooting" style="font-size:12px;color:#4A6E4E;text-decoration:none;padding:6px 14px;border-radius:100px;border:1.5px solid #B8D4BB;">Troubleshooting</a>
@@ -378,12 +387,13 @@
 
       <div style="margin-bottom:28px;">
         <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What is grovio, exactly?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">grovio is a homeschool companion app for iPhone and Android. It helps you plan with a Schedule or Rhythm, track attendance, build a learning portfolio, and access practical articles through The grovio Guide. It's designed for homeschool parents who want a simple, warm tool — not another complicated system to manage.</p>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">grovio is a homeschool companion app for iPhone and Android. It helps you plan with a Schedule or Rhythm, track attendance, and build a learning portfolio. The grovio Guide is a free web library of practical articles from Claire. Community Hub, an optional private space for homeschool groups, is coming soon.</p>
       </div>
 
       <div style="margin-bottom:28px;">
         <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Is grovio free?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">grovio is free to download — no credit card required. When you finish setup, you'll automatically get 14 days of full Premium access so you can try everything. After that, you can subscribe to keep Premium, or continue on the free tier with attendance, the Guide, and up to 15 portfolio moments.</p>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">grovio is free to download — no credit card required. When you finish setup, you'll automatically get 14 days of full Premium access so you can try everything. After that, you can subscribe to keep Premium, or continue on the free tier with attendance, up to 15 portfolio moments, and a simple rhythm for your family.</p>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:8px 0 0;">The grovio Guide is always free to read on the web. Community Hub is coming soon and will be optional.</p>
         <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:8px 0 0;">Premium unlocks unlimited portfolio moments, unlimited planner entries, weekly Friday Wrap-Ups, exportable attendance records, shareable portfolio links, and cloud sync across your devices. Paid plans are $9.99/month or $79.99/year.</p>
       </div>
 
@@ -576,17 +586,32 @@
 
       <div style="margin-bottom:28px;">
         <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What is The grovio Guide?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">The grovio Guide is a library of 25 practical articles written for homeschool parents — especially those who are newer to homeschooling or looking for reassurance that they're on the right track. Articles cover getting started, compliance and record-keeping, building a daily rhythm, learning approaches, and navigating resistance. They're written by Claire, grovio's guide voice, in a warm and grounded tone.</p>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">The grovio Guide is a free web library of practical articles written for homeschool parents — especially those looking for reassurance that they're on the right track. Articles cover getting started, compliance and record-keeping, building a daily rhythm, learning approaches, and navigating resistance. They're written by Claire, grovio's guide voice, in a warm and grounded tone.</p>
       </div>
 
       <div style="margin-bottom:28px;">
-        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Is the Guide included for free?</h3>
-        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Yes — always. The grovio Guide is free for everyone, whether or not you have an account. You can also read all Guide articles on the web at <a href="/guide/" style="color:#4A6E4E;">grovioapp.com/guide</a> without downloading the app. We believe Claire's knowledge should be shared freely, and we have no plans to put the Guide behind a paywall.</p>
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Where can I read The grovio Guide?</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">The grovio Guide is free for everyone at <a href="/guide/" style="color:#4A6E4E;">grovioapp.com/guide</a>. You do not need to download the app or create an account to read it. We believe Claire's knowledge should be shared freely, and we have no plans to put the Guide behind a paywall.</p>
       </div>
 
       <div style="margin-bottom:28px;">
         <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Does The grovio Guide give legal advice about my state?</h3>
         <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">No. The Guide offers general information and practical tips about compliance and record-keeping, but it does not replace legal advice specific to your state or situation. Articles covering compliance topics include a disclaimer to that effect. For legal questions, please consult your state's Department of Education or a qualified professional.</p>
+      </div>
+    </div>
+
+    <!-- ══ COMMUNITY HUB ══ -->
+    <div id="community" style="margin-bottom:56px;">
+      <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#4A6E4E;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #EBF3EC;">Community Hub <span style="font-size:10px;color:#8C7A6A;letter-spacing:0;">Coming soon</span></h2>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">What is Community Hub?</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">Community Hub is coming soon. It will be an optional, private place for homeschool co-ops, groups, and local communities to share updates, events, and conversation.</p>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <h3 style="font-family:'Source Serif 4',Georgia,serif;font-size:17px;font-weight:600;color:#2C2218;margin-bottom:8px;line-height:1.35;">Will Community Hub share my family's records?</h3>
+        <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B6458;line-height:1.7;margin:0;">No. Your attendance, planner, learner details, and private portfolio records will stay in your personal grovio space. Community Hub membership and group posts will be separate. A portfolio link only shows the specific content you choose to share.</p>
       </div>
     </div>
 

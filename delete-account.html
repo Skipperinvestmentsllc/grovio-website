@@ -197,6 +197,8 @@
       right: 0;
       width: min(320px, 86vw);
       height: 100dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
       background: #FDFBF5;
       box-shadow: -8px 0 32px rgba(44,34,24,0.18);
       transform: translateX(100%);
@@ -397,11 +399,16 @@
 </header>
 <div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
 <nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true">
+  <a href="/" class="grovio-nav-panel-link">Home</a>
+  <a href="/features" class="grovio-nav-panel-link">Features</a>
+  <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
+  <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
   <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
   <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
   <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
   <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
   <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
+  <a href="/support" class="grovio-nav-panel-link">Support</a>
   <p class="grovio-nav-panel-tagline">Grow simply. Homeschool confidently.</p>
 </nav>
 
