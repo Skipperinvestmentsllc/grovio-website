@@ -6,6 +6,16 @@ export type MarketingOAuthState = {
   nonce: string;
 };
 
+export type MarketingChannelProvider = "tiktok" | "x" | "reddit";
+
+export type MarketingChannelOAuthConfig = {
+  provider: MarketingChannelProvider;
+  clientId: string;
+  clientSecret: string;
+  redirectUri: string;
+  returnUrl: string;
+};
+
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
@@ -83,6 +93,41 @@ export async function encryptMarketingCredential(value: string) {
   const key = await crypto.subtle.importKey("raw", encryptionKey(), { name: "AES-GCM" }, false, ["encrypt"]);
   const ciphertext = new Uint8Array(await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, encoder.encode(value)));
   return `v1.${base64Url(iv)}.${base64Url(ciphertext)}`;
+}
+
+export async function decryptMarketingCredential(value: string) {
+  const [version, encodedIv, encodedCiphertext, ...extra] = value.split(".");
+  if (version !== "v1" || !encodedIv || !encodedCiphertext || extra.length) throw new Error("Invalid encrypted marketing credential.");
+  const plaintext = await crypto.subtle.decrypt(
+    { name: "AES-GCM", iv: fromBase64Url(encodedIv) },
+    await crypto.subtle.importKey("raw", encryptionKey(), { name: "AES-GCM" }, false, ["decrypt"]),
+    fromBase64Url(encodedCiphertext),
+  );
+  return decoder.decode(plaintext);
+}
+
+function shortSecret(name: string, minimumLength = 8) {
+  const value = Deno.env.get(name)?.trim() || "";
+  if (value.length < minimumLength) throw new Error(`Missing ${name}.`);
+  return value;
+}
+
+function httpsUrl(name: string) {
+  const value = shortSecret(name, 20);
+  const url = new URL(value);
+  if (url.protocol !== "https:") throw new Error(`${name} must use HTTPS.`);
+  return url.toString();
+}
+
+export function marketingChannelOAuthConfig(provider: MarketingChannelProvider): MarketingChannelOAuthConfig {
+  const values = provider === "tiktok"
+    ? { clientId: shortSecret("TIKTOK_CLIENT_KEY"), clientSecret: shortSecret("TIKTOK_CLIENT_SECRET", 16), redirectUri: httpsUrl("TIKTOK_REDIRECT_URI") }
+    : provider === "x"
+    ? { clientId: shortSecret("X_CLIENT_ID"), clientSecret: shortSecret("X_CLIENT_SECRET", 16), redirectUri: httpsUrl("X_REDIRECT_URI") }
+    : { clientId: shortSecret("REDDIT_CLIENT_ID"), clientSecret: shortSecret("REDDIT_CLIENT_SECRET", 8), redirectUri: httpsUrl("REDDIT_REDIRECT_URI") };
+  const returnUrl = Deno.env.get("MARKETING_OAUTH_RETURN_URL")?.trim() || "";
+  if (returnUrl) new URL(returnUrl);
+  return { provider, ...values, returnUrl };
 }
 
 export function marketingMetaConfig() {

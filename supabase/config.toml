@@ -13,3 +13,10 @@ entrypoint = "./functions/marketing-admin/index.ts"
 enabled = true
 verify_jwt = false
 entrypoint = "./functions/marketing-meta-oauth/index.ts"
+
+# TikTok, X, and Reddit use a short-lived state stored server-side. Their
+# callback cannot have Supabase's JWT gate because the platform calls it.
+[functions.marketing-channel-oauth]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/marketing-channel-oauth/index.ts"
