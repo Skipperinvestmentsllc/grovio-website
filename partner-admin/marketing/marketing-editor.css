@@ -1,0 +1,18 @@
+.calendar-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.calendar-day { min-height: 168px; }
+.calendar-day > b { display: flex; justify-content: space-between; align-items: center; }
+.calendar-day > b small { color: #7a756c; font-weight: 600; }
+.calendar-day button:not(.add-slot) { display: grid; gap: 4px; text-align: left; width: 100%; margin-top: 8px; padding: 10px; border: 1px solid #d9d4ca; border-radius: 10px; background: #fff; color: #2c2218; font: inherit; }
+.calendar-day button:not(.add-slot):hover { border-color: #4a6e4e; }
+.calendar-day button span { color: #4a6e4e; font-size: 12px; font-weight: 700; }
+.calendar-day button strong { font-size: 12px; }
+.editor-form { border-top: 1px solid #e6e1d8; margin-top: 22px; padding-top: 22px; }
+.editor-form fieldset { border: 1px solid #ded8ce; border-radius: 12px; padding: 12px 14px; }
+.editor-form legend { color: #4a6e4e; font-weight: 800; padding: 0 6px; }
+.editor-form fieldset label + label { margin-top: 12px; }
+.editor-body { min-height: 260px; }
+.editor-check { margin-top: 4px; }
+.form-note { color: #726b61; font-size: 13px; line-height: 1.5; margin: 0; }
+.btn.danger { background: #8e3434; border-color: #8e3434; color: #fff; }
+.btn.danger:hover { background: #732727; border-color: #732727; }
+@media (max-width: 760px) { .calendar-controls { width: 100%; } .calendar-controls .btn { flex: 1 1 auto; } }

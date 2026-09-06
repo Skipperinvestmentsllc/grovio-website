@@ -1,0 +1,15 @@
+project_id = "trqqcvevrfuijjxsqqlt"
+
+# Called only by the signed-in Grovio owner account.
+[functions.marketing-admin]
+enabled = true
+verify_jwt = true
+import_map = "./functions/marketing-admin/deno.json"
+entrypoint = "./functions/marketing-admin/index.ts"
+
+# Instagram returns here with an HMAC-signed, time-limited OAuth state. It
+# cannot use Supabase's JWT gate because Instagram is the caller.
+[functions.marketing-meta-oauth]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/marketing-meta-oauth/index.ts"
