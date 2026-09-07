@@ -35,6 +35,7 @@
     { "source": "/podcast/:slug", "destination": "/podcast/:slug.html" },
     { "source": "/get", "destination": "/get.html" },
     { "source": "/start", "destination": "/start.html" },
+    { "source": "/creator-program", "destination": "/creator-program.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
