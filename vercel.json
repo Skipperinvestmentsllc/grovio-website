@@ -37,8 +37,6 @@
     { "source": "/start", "destination": "/start.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/admin", "destination": "/admin/index.html" },
-    { "source": "/admin/influencers", "destination": "/partner-admin/index.html" },
-    { "source": "/admin/marketing", "destination": "/partner-admin/marketing/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/share/:token", "destination": "/share" },
     { "source": "/p/:slug", "destination": "/p/:slug.html" }
