@@ -10,6 +10,16 @@
       "source": "/:l([a-z0-9])",
       "destination": "/?utm_source=heycatch&utm_campaign=:l",
       "permanent": false
+    },
+    {
+      "source": "/partner-admin/marketing",
+      "destination": "/admin/marketing",
+      "permanent": true
+    },
+    {
+      "source": "/partner-admin",
+      "destination": "/admin/influencers",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -26,8 +36,9 @@
     { "source": "/get", "destination": "/get.html" },
     { "source": "/start", "destination": "/start.html" },
     { "source": "/links", "destination": "/links/index.html" },
-    { "source": "/partner-admin/marketing", "destination": "/partner-admin/marketing/index.html" },
-    { "source": "/partner-admin", "destination": "/partner-admin/index.html" },
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/influencers", "destination": "/partner-admin/index.html" },
+    { "source": "/admin/marketing", "destination": "/partner-admin/marketing/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/share/:token", "destination": "/share" },
     { "source": "/p/:slug", "destination": "/p/:slug.html" }
@@ -40,7 +51,7 @@
       ]
     },
     {
-      "source": "/partner-admin/(.*)",
+      "source": "/admin/(.*)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]
