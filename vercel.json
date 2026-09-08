@@ -7,11 +7,6 @@
       "permanent": true
     },
     {
-      "source": "/:l([a-z0-9])",
-      "destination": "/?utm_source=heycatch&utm_campaign=:l",
-      "permanent": false
-    },
-    {
       "source": "/partner-admin/marketing",
       "destination": "/admin/marketing",
       "permanent": true

@@ -13,7 +13,6 @@ const SHOW_TITLE = "Dear Homeschool Mom: Grow Simply with Claire";
 const SHOW_DESCRIPTION = "Honest weekly letters for the homeschool mom who needs reassurance, perspective, and a calmer way to trust what she is building.";
 const AUTHOR_NAME = "Claire from grovio";
 const AUTHOR_URL = `${SITE}/about/claire`;
-const HEYCATCH = '  <script type="module" src="/heycatch.js"></script>';
 const PLATFORM_LINKS = [
   ["Spotify", "Listen on Spotify", "https://podcasters.spotify.com/pod/show/claire-from-grovio7"],
   ["Apple Podcasts", "Listen on Apple Podcasts", "https://podcasts.apple.com/us/podcast/dear-homeschool-mom-grow-simply-with-claire/id6797835426"],
@@ -386,7 +385,6 @@ const renderPodcastHome = (episodes) => {
   </script>
   ${sharedStyles}
   ${podcastCss}
-  ${HEYCATCH}
 </head>
 <body>
   ${nav}
@@ -481,7 +479,6 @@ const renderTranscriptPage = (episode, episodesBySlug) => {
   </script>
   ${sharedStyles}
   ${transcriptCss}
-  ${HEYCATCH}
 </head>
 <body>
   ${nav}
