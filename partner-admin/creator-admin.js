@@ -11,7 +11,9 @@ function referralLink(partner) {
   const referralCode = partner.followerCode?.code || '';
   if (!referralCode) return '';
   const link = new URL('https://grovio.onelink.me/7Juf/');
-  link.searchParams.set('deep_link_value', 'trial_extension');
+  link.searchParams.set('pid', 'influencer');
+  link.searchParams.set('c', partner.slug || 'creator');
+  link.searchParams.set('deep_link_value', 'promo');
   link.searchParams.set('deep_link_sub1', referralCode);
   link.searchParams.set('af_dp', `com.grovioapp.app:///redeem/${encodeURIComponent(referralCode)}`);
   link.searchParams.set('af_force_deeplink', 'true');
