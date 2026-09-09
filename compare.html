@@ -73,9 +73,9 @@
     "mainEntity": [
       {"@type": "Question", "name": "Which homeschool app is best for portfolios?", "acceptedAnswer": {"@type": "Answer", "text": "grovio and Homeschool Moment both focus on portfolio documentation, but they work differently. Moment uses AI to generate captions from your photos. grovio has you write a short description yourself. Both approaches work. The question is whether you want the app to tell your story or whether you want to tell it."}},
       {"@type": "Question", "name": "Do I need a homeschool tracking app?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your state. Some states require attendance records and periodic evaluations. Others just ask for a letter of intent. If your state asks for documentation, a tracking app saves you from the end-of-year scramble. Even in relaxed states, having a record helps you see patterns in your own year that you'd otherwise miss."}},
-      {"@type": "Question", "name": "What's the difference between a homeschool planner and a homeschool tracker?", "acceptedAnswer": {"@type": "Answer", "text": "A planner looks forward (what are we doing this week). A tracker looks backward (what did we do). Some apps do both. grovio does both through a rhythm-based planner (with room for one-off items like a Friday math test) and a portfolio that fills in as the year happens. Tracker and Panda also cover both sides, with grading and curriculum integration that grovio doesn't have."}},
-      {"@type": "Question", "name": "Is grovio free?", "acceptedAnswer": {"@type": "Answer", "text": "grovio has a generous free tier: 15 portfolio moments, daily attendance tracking, 3 planner series, shareable cards, and the free grovio Guide on the web. Premium adds unlimited moments, weekly Wrap-Ups, and cloud backup. You get 14 days of Premium automatically when you set up. No credit card needed."}},
-      {"@type": "Question", "name": "Which homeschool app is best for state compliance?", "acceptedAnswer": {"@type": "Answer", "text": "Homeschool Tracker has the deepest homeschool compliance toolset (transcripts, report cards, detailed logs). grovio handles attendance tracking and PDF export, which covers what most states actually require. If you're in a heavily regulated state, check your specific requirements before choosing."}}
+      {"@type": "Question", "name": "What's the difference between a homeschool planner and a homeschool tracker?", "acceptedAnswer": {"@type": "Answer", "text": "A planner looks forward (what are we doing this week). A tracker looks backward (what did we do). Some apps do both. grovio combines a flexible rhythm or schedule with recurring activities, specific days, and a portfolio that fills in as the year happens. Tracker and Panda also cover both sides, with grading and curriculum integration that grovio doesn't have."}},
+      {"@type": "Question", "name": "Is grovio free?", "acceptedAnswer": {"@type": "Answer", "text": "grovio has a generous free tier: 15 portfolio moments, daily attendance tracking, 3 planner series, individual-moment share cards, and the free grovio Guide on the web. Premium adds unlimited moments, weekly Wrap-Ups, cloud backup, and exports. You get 14 days of Premium automatically when you set up. No credit card needed."}},
+      {"@type": "Question", "name": "Which homeschool app is best for state compliance?", "acceptedAnswer": {"@type": "Answer", "text": "Homeschool Tracker offers transcripts, report cards, and detailed logs for families who need that depth. grovio handles attendance tracking and Premium PDF exports, which can support common attendance-record needs. State and local requirements vary, so check your specific situation before choosing."}}
     ]
   }
   </script>
@@ -455,6 +455,62 @@
       color: #2C2218;
     }
 
+    .source-note {
+      font-size: 12.5px !important;
+      line-height: 1.65 !important;
+      color: #7A6A5A !important;
+      margin: -0.25rem 0 1.5rem !important;
+    }
+
+    .pain-context { display: none; }
+
+    .feature-notes {
+      margin: 2.5rem 0 3rem;
+      border-top: 1px solid #E8E2D5;
+      border-bottom: 1px solid #E8E2D5;
+    }
+
+    .feature-notes summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.15rem 0;
+      color: #4A6E4E;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .feature-notes summary::-webkit-details-marker { display: none; }
+    .feature-notes summary::after {
+      content: '+';
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(74,110,78,0.3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .feature-notes[open] summary::after { content: '−'; }
+
+    .feature-notes-intro {
+      max-width: 680px;
+      font-size: 14px !important;
+      line-height: 1.65 !important;
+      color: #7A6A5A !important;
+      margin: 0 0 0.5rem !important;
+    }
+
     .table-label {
       font-family: 'Inter', sans-serif;
       font-size: 13px;
@@ -615,6 +671,50 @@
       .compare-table .grovio-col {
         background: rgba(74,110,78,0.08);
       }
+      .compare-table--pain tr {
+        margin-bottom: 1.15rem;
+        border-radius: 16px;
+      }
+      .compare-table--pain td:first-child {
+        background: #FDFBF5;
+        border-bottom: 0;
+        padding: 19px 17px 10px;
+        font-family: 'Source Serif 4', Georgia, serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+      .compare-table--pain td:not(:first-child) {
+        display: grid;
+        grid-template-columns: 104px minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+        padding: 12px 17px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .compare-table--pain td:not(:first-child)::before {
+        margin: 1px 0 0;
+        color: #4A6E4E;
+        font-size: 10px;
+        line-height: 1.35;
+      }
+      .compare-table--pain .grovio-col {
+        border-left: 3px solid #7A9E7E;
+        padding-left: 14px;
+      }
+      .pain-context {
+        display: block;
+        margin-top: 5px;
+        color: #7A6A5A;
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.55;
+      }
+      .feature-notes { margin: 2rem 0 2.5rem; }
+      .feature-notes summary { font-size: 19px; padding: 1rem 0; }
+      .feature-notes .table-wrap { margin-top: 1rem; }
       .cta-card { padding: 28px 20px; }
     }
   </style>
@@ -672,9 +772,9 @@
 
     <p><a href="https://www.homeschooltracker.com" rel="nofollow">Homeschool Tracker</a> answers it with data. Assignments logged. Grades recorded. Hours tracked. If you need a spreadsheet-level accounting of every subject and every hour, Tracker has been doing this for over twenty years and nobody does it more thoroughly.</p>
 
-    <p>grovio answers it on Friday. The Friday Wrap-Up pulls together everything from your week: the attendance days you marked, the rhythm items you checked off, the portfolio moments you captured. It lays it all out in one warm summary that's yours, not generated by a machine. Every time I read mine, I think "oh, we actually did a lot this week." That's the answer I needed. Not more data. Not an AI telling me what I did. Just my own week, reflected back in a way that lets me see it clearly.</p>
+    <p>grovio answers it in layers. As the week happens, you can see the attendance you marked, the planner activities you checked off, the subjects accumulating, and the portfolio moments you saved. On Friday, the Wrap-Up turns that evidence into a short, editable AI-written summary of your week. Every time I read mine, I think "oh, we actually did a lot this week." That's the answer I needed: not more dashboards, but a calm way to see the week clearly.</p>
 
-    <p>If the AI documentation approach sounds like relief to you, Homeschool Moment is doing it well. If you need formal grade-level tracking, that's Tracker's territory. If you just want to end Friday feeling like the week actually counted, that's where grovio lives. And that feeling on Friday? Nobody else does it. I've looked.</p>
+    <p>If the AI documentation approach sounds like relief to you, Homeschool Moment is doing it well. If you need formal grade-level tracking, that's Tracker's territory. If you want to see the attendance, completed subjects, portfolio evidence, and Friday reflection accumulate into a clearer picture of your week, that's where grovio fits.</p>
 
     <h2>"The records are a mess"</h2>
 
@@ -682,15 +782,15 @@
 
     <p>I hear this one in my co-op more than any other. And the answer is practical: you need a homeschool attendance tracker that can produce a clean record when someone asks for one.</p>
 
-    <p>grovio does this with a one-tap daily check. Open the app, tap your kid's name, done. When you need a PDF for the district or for an evaluator, it exports a clean attendance record with subject coverage included. No formatting, no assembly. It also tracks subjects covered throughout the year, so you can show breadth, not just days.</p>
+    <p>grovio does this with a one-tap daily check. Open the app, tap your kid's name, done. Premium can export a polished PDF attendance calendar with totals and certification space when you need a record for an evaluator or district. Separately, completed planner activities make subject coverage visible over the year, so you can see breadth as well as days.</p>
 
-    <p><a href="https://www.homeschooltracker.com" rel="nofollow">Homeschool Tracker</a> is the most thorough option here. Twenty years of compliance tools. Transcripts, report cards, detailed assignment logs. If you're in a state like New York or Pennsylvania with strict oversight, Tracker was built for exactly that. It's more than most families need, but if you need it, you really need it.</p>
+    <p><a href="https://www.homeschooltracker.com" rel="nofollow">Homeschool Tracker</a> is a deep option here: transcripts, report cards, attendance, and detailed assignment logs. It is a better fit when a family needs that level of academic reporting. It is more than some families need, but its depth can be useful when the records need to do more.</p>
 
     <p><a href="https://homeschoolpanda.com" rel="nofollow">Homeschool Panda</a> also handles attendance and has planning tools built in. It sits somewhere between grovio's simplicity and Tracker's depth.</p>
 
     <p><a href="https://hometrail.net" rel="nofollow">HomeTrail</a> also covers attendance and portfolio reports on its free tier, with grading and transcripts on the paid plan ($19.99/month). It's newer but growing fast.</p>
 
-    <p><a href="https://homeschoolmoment.com" rel="nofollow">Homeschool Moment</a> and <a href="https://strew.app" rel="nofollow">Strew</a> don't track attendance. They're documentation tools, not compliance tools. If attendance reporting matters in your state, that's worth knowing before you invest time setting one up.</p>
+    <p><a href="https://homeschoolmoment.com" rel="nofollow">Homeschool Moment</a> is built around photo documentation rather than attendance. <a href="https://strew.app" rel="nofollow">Strew</a>'s public materials emphasize activity logs, subject time, and reports rather than attendance tracking. If attendance reporting matters in your state, confirm the current tools before investing time setting one up.</p>
 
     <h2>"Every morning I stare at the kitchen table and think 'now what'"</h2>
 
@@ -700,11 +800,11 @@
 
     <p><a href="https://www.homeschooltracker.com" rel="nofollow">Homeschool Tracker</a> and <a href="https://homeschoolpanda.com" rel="nofollow">Homeschool Panda</a> both offer real lesson-level planning. Individual assignments, scheduled due dates, curriculum alignment, grading integration. If you want to plan down to the specific worksheet on a specific day, those tools do it. They take longer to set up, but they carry more detail.</p>
 
-    <p><a href="https://homeschoolmoment.com" rel="nofollow">Homeschool Moment</a> and <a href="https://strew.app" rel="nofollow">Strew</a> don't have planners at all. They're built for looking backward at what happened, not forward at what's coming.</p>
+    <p><a href="https://homeschoolmoment.com" rel="nofollow">Homeschool Moment</a> does not offer a planner. <a href="https://strew.app" rel="nofollow">Strew</a> is centered on logging learning that happened, rather than on a traditional lesson planner. Both are built more for looking backward than for mapping tomorrow.</p>
 
     <p><a href="https://hometrail.net" rel="nofollow">HomeTrail</a> has a planner on the free tier plus an AI-powered SMS assistant on Plus that lets you text in what happened and it structures it for you. If you like the idea of texting "we read for 30 minutes and then hiked and talked about ecosystems" and having an app turn that into a structured log, that's worth looking at.</p>
 
-    <p>If you need grades attached to every assignment, or curriculum-specific progress tracking that ties into transcripts, grovio won't do that. That's Tracker or Panda territory. But if you've tried the full academic planners and found yourself abandoning them, a rhythm with room for one-off items might be what you were actually looking for.</p>
+    <p>If you need grades attached to every assignment, or curriculum-specific progress tracking that ties into transcripts, grovio won't do that. That's Tracker or Panda territory. But if you've tried the full academic planners and found yourself abandoning them, a flexible rhythm with room for specific days and optional times might be what you were actually looking for.</p>
 
     <h2>"When someone asks what we've been doing, I go blank"</h2>
 
@@ -726,9 +826,9 @@
 
     <p>This one hit me harder than I expected. I talked about it with the moms in my co-op and every single one of them knew exactly what I meant.</p>
 
-    <p>grovio makes shareable cards. After you capture a portfolio moment, you can share it as a simple, clean card to Instagram or anywhere else. It takes ten seconds. And it's always free. Not gated behind a subscription. Not a premium upsell. Free, because I wanted homeschool moms to have a way to show their people what they're building. Your sister sees the card on Instagram and texts "this is amazing." That's not a feature. That's the thing that keeps you going in February.</p>
+    <p>grovio lets you create a shareable, read-only portfolio link for each learner — something you can send to a family member, evaluator, or umbrella school without giving them an account. You can turn that link off any time. It is a Premium feature. Grovio also makes free share cards for individual portfolio moments, so you can post a small piece of the story to Instagram or save it anywhere else. I wanted homeschool moms to have ways to show their people what they are building. Your sister sees the card on Instagram and texts "this is amazing." That's not just a feature. That's the thing that keeps you going in February.</p>
 
-    <p>Nobody else does this. <a href="https://www.homeschooltracker.com" rel="nofollow">Homeschool Tracker</a> exports transcripts and report cards. <a href="https://homeschoolpanda.com" rel="nofollow">Homeschool Panda</a> has a community feature where you connect with other families. Those are real solutions to the isolation problem. But a shareable card that your sister can see on Instagram and text you "this is amazing"? That's different. That's not documentation. That's being seen.</p>
+    <p>Other apps offer different ways to share the work. <a href="https://www.homeschooltracker.com" rel="nofollow">Homeschool Tracker</a> creates transcripts and reports. <a href="https://homeschoolpanda.com" rel="nofollow">Homeschool Panda</a> has a community feature where you can connect with other families. <a href="https://strew.app" rel="nofollow">Strew</a> creates shareable PDF reports. grovio's angle is smaller and more personal: an individual learning moment, made into a card someone you love can actually see.</p>
 
     <h2>"I downloaded the ultimate homeschool app and quit it by October"</h2>
 
@@ -736,20 +836,21 @@
 
     <p>Complexity is not a feature. It's a cost. And for a lot of families, that cost is higher than the benefit. I've watched it happen in my co-op. Someone recommends the "most complete" app. Everyone downloads it. By October, two people are still using it and the rest feel guilty about quitting.</p>
 
-    <p>grovio is five minutes a day. Mark attendance, glance at your rhythm, maybe capture a moment if something good happened. That's it. There is no dashboard with twelve widgets. No notification telling you that you haven't logged science this week. No onboarding tutorial that takes an hour. And the free tier is genuinely usable: 15 portfolio moments, daily attendance, 3 planner series, shareable cards, and the free grovio Guide on the web. Premium is $79.99 a year if you want everything, which is less than most curriculum workbooks and a fraction of what some of these apps charge.</p>
+    <p>grovio is designed to stay low-maintenance: mark attendance, glance at your rhythm or schedule, and capture a moment when something worth saving happens. There is no academic dashboard asking you to log every worksheet. The free tier includes daily attendance, 15 portfolio moments, 3 planner series, 10 ideas, individual-moment share cards, and every Guide article. Premium adds unlimited records, cloud backup and sync, exports, and weekly Wrap-Ups for $79.99 a year or $9.99 month-to-month.</p>
 
     <p><a href="https://homeschoolmoment.com" rel="nofollow">Homeschool Moment</a> is also genuinely simple. Take a photo, done. If you don't need attendance or a planner and just want to document, Moment is easy to stick with.</p>
 
     <p><a href="https://www.homeschooltracker.com" rel="nofollow">Homeschool Tracker</a> is powerful and thorough, but the learning curve is real. If you thrive on detail, you'll love it. If "thorough" sounds exhausting, it might not be the right fit.</p>
 
-    <p><a href="https://homeschoolpanda.com" rel="nofollow">Homeschool Panda</a> has a lot of features. Lesson plans, community, budgeting, resource tracking. Some families want all of that in one place. Other families open it and feel their chest tighten. Know which one you are before you commit.</p>
+    <p><a href="https://homeschoolpanda.com" rel="nofollow">Homeschool Panda</a> covers lesson plans, reports, grades, resources, budgeting, and community. Some families want all of that in one place. Other families want a smaller system. Know which kind of support will make your day lighter before you commit.</p>
 
     <h2>The comparison, side by side</h2>
 
     <p class="table-label">Organized by what's keeping you up at night:</p>
+    <p class="source-note">Each row starts with the feeling; each answer shows the tool's particular approach. Features and prices were checked against the linked public product pages on September 7, 2026, and may change.</p>
 
     <div class="table-wrap">
-      <table class="compare-table">
+      <table class="compare-table compare-table--pain">
         <thead>
           <tr>
             <th>What keeps you up at night</th>
@@ -763,67 +864,69 @@
         </thead>
         <tbody>
           <tr>
-            <td>"Am I doing enough?"</td>
-            <td class="grovio-col" data-label="grovio">Friday Wrap-Up (weekly reflection)</td>
-            <td data-label="Homeschool Moment">AI writes your documentation</td>
-            <td data-label="Homeschool Tracker">Grades and assignment tracking</td>
-            <td data-label="Homeschool Panda">Activity journals</td>
+            <td>"Am I doing enough?"<span class="pain-context">Six different routes to reassurance.</span></td>
+            <td class="grovio-col" data-label="grovio · our approach">Attendance, completed subjects, portfolio, + Friday Wrap-Up</td>
+            <td data-label="Homeschool Moment">AI captions from photos</td>
+            <td data-label="Homeschool Tracker">Grades, assignments, and reports</td>
+            <td data-label="Homeschool Panda">Planning, grades, and reports</td>
             <td data-label="Strew">AI summaries</td>
-            <td data-label="HomeTrail">AI SMS logging (Plus) or manual</td>
+            <td data-label="HomeTrail">Manual logs or TrailGuide by text (Plus)</td>
           </tr>
           <tr>
-            <td>"Records are a mess"</td>
-            <td class="grovio-col" data-label="grovio">One-tap attendance and PDF export</td>
-            <td data-label="Homeschool Moment">No attendance</td>
-            <td data-label="Homeschool Tracker">Full compliance suite (20 years)</td>
-            <td data-label="Homeschool Panda">Basic attendance and planning</td>
-            <td data-label="Strew">No attendance</td>
-            <td data-label="HomeTrail">Attendance + portfolio reports (free)</td>
+            <td>"Records are a mess"<span class="pain-context">From a light record to a full academic system.</span></td>
+            <td class="grovio-col" data-label="grovio · our approach">One-tap attendance; Premium PDF export</td>
+            <td data-label="Homeschool Moment">Photo portfolio + PDF export; no attendance listed</td>
+            <td data-label="Homeschool Tracker">Attendance, detailed records, and reports</td>
+            <td data-label="Homeschool Panda">Attendance, reports, and transcripts on Pro</td>
+            <td data-label="Strew">Learning logs and PDF reports; no attendance listed</td>
+            <td data-label="HomeTrail">Free attendance + portfolio reports</td>
           </tr>
           <tr>
-            <td>"What do we do tomorrow?"</td>
-            <td class="grovio-col" data-label="grovio">Rhythm + individual items (no grades)</td>
+            <td>"What do we do tomorrow?"<span class="pain-context">Different ways to give tomorrow a shape.</span></td>
+            <td class="grovio-col" data-label="grovio · our approach">Rhythm or schedule; recurring activities</td>
             <td data-label="Homeschool Moment">No planner</td>
-            <td data-label="Homeschool Tracker">Lesson-level scheduling with grades</td>
+            <td data-label="Homeschool Tracker">Lesson plans, schedules, and grades</td>
             <td data-label="Homeschool Panda">Lesson planning and scheduling</td>
-            <td data-label="Strew">No planner</td>
+            <td data-label="Strew">Learning log, not a lesson planner</td>
             <td data-label="HomeTrail">Planner + activity discovery (free)</td>
           </tr>
           <tr>
-            <td>"I can't find the proof"</td>
-            <td class="grovio-col" data-label="grovio">Portfolio by date and subject</td>
-            <td data-label="Homeschool Moment">AI-tagged photo portfolio</td>
-            <td data-label="Homeschool Tracker">Assignment and grade database</td>
-            <td data-label="Homeschool Panda">Multi-category logs</td>
-            <td data-label="Strew">Rolling activity feed</td>
-            <td data-label="HomeTrail">Portfolio reports + SMS AI logging</td>
+            <td>"I can't find the proof"<span class="pain-context">Where each tool keeps the evidence of learning.</span></td>
+            <td class="grovio-col" data-label="grovio · our approach">Photos, notes, subjects, and dates</td>
+            <td data-label="Homeschool Moment">AI-captioned photo portfolio</td>
+            <td data-label="Homeschool Tracker">Year-end portfolios from academic records</td>
+            <td data-label="Homeschool Panda">Portfolios and multi-category logs</td>
+            <td data-label="Strew">Photo records + learning timeline</td>
+            <td data-label="HomeTrail">Portfolios, Journey, and reports</td>
           </tr>
           <tr>
-            <td>"Nobody sees this"</td>
-            <td class="grovio-col" data-label="grovio">Shareable cards (always free)</td>
-            <td data-label="Homeschool Moment">PDF export</td>
-            <td data-label="Homeschool Tracker">Transcripts and reports</td>
+            <td>"Nobody sees this"<span class="pain-context">Different ways to let someone else see the work.</span></td>
+            <td class="grovio-col" data-label="grovio · our approach">Shareable learner portfolio (Premium) + free moment cards</td>
+            <td data-label="Homeschool Moment">PDF portfolios</td>
+            <td data-label="Homeschool Tracker">Transcripts, portfolios, and reports</td>
             <td data-label="Homeschool Panda">Community features</td>
-            <td data-label="Strew">None</td>
-            <td data-label="HomeTrail">Reports</td>
+            <td data-label="Strew">Shareable PDF reports</td>
+            <td data-label="HomeTrail">Portfolio reports; sharing on Plus</td>
           </tr>
           <tr>
-            <td>"This app is too much"</td>
-            <td class="grovio-col" data-label="grovio">5 min/day</td>
+            <td>"This app is too much"<span class="pain-context">How much system each one asks of you.</span></td>
+            <td class="grovio-col" data-label="grovio · our approach">Low-maintenance daily routine</td>
             <td data-label="Homeschool Moment">Simple (photos only)</td>
-            <td data-label="Homeschool Tracker">Steep learning curve</td>
-            <td data-label="Homeschool Panda">Feature-heavy</td>
-            <td data-label="Strew">Simple</td>
-            <td data-label="HomeTrail">Growing feature set</td>
+            <td data-label="Homeschool Tracker">Detailed setup for deep records</td>
+            <td data-label="Homeschool Panda">Full homeschool-management system</td>
+            <td data-label="Strew">Lightweight learning log</td>
+            <td data-label="HomeTrail">Connected planner and records</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p class="table-label">Quick feature checklist:</p>
+    <details class="feature-notes">
+      <summary>For the detail-oriented: feature notes</summary>
+      <p class="feature-notes-intro">The emotional comparison above is the main thing. This is the practical evidence behind it, using the current public feature and pricing information for each tool.</p>
 
-    <div class="table-wrap">
-      <table class="compare-table">
+      <div class="table-wrap">
+      <table class="compare-table compare-table--evidence">
         <thead>
           <tr>
             <th></th>
@@ -831,75 +934,76 @@
             <th>Planner</th>
             <th>Portfolio</th>
             <th>Weekly Reflection</th>
-            <th>Compliance Export</th>
-            <th>Shareable Cards</th>
+            <th>Records &amp; export</th>
+            <th>Sharing</th>
             <th>Free Tier</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <th>grovio</th>
-            <td data-label="Attendance">Yes</td>
-            <td data-label="Planner">Rhythm + individual items</td>
-            <td data-label="Portfolio">Yes</td>
-            <td data-label="Weekly Reflection">Friday Wrap-Up</td>
-            <td data-label="Compliance Export">PDF</td>
-            <td data-label="Shareable Cards">Yes (free)</td>
-            <td data-label="Free Tier">Generous</td>
+            <td data-label="Attendance">Yes — one tap</td>
+            <td data-label="Planner">Rhythm or schedule</td>
+            <td data-label="Portfolio">Photo or emoji + written note</td>
+            <td data-label="Weekly Reflection">AI-written Friday Wrap-Up (Premium; one free)</td>
+            <td data-label="Records Export">PDF / CSV attendance export (Premium)</td>
+            <td data-label="Sharing">Shareable learner portfolio (Premium); moment cards free</td>
+            <td data-label="Free Tier">15 moments + 3 series + 10 ideas, attendance &amp; Guide</td>
           </tr>
           <tr>
             <th>Homeschool Moment</th>
-            <td data-label="Attendance">No</td>
+            <td data-label="Attendance">Not listed</td>
             <td data-label="Planner">No</td>
-            <td data-label="Portfolio">Yes (AI)</td>
-            <td data-label="Weekly Reflection">No</td>
-            <td data-label="Compliance Export">No</td>
-            <td data-label="Shareable Cards">No</td>
+            <td data-label="Portfolio">AI-captioned photo portfolio</td>
+            <td data-label="Weekly Reflection">No weekly feature listed</td>
+            <td data-label="Records Export">PDF portfolio export (watermarked free)</td>
+            <td data-label="Sharing">PDF portfolio export</td>
             <td data-label="Free Tier">5/month</td>
           </tr>
           <tr>
             <th>Homeschool Tracker</th>
             <td data-label="Attendance">Yes</td>
-            <td data-label="Planner">Lesson-level</td>
-            <td data-label="Portfolio">Basic</td>
-            <td data-label="Weekly Reflection">No</td>
-            <td data-label="Compliance Export">Full suite</td>
-            <td data-label="Shareable Cards">No</td>
-            <td data-label="Free Tier">Trial only</td>
+            <td data-label="Planner">Lesson plans + schedule</td>
+            <td data-label="Portfolio">Year-end portfolios</td>
+            <td data-label="Weekly Reflection">No weekly feature listed</td>
+            <td data-label="Records Export">Transcripts, report cards, attendance reports</td>
+            <td data-label="Sharing">Printable reports and portfolios</td>
+            <td data-label="Free Tier">7-day full trial</td>
           </tr>
           <tr>
             <th>Homeschool Panda</th>
             <td data-label="Attendance">Yes</td>
-            <td data-label="Planner">Lesson-level</td>
-            <td data-label="Portfolio">Yes</td>
-            <td data-label="Weekly Reflection">No</td>
-            <td data-label="Compliance Export">Basic</td>
-            <td data-label="Shareable Cards">No</td>
-            <td data-label="Free Tier">Limited</td>
+            <td data-label="Planner">Lesson planning + scheduling</td>
+            <td data-label="Portfolio">Photos in assignments + yearly portfolios</td>
+            <td data-label="Weekly Reflection">No weekly feature listed</td>
+            <td data-label="Records Export">Reports; transcripts on Pro</td>
+            <td data-label="Sharing">Panda Post community</td>
+            <td data-label="Free Tier">Free community; planner from $5/month</td>
           </tr>
           <tr>
             <th>Strew</th>
-            <td data-label="Attendance">No</td>
-            <td data-label="Planner">No</td>
-            <td data-label="Portfolio">Yes</td>
-            <td data-label="Weekly Reflection">AI summaries</td>
-            <td data-label="Compliance Export">No</td>
-            <td data-label="Shareable Cards">No</td>
-            <td data-label="Free Tier">Free</td>
+            <td data-label="Attendance">Not listed</td>
+            <td data-label="Planner">Learning log, not a lesson planner</td>
+            <td data-label="Portfolio">Photos, notes, and timeline</td>
+            <td data-label="Weekly Reflection">AI-assisted summaries and reports</td>
+            <td data-label="Records Export">Printable / shareable PDF reports</td>
+            <td data-label="Sharing">PDF reports</td>
+            <td data-label="Free Tier">Free plan</td>
           </tr>
           <tr>
             <th>HomeTrail</th>
             <td data-label="Attendance">Yes (free)</td>
             <td data-label="Planner">Yes (free)</td>
-            <td data-label="Portfolio">Yes + AI SMS (Plus)</td>
-            <td data-label="Weekly Reflection">No</td>
-            <td data-label="Compliance Export">Reports (free), transcripts (Plus)</td>
-            <td data-label="Shareable Cards">No</td>
-            <td data-label="Free Tier">Free tier + Plus $19.99/mo</td>
+            <td data-label="Portfolio">Journey, portfolios, and reports</td>
+            <td data-label="Weekly Reflection">No weekly feature listed</td>
+            <td data-label="Records Export">Portfolio reports free; transcripts Plus</td>
+            <td data-label="Sharing">Portfolio sharing on Plus</td>
+            <td data-label="Free Tier">Planner, attendance, Journey, and reports</td>
           </tr>
         </tbody>
       </table>
-    </div>
+      </div>
+    </details>
 
     <h2>When grovio is not the right fit</h2>
 
@@ -909,17 +1013,17 @@
 
     <p>grovio doesn't generate transcripts or calculate GPAs. If you need official academic records for a college application, Tracker is where you should be.</p>
 
-    <p>grovio doesn't use AI to write your portfolio entries. If you want to take a photo and have the app describe what happened, Homeschool Moment does that well. grovio asks you to write the line yourself. Some people want that. Some don't.</p>
+    <p>grovio doesn't use AI to write individual portfolio entries. If you want to take a photo and have the app describe what happened, Homeschool Moment does that well. grovio asks you to write that line yourself. (Its separate Friday Wrap-Up is an editable AI-written weekly summary.) Some people want one approach; some want the other.</p>
 
     <p>Community Hub, an optional private space for homeschool groups, is coming soon to grovio. Until it launches, families who need an in-app community today may prefer Panda.</p>
 
     <h2>When grovio is exactly what you need</h2>
 
-    <p>You want to tap two names before breakfast and know attendance is handled. You want a weekly Schedule or Rhythm you can set up without rebuilding your plan every Sunday night. You want to snap a photo when your kid does something that makes you stop and think "wait, that was real learning," and write one line about what you saw so you don't lose it. And on Friday, you want to sit down with a cup of coffee and read a summary that says: look at everything that happened this week. You did more than you thought.</p>
+    <p>You want to tap two names before breakfast and know attendance is handled. You want a weekly Schedule or Rhythm you can set up without rebuilding your plan every Sunday night. You want to see completed subjects, portfolio moments, and attendance collect into evidence you can find again. You want to snap a photo when your kid does something that makes you stop and think "wait, that was real learning," and write one line about what you saw so you don't lose it. And on Friday, you want to sit down with a cup of coffee and read a summary that says: look at everything that happened this week. You did more than you thought.</p>
 
-    <p>You've tried the big apps. They made you feel more behind, not less. You've tried the AI-powered apps. They documented your year in someone else's words. You don't need forty features. You need four that you'll actually use in March, in the rain, on the day the toddler skipped her nap and nothing went as planned.</p>
+    <p>You've tried the big apps. They made you feel more behind, not less. You may have tried AI-powered documentation and decided you want to write the individual moments in your own words. You don't need forty features. You need four that you'll actually use in March, in the rain, on the day the toddler skipped her nap and nothing went as planned.</p>
 
-    <p>grovio covers attendance, planning, portfolio, and weekly reflection in one place. It costs less than the other paid options. And the things it doesn't do? It doesn't do them on purpose. Because calm is a feature, and simple is a choice.</p>
+    <p>grovio covers attendance, planning, portfolio, and weekly reflection in one place. Its Premium plan is $79.99 annually or $9.99 month-to-month. And the things it doesn't do? It doesn't do them on purpose. Because calm is a feature, and simple is a choice.</p>
 
     <div class="cta-card">
       <p class="cta-card-title">Try grovio free</p>
@@ -937,13 +1041,13 @@
     <p>It depends on your state. Some states require attendance records and periodic evaluations. Others just ask for a letter of intent. If your state asks for documentation, a tracking app saves you from the end-of-year scramble. Even in relaxed states, having a record helps you see patterns in your own year that you'd otherwise miss.</p>
 
     <p class="faq-q">What's the difference between a homeschool planner and a homeschool tracker?</p>
-    <p>A planner looks forward (what are we doing this week). A tracker looks backward (what did we do). Some apps do both. grovio does both through a rhythm-based planner (with room for one-off items like a Friday math test) and a portfolio that fills in as the year happens. Tracker and Panda also cover both sides, with grading and curriculum integration that grovio doesn't have.</p>
+    <p>A planner looks forward (what are we doing this week). A tracker looks backward (what did we do). Some apps do both. grovio combines a flexible rhythm or schedule with recurring activities, specific days, and a portfolio that fills in as the year happens. Tracker and Panda also cover both sides, with grading and curriculum integration that grovio doesn't have.</p>
 
     <p class="faq-q">Is grovio free?</p>
-    <p>grovio has a generous free tier: 15 portfolio moments, daily attendance tracking, 3 planner series, shareable cards, and the free grovio Guide on the web. Premium adds unlimited moments, weekly Wrap-Ups, and cloud backup. You get 14 days of Premium automatically when you set up. No credit card needed.</p>
+    <p>grovio's free tier includes 15 portfolio moments, daily attendance tracking, 3 planner series, 10 ideas, individual-moment share cards, and every Guide article. Premium adds unlimited moments, weekly Wrap-Ups, exports, and cloud backup. You get 14 days of Premium automatically when you set up. No credit card needed.</p>
 
     <p class="faq-q">Which homeschool app is best for state compliance?</p>
-    <p>Homeschool Tracker has the deepest homeschool compliance toolset (transcripts, report cards, detailed logs). grovio handles attendance tracking and PDF export, which covers what most states actually require. If you're in a heavily regulated state, check your specific requirements before choosing.</p>
+    <p>Homeschool Tracker offers transcripts, report cards, and detailed logs for families who need that depth. grovio handles attendance tracking and Premium PDF exports, which can support common attendance-record needs. State and local requirements vary, so check your specific situation before choosing.</p>
 
     <p class="footnote">Claire writes <a href="/guide">the grovio Guide</a>, a free collection of 25 articles on the honest parts of homeschooling. She's a former Montessori preschool owner with a background in developmental psychology, now homeschooling her own son. <a href="/about/claire">Read more about Claire</a> · <a href="/guide">Read the Guide</a></p>
 
