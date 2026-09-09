@@ -100,6 +100,7 @@ for (const relativePath of modernFiles) {
   const fullNavigationPattern = /<header class="grovio-nav">[\s\S]*?<\/header>\s*<div class="grovio-nav-overlay" id="grovioNavOverlay"><\/div>\s*<nav class="grovio-nav-panel" id="grovioNavPanel"[^>]*>[\s\S]*?<\/nav>/;
   if (!fullNavigationPattern.test(html)) throw new Error(`Could not find the current navigation in ${relativePath}`);
   html = html.replace(fullNavigationPattern, sharedHeader);
+  html = addSharedAssets(html);
   html = html.replace(/@media \(min-width: 761px\) \{ \.grovio-nav-burger \{ display: none; \} \}\n?/, '');
   html = html.replace(/\n        @media \(max-width: 760px\)/g, '\n    @media (max-width: 760px)');
   await writeFile(file, html);
