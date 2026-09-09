@@ -1317,7 +1317,6 @@
       .grovio-nav-inner { height: 52px; padding: 0 1.25rem; }
       .grovio-wordmark { font-size: 22px; }
     }
-    @media (min-width: 761px) { .grovio-nav-burger { display: none; } }
     @media (max-width: 760px) { .grovio-nav-links { display: none; } }
   </style>
 </head>
@@ -1328,18 +1327,18 @@
   <div class="grovio-nav-inner">
     <a href="/" class="grovio-wordmark">grovio</a>
     <nav class="grovio-nav-links" aria-label="Primary navigation">
-      <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/guide/">Guide</a><a href="/compare">Compare apps</a>
+      <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/podcast">Podcast</a><a href="/guide/">Guide</a><a href="/compare">Compare apps</a>
     </nav>
     <div class="grovio-nav-right">
       <a href="/get" class="grovio-nav-cta">Download free</a>
-      <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open menu" aria-expanded="false" aria-controls="grovioNavPanel">
+      <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open site menu" aria-expanded="false" aria-controls="grovioNavPanel">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </header>
 <div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
-<nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true">
+<nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true" aria-label="Site menu">
   <a href="/" class="grovio-nav-panel-link">Home</a>
   <a href="/features" class="grovio-nav-panel-link">Features</a>
   <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
@@ -1474,13 +1473,13 @@
           <div class="homepage-app-preview-visual">
             <div class="app-carousel" data-app-carousel>
               <div class="app-carousel-stage" aria-live="polite">
-                <a href="/features" class="app-carousel-slide" data-position="active"><img src="/assets/optimized/feature-home-toast-720.jpg" alt="grovio home screen showing attendance, upcoming planner tasks, and a Friday Wrap-Up" width="1290" height="2796" loading="eager" decoding="async"></a>
-                <a href="/features#plan" class="app-carousel-slide" data-position="next"><img src="/assets/optimized/feature-planner-rhythm-720.jpg" alt="grovio rhythm planner showing learner tasks and skipped items" width="1290" height="2796" loading="eager" decoding="async"></a>
-                <a href="/features#capture" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-portfolio-720.jpg" alt="grovio portfolio screen showing captured homeschool learning moments" width="1290" height="2796" loading="eager" decoding="async"></a>
-                <a href="/features#records" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-attendance-720.jpg" alt="grovio attendance screen showing a monthly homeschool attendance calendar" width="1290" height="2796" loading="eager" decoding="async"></a>
-                <a href="/features#review" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-attendance-export-720.jpg" alt="grovio attendance export sheet with learner and date range options" width="1290" height="2796" loading="eager" decoding="async"></a>
-                <a href="/guide/" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-guide-720.jpg" alt="grovio Guide screen with article categories for getting started, compliance, rhythm, academics, and behavior" width="1290" height="2796" loading="eager" decoding="async"></a>
-                <a href="/features#plan" class="app-carousel-slide" data-position="prev"><img src="/assets/optimized/feature-planner-choice-720.jpg" alt="grovio planner style chooser with rhythm and schedule options" width="1290" height="2796" loading="eager" decoding="async"></a>
+                <a href="/features" class="app-carousel-slide" data-position="active"><img src="/assets/optimized/feature-home-toast-720.jpg" alt="grovio home screen showing attendance, upcoming planner tasks, and a Friday Wrap-Up" width="1290" height="2796" loading="lazy" decoding="async"></a>
+                <a href="/features#plan" class="app-carousel-slide" data-position="next"><img src="/assets/optimized/feature-planner-rhythm-720.jpg" alt="grovio rhythm planner showing learner tasks and skipped items" width="1290" height="2796" loading="lazy" decoding="async"></a>
+                <a href="/features#capture" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-portfolio-720.jpg" alt="grovio portfolio screen showing captured homeschool learning moments" width="1290" height="2796" loading="lazy" decoding="async"></a>
+                <a href="/features#records" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-attendance-720.jpg" alt="grovio attendance screen showing a monthly homeschool attendance calendar" width="1290" height="2796" loading="lazy" decoding="async"></a>
+                <a href="/features#review" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-attendance-export-720.jpg" alt="grovio attendance export sheet with learner and date range options" width="1290" height="2796" loading="lazy" decoding="async"></a>
+                <a href="/guide/" class="app-carousel-slide" data-position="hidden"><img src="/assets/optimized/feature-guide-720.jpg" alt="grovio Guide screen with article categories for getting started, compliance, rhythm, academics, and behavior" width="1290" height="2796" loading="lazy" decoding="async"></a>
+                <a href="/features#plan" class="app-carousel-slide" data-position="prev"><img src="/assets/optimized/feature-planner-choice-720.jpg" alt="grovio planner style chooser with rhythm and schedule options" width="1290" height="2796" loading="lazy" decoding="async"></a>
                 <div class="app-carousel-controls">
                   <button type="button" class="app-carousel-control" data-carousel-prev aria-label="Previous app screenshot">&lsaquo;</button>
                   <button type="button" class="app-carousel-control" data-carousel-next aria-label="Next app screenshot">&rsaquo;</button>
