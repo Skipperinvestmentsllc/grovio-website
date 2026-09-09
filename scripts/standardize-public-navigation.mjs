@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
+const navigationStylesheet = '/assets/grovio-navigation.css?v=20260909';
 const legacyFiles = [
   'features.html',
   'pricing.html',
@@ -68,7 +69,9 @@ ${menuPanel}`;
 
 function addSharedAssets(html) {
   if (!html.includes('/assets/grovio-navigation.css')) {
-    html = html.replace('</head>', '  <link rel="stylesheet" href="/assets/grovio-navigation.css">\n  <script defer src="/assets/grovio-navigation.js"></script>\n</head>');
+    html = html.replace('</head>', `  <link rel="stylesheet" href="${navigationStylesheet}">\n  <script defer src="/assets/grovio-navigation.js"></script>\n</head>`);
+  } else {
+    html = html.replace(/href="\/assets\/grovio-navigation\.css(?:\?[^\"]*)?"/g, `href="${navigationStylesheet}"`);
   }
   return html;
 }
