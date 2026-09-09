@@ -142,6 +142,20 @@
       justify-content: space-between;
       height: 60px;
     }
+    .grovio-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      margin-left: auto;
+      margin-right: 1.25rem;
+    }
+    .grovio-nav-links a {
+      color: #5C4A3A;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .grovio-nav-links a:hover { color: #4A6E4E; }
     .grovio-wordmark {
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
@@ -669,6 +683,12 @@
     @media (max-width: 640px) {
       .grovio-nav-inner { height: 52px; padding: 0 1.25rem; }
       .grovio-wordmark { font-size: 22px; }
+    }
+    @media (min-width: 761px) {
+      .grovio-nav-burger { display: none; }
+    }
+    @media (max-width: 760px) {
+      .grovio-nav-links { display: none; }
     }
   </style>
 </head>
