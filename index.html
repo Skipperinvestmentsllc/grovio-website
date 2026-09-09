@@ -838,7 +838,7 @@
       justify-content: center;
       padding: 2.25rem 1.5rem;
     }
-    
+
     .app-carousel { width: min(100%, 430px); position: relative; }
     .app-carousel-stage { position: relative; width: 100%; aspect-ratio: 1 / 1.58; min-height: 560px; overflow: visible; touch-action: pan-y; }
     .app-carousel-slide { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0; transform: translate3d(0,0,0) scale(0.76); backface-visibility: hidden; transform-style: preserve-3d; will-change: transform, opacity, filter; transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1), filter 0.52s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; filter: saturate(0.9); }
@@ -1319,6 +1319,8 @@
     }
     @media (max-width: 760px) { .grovio-nav-links { display: none; } }
   </style>
+  <link rel="stylesheet" href="/assets/grovio-navigation.css">
+  <script defer src="/assets/grovio-navigation.js"></script>
 </head>
 <body>
 
@@ -1327,7 +1329,7 @@
   <div class="grovio-nav-inner">
     <a href="/" class="grovio-wordmark">grovio</a>
     <nav class="grovio-nav-links" aria-label="Primary navigation">
-      <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/podcast">Podcast</a><a href="/guide/">Guide</a><a href="/community">Community</a><a href="/compare">Compare apps</a>
+      <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/podcast">Podcast</a><a href="/guide/">Guide</a><a href="/compare">Compare apps</a>
     </nav>
     <div class="grovio-nav-right">
       <a href="/get" class="grovio-nav-cta">Download free</a>
@@ -1342,10 +1344,10 @@
   <a href="/" class="grovio-nav-panel-link">Home</a>
   <a href="/features" class="grovio-nav-panel-link">Features</a>
   <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
-  <a href="/community" class="grovio-nav-panel-link">Community</a>
   <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
   <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
   <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
+  <a href="/community" class="grovio-nav-panel-link">Community</a>
   <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
   <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
   <a href="/faq" class="grovio-nav-panel-link">FAQ</a>

@@ -32,14 +32,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html, body {
       background:#F7F4EE;
       color:#3E3A32;
-      font-family:'Plus Jakarta Sans',sans-serif;
+      font-family:'Inter',sans-serif;
       -webkit-font-smoothing:antialiased;
       min-height:100vh;
     }
@@ -116,7 +116,7 @@
     .byline .meta { font-size:11px; color:#9B9484; margin:0; }
 
     .body p {
-      font-family:'Plus Jakarta Sans',sans-serif;
+      font-family:'Inter',sans-serif;
       font-size:16px;
       color:#3E3A32;
       line-height:1.75;
@@ -174,7 +174,7 @@
       color:#F7F4EE;
       border-radius:100px;
       text-decoration:none;
-      font-family:'Plus Jakarta Sans',sans-serif;
+      font-family:'Inter',sans-serif;
       font-size:15px;
       font-weight:600;
       letter-spacing:0.01em;
@@ -281,11 +281,35 @@
       mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 65%);
     }
   </style>
+  <link rel="stylesheet" href="/assets/grovio-navigation.css">
+  <script defer src="/assets/grovio-navigation.js"></script>
 </head>
 <body>
-  <div class="top-bar">
-    <a href="/" class="wordmark">grovio</a>
+  <header class="grovio-nav grovio-nav--landing">
+  <div class="grovio-nav-inner">
+    <a href="/" class="grovio-wordmark">grovio</a>
+    <div class="grovio-nav-right">
+      <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open site menu" aria-expanded="false" aria-controls="grovioNavPanel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
+</header>
+<div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
+<nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true" aria-label="Site menu">
+  <a href="/" class="grovio-nav-panel-link">Home</a>
+  <a href="/features" class="grovio-nav-panel-link">Features</a>
+  <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
+  <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
+  <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
+  <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
+  <a href="/community" class="grovio-nav-panel-link">Community</a>
+  <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
+  <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
+  <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
+  <a href="/support" class="grovio-nav-panel-link">Support</a>
+  <p class="grovio-nav-panel-tagline">Grow simply. Homeschool confidently.</p>
+</nav>
 
   <main>
     <p class="category">💛 Behavior &amp; Resistance</p>

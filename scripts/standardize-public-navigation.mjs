@@ -27,6 +27,7 @@ const menuPanel = `<nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden
   <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
   <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
   <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
+  <a href="/community" class="grovio-nav-panel-link">Community</a>
   <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
   <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
   <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
@@ -49,6 +50,22 @@ const sharedHeader = `<header class="grovio-nav">
 <div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
 ${menuPanel}`;
 
+const fullNavigationPattern = /<header class="grovio-nav(?: [^"]*)?">[\s\S]*?<\/header>\s*<div class="grovio-nav-overlay" id="grovioNavOverlay"><\/div>\s*<nav class="grovio-nav-panel" id="grovioNavPanel"[^>]*>[\s\S]*?<\/nav>/;
+const fullNavigationPatternGlobal = /<header class="grovio-nav(?: [^"]*)?">[\s\S]*?<\/header>\s*<div class="grovio-nav-overlay" id="grovioNavOverlay"><\/div>\s*<nav class="grovio-nav-panel" id="grovioNavPanel"[^>]*>[\s\S]*?<\/nav>/g;
+
+const landingHeader = `<header class="grovio-nav grovio-nav--landing">
+  <div class="grovio-nav-inner">
+    <a href="/" class="grovio-wordmark">grovio</a>
+    <div class="grovio-nav-right">
+      <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open site menu" aria-expanded="false" aria-controls="grovioNavPanel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
+${menuPanel}`;
+
 function addSharedAssets(html) {
   if (!html.includes('/assets/grovio-navigation.css')) {
     html = html.replace('</head>', '  <link rel="stylesheet" href="/assets/grovio-navigation.css">\n  <script defer src="/assets/grovio-navigation.js"></script>\n</head>');
@@ -56,11 +73,21 @@ function addSharedAssets(html) {
   return html;
 }
 
+function keepOneNavigation(html) {
+  let found = false;
+  return html.replace(fullNavigationPatternGlobal, (navigation) => {
+    if (found) return '';
+    found = true;
+    return navigation;
+  });
+}
+
 let legacyUpdated = 0;
 for (const relativePath of legacyFiles) {
   const file = resolve(root, relativePath);
   let html = await readFile(file, 'utf8');
   if (html.includes('id="grovioNavPanel"')) {
+    html = html.replace(fullNavigationPattern, sharedHeader);
     html = addSharedAssets(html);
     await writeFile(file, html);
     legacyUpdated += 1;
@@ -91,13 +118,13 @@ const modernFiles = [
   'guide/what-if-my-child-is-ahead-or-behind.html', 'guide/what-if-my-child-refuses-schoolwork.html',
   'guide/what-if-we-dont-finish-everything.html', 'guide/what-records-should-i-keep.html',
   'guide/what-should-a-typical-day-look-like.html', 'guide/what-subjects-do-i-need-to-teach.html',
+  'guide/what-supplies-do-i-need.html',
 ];
 
 let modernUpdated = 0;
 for (const relativePath of modernFiles) {
   const file = resolve(root, relativePath);
   let html = await readFile(file, 'utf8');
-  const fullNavigationPattern = /<header class="grovio-nav">[\s\S]*?<\/header>\s*<div class="grovio-nav-overlay" id="grovioNavOverlay"><\/div>\s*<nav class="grovio-nav-panel" id="grovioNavPanel"[^>]*>[\s\S]*?<\/nav>/;
   if (!fullNavigationPattern.test(html)) throw new Error(`Could not find the current navigation in ${relativePath}`);
   html = html.replace(fullNavigationPattern, sharedHeader);
   html = addSharedAssets(html);
@@ -107,4 +134,92 @@ for (const relativePath of modernFiles) {
   modernUpdated += 1;
 }
 
-console.log(`Updated ${legacyUpdated} legacy headers and ${modernUpdated} current headers.`);
+const standalonePublicFiles = [
+  'community.html',
+  'get.html',
+  'links/index.html',
+  'share.html',
+  'grovio-vs-homeschool-ledger.html',
+  'grovio-vs-homeschool-planet.html',
+  'grovio-vs-homeschool-tracker.html',
+];
+
+for (const relativePath of standalonePublicFiles) {
+  const file = resolve(root, relativePath);
+  let html = await readFile(file, 'utf8');
+  html = addSharedAssets(html);
+
+  if (html.includes('id="grovioNavPanel"')) {
+    html = html.replace(fullNavigationPattern, sharedHeader);
+  } else if (relativePath === 'community.html') {
+    html = html.replace(/<header class="nav">[\s\S]*?<\/header>/, sharedHeader);
+  } else if (relativePath === 'links/index.html') {
+    html = html.replace(/<a class="wordmark" href="https:\/\/grovioapp\.com\/" aria-label="grovio home">grovio<\/a>/, '<span aria-hidden="true"></span>');
+    html = html.replace('<body>', `<body>\n  ${sharedHeader}`);
+  } else if (relativePath === 'share.html') {
+    html = html.replace(/<div class="top-bar">[\s\S]*?<\/div>/, sharedHeader);
+  } else if (relativePath.startsWith('grovio-vs-')) {
+    html = html.replace(/<nav class="nav">[\s\S]*?<\/nav>/, sharedHeader);
+  } else {
+    html = html.replace('<body>', `<body>\n  ${sharedHeader}`);
+  }
+
+  await writeFile(file, html);
+}
+
+const directLinkFiles = [
+  'creator-program.html',
+  'start.html',
+  'p/can-i-homeschool-if-im-not-a-teacher.html',
+  'p/how-do-i-create-a-daily-rhythm.html',
+  'p/how-do-i-start-homeschooling.html',
+  'p/how-do-i-stay-consistent-without-burnout.html',
+  'p/is-it-normal-for-homeschooling-to-feel-hard.html',
+  'p/what-counts-as-learning.html',
+  'p/what-if-my-child-is-ahead-or-behind.html',
+  'p/what-supplies-do-i-need.html',
+];
+
+for (const relativePath of directLinkFiles) {
+  const file = resolve(root, relativePath);
+  let html = await readFile(file, 'utf8');
+  html = addSharedAssets(html);
+
+  if (html.includes('grovio-nav--landing')) {
+    // This direct-link page is already using the focused exit menu.
+  } else if (relativePath === 'creator-program.html') {
+    if (!/<meta name="robots"/i.test(html)) {
+      html = html.replace('</head>', '  <meta name="robots" content="noindex, nofollow">\n</head>');
+    }
+    html = html.replace(/\s*<header class="site-header">[\s\S]*?<\/header>/, '');
+    html = html.replace('<body>', `<body>\n  ${landingHeader}`);
+  } else if (relativePath === 'start.html') {
+    html = html.replace(fullNavigationPattern, landingHeader);
+  } else {
+    html = html.replace(/<div class="top-bar">[\s\S]*?<\/div>/, landingHeader);
+  }
+
+  await writeFile(file, html);
+}
+
+const publicHtmlFiles = [
+  ...legacyFiles,
+  ...modernFiles,
+  ...standalonePublicFiles,
+  ...directLinkFiles,
+];
+
+for (const relativePath of new Set(publicHtmlFiles)) {
+  const file = resolve(root, relativePath);
+  let html = await readFile(file, 'utf8');
+  html = html
+    .replace(/family=Plus\+Jakarta\+Sans(?::[^&"']+)?/g, 'family=Inter:wght@400;500;600')
+    .replace(/'Plus Jakarta Sans'/g, "'Inter'")
+    .replace(/"Plus Jakarta Sans"/g, '"Inter"')
+    .replace(/Plus Jakarta Sans/g, 'Inter');
+  html = keepOneNavigation(html);
+  html = html.replace(/\n[ \t]+\n/g, '\n\n');
+  await writeFile(file, html);
+}
+
+console.log(`Updated ${legacyUpdated} legacy headers, ${modernUpdated} current headers, ${standalonePublicFiles.length} standalone pages, and ${directLinkFiles.length} direct-link pages.`);

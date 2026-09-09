@@ -151,6 +151,10 @@
   font-style: italic;
 }
 body.grovio-nav-locked { overflow: hidden; }
+@media (min-width: 761px) {
+  .grovio-nav-burger { display: none; }
+  .grovio-nav--landing .grovio-nav-burger { display: flex; }
+}
 @media (max-width: 760px) {
   .grovio-nav-inner { height: 52px; padding: 0 1.25rem; }
   .grovio-wordmark { font-size: 22px; }
