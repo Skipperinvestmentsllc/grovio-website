@@ -18,6 +18,7 @@ grovio supports homeschool attendance tracking, photo-and-notes portfolio record
 ## Podcast transcripts
 
 - [Podcast hub](https://grovioapp.com/podcast): Weekly Dear Homeschool Mom episode archive with newest episode first.
+- [What Is the Actual Goal?](https://grovioapp.com/podcast/what-is-the-actual-goal): Transcript and answer page for episode 6.
 - [I Thought I Was Doing It for the Wrong Reason](https://grovioapp.com/podcast/i-thought-i-was-doing-it-for-the-wrong-reason): Transcript and answer page for episode 5.
 - [The Day I Pulled Him Out](https://grovioapp.com/podcast/the-day-i-pulled-him-out): Transcript and answer page for episode 4.
 - [The Homeschool Mom in My Head](https://grovioapp.com/podcast/the-homeschool-mom-in-my-head): Transcript and answer page for episode 3.

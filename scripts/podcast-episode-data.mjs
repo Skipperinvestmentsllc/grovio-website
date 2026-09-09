@@ -259,4 +259,50 @@ export const podcastEpisodeData = {
       label: "Start with grovio free",
     },
   },
+  "what-is-the-actual-goal": {
+    searchTitle: "What Is the Actual Goal? | Homeschool priorities transcript",
+    metaDescription: "Claire asks what your homeschool routines are actually for, and how returning to the real goal can loosen the grip of needless conflict and performance.",
+    questionH1: "What is the actual goal behind the routines in our homeschool?",
+    directAnswer: "The actual goal is the learning, communication, curiosity, and relationship you want to support—not a ritual that only makes school look right. Ask what each practice is for, then keep the parts that move your child toward that purpose.",
+    sections: [
+      {
+        heading: "The question that cuts through the surface answer",
+        body: "Claire describes asking what the actual goal is as a useful interruption. It pushes past the first explanation and reveals whether a demand serves learning or simply reflects a reason you have never examined.",
+      },
+      {
+        heading: "When handwriting practice stops serving communication",
+        body: "A disagreement about letters, lines, and slant made the distinction concrete. Neat handwriting was only valuable because it could help her son communicate clearly; insisting on a particular look was moving him toward hating the work instead.",
+      },
+      {
+        heading: "A goal is different from a ritual",
+        body: "Read-alouds, kitchen-counter math, and library trips survived the question because their purpose was clear. Repeating worksheets he had already mastered or enforcing a school-like format did not. When the reason is only that it looks right, Claire calls it a ritual rather than a goal.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How can I find the real goal of a homeschool activity?",
+        answer: "Name the immediate reason, then ask why that reason matters and whether the activity is moving your child toward it. Keep following the answer until you reach a purpose you can clearly defend.",
+      },
+      {
+        question: "What should I do when a routine no longer serves its purpose?",
+        answer: "Loosen or change the routine. If it is creating conflict without supporting learning, communication, curiosity, or relationship, the routine may be acting as a ritual instead of helping with the goal.",
+      },
+    ],
+    relatedGuideSlugs: [
+      "what-counts-as-learning",
+      "what-if-we-dont-finish-everything",
+      "is-it-normal-for-homeschooling-to-feel-hard",
+    ],
+    relatedEpisodeSlugs: [
+      "am-i-doing-enough",
+      "behind-compared-to-what",
+      "the-homeschool-mom-in-my-head",
+    ],
+    cta: {
+      title: "Keep the learning that matters",
+      body: "grovio helps you record the real work and small wins in your homeschool so routines stay connected to what your child is actually learning.",
+      href: "/get",
+      label: "Start with grovio free",
+    },
+  },
 };
