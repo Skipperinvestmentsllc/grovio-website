@@ -281,7 +281,7 @@
       mask-image:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 65%);
     }
   </style>
-  <link rel="stylesheet" href="/assets/grovio-navigation.css?v=20260909">
+  <link rel="stylesheet" href="/assets/grovio-navigation.css?v=20260911">
   <script defer src="/assets/grovio-navigation.js"></script>
 </head>
 <body>
@@ -289,25 +289,37 @@
   <div class="grovio-nav-inner">
     <a href="/" class="grovio-wordmark">grovio</a>
     <div class="grovio-nav-right">
-      <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open site menu" aria-expanded="false" aria-controls="grovioNavPanel">
-        <span></span><span></span><span></span>
+      <button class="grovio-nav-burger grovio-nav-burger--landing" id="grovioNavBurger" aria-label="Explore grovio" aria-expanded="false" aria-controls="grovioNavPanel">
+        <span class="grovio-nav-menu-label">Explore grovio</span>
+        <span class="grovio-nav-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
 </header>
 <div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
 <nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true" aria-label="Site menu">
-  <a href="/" class="grovio-nav-panel-link">Home</a>
-  <a href="/features" class="grovio-nav-panel-link">Features</a>
-  <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
-  <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
-  <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
-  <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
-  <a href="/community" class="grovio-nav-panel-link">Community</a>
-  <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
-  <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
-  <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
-  <a href="/support" class="grovio-nav-panel-link">Support</a>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">The app</p>
+    <a href="/" class="grovio-nav-panel-link">Home</a>
+    <a href="/features" class="grovio-nav-panel-link">Features</a>
+    <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
+    <a href="/get" class="grovio-nav-panel-link">Download free</a>
+  </div>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">Learn</p>
+    <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
+    <a href="/guide/homeschool-records-by-state" class="grovio-nav-panel-link">Homeschool Records by State</a>
+    <a href="/compare" class="grovio-nav-panel-link">Compare Homeschool Apps</a>
+    <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
+  </div>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">About &amp; help</p>
+    <a href="/about" class="grovio-nav-panel-link">About grovio</a>
+    <a href="/about/claire" class="grovio-nav-panel-link">Meet Claire</a>
+    <a href="/community" class="grovio-nav-panel-link">Community</a>
+    <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
+    <a href="/support" class="grovio-nav-panel-link">Support</a>
+  </div>
   <p class="grovio-nav-panel-tagline">Grow simply. Homeschool confidently.</p>
 </nav>
 

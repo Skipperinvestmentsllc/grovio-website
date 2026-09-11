@@ -691,7 +691,7 @@
       .grovio-nav-links { display: none; }
     }
   </style>
-  <link rel="stylesheet" href="/assets/grovio-navigation.css?v=20260909">
+  <link rel="stylesheet" href="/assets/grovio-navigation.css?v=20260911">
   <script defer src="/assets/grovio-navigation.js"></script>
 </head>
 <body>
@@ -699,29 +699,64 @@
   <div class="grovio-nav-inner">
     <a href="/" class="grovio-wordmark">grovio</a>
     <nav class="grovio-nav-links" aria-label="Primary navigation">
-      <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/podcast">Podcast</a><a href="/guide/">Guide</a><a href="/compare">Compare apps</a>
-    </nav>
+  <a href="/features">Features</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/podcast">Podcast</a>
+  <div class="grovio-nav-dropdown">
+  <a href="/guide/" class="grovio-nav-parent-link">The Guide</a>
+  <button class="grovio-nav-dropdown-toggle" type="button" aria-label="Open The Guide menu" aria-expanded="false" aria-controls="grovioGuideMenu" data-grovio-dropdown="grovioGuideMenu"><span aria-hidden="true">&#8964;</span></button>
+  <div class="grovio-nav-dropdown-panel" id="grovioGuideMenu" hidden>
+    <a href="/guide/">Browse The Guide</a><a href="/guide/homeschool-records-by-state">Homeschool Records by State</a><a href="/compare">Compare Homeschool Apps</a>
+  </div>
+</div>
+  <div class="grovio-nav-dropdown">
+  <a href="/about" class="grovio-nav-parent-link">About</a>
+  <button class="grovio-nav-dropdown-toggle" type="button" aria-label="Open About menu" aria-expanded="false" aria-controls="grovioAboutMenu" data-grovio-dropdown="grovioAboutMenu"><span aria-hidden="true">&#8964;</span></button>
+  <div class="grovio-nav-dropdown-panel" id="grovioAboutMenu" hidden>
+    <a href="/about">About grovio</a><a href="/about/claire">Meet Claire</a><a href="/community">Community</a>
+  </div>
+</div>
+  <div class="grovio-nav-dropdown">
+  <a href="/faq" class="grovio-nav-parent-link">Help</a>
+  <button class="grovio-nav-dropdown-toggle" type="button" aria-label="Open Help menu" aria-expanded="false" aria-controls="grovioHelpMenu" data-grovio-dropdown="grovioHelpMenu"><span aria-hidden="true">&#8964;</span></button>
+  <div class="grovio-nav-dropdown-panel" id="grovioHelpMenu" hidden>
+    <a href="/faq">FAQ</a><a href="/support">Support</a>
+  </div>
+</div>
+</nav>
     <div class="grovio-nav-right">
       <a href="/get" class="grovio-nav-cta">Download free</a>
       <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open site menu" aria-expanded="false" aria-controls="grovioNavPanel">
-        <span></span><span></span><span></span>
+        <span class="grovio-nav-menu-label">Menu</span>
+        <span class="grovio-nav-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
 </header>
 <div class="grovio-nav-overlay" id="grovioNavOverlay"></div>
 <nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true" aria-label="Site menu">
-  <a href="/" class="grovio-nav-panel-link">Home</a>
-  <a href="/features" class="grovio-nav-panel-link">Features</a>
-  <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
-  <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
-  <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
-  <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
-  <a href="/community" class="grovio-nav-panel-link">Community</a>
-  <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
-  <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
-  <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
-  <a href="/support" class="grovio-nav-panel-link">Support</a>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">The app</p>
+    <a href="/" class="grovio-nav-panel-link">Home</a>
+    <a href="/features" class="grovio-nav-panel-link">Features</a>
+    <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
+    <a href="/get" class="grovio-nav-panel-link">Download free</a>
+  </div>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">Learn</p>
+    <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
+    <a href="/guide/homeschool-records-by-state" class="grovio-nav-panel-link">Homeschool Records by State</a>
+    <a href="/compare" class="grovio-nav-panel-link">Compare Homeschool Apps</a>
+    <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
+  </div>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">About &amp; help</p>
+    <a href="/about" class="grovio-nav-panel-link">About grovio</a>
+    <a href="/about/claire" class="grovio-nav-panel-link">Meet Claire</a>
+    <a href="/community" class="grovio-nav-panel-link">Community</a>
+    <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
+    <a href="/support" class="grovio-nav-panel-link">Support</a>
+  </div>
   <p class="grovio-nav-panel-tagline">Grow simply. Homeschool confidently.</p>
 </nav>
 
@@ -1139,40 +1174,5 @@
 })();
 </script>
 
-<script>
-(function() {
-  var burger = document.getElementById('grovioNavBurger');
-  var panel = document.getElementById('grovioNavPanel');
-  var overlay = document.getElementById('grovioNavOverlay');
-  if (!burger || !panel || !overlay) return;
-  function openMenu() {
-    burger.setAttribute('aria-expanded', 'true');
-    burger.setAttribute('aria-label', 'Close menu');
-    panel.classList.add('is-open');
-    panel.setAttribute('aria-hidden', 'false');
-    overlay.classList.add('is-open');
-    document.body.classList.add('grovio-nav-locked');
-  }
-  function closeMenu() {
-    burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', 'Open menu');
-    panel.classList.remove('is-open');
-    panel.setAttribute('aria-hidden', 'true');
-    overlay.classList.remove('is-open');
-    document.body.classList.remove('grovio-nav-locked');
-  }
-  burger.addEventListener('click', function() {
-    if (burger.getAttribute('aria-expanded') === 'true') closeMenu();
-    else openMenu();
-  });
-  overlay.addEventListener('click', closeMenu);
-  panel.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', closeMenu);
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') closeMenu();
-  });
-})();
-</script>
 </body>
 </html>

@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const navigationStylesheet = '/assets/grovio-navigation.css?v=20260909';
+const navigationStylesheet = '/assets/grovio-navigation.css?v=20260911';
 const legacyFiles = [
   'features.html',
   'pricing.html',
@@ -17,22 +17,57 @@ const legacyFiles = [
   'podcast/what-is-the-actual-goal.html',
 ];
 
+const dropdown = (label, href, menuId, links) => `<div class="grovio-nav-dropdown">
+  <a href="${href}" class="grovio-nav-parent-link">${label}</a>
+  <button class="grovio-nav-dropdown-toggle" type="button" aria-label="Open ${label} menu" aria-expanded="false" aria-controls="${menuId}" data-grovio-dropdown="${menuId}"><span aria-hidden="true">&#8964;</span></button>
+  <div class="grovio-nav-dropdown-panel" id="${menuId}" hidden>
+    ${links.map(({ href: linkHref, label: linkLabel }) => `<a href="${linkHref}">${linkLabel}</a>`).join('')}
+  </div>
+</div>`;
+
 const primaryLinks = `<nav class="grovio-nav-links" aria-label="Primary navigation">
-      <a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/podcast">Podcast</a><a href="/guide/">Guide</a><a href="/compare">Compare apps</a>
-    </nav>`;
+  <a href="/features">Features</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/podcast">Podcast</a>
+  ${dropdown('The Guide', '/guide/', 'grovioGuideMenu', [
+    { href: '/guide/', label: 'Browse The Guide' },
+    { href: '/guide/homeschool-records-by-state', label: 'Homeschool Records by State' },
+    { href: '/compare', label: 'Compare Homeschool Apps' },
+  ])}
+  ${dropdown('About', '/about', 'grovioAboutMenu', [
+    { href: '/about', label: 'About grovio' },
+    { href: '/about/claire', label: 'Meet Claire' },
+    { href: '/community', label: 'Community' },
+  ])}
+  ${dropdown('Help', '/faq', 'grovioHelpMenu', [
+    { href: '/faq', label: 'FAQ' },
+    { href: '/support', label: 'Support' },
+  ])}
+</nav>`;
 
 const menuPanel = `<nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden="true" aria-label="Site menu">
-  <a href="/" class="grovio-nav-panel-link">Home</a>
-  <a href="/features" class="grovio-nav-panel-link">Features</a>
-  <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
-  <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
-  <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
-  <a href="/compare" class="grovio-nav-panel-link">Compare Apps</a>
-  <a href="/community" class="grovio-nav-panel-link">Community</a>
-  <a href="/about" class="grovio-nav-panel-link grovio-nav-panel-link--parent">About</a>
-  <a href="/about/claire" class="grovio-nav-panel-sublink">Claire</a>
-  <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
-  <a href="/support" class="grovio-nav-panel-link">Support</a>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">The app</p>
+    <a href="/" class="grovio-nav-panel-link">Home</a>
+    <a href="/features" class="grovio-nav-panel-link">Features</a>
+    <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
+    <a href="/get" class="grovio-nav-panel-link">Download free</a>
+  </div>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">Learn</p>
+    <a href="/guide/" class="grovio-nav-panel-link">The Guide</a>
+    <a href="/guide/homeschool-records-by-state" class="grovio-nav-panel-link">Homeschool Records by State</a>
+    <a href="/compare" class="grovio-nav-panel-link">Compare Homeschool Apps</a>
+    <a href="/podcast" class="grovio-nav-panel-link">Podcast</a>
+  </div>
+  <div class="grovio-nav-panel-group">
+    <p class="grovio-nav-panel-heading">About &amp; help</p>
+    <a href="/about" class="grovio-nav-panel-link">About grovio</a>
+    <a href="/about/claire" class="grovio-nav-panel-link">Meet Claire</a>
+    <a href="/community" class="grovio-nav-panel-link">Community</a>
+    <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
+    <a href="/support" class="grovio-nav-panel-link">Support</a>
+  </div>
   <p class="grovio-nav-panel-tagline">Grow simply. Homeschool confidently.</p>
 </nav>`;
 
@@ -43,7 +78,8 @@ const sharedHeader = `<header class="grovio-nav">
     <div class="grovio-nav-right">
       <a href="/get" class="grovio-nav-cta">Download free</a>
       <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open site menu" aria-expanded="false" aria-controls="grovioNavPanel">
-        <span></span><span></span><span></span>
+        <span class="grovio-nav-menu-label">Menu</span>
+        <span class="grovio-nav-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
@@ -53,13 +89,15 @@ ${menuPanel}`;
 
 const fullNavigationPattern = /<header class="grovio-nav(?: [^"]*)?">[\s\S]*?<\/header>\s*<div class="grovio-nav-overlay" id="grovioNavOverlay"><\/div>\s*<nav class="grovio-nav-panel" id="grovioNavPanel"[^>]*>[\s\S]*?<\/nav>/;
 const fullNavigationPatternGlobal = /<header class="grovio-nav(?: [^"]*)?">[\s\S]*?<\/header>\s*<div class="grovio-nav-overlay" id="grovioNavOverlay"><\/div>\s*<nav class="grovio-nav-panel" id="grovioNavPanel"[^>]*>[\s\S]*?<\/nav>/g;
+const copiedNavigationScriptPattern = /<script>\s*\(function\(\) \{\s*var burger = document\.getElementById\('grovioNavBurger'\);[\s\S]*?\}\)\(\);\s*<\/script>\s*/g;
 
 const landingHeader = `<header class="grovio-nav grovio-nav--landing">
   <div class="grovio-nav-inner">
     <a href="/" class="grovio-wordmark">grovio</a>
     <div class="grovio-nav-right">
-      <button class="grovio-nav-burger" id="grovioNavBurger" aria-label="Open site menu" aria-expanded="false" aria-controls="grovioNavPanel">
-        <span></span><span></span><span></span>
+      <button class="grovio-nav-burger grovio-nav-burger--landing" id="grovioNavBurger" aria-label="Explore grovio" aria-expanded="false" aria-controls="grovioNavPanel">
+        <span class="grovio-nav-menu-label">Explore grovio</span>
+        <span class="grovio-nav-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
       </button>
     </div>
   </div>
@@ -189,7 +227,7 @@ for (const relativePath of directLinkFiles) {
   html = addSharedAssets(html);
 
   if (html.includes('grovio-nav--landing')) {
-    // This direct-link page is already using the focused exit menu.
+    html = html.replace(fullNavigationPattern, landingHeader);
   } else if (relativePath === 'creator-program.html') {
     if (!/<meta name="robots"/i.test(html)) {
       html = html.replace('</head>', '  <meta name="robots" content="noindex, nofollow">\n</head>');
@@ -221,6 +259,7 @@ for (const relativePath of new Set(publicHtmlFiles)) {
     .replace(/"Plus Jakarta Sans"/g, '"Inter"')
     .replace(/Plus Jakarta Sans/g, 'Inter');
   html = keepOneNavigation(html);
+  html = html.replace(copiedNavigationScriptPattern, '');
   html = html.replace(/\n[ \t]+\n/g, '\n\n');
   await writeFile(file, html);
 }
