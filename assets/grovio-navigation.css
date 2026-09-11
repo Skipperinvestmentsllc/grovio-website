@@ -68,8 +68,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.38rem;
-  background: transparent;
-  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   cursor: pointer;
 }
 .grovio-nav-dropdown-chevron {
