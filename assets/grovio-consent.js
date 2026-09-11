@@ -6,6 +6,8 @@
   var metaPixelId = '1483572783552950';
   var pinterestTagId = '2613547423528';
   var banner;
+  var compactControl;
+  var consentPanel;
   var preferences;
   var initialActions;
   var analyticsInput;
@@ -118,19 +120,34 @@
   }
 
   function hideBanner() {
-    banner.classList.remove('is-visible');
+    banner.classList.remove('is-visible', 'is-compact');
     banner.setAttribute('aria-hidden', 'true');
   }
 
-  function showBanner() {
-    banner.classList.add('is-visible');
+  function showCompact() {
+    preferences.hidden = true;
+    initialActions.hidden = false;
+    consentPanel.hidden = true;
+    compactControl.hidden = false;
+    compactControl.setAttribute('aria-expanded', 'false');
+    banner.classList.remove('is-visible');
+    banner.classList.add('is-compact');
     banner.setAttribute('aria-hidden', 'false');
   }
 
   function showInitial() {
+    showCompact();
+  }
+
+  function showNotice() {
     preferences.hidden = true;
     initialActions.hidden = false;
-    showBanner();
+    consentPanel.hidden = false;
+    compactControl.hidden = true;
+    compactControl.setAttribute('aria-expanded', 'true');
+    banner.classList.remove('is-compact');
+    banner.classList.add('is-visible');
+    banner.setAttribute('aria-hidden', 'false');
   }
 
   function showPreferences() {
@@ -139,7 +156,12 @@
     marketingInput.checked = consent.marketing;
     initialActions.hidden = true;
     preferences.hidden = false;
-    showBanner();
+    consentPanel.hidden = false;
+    compactControl.hidden = true;
+    compactControl.setAttribute('aria-expanded', 'true');
+    banner.classList.remove('is-compact');
+    banner.classList.add('is-visible');
+    banner.setAttribute('aria-hidden', 'false');
     analyticsInput.focus();
   }
 
@@ -173,10 +195,14 @@
       var choice = action.dataset.grovioConsentAction;
       if (choice === 'essential') updateConsent({ analytics: false, marketing: false });
       if (choice === 'allow-all') updateConsent({ analytics: true, marketing: true });
+      if (choice === 'open') showNotice();
       if (choice === 'manage') showPreferences();
       if (choice === 'save') updateConsent({ analytics: analyticsInput.checked, marketing: marketingInput.checked });
+      if (choice === 'collapse') {
+        if (readConsent()) hideBanner(); else showCompact();
+      }
       if (choice === 'cancel') {
-        if (readConsent()) hideBanner(); else showInitial();
+        if (readConsent()) hideBanner(); else showCompact();
       }
     });
   }
@@ -185,13 +211,17 @@
     banner = document.createElement('section');
     banner.className = 'grovio-consent';
     banner.id = 'grovioConsent';
-    banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-labelledby', 'grovioConsentTitle');
+    banner.setAttribute('aria-label', 'Website privacy choices');
     banner.setAttribute('aria-hidden', 'true');
     banner.innerHTML = [
+      '<button class="grovio-consent-tab" type="button" data-grovio-consent-action="open" aria-expanded="false">Privacy choices <span aria-hidden="true">&#8964;</span></button>',
+      '<div class="grovio-consent-panel" data-consent-panel hidden>',
+      '<div class="grovio-consent-panel-header">',
       '<div class="grovio-consent-copy">',
       '<h2 class="grovio-consent-title" id="grovioConsentTitle">Your privacy, your choice.</h2>',
       '<p>We use optional analytics and marketing tools to understand visits and measure campaigns. You can use grovioapp.com without them. <a href="/privacy#website-privacy-choices">Learn more</a>.</p>',
+      '</div>',
+      '<button class="grovio-consent-close" type="button" data-grovio-consent-action="collapse" aria-label="Close privacy choices">&times;</button>',
       '</div>',
       '<div class="grovio-consent-actions" data-consent-initial-actions>',
       '<button class="grovio-consent-button" type="button" data-grovio-consent-action="essential">Use essential only</button>',
@@ -203,9 +233,12 @@
       '<label class="grovio-consent-option"><input type="checkbox" data-consent-analytics><span><strong>Analytics</strong><span>Helps us understand which pages and resources are useful.</span></span></label>',
       '<label class="grovio-consent-option"><input type="checkbox" data-consent-marketing><span><strong>Marketing</strong><span>Measures advertising and campaign performance.</span></span></label>',
       '<div class="grovio-consent-actions"><button class="grovio-consent-button" type="button" data-grovio-consent-action="cancel">Cancel</button><button class="grovio-consent-button grovio-consent-button--primary" type="button" data-grovio-consent-action="save">Save choices</button></div>',
-      '</form>'
+      '</form>',
+      '</div>'
     ].join('');
     document.body.appendChild(banner);
+    compactControl = banner.querySelector('.grovio-consent-tab');
+    consentPanel = banner.querySelector('[data-consent-panel]');
     preferences = banner.querySelector('[data-consent-preferences]');
     initialActions = banner.querySelector('[data-consent-initial-actions]');
     analyticsInput = banner.querySelector('[data-consent-analytics]');

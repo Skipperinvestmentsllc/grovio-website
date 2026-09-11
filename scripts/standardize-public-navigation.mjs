@@ -4,8 +4,8 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const navigationStylesheet = '/assets/grovio-navigation.css?v=20260911';
 const navigationScript = '/assets/grovio-navigation.js?v=20260911-2';
-const consentStylesheet = '/assets/grovio-consent.css?v=20260911-1';
-const consentScript = '/assets/grovio-consent.js?v=20260911-1';
+const consentStylesheet = '/assets/grovio-consent.css?v=20260911-2';
+const consentScript = '/assets/grovio-consent.js?v=20260911-2';
 const legacyFiles = [
   'features.html',
   'pricing.html',
