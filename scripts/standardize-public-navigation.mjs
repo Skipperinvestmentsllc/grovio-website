@@ -26,7 +26,10 @@ const dropdown = (label, href, menuId, links) => `<div class="grovio-nav-dropdow
 </div>`;
 
 const primaryLinks = `<nav class="grovio-nav-links" aria-label="Primary navigation">
-  <a href="/features">Features</a>
+  ${dropdown('Features', '/features', 'grovioFeaturesMenu', [
+    { href: '/features', label: 'Explore grovio features' },
+    { href: '/community', label: 'Community' },
+  ])}
   <a href="/pricing">Pricing</a>
   <a href="/podcast">Podcast</a>
   ${dropdown('The Guide', '/guide/', 'grovioGuideMenu', [
@@ -37,7 +40,6 @@ const primaryLinks = `<nav class="grovio-nav-links" aria-label="Primary navigati
   ${dropdown('About', '/about', 'grovioAboutMenu', [
     { href: '/about', label: 'About grovio' },
     { href: '/about/claire', label: 'Meet Claire' },
-    { href: '/community', label: 'Community' },
   ])}
   ${dropdown('Help', '/faq', 'grovioHelpMenu', [
     { href: '/faq', label: 'FAQ' },
@@ -50,6 +52,7 @@ const menuPanel = `<nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden
     <p class="grovio-nav-panel-heading">The app</p>
     <a href="/" class="grovio-nav-panel-link">Home</a>
     <a href="/features" class="grovio-nav-panel-link">Features</a>
+    <a href="/community" class="grovio-nav-panel-link">Community</a>
     <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
     <a href="/get" class="grovio-nav-panel-link">Download free</a>
   </div>
@@ -64,7 +67,6 @@ const menuPanel = `<nav class="grovio-nav-panel" id="grovioNavPanel" aria-hidden
     <p class="grovio-nav-panel-heading">About &amp; help</p>
     <a href="/about" class="grovio-nav-panel-link">About grovio</a>
     <a href="/about/claire" class="grovio-nav-panel-link">Meet Claire</a>
-    <a href="/community" class="grovio-nav-panel-link">Community</a>
     <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
     <a href="/support" class="grovio-nav-panel-link">Support</a>
   </div>

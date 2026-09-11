@@ -304,7 +304,13 @@
   <div class="grovio-nav-inner">
     <a href="/" class="grovio-wordmark">grovio</a>
     <nav class="grovio-nav-links" aria-label="Primary navigation">
-  <a href="/features">Features</a>
+  <div class="grovio-nav-dropdown">
+  <a href="/features" class="grovio-nav-parent-link">Features</a>
+  <button class="grovio-nav-dropdown-toggle" type="button" aria-label="Open Features menu" aria-expanded="false" aria-controls="grovioFeaturesMenu" data-grovio-dropdown="grovioFeaturesMenu"><span aria-hidden="true">&#8964;</span></button>
+  <div class="grovio-nav-dropdown-panel" id="grovioFeaturesMenu" hidden>
+    <a href="/features">Explore grovio features</a><a href="/community">Community</a>
+  </div>
+</div>
   <a href="/pricing">Pricing</a>
   <a href="/podcast">Podcast</a>
   <div class="grovio-nav-dropdown">
@@ -318,7 +324,7 @@
   <a href="/about" class="grovio-nav-parent-link">About</a>
   <button class="grovio-nav-dropdown-toggle" type="button" aria-label="Open About menu" aria-expanded="false" aria-controls="grovioAboutMenu" data-grovio-dropdown="grovioAboutMenu"><span aria-hidden="true">&#8964;</span></button>
   <div class="grovio-nav-dropdown-panel" id="grovioAboutMenu" hidden>
-    <a href="/about">About grovio</a><a href="/about/claire">Meet Claire</a><a href="/community">Community</a>
+    <a href="/about">About grovio</a><a href="/about/claire">Meet Claire</a>
   </div>
 </div>
   <div class="grovio-nav-dropdown">
@@ -344,6 +350,7 @@
     <p class="grovio-nav-panel-heading">The app</p>
     <a href="/" class="grovio-nav-panel-link">Home</a>
     <a href="/features" class="grovio-nav-panel-link">Features</a>
+    <a href="/community" class="grovio-nav-panel-link">Community</a>
     <a href="/pricing" class="grovio-nav-panel-link">Pricing</a>
     <a href="/get" class="grovio-nav-panel-link">Download free</a>
   </div>
@@ -358,7 +365,6 @@
     <p class="grovio-nav-panel-heading">About &amp; help</p>
     <a href="/about" class="grovio-nav-panel-link">About grovio</a>
     <a href="/about/claire" class="grovio-nav-panel-link">Meet Claire</a>
-    <a href="/community" class="grovio-nav-panel-link">Community</a>
     <a href="/faq" class="grovio-nav-panel-link">FAQ</a>
     <a href="/support" class="grovio-nav-panel-link">Support</a>
   </div>
