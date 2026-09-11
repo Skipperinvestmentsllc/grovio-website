@@ -4,6 +4,8 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const navigationStylesheet = '/assets/grovio-navigation.css?v=20260911';
 const navigationScript = '/assets/grovio-navigation.js?v=20260911-2';
+const consentStylesheet = '/assets/grovio-consent.css?v=20260911-1';
+const consentScript = '/assets/grovio-consent.js?v=20260911-1';
 const legacyFiles = [
   'features.html',
   'pricing.html',
@@ -118,7 +120,34 @@ function addSharedAssets(html) {
       html = html.replace('</head>', `  <script defer src="${navigationScript}"></script>\n</head>`);
     }
   }
+
+  if (!html.includes('/assets/grovio-consent.css')) {
+    html = html.replace('</head>', `  <link rel="stylesheet" href="${consentStylesheet}">\n  <script defer src="${consentScript}"></script>\n</head>`);
+  } else {
+    html = html.replace(/href="\/assets\/grovio-consent\.css(?:\?[^\"]*)?"/g, `href="${consentStylesheet}"`);
+    if (html.includes('/assets/grovio-consent.js')) {
+      html = html.replace(/src="\/assets\/grovio-consent\.js(?:\?[^\"]*)?"/g, `src="${consentScript}"`);
+    } else {
+      html = html.replace('</head>', `  <script defer src="${consentScript}"></script>\n</head>`);
+    }
+  }
+
   return html;
+}
+
+function removeWebsiteMeasurement(html) {
+  return html
+    .replace(/<!-- Google Analytics 4 -->\s*/gi, '')
+    .replace(/<script\s+async\s+src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-ZM2WLE995S"><\/script>\s*/gi, '')
+    .replace(/<script>\s*window\.dataLayer\s*=\s*window\.dataLayer\s*\|\|\s*\[\];[\s\S]*?gtag\('config',\s*['"]G-ZM2WLE995S['"][\s\S]*?<\/script>\s*/gi, '')
+    .replace(/<!-- Meta Pixel Code -->[\s\S]*?(?:<!-- End Meta Pixel Code -->|(?=<!-- Pinterest Tag -->))\s*/gi, '')
+    .replace(/<!-- Pinterest Tag -->[\s\S]*?(?:<!-- end Pinterest Tag -->|(?=<meta\s+name="viewport"))\s*/gi, '')
+    .replace(/<script>\s*!function\(w,d,s,u\)\{if\(w\.oaiq\)[\s\S]*?bzrcdn\.openai\.com\/sdk\/oaiq\.min\.js[\s\S]*?<\/script>\s*/g, '');
+}
+
+function addOpenAIConversionConfiguration(html, relativePath) {
+  if (relativePath !== 'start.html' || html.includes('grovio-openai-conversion-pixel')) return html;
+  return html.replace('</head>', '  <meta name="grovio-openai-conversion-pixel" content="WtKnfY6Nk16KRdKDGcRUEj">\n</head>');
 }
 
 function keepOneNavigation(html) {
@@ -260,6 +289,9 @@ const publicHtmlFiles = [
 for (const relativePath of new Set(publicHtmlFiles)) {
   const file = resolve(root, relativePath);
   let html = await readFile(file, 'utf8');
+  html = removeWebsiteMeasurement(html);
+  html = addOpenAIConversionConfiguration(html, relativePath);
+  html = addSharedAssets(html);
   html = html
     .replace(/family=Plus\+Jakarta\+Sans(?::[^&"']+)?/g, 'family=Inter:wght@400;500;600')
     .replace(/'Plus Jakarta Sans'/g, "'Inter'")
