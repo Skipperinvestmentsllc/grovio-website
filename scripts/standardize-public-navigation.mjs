@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const navigationStylesheet = '/assets/grovio-navigation.css?v=20260911';
+const navigationScript = '/assets/grovio-navigation.js?v=20260911-2';
 const legacyFiles = [
   'features.html',
   'pricing.html',
@@ -17,31 +18,30 @@ const legacyFiles = [
   'podcast/what-is-the-actual-goal.html',
 ];
 
-const dropdown = (label, href, menuId, links) => `<div class="grovio-nav-dropdown">
-  <a href="${href}" class="grovio-nav-parent-link">${label}</a>
-  <button class="grovio-nav-dropdown-toggle" type="button" aria-label="Open ${label} menu" aria-expanded="false" aria-controls="${menuId}" data-grovio-dropdown="${menuId}"><span aria-hidden="true">&#8964;</span></button>
+const dropdown = (label, menuId, links) => `<div class="grovio-nav-dropdown">
+  <button class="grovio-nav-dropdown-trigger" type="button" aria-label="Open ${label} menu" aria-expanded="false" aria-haspopup="true" aria-controls="${menuId}" data-grovio-dropdown="${menuId}"><span>${label}</span><span class="grovio-nav-dropdown-chevron" aria-hidden="true">&#8964;</span></button>
   <div class="grovio-nav-dropdown-panel" id="${menuId}" hidden>
     ${links.map(({ href: linkHref, label: linkLabel }) => `<a href="${linkHref}">${linkLabel}</a>`).join('')}
   </div>
 </div>`;
 
 const primaryLinks = `<nav class="grovio-nav-links" aria-label="Primary navigation">
-  ${dropdown('Features', '/features', 'grovioFeaturesMenu', [
+  ${dropdown('Features', 'grovioFeaturesMenu', [
     { href: '/features', label: 'Explore grovio features' },
     { href: '/community', label: 'Community' },
   ])}
   <a href="/pricing">Pricing</a>
   <a href="/podcast">Podcast</a>
-  ${dropdown('The Guide', '/guide/', 'grovioGuideMenu', [
+  ${dropdown('The Guide', 'grovioGuideMenu', [
     { href: '/guide/', label: 'Browse The Guide' },
     { href: '/guide/homeschool-records-by-state', label: 'Homeschool Records by State' },
     { href: '/compare', label: 'Compare Homeschool Apps' },
   ])}
-  ${dropdown('About', '/about', 'grovioAboutMenu', [
+  ${dropdown('About', 'grovioAboutMenu', [
     { href: '/about', label: 'About grovio' },
     { href: '/about/claire', label: 'Meet Claire' },
   ])}
-  ${dropdown('Help', '/faq', 'grovioHelpMenu', [
+  ${dropdown('Help', 'grovioHelpMenu', [
     { href: '/faq', label: 'FAQ' },
     { href: '/support', label: 'Support' },
   ])}
@@ -109,9 +109,14 @@ ${menuPanel}`;
 
 function addSharedAssets(html) {
   if (!html.includes('/assets/grovio-navigation.css')) {
-    html = html.replace('</head>', `  <link rel="stylesheet" href="${navigationStylesheet}">\n  <script defer src="/assets/grovio-navigation.js"></script>\n</head>`);
+    html = html.replace('</head>', `  <link rel="stylesheet" href="${navigationStylesheet}">\n  <script defer src="${navigationScript}"></script>\n</head>`);
   } else {
     html = html.replace(/href="\/assets\/grovio-navigation\.css(?:\?[^\"]*)?"/g, `href="${navigationStylesheet}"`);
+    if (html.includes('/assets/grovio-navigation.js')) {
+      html = html.replace(/src="\/assets\/grovio-navigation\.js(?:\?[^\"]*)?"/g, `src="${navigationScript}"`);
+    } else {
+      html = html.replace('</head>', `  <script defer src="${navigationScript}"></script>\n</head>`);
+    }
   }
   return html;
 }
