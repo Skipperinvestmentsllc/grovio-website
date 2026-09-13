@@ -9,6 +9,7 @@ import {
   signMarketingOAuthState,
   type MarketingChannelProvider,
 } from "../_shared/marketing-meta-oauth.ts";
+import { syncInstagramRecentMedia } from "../_shared/marketing-instagram-sync.ts";
 
 const cors = {
   "Access-Control-Allow-Origin": "*",
@@ -368,7 +369,7 @@ async function startChannelOAuth(user: { id: string }, provider: MarketingChanne
   if (provider === "tiktok") {
     authorization.searchParams.set("client_key", config.clientId);
     authorization.searchParams.set("response_type", "code");
-    authorization.searchParams.set("scope", "user.info.basic,video.list,video.publish");
+    authorization.searchParams.set("scope", "user.info.basic,video.list,video.upload");
   } else if (provider === "x") {
     authorization.searchParams.set("client_id", config.clientId);
     authorization.searchParams.set("response_type", "code");
@@ -739,6 +740,49 @@ Deno.serve(async (req) => {
       return reply({ connections: data || [] });
     }
 
+    if (action === "list_publishing_automations") {
+      const { data, error } = await supabase
+        .from("marketing_channel_automations")
+        .select("id, source_platform, destination_platform, mode, enabled, requires_creator_review, last_run_at, last_error, created_at, updated_at")
+        .order("updated_at", { ascending: false });
+      if (error) throw error;
+      return reply({ automations: data || [] });
+    }
+
+    if (action === "upsert_publishing_automation") {
+      const source = text(body?.source_platform, 30);
+      const destination = text(body?.destination_platform, 30);
+      if (source !== "instagram" || destination !== "tiktok" || typeof body?.enabled !== "boolean") {
+        return reply({ reason: "invalid_request" }, 400);
+      }
+      const { data, error } = await supabase
+        .from("marketing_channel_automations")
+        .upsert({
+          source_platform: "instagram",
+          destination_platform: "tiktok",
+          mode: "tiktok_upload_queue",
+          enabled: body.enabled,
+          requires_creator_review: true,
+          created_by: user.id,
+          last_error: null,
+        }, { onConflict: "source_platform,destination_platform" })
+        .select("id, source_platform, destination_platform, mode, enabled, requires_creator_review, last_run_at, last_error, created_at, updated_at")
+        .single();
+      if (error) throw error;
+      return reply({ automation: data });
+    }
+
+    if (action === "sync_instagram_media") {
+      try {
+        const result = await syncInstagramRecentMedia(supabase);
+        if ("reason" in result) return reply({ reason: result.reason }, 422);
+        return reply({ sync: result });
+      } catch (error) {
+        console.error("marketing-admin Instagram media sync", error);
+        return reply({ reason: "instagram_sync_failed" }, 502);
+      }
+    }
+
     if (action === "start_channel_oauth") {
       const provider = text(body?.provider, 20) as MarketingChannelProvider;
       if (!(["tiktok", "x", "reddit"] as string[]).includes(provider)) return reply({ reason: "invalid_request" }, 400);
@@ -838,7 +882,7 @@ Deno.serve(async (req) => {
       const type = nullableText(body?.content_type, 40);
       let query = supabase
         .from("marketing_content")
-        .select("*, campaign:marketing_campaigns(id, name, slug), channel_posts:marketing_channel_posts(id, channel, status, scheduled_for, published_at, platform_post_url)")
+        .select("*, campaign:marketing_campaigns(id, name, slug), channel_posts:marketing_channel_posts(id, channel, status, copy, destination_url, scheduled_for, published_at, platform_post_id, platform_post_url, platform_config, provider_payload, delivery_attempts, last_delivery_attempt_at, delivery_error)")
         .order("updated_at", { ascending: false })
         .limit(100);
       if (campaignId) query = query.eq("campaign_id", campaignId);
@@ -866,12 +910,15 @@ Deno.serve(async (req) => {
           content_id: contentId,
           channel,
           status: "scheduled",
-          copy: content.caption,
-          destination_url: content.target_url,
+          copy: nullableText(body?.copy, 5000) ?? content.caption,
+          destination_url: externalUrl(body?.destination_url) ?? content.target_url,
+          platform_config: jsonObject(body?.platform_config) || {},
           scheduled_for: scheduledFor,
           published_at: null,
           platform_post_id: null,
           platform_post_url: null,
+          provider_payload: {},
+          delivery_error: null,
         }, { onConflict: "content_id,channel" })
         .select("*")
         .single();
@@ -884,6 +931,35 @@ Deno.serve(async (req) => {
         .single();
       if (updateError) throw updateError;
       return reply({ content: updated, channel_post: channelPost });
+    }
+
+    if (action === "update_channel_post") {
+      const id = nullableUuid(body?.id);
+      const status = text(body?.status, 30);
+      const scheduledFor = nullableTimestamp(body?.scheduled_for);
+      if (!id || !["draft", "in_review", "approved", "scheduled", "archived"].includes(status) || scheduledFor === undefined || (status === "scheduled" && !scheduledFor)) {
+        return reply({ reason: "invalid_request" }, 400);
+      }
+      const destination = body?.destination_url === undefined ? undefined : externalUrl(body.destination_url);
+      if (body?.destination_url && !destination) return reply({ reason: "invalid_request" }, 400);
+      const update: Record<string, unknown> = {
+        status,
+        copy: body?.copy === undefined ? undefined : nullableText(body.copy, 5000),
+        scheduled_for: scheduledFor,
+        platform_config: body?.platform_config === undefined ? undefined : (jsonObject(body.platform_config) || {}),
+        delivery_error: status === "scheduled" ? null : undefined,
+      };
+      if (destination !== undefined) update.destination_url = destination;
+      for (const key of Object.keys(update)) if (update[key] === undefined) delete update[key];
+      const { data, error } = await supabase
+        .from("marketing_channel_posts")
+        .update(update)
+        .eq("id", id)
+        .select("*")
+        .maybeSingle();
+      if (error) throw error;
+      if (!data) return reply({ reason: "not_found" }, 404);
+      return reply({ channel_post: data });
     }
 
     if (action === "create_content") {

@@ -20,3 +20,10 @@ entrypoint = "./functions/marketing-meta-oauth/index.ts"
 enabled = true
 verify_jwt = false
 entrypoint = "./functions/marketing-channel-oauth/index.ts"
+
+# Invoked only by Supabase Cron using a Vault-held secret. It imports newly
+# published Instagram media and delivers due X posts or TikTok Inbox uploads.
+[functions.marketing-publisher]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/marketing-publisher/index.ts"
