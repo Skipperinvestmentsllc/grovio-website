@@ -2,10 +2,55 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const navigationStylesheet = '/assets/grovio-navigation.css?v=20260911-2';
+const navigationStylesheet = '/assets/grovio-navigation.css?v=20260913-1';
 const navigationScript = '/assets/grovio-navigation.js?v=20260911-2';
 const consentStylesheet = '/assets/grovio-consent.css?v=20260911-2';
 const consentScript = '/assets/grovio-consent.js?v=20260911-2';
+const socialProfiles = [
+  { label: 'Instagram', href: 'https://www.instagram.com/groviohomeschool/' },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61590897646398' },
+  { label: 'Pinterest', href: 'https://www.pinterest.com/grovioapp/' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@groviohomeschoolapp' },
+  { label: 'X', href: 'https://x.com/groviohomeskool' },
+];
+const lightFooterFiles = new Set([
+  'community.html',
+  'get.html',
+  'links/index.html',
+  'share.html',
+  'p/can-i-homeschool-if-im-not-a-teacher.html',
+  'p/how-do-i-create-a-daily-rhythm.html',
+  'p/how-do-i-start-homeschooling.html',
+  'p/how-do-i-stay-consistent-without-burnout.html',
+  'p/is-it-normal-for-homeschooling-to-feel-hard.html',
+  'p/what-counts-as-learning.html',
+  'p/what-if-my-child-is-ahead-or-behind.html',
+  'p/what-supplies-do-i-need.html',
+]);
+
+function socialFooterMarkup({ onDark = false } = {}) {
+  const toneClass = onDark ? ' grovio-social-links--on-dark' : '';
+  return `\n    <nav class="grovio-social-links${toneClass}" aria-label="Follow grovio">
+      <span class="grovio-social-links-label">Follow grovio</span>
+      ${socialProfiles.map(({ href, label }) => `<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`).join('\n      ')}
+    </nav>\n  `;
+}
+
+function addSocialFooterLinks(html, relativePath) {
+  if (html.includes('grovio-social-links')) return html;
+  const footerCloseIndex = html.lastIndexOf('</footer>');
+  if (footerCloseIndex < 0) return html;
+  return `${html.slice(0, footerCloseIndex)}${socialFooterMarkup({ onDark: !lightFooterFiles.has(relativePath) })}${html.slice(footerCloseIndex)}`;
+}
+
+function addCreatorFooter(html) {
+  if (html.includes('grovio-social-footer')) return html;
+  const footer = `
+  <footer class="grovio-social-footer">
+    <a href="/" class="grovio-social-footer-wordmark">grovio</a>
+    <p>Grow Simply. Homeschool Confidently.</p>${socialFooterMarkup({ onDark: true })}</footer>`;
+  return html.replace('</main>', `</main>${footer}`);
+}
 const legacyFiles = [
   'features.html',
   'pricing.html',
@@ -299,6 +344,9 @@ for (const relativePath of new Set(publicHtmlFiles)) {
     .replace(/Plus Jakarta Sans/g, 'Inter');
   html = keepOneNavigation(html);
   html = html.replace(copiedNavigationScriptPattern, '');
+  html = relativePath === 'creator-program.html'
+    ? addCreatorFooter(html)
+    : addSocialFooterLinks(html, relativePath);
   html = html.replace(/\n[ \t]+\n/g, '\n\n');
   await writeFile(file, html);
 }

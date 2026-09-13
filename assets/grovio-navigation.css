@@ -252,6 +252,69 @@
 }
 body.grovio-nav-locked { overflow: hidden; }
 
+/* Shared footer social links stay compact across the site's legacy page layouts. */
+.grovio-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  max-width: min(100%, 34rem);
+  margin: 1rem auto 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(74, 110, 78, 0.2);
+  color: #4A6E4E;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.grovio-social-links-label {
+  margin-right: 0.1rem;
+  color: inherit;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.grovio-social-links a {
+  color: inherit !important;
+  text-decoration: none !important;
+  text-underline-offset: 0.18em;
+}
+.grovio-social-links a:hover,
+.grovio-social-links a:focus-visible {
+  color: #2F5135 !important;
+  text-decoration: underline !important;
+}
+.grovio-social-links--on-dark {
+  border-color: rgba(247, 244, 238, 0.18);
+  color: #C8DDC8;
+}
+.grovio-social-links--on-dark a:hover,
+.grovio-social-links--on-dark a:focus-visible { color: #FFFFFF !important; }
+.grovio-social-footer {
+  padding: 2.25rem 1.25rem;
+  background: #2C2218;
+  color: rgba(247, 244, 238, 0.58);
+  text-align: center;
+}
+.grovio-social-footer-wordmark {
+  color: #B8D4BB;
+  font-family: Nunito, sans-serif;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+}
+.grovio-social-footer > p {
+  margin: 0.45rem 0 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.grovio-social-footer .grovio-social-links { margin-top: 1.1rem; }
+
 @media (min-width: 1040px) {
   .grovio-nav--landing .grovio-nav-inner { justify-content: space-between; }
   .grovio-nav--landing .grovio-nav-burger { display: inline-flex; }
@@ -272,4 +335,8 @@ body.grovio-nav-locked { overflow: hidden; }
 @media (max-width: 380px) {
   .grovio-nav-inner { padding: 0 0.75rem; }
   .grovio-nav-cta { padding-inline: 0.55rem; }
+}
+@media (max-width: 460px) {
+  .grovio-social-links { gap: 0.35rem 0.65rem; font-size: 0.72rem; }
+  .grovio-social-links-label { flex-basis: 100%; margin: 0 0 0.08rem; }
 }
