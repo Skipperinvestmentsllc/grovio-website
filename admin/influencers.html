@@ -10,6 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>Grovio Admin — Influencer Program</title>
     <link rel="stylesheet" href="/partner-admin/creator-admin.css">
+    <style>
+      .cadmin-title-actions { display: flex; gap: 9px; align-items: center; }
+      .cadmin-title-actions .primary { padding: 9px 12px; border: 1px solid #4a6e4e; border-radius: 9px; background: #4a6e4e; color: white; font: 700 12px inherit; cursor: pointer; }
+      .cadmin-manual-modal { width: min(640px, 100%) !important; }
+      .cadmin-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .cadmin-modal label small { color: #897c70; font-weight: 500; }
+      .cadmin-platforms { display: flex; gap: 18px; margin: 18px 0 12px; padding: 0; border: 0; }
+      .cadmin-platforms legend { margin-bottom: 6px; font-size: 12px; font-weight: 700; }
+      .cadmin-platforms label { display: flex; align-items: center; gap: 7px; margin: 0; }
+      .cadmin-platforms input { accent-color: #4a6e4e; }
+      .cadmin-code-note { margin-top: 14px; padding: 11px 12px; border-radius: 9px; background: #edf3eb; color: #52654f; font-size: 12px; line-height: 1.55; }
+      @media (max-width: 760px) { .cadmin-form-grid { grid-template-columns: 1fr; } }
+    </style>
   </head>
   <body>
     <div id="root"></div>
