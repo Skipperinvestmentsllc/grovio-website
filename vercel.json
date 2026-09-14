@@ -32,7 +32,7 @@
     { "source": "/start", "destination": "/start.html" },
     { "source": "/community", "destination": "/community.html" },
     { "source": "/creator-program", "destination": "/creator-program.html" },
-    { "source": "/IG", "destination": "/creator-links.html" },
+    { "source": "/IG", "destination": "/creator-links" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
