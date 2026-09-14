@@ -32,6 +32,7 @@
     { "source": "/start", "destination": "/start.html" },
     { "source": "/community", "destination": "/community.html" },
     { "source": "/creator-program", "destination": "/creator-program.html" },
+    { "source": "/IG", "destination": "/creator-links.html" },
     { "source": "/links", "destination": "/links/index.html" },
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
@@ -61,7 +62,7 @@
       ]
     },
     {
-      "source": "/(features|pricing|podcast|guide|compare|about|faq|support|privacy|terms|creator-program|start|links)",
+      "source": "/(features|pricing|podcast|guide|compare|about|faq|support|privacy|terms|creator-program|IG|start|links)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=120, stale-while-revalidate=600" },
         { "key": "Vercel-CDN-Cache-Control", "value": "max-age=86400, stale-while-revalidate=604800" }
@@ -82,6 +83,12 @@
     },
     {
       "source": "/creator-program",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/IG",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]

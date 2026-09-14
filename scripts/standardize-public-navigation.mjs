@@ -296,6 +296,7 @@ for (const relativePath of standalonePublicFiles) {
 }
 
 const directLinkFiles = [
+  'creator-links.html',
   'creator-program.html',
   'start.html',
   'p/can-i-homeschool-if-im-not-a-teacher.html',
@@ -315,6 +316,8 @@ for (const relativePath of directLinkFiles) {
 
   if (html.includes('grovio-nav--landing')) {
     html = html.replace(fullNavigationPattern, landingHeader);
+  } else if (relativePath === 'creator-links.html') {
+    html = html.replace('<body>', `<body>\n  ${landingHeader}`);
   } else if (relativePath === 'creator-program.html') {
     if (!/<meta name="robots"/i.test(html)) {
       html = html.replace('</head>', '  <meta name="robots" content="noindex, nofollow">\n</head>');
