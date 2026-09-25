@@ -305,4 +305,96 @@ export const podcastEpisodeData = {
       label: "Start with grovio free",
     },
   },
+  "i-tried-to-recreate-school-at-home": {
+    "searchTitle": "Do I Need a School Schedule at Home? | Grow Simply with Claire",
+    "metaDescription": "Claire reflects on a color-coded homeschool schedule, the curiosity it interrupted, and designing a day around how her son actually learns.",
+    "questionH1": "Does our homeschool day need to follow a school schedule?",
+    "directAnswer": "Your homeschool rhythm can reflect how your child learns. Claire found that copying a school timetable interrupted her son’s curiosity and left her chasing a schedule that no longer fit their day. She asks what would change if she designed the day around his learning instead.",
+    "sections": [
+      {
+        "heading": "The schedule that stopped fitting by nine fifteen",
+        "body": "Claire planned thirty-minute blocks for math, reading, writing, science, and history. On the first day, a question during math led to twenty minutes of discussion. The learning was alive, but the timetable made her feel behind."
+      },
+      {
+        "heading": "Borrowing constraints her homeschool did not need",
+        "body": "In the letter, Claire contrasts a classroom timetable with teaching one child at her dining room table. She realized she was recreating a structure intended for a different setting instead of using the freedom she had to follow what worked for her son."
+      },
+      {
+        "heading": "Designing the day around genuine curiosity",
+        "body": "Claire describes the rigid schedule as fear dressed up as rigor: something she could point to as proof of real school. Her son tended to go deeply into a question, and ending that exploration when the clock changed worked against the way he learned."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What if a good discussion puts us behind schedule?",
+        "answer": "Claire’s math conversation shows that going off schedule can still mean learning is happening. The letter invites you to consider whether the timetable reflects the day your child needs."
+      },
+      {
+        "question": "Does Claire say homeschool families should have no structure?",
+        "answer": "The letter questions her rigid, school-style timetable. Her closing question is how to design the day around how her son actually learns; it does not prescribe one schedule for every family."
+      }
+    ],
+    "relatedGuideSlugs": [
+      "what-counts-as-learning",
+      "what-if-we-dont-finish-everything",
+      "how-do-i-stay-consistent-without-burnout"
+    ],
+    "relatedEpisodeSlugs": [
+      "what-is-the-actual-goal",
+      "the-homeschool-mom-in-my-head"
+    ],
+    "cta": {
+      "title": "Notice the learning your day holds",
+      "body": "Record the questions, discoveries, and small wins in grovio so you can see learning beyond the planned time blocks.",
+      "href": "/get",
+      "label": "Start with grovio free"
+    }
+  },
+  "what-i-was-actually-buying": {
+    "searchTitle": "Am I Buying Curriculum or Certainty? | Grow Simply with Claire",
+    "metaDescription": "Claire explores the reassurance she sought in each curriculum box and the shift from hoping for the answer to choosing what is useful for her son.",
+    "questionH1": "Am I buying homeschool curriculum because it helps, or because I want certainty?",
+    "directAnswer": "For Claire, each new curriculum box briefly promised certainty about herself as a homeschool mother. That reassurance faded when the material did not work as she hoped. Her shift was to choose curriculum for its usefulness to her son, drawing on what she already knew about him.",
+    "sections": [
+      {
+        "heading": "The hope inside each new box",
+        "body": "A delivery brought Claire the sincere feeling that this was finally the one. Researching, choosing, and ordering felt like evidence that she was on top of homeschooling. When her son responded differently from the reviews, she began looking again."
+      },
+      {
+        "heading": "The question curriculum could not answer",
+        "body": "Under the search was a fear about whether Claire was the right person for homeschooling and whether she was enough for it. A well-reviewed box could not resolve that question, however carefully she chose it."
+      },
+      {
+        "heading": "Useful is different from the answer",
+        "body": "Claire still uses curriculum. She picks it up when it serves what she knows about her son and puts it down when it does not. The change is small in words: she hopes the next box will be useful, instead of hoping it will be the answer."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why did new curriculum only reassure Claire for a short time?",
+        "answer": "The purchase gave her hope that she had figured homeschooling out. When her son did not respond as expected, the underlying doubts returned and she started searching for another box."
+      },
+      {
+        "question": "Does this episode recommend giving up curriculum?",
+        "answer": "No. Claire says she still uses curriculum, choosing it when it serves her son and setting it down when it does not. She asks what she would stop seeking in a box if she trusted what she knew about her child."
+      }
+    ],
+    "relatedGuideSlugs": [
+      "how-do-i-know-if-my-child-is-on-track",
+      "is-it-normal-for-homeschooling-to-feel-hard",
+      "what-counts-as-learning"
+    ],
+    "relatedEpisodeSlugs": [
+      "am-i-doing-enough",
+      "what-is-the-actual-goal",
+      "i-tried-to-recreate-school-at-home"
+    ],
+    "cta": {
+      "title": "Keep a record of what you notice",
+      "body": "Capture real learning and small wins in grovio, giving yourself a record of your child’s growth to return to.",
+      "href": "/get",
+      "label": "Start with grovio free"
+    }
+  }
+
 };

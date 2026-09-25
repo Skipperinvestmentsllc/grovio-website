@@ -7,7 +7,8 @@ import { podcastEpisodeData, guideCatalog } from "./podcast-episode-data.mjs";
 const ROOT = process.cwd();
 const SITE = "https://grovioapp.com";
 const RSS_URL = "https://anchor.fm/s/1156e7a4c/podcast/rss";
-const TRANSCRIPT_DIR = "/Users/skipperkilian/Desktop/Podcast/Transcripts";
+const TRANSCRIPT_DIR = process.env.PODCAST_TRANSCRIPT_DIR || "/Users/skipperkilian/Desktop/Podcast/Transcripts";
+const ARCHIVE_DIR = path.join(ROOT, "content", "podcast", "transcripts");
 const ARTWORK = "/assets/optimized/grow-simply-with-claire-podcast-1200.jpg";
 const SHOW_TITLE = "Dear Homeschool Mom: Grow Simply with Claire";
 const SHOW_DESCRIPTION = "Honest weekly letters for the homeschool mom who needs reassurance, perspective, and a calmer way to trust what she is building.";
@@ -24,6 +25,8 @@ const PLATFORM_LINKS = [
 
 const args = new Set(process.argv.slice(2));
 const dryRun = args.has("--dry-run");
+const checkOnly = args.has("--check");
+const refresh = args.has("--refresh");
 const rssFileArg = process.argv.slice(2).find((arg) => arg.startsWith("--rss-file="));
 const rssFilePath = rssFileArg ? path.resolve(ROOT, rssFileArg.split("=")[1]) : "";
 
@@ -32,7 +35,7 @@ const fetchText = (url, redirects = 0) => new Promise((resolve, reject) => {
     reject(new Error(`Too many redirects while fetching ${url}`));
     return;
   }
-  const request = https.get(url, { timeout: 20000, headers: { "user-agent": "grovio-podcast-updater/2.0" } }, (res) => {
+  const request = https.get(url, { timeout: 20000, headers: { "user-agent": "grovio-podcast-updater/3.0", "cache-control": "no-cache", "pragma": "no-cache" } }, (res) => {
     if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
       request.destroy();
       fetchText(new URL(res.headers.location, url).toString(), redirects + 1).then(resolve, reject);
@@ -114,15 +117,24 @@ const displayDuration = (duration = "") => {
   return parts.length === 3 && parts[0] === "00" ? `${Number(parts[1])}:${parts[2]}` : duration;
 };
 
+// Released transcripts live in Git under a stable slug. Planned dates in the
+// external writing folder are not publication dates; the live RSS owns those.
 const getTranscript = async (episode) => {
-  const filename = `${episode.date}--${episode.slug}.txt`;
-  const filePath = path.join(TRANSCRIPT_DIR, filename);
+  const archived = path.join(ARCHIVE_DIR, `${episode.slug}.txt`);
   try {
-    const text = (await fs.readFile(filePath, "utf8")).trim();
-    return { filename, filePath, text };
-  } catch {
-    return { filename, filePath, text: "" };
+    return { filename: path.basename(archived), filePath: archived, text: (await fs.readFile(archived, "utf8")).trim() };
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
   }
+  let files;
+  try { files = await fs.readdir(TRANSCRIPT_DIR); }
+  catch (error) { if (error.code !== "ENOENT") throw error; files = []; }
+  const matches = files.filter((name) => /^\d{4}-\d{2}-\d{2}--/.test(name) && name.endsWith(`--${episode.slug}.txt`));
+  if (matches.length > 1) throw new Error(`Ambiguous transcript for ${episode.slug}: ${matches.join(", ")}`);
+  const filename = matches[0] || `${episode.date}--${episode.slug}.txt`;
+  const filePath = path.join(TRANSCRIPT_DIR, filename);
+  if (!matches.length) return { filename, filePath, text: "" };
+  return { filename, filePath, text: (await fs.readFile(filePath, "utf8")).trim() };
 };
 
 const parseEpisodes = (rss) => {
@@ -138,13 +150,15 @@ const parseEpisodes = (rss) => {
       date: isoDate(pubDate),
       displayDate: formatDate(pubDate),
       pubDate: pubDate.toISOString(),
-      episodeNumber: Number(tag(item, "itunes:episode")) || index + 1,
+      episodeNumber: Number(tag(item, "itunes:episode")) || 0,
       duration: tag(item, "itunes:duration"),
       audioUrl: attrTag(item, "enclosure", "url"),
       episodeUrl: tag(item, "link") || tag(item, "guid"),
       description,
     };
-  }).filter((episode) => episode.title && episode.slug && episode.date);
+  }).filter((episode) => episode.title && episode.slug && episode.date && Date.parse(episode.pubDate) <= Date.now())
+    .sort((a, b) => Date.parse(b.pubDate) - Date.parse(a.pubDate))
+    .map((episode, index, episodes) => ({ ...episode, episodeNumber: episode.episodeNumber || episodes.length - index }));
 };
 
 const nav = `<header class="nav">
@@ -399,7 +413,7 @@ const renderPodcastHome = (episodes) => {
     </section>
     <section class="container">
       <div class="panel">
-        <img src="${ARTWORK}" alt="Dear Homeschool Mom: Grow Simply with Claire podcast artwork. Honest notes for the days you need a little reassurance." width="1678" height="937" loading="lazy">
+        <img src="${ARTWORK}" alt="Dear Homeschool Mom: Grow Simply with Claire podcast artwork. Honest notes for the days you need a little reassurance." width="1678" height="937" loading="eager" fetchpriority="high" decoding="async">
         <div class="copy">
           <span class="label">Listen now</span>
           <h2>A quiet place for confidence to grow.</h2>
@@ -583,6 +597,7 @@ const validateTranscript = (episode) => {
   if (!episode.transcript) problems.push(`missing transcript: ${episode.transcriptFile}`);
   if (episode.transcript && episode.transcript.length < 600) problems.push(`incomplete transcript: ${episode.transcriptFile} is shorter than expected`);
   if (episode.transcript && episode.transcript.split(/\n{2,}/).filter(Boolean).length < 5) problems.push(`incomplete transcript: ${episode.transcriptFile} has too few paragraphs`);
+  if (episode.transcript && !/Love,\s+Claire\s*$/i.test(episode.transcript)) problems.push(`incomplete transcript: ${episode.transcriptFile} is missing Claire's closing`);
   return problems;
 };
 
@@ -602,6 +617,7 @@ const validateEditorial = (episode, episodesBySlug) => {
   if (missing.length) return [`editorial data incomplete for ${episode.slug}: ${missing.join(", ")}`];
 
   const detailProblems = [];
+  if (!editorial.questionH1.trim().endsWith("?")) detailProblems.push("questionH1 must be a question");
   editorial.sections.forEach((section, index) => {
     if (!section?.heading?.trim() || !section?.body?.trim()) detailProblems.push(`sections[${index}]`);
   });
@@ -630,13 +646,14 @@ const updateSitemap = async (episodes) => {
     .map((episode) => `  <url><loc>${SITE}/podcast/${episode.slug}</loc><lastmod>${episode.date}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`)
     .join("\n");
   sitemap = sitemap.replace(`  <url><loc>${SITE}/get</loc>`, `${entries}\n  <url><loc>${SITE}/get</loc>`);
-  await fs.writeFile(sitemapPath, sitemap);
+  if (!sitemap.includes(`${SITE}/podcast/${episodes[0].slug}</loc>`)) throw new Error("Sitemap insertion point missing");
+  return { path: sitemapPath, content: sitemap };
 };
 
 const updateLlms = async (episodes) => {
   const llmsPath = path.join(ROOT, "llms.txt");
   let llms = await fs.readFile(llmsPath, "utf8");
-  llms = llms.replace(/\n## Podcast transcripts[\s\S]*$/m, "");
+  llms = llms.replace(/\n## Podcast transcripts[\s\S]*?(?=\n## |$)/, "");
   const podcastSection = [
     "",
     "## Podcast transcripts",
@@ -647,7 +664,7 @@ const updateLlms = async (episodes) => {
       .map((episode) => `- [${episode.title}](${SITE}/podcast/${episode.slug}): Transcript and answer page for episode ${episode.episodeNumber}.`),
   ].join("\n");
   llms = `${llms.trimEnd()}\n${podcastSection}\n`;
-  await fs.writeFile(llmsPath, llms);
+  return { path: llmsPath, content: llms };
 };
 
 const updateLinksPage = async (latestEpisode) => {
@@ -657,7 +674,8 @@ const updateLinksPage = async (latestEpisode) => {
     /<a class="story-card podcast" href="https:\/\/grovioapp\.com\/podcast\/[^"]+"><div class="story-content"><span class="story-label">Podcast<\/span><h2 class="story-title">Grow Simply with Claire<\/h2><p class="story-text">[\s\S]*?<\/p><span class="story-arrow" aria-hidden="true">→<\/span><\/div><img class="podcast-cover" src="\/assets\/optimized\/grow-simply-with-claire-podcast-1200\.jpg" alt="Grow Simply with Claire podcast artwork"><\/a>/,
     `<a class="story-card podcast" href="https://grovioapp.com/podcast/${latestEpisode.slug}"><div class="story-content"><span class="story-label">Podcast</span><h2 class="story-title">Grow Simply with Claire</h2><p class="story-text">Listen to the latest letter, ${escapeHtml(latestEpisode.title)}.</p><span class="story-arrow" aria-hidden="true">→</span></div><img class="podcast-cover" src="/assets/optimized/grow-simply-with-claire-podcast-1200.jpg" alt="Grow Simply with Claire podcast artwork"></a>`,
   );
-  await fs.writeFile(linksPath, html);
+  if (!html.includes(`href="${SITE}/podcast/${latestEpisode.slug}"`) || !html.includes(`Listen to the latest letter, ${escapeHtml(latestEpisode.title)}`)) throw new Error("Podcast card not found in links/index.html");
+  return { path: linksPath, content: html };
 };
 
 const latestPublishedSlug = async () => {
@@ -672,7 +690,26 @@ const latestPublishedSlug = async () => {
 
 const getRssText = async () => {
   if (rssFilePath) return fs.readFile(rssFilePath, "utf8");
-  return fetchText(RSS_URL);
+  const url = new URL(RSS_URL);
+  url.searchParams.set("grovio_check", Date.now().toString());
+  return fetchText(url.toString());
+};
+
+// Reuse the current hub's shared site chrome instead of reverting later site-wide
+// navigation, consent, and footer updates to the legacy generator template.
+const siteChrome = async () => {
+  let hub;
+  try { hub = await fs.readFile(path.join(ROOT, "podcast.html"), "utf8"); }
+  catch (error) { if (error.code === "ENOENT") return (html) => html; throw error; }
+  const opening = hub.match(/<body>[\s\S]*?<main>/)?.[0];
+  const ending = hub.match(/<\/main>[\s\S]*$/)?.[0];
+  const head = hub.split("</head>")[0];
+  const assets = [...head.matchAll(/<(?:link\b[^>]*|script\b[^>]*>\s*<\/script)>/g)]
+    .map(([tag]) => tag).filter((tag) => tag.includes("/assets/grovio-"));
+  if (!opening || !ending) throw new Error("Cannot identify current podcast hub navigation/footer");
+  return (html) => html.replace(/<body>[\s\S]*?<main>/, () => opening)
+    .replace(/<\/main>[\s\S]*$/, () => ending)
+    .replace("</head>", `${assets.map((tag) => `  ${tag}`).join("\n")}\n</head>`);
 };
 
 const main = async () => {
@@ -693,38 +730,51 @@ const main = async () => {
   const episodesBySlug = new Map(episodes.map((episode) => [episode.slug, episode]));
   const newest = episodes[0];
   const latestPublished = await latestPublishedSlug();
-  const newestProblems = [
-    ...validateTranscript(newest),
-    ...validateEditorial(newest, episodesBySlug),
-  ];
-  if (newestProblems.length) {
-    throw new Error(`Newest episode ${newest.title} is not publishable:\n- ${newestProblems.join("\n- ")}`);
+  const missingFromFeed = [...latestPublished].filter((slug) => !episodesBySlug.has(slug));
+  if (missingFromFeed.length) throw new Error(`RSS omitted previously published episodes; refusing to shrink archive: ${missingFromFeed.join(", ")}`);
+  if (episodesBySlug.size !== episodes.length) throw new Error("RSS has duplicate episode slugs; refusing ambiguous publication");
+  const unpublished = episodes.filter((episode) => !latestPublished.has(episode.slug));
+  const problems = episodes.flatMap((episode) => [
+    ...validateTranscript(episode),
+    ...validateEditorial(episode, episodesBySlug),
+    ...(!/^https:\/\//.test(episode.audioUrl) ? [`missing HTTPS audio URL for ${episode.slug}`] : []),
+    ...(!/^https:\/\//.test(episode.episodeUrl) ? [`missing HTTPS platform URL for ${episode.slug}`] : []),
+    ...(!/^\d+(?::[0-5]\d){0,2}$/.test(episode.duration) || !/[1-9]/.test(episode.duration) ? [`invalid duration for ${episode.slug}`] : []),
+  ]);
+  if (checkOnly) {
+    console.log(JSON.stringify({ newest, unpublished: unpublished.map(({ slug, title, date, transcriptPath }) => ({ slug, title, date, transcriptPath })), problems }, null, 2));
+    return;
   }
-
-  for (const episode of episodes.filter((item) => item.hasTranscript)) {
-    const editorialProblems = validateEditorial(episode, episodesBySlug);
-    if (editorialProblems.length) {
-      throw new Error(`Existing transcript episode ${episode.title} is missing editorial requirements:\n- ${editorialProblems.join("\n- ")}`);
-    }
-    episode.editorial = podcastEpisodeData[episode.slug];
+  if (!unpublished.length && !refresh) {
+    console.log(`Nothing new is live. Latest episode already published: ${newest.title}`);
+    return;
   }
+  if (problems.length) throw new Error(`Podcast publication blocked:\n- ${problems.join("\n- ")}`);
+  for (const episode of episodes) episode.editorial = podcastEpisodeData[episode.slug];
 
+  const preserveChrome = await siteChrome();
   const writes = [
-    { path: path.join(ROOT, "podcast.html"), content: renderPodcastHome(episodes) },
+    { path: path.join(ROOT, "podcast.html"), content: preserveChrome(renderPodcastHome(episodes)) },
     ...episodes
-      .filter((episode) => episode.hasTranscript)
+      .filter((episode) => refresh || !latestPublished.has(episode.slug))
       .map((episode) => ({
         path: path.join(ROOT, "podcast", `${episode.slug}.html`),
-        content: renderTranscriptPage(episode, episodesBySlug),
+        content: preserveChrome(renderTranscriptPage(episode, episodesBySlug)),
       })),
   ];
 
+  // Prepare every output before the first write, including integration pages.
+  writes.push(await updateSitemap(episodes), await updateLlms(episodes), await updateLinksPage(newest));
+  for (const episode of episodes) {
+    writes.push({ path: path.join(ARCHIVE_DIR, `${episode.slug}.txt`), content: `${episode.transcript}\n` });
+  }
   if (!dryRun) {
-    await fs.mkdir(path.join(ROOT, "podcast"), { recursive: true });
-    for (const file of writes) await fs.writeFile(file.path, file.content);
-    await updateSitemap(episodes);
-    await updateLlms(episodes);
-    await updateLinksPage(newest);
+    for (const file of writes) {
+      await fs.mkdir(path.dirname(file.path), { recursive: true });
+      let existing;
+      try { existing = await fs.readFile(file.path, "utf8"); } catch (error) { if (error.code !== "ENOENT") throw error; }
+      if (existing !== file.content) await fs.writeFile(file.path, file.content);
+    }
   }
 
   console.log(`${dryRun ? "Validated" : "Updated"} podcast content for ${episodes.length} RSS episode(s).`);
