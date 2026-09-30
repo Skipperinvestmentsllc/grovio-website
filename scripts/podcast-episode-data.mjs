@@ -395,6 +395,49 @@ export const podcastEpisodeData = {
       "href": "/get",
       "label": "Start with grovio free"
     }
+  },
+  "the-money-i-spent-trying-to-find-the-answer": {
+    "searchTitle": "Unused Homeschool Curriculum and Guilt | Grow Simply with Claire",
+    "metaDescription": "Claire reflects on money spent on homeschool materials that did not work, and what those purchases taught her about her son’s learning needs.",
+    "questionH1": "How can I think differently about homeschool curriculum that did not work?",
+    "directAnswer": "Claire began to see her unused homeschool materials as evidence of what she had learned about her son. She still acknowledges spending too much, but the boxes helped her notice what engaged him and what did not. Her invitation is to count what you learned alongside what it cost.",
+    "sections": [
+      {
+        "heading": "The cabinet Claire used to close quickly",
+        "body": "Workbooks, kits, subscriptions, and a highly recommended curriculum filled a cabinet Claire felt ashamed to open. She read the collection as evidence that she was disorganized or had not researched enough, even though she had weighed the options before buying."
+      },
+      {
+        "heading": "What each unsuccessful purchase revealed",
+        "body": "Claire came to recognize the effort behind those decisions. Trying materials showed her what clicked for her son, what kind of presentation engaged him, and what made him shut down. In her account, each box that did not work still supplied information about his needs."
+      },
+      {
+        "heading": "Acknowledging the cost without making it a verdict",
+        "body": "Claire does not pretend the expense was small: she says she spent too much ruling things out. What changes is how she reads the cabinet. She sees a mother trying to understand her child, and asks what she might notice by counting what she learned instead of only what she spent."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does Claire say every curriculum purchase was worth the money?",
+        "answer": "No. She explicitly says she spent too much. The letter reframes her shame by recognizing what she learned about her son from materials that did not work; it does not advise buying more."
+      },
+      {
+        "question": "What did unused homeschool materials teach Claire?",
+        "answer": "They helped her discover what clicked for her son, which presentations engaged him, and which made him shut down. Those observations changed how she understood the cabinet of materials she had set aside."
+      }
+    ],
+    "relatedGuideSlugs": [
+      "is-it-normal-for-homeschooling-to-feel-hard",
+      "what-counts-as-learning"
+    ],
+    "relatedEpisodeSlugs": [
+      "what-i-was-actually-buying",
+      "what-is-the-actual-goal"
+    ],
+    "cta": {
+      "title": "Keep what you are learning about your child",
+      "body": "Use grovio to record learning and small wins, so the things you notice have a place beyond the curriculum cabinet.",
+      "href": "/get",
+      "label": "Start with grovio free"
+    }
   }
-
 };

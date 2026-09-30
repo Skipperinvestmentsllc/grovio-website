@@ -18,6 +18,7 @@ grovio supports homeschool attendance tracking, photo-and-notes portfolio record
 ## Podcast transcripts
 
 - [Podcast hub](https://grovioapp.com/podcast): Weekly Dear Homeschool Mom episode archive with newest episode first.
+- [The Money I Spent Trying to Find the Answer](https://grovioapp.com/podcast/the-money-i-spent-trying-to-find-the-answer): Transcript and answer page for episode 9.
 - [What I Was Actually Buying](https://grovioapp.com/podcast/what-i-was-actually-buying): Transcript and answer page for episode 8.
 - [I Tried to Recreate School at Home](https://grovioapp.com/podcast/i-tried-to-recreate-school-at-home): Transcript and answer page for episode 7.
 - [What Is the Actual Goal?](https://grovioapp.com/podcast/what-is-the-actual-goal): Transcript and answer page for episode 6.
