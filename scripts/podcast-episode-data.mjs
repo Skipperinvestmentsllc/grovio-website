@@ -396,6 +396,52 @@ export const podcastEpisodeData = {
       "label": "Start with grovio free"
     }
   },
+  "reading-made-us-both-cry": {
+    "searchTitle": "When Reading Practice Ends in Tears | Grow Simply with Claire",
+    "metaDescription": "Claire reflects on mistaking reading fatigue for resistance and the moment she began asking what her son needed instead of pushing harder.",
+    "questionH1": "What if my child is not resisting reading, but is exhausted?",
+    "directAnswer": "Claire came to see that her son was not refusing reading itself; he was worn out by the way and moment she was asking him to do it. What looked like inconsistency was the effort of decoding taking more from him than she could see. Her question is whether a child’s resistance may point to a gap between our assumptions and how learning is actually working for them.",
+    "sections": [
+      {
+        "heading": "A reading practice that became a standoff",
+        "body": "On the drive home from a field trip, Claire asked her son to read because he had managed a page from Magic Tree House a few days earlier. When he withdrew instead of reading, she pushed harder, certain that learning to read was not optional. In hindsight, she recognizes that insistence was not what he needed in that moment."
+      },
+      {
+        "heading": "What looked like forgetting was hard work",
+        "body": "Claire had learned to read through patterns and constant reading, so her son’s inconsistent recall of blends did not make sense to her. She later understood that decoding was neurologically exhausting for him. The letter compares asking him to keep going to asking someone to drive on fumes."
+      },
+      {
+        "heading": "Looking beneath resistance",
+        "body": "Claire does not conclude that reading was unimportant. She distinguishes the goal from the way she was pursuing it, and says she waited too long to make a call for help. Her closing question asks what may change when a parent becomes curious about the difference between how they expect learning to work and how it works for their child."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Why did Claire's son seem able to read one day but not another?",
+        "answer": "Claire says the work of decoding words was exhausting for him. What she first read as inconsistent recall or resistance may have been his concentration running out, rather than an absence of ability."
+      },
+      {
+        "question": "Does this episode say reading practice does not matter?",
+        "answer": "No. Claire calls reading an important skill. The letter questions the timing and pressure she used, and asks parents to consider what a child may need when the usual approach is not working."
+      }
+    ],
+    "relatedGuideSlugs": [
+      "what-if-homeschooling-causes-tension",
+      "what-counts-as-learning",
+      "is-it-normal-for-homeschooling-to-feel-hard"
+    ],
+    "relatedEpisodeSlugs": [
+      "what-is-the-actual-goal",
+      "i-tried-to-recreate-school-at-home",
+      "the-homeschool-mom-in-my-head"
+    ],
+    "cta": {
+      "title": "Keep track of what helps your child learn",
+      "body": "Use grovio to capture the patterns, hard moments, and small wins you notice, so you have a clearer record of how your child learns.",
+      "href": "/get",
+      "label": "Start with grovio free"
+    }
+  },
   "the-money-i-spent-trying-to-find-the-answer": {
     "searchTitle": "Unused Homeschool Curriculum and Guilt | Grow Simply with Claire",
     "metaDescription": "Claire reflects on money spent on homeschool materials that did not work, and what those purchases taught her about her son’s learning needs.",
