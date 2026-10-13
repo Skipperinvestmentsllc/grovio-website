@@ -5,16 +5,6 @@
       "source": "/blog",
       "destination": "/guide/",
       "permanent": true
-    },
-    {
-      "source": "/partner-admin/marketing",
-      "destination": "/admin/marketing",
-      "permanent": true
-    },
-    {
-      "source": "/partner-admin",
-      "destination": "/admin/influencers",
-      "permanent": true
     }
   ],
   "rewrites": [
@@ -33,7 +23,7 @@
     { "source": "/community", "destination": "/community.html" },
     { "source": "/creator-program", "destination": "/creator-program.html" },
     { "source": "/links", "destination": "/links/index.html" },
-    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/partner-admin", "destination": "/partner-admin/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/share/:token", "destination": "/share" },
     { "source": "/p/:slug", "destination": "/p/:slug.html" }
@@ -84,6 +74,13 @@
       "source": "/creator-program",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/partner-admin/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "private, no-store" }
       ]
     },
     {
