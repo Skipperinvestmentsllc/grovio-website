@@ -433,10 +433,6 @@
     <h1 class="desktop-only">Get grovio on <em>your phone</em></h1>
     <p class="lede desktop-only">The calm homeschool companion — plan with a schedule or rhythm, capture portfolio moments, and track attendance. Free to start, no credit card.</p>
 
-    <!-- ── ANDROID VIEW ── -->
-    <h1 class="android-only">grovio is <em>coming to Android</em> soon</h1>
-    <p class="lede android-only">We're hard at work bringing grovio to Android. Drop your email below and we'll let you know the moment it's ready.</p>
-
     <!-- ───── PRIMARY: Store badges (desktop only) ───── -->
     <div class="badges desktop-only flex">
       <!-- App Store — always live -->
@@ -453,7 +449,7 @@
         </a>
       </div>
 
-      <!-- Google Play LIVE — shown only when ANDROID_LIVE is true -->
+      <!-- Google Play -->
       <div class="badge-cell android-live-only">
         <a href="https://play.google.com/store/apps/details?id=com.grovioapp.app" class="badge-link" aria-label="Get grovio on Google Play">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64" role="img" aria-hidden="true">
@@ -467,46 +463,7 @@
         </a>
       </div>
 
-      <!-- Google Play COMING SOON — shown only when !ANDROID_LIVE -->
-      <div class="badge-cell android-coming-only">
-        <span class="badge-disabled" aria-label="Google Play — coming soon" title="Coming soon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64" role="img" aria-hidden="true">
-            <rect width="200" height="64" rx="11" fill="#000"/>
-            <g>
-              <path d="M24 18v28c0 .95.55 1.4 1.2 1.05l22-14.05c.75-.5.75-1.55 0-2.05L25.2 16.95C24.55 16.6 24 17.05 24 18z" fill="#EA4335"/>
-              <text x="65" y="27" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#fff">GET IT ON</text>
-              <text x="65" y="48" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#fff">Google Play</text>
-            </g>
-          </svg>
-        </span>
-        <span class="badge-pill">Coming soon</span>
-      </div>
     </div>
-
-    <!-- ───── SECONDARY: Email capture (Android-coming-only) ───── -->
-    <div class="notify-block android-coming-only">
-      <div class="notify-heading desktop-only">On Android?</div>
-      <p class="notify-helper desktop-only">grovio is coming to Google Play soon. Leave your email and we'll let you know the day it lands.</p>
-      <form class="notify-form flex" id="notify-form" action="https://app.kit.com/forms/9276539/subscriptions" method="post" novalidate>
-        <input
-          type="email"
-          name="email_address"
-          id="notify-email"
-          class="notify-email"
-          placeholder="your@email.com"
-          autocomplete="email"
-          inputmode="email"
-          required
-        >
-        <button type="submit" id="notify-btn" class="notify-btn">Notify me</button>
-      </form>
-      <div id="notify-msg" class="notify-msg" style="display:none;"></div>
-    </div>
-
-    <!-- Android-view cross-link to App Store (for visitors with iOS too) -->
-    <p class="cross-link android-only">
-      Have an iPhone or iPad too? <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537">Download on the App Store &rarr;</a>
-    </p>
 
     <!-- ───── TERTIARY: QR code (desktop only — encodes /get so phone scans re-enter routing) ───── -->
     <div class="qr-block desktop-only flex">
@@ -533,42 +490,5 @@
   </footer>
   </main>
 
-  <!-- Hidden iframe target for the Kit form POST (avoids CORS while keeping
-       the user on the page). -->
-  <iframe name="kit-target" id="kit-target" style="display:none" aria-hidden="true"></iframe>
-
-  <script>
-  (function() {
-    var form = document.getElementById('notify-form');
-    if (!form) return;
-    var input = document.getElementById('notify-email');
-    var btn = document.getElementById('notify-btn');
-    var msg = document.getElementById('notify-msg');
-    var iframe = document.getElementById('kit-target');
-    if (!form || !input || !btn || !msg || !iframe) return;
-
-    var submitted = false;
-    form.setAttribute('target', 'kit-target');
-
-    form.addEventListener('submit', function() {
-      var email = input.value.trim();
-      if (!email || email.indexOf('@') < 1) return;
-      submitted = true;
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      msg.style.display = 'none';
-    });
-
-    iframe.addEventListener('load', function() {
-      if (!submitted) return;
-      msg.textContent = 'You’re on the list. We’ll email you the moment Android is ready.';
-      msg.style.color = '#4A6E4E';
-      msg.style.display = 'block';
-      input.style.display = 'none';
-      btn.style.display = 'none';
-      submitted = false;
-    });
-  })();
-  </script>
 </body>
 </html>
