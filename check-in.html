@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="A gentle homeschool check-in from grovio to help you find the kind of support your homeschool needs right now.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="grovio">
+  <meta property="og:title" content="What does your homeschool need right now? — grovio">
+  <meta property="og:description" content="Six gentle questions. No wrong answers. Just a clearer next step for the season you’re in.">
+  <meta property="og:url" content="https://grovioapp.com/check-in">
+  <meta property="og:image" content="https://grovioapp.com/og-image.png">
+  <title>What does your homeschool need right now? — grovio</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/grovio-consent.css?v=20260911-2">
+  <link rel="stylesheet" href="assets/check-in.css?v=20261020-1">
+  <script defer src="assets/grovio-consent.js?v=20260911-2"></script>
+  <script defer src="assets/check-in.js?v=20261108-1"></script>
+</head>
+<body class="checkin-page">
+  <header class="checkin-header"><a href="/" class="checkin-wordmark">grovio</a><a href="/" class="checkin-exit">Back to grovio</a></header>
+
+  <main>
+    <section class="checkin-intro" data-screen="intro" aria-labelledby="intro-title">
+      <div class="intro-mark" aria-hidden="true">✦</div>
+      <div class="checkin-eyebrow">A 2-minute check-in</div>
+      <h1 id="intro-title">What does your homeschool need <em>right now?</em></h1>
+      <p class="intro-copy">Six questions. One place to begin.</p>
+      <button class="checkin-button checkin-button--primary" type="button" data-action="start">Start the check-in <span aria-hidden="true">&rarr;</span></button>
+      <p class="intro-note">No score. Just a clearer next step.</p>
+    </section>
+
+    <section class="checkin-quiz" data-screen="quiz" aria-labelledby="question-title" hidden>
+      <div class="quiz-topline"><button class="text-button" type="button" data-action="back" aria-label="Go back to the previous question">&larr; Back</button><span class="quiz-progress-label" data-progress-label>Question 1 of 6</span></div>
+      <div class="quiz-progress" aria-hidden="true"><span data-progress-bar></span></div>
+      <form id="checkin-form" novalidate>
+        <fieldset>
+          <legend id="question-title" data-question-title></legend>
+          <div class="answer-list" data-answer-list></div>
+        </fieldset>
+        <p class="answer-error" data-answer-error role="alert" hidden>Please choose one.</p>
+      </form>
+    </section>
+
+    <section class="checkin-email" data-screen="email" aria-labelledby="email-title" hidden>
+      <div class="email-mark" aria-hidden="true">✦</div>
+      <div class="checkin-eyebrow">One last step</div>
+      <h1 id="email-title">Where should we send your result?</h1>
+      <p class="email-copy">Enter your email and we’ll send your check-in result, plus a gentle next step from grovio.</p>
+      <form class="email-form" data-email-form action="https://app.kit.com/forms/9276539/subscriptions" method="post" target="kit-email-submit-frame">
+        <label for="checkin-email">Email address</label>
+        <input id="checkin-email" name="email_address" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+        <button class="checkin-button checkin-button--primary" type="submit">Show me my result <span aria-hidden="true">&rarr;</span></button>
+      </form>
+      <p class="email-error" data-email-error role="alert" hidden>Please enter a valid email address.</p>
+      <button class="text-button email-skip" type="button" data-action="skip-email">Skip for now</button>
+      <p class="email-note">We’ll keep it gentle. Unsubscribe anytime.</p>
+      <iframe name="kit-email-submit-frame" title="Email signup confirmation" class="email-submit-frame"></iframe>
+    </section>
+
+    <section class="checkin-result" data-screen="result" aria-labelledby="result-title" hidden>
+      <div class="result-spark" aria-hidden="true">✦</div>
+      <div class="checkin-eyebrow">Your next step</div>
+      <h1 id="result-title" data-result-title></h1>
+      <p class="result-lead" data-result-lead></p>
+      <article class="result-card result-card--action"><div class="card-label">Start here</div><h2 data-result-action-title></h2><ol class="result-steps" data-result-steps></ol></article>
+      <div class="result-feature"><img data-result-image src="assets/optimized/feature-home-toast-720.jpg" alt="A preview of a grovio feature"><div><div class="card-label">Why grovio feels lighter</div><h2 data-result-feature-name></h2><p data-result-feature-copy></p></div></div>
+      <div class="result-cta-wrap"><a class="checkin-button checkin-button--primary" data-result-cta href="/get">See it in grovio <span aria-hidden="true">&rarr;</span></a></div>
+      <div class="result-secondary"><p>Want to keep exploring?</p><a data-guide-link href="/guide/">Read a gentle next step in The Guide <span aria-hidden="true">&rarr;</span></a></div>
+      <button class="text-button restart-button" type="button" data-action="restart">Take the check-in again</button>
+    </section>
+  </main>
+
+  <footer class="checkin-footer"><a href="/">grovio</a><span aria-hidden="true">·</span><a href="/privacy">Privacy</a><span aria-hidden="true">·</span><a href="/terms">Terms</a></footer>
+</body>
+</html>

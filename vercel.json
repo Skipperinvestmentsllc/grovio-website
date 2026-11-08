@@ -19,6 +19,8 @@
     { "source": "/podcast", "destination": "/podcast.html" },
     { "source": "/podcast/:slug", "destination": "/podcast/:slug.html" },
     { "source": "/get", "destination": "/get.html" },
+    { "source": "/check-in", "destination": "/check-in.html" },
+    { "source": "/whats-new", "destination": "/whats-new.html" },
     { "source": "/start", "destination": "/start.html" },
     { "source": "/community", "destination": "/community.html" },
     { "source": "/creator-program", "destination": "/creator-program.html" },
@@ -51,7 +53,7 @@
       ]
     },
     {
-      "source": "/(features|pricing|podcast|guide|compare|about|faq|support|privacy|terms|creator-program|IG|start|links)",
+      "source": "/(features|pricing|podcast|guide|compare|about|faq|support|privacy|terms|creator-program|IG|start|links|whats-new)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=120, stale-while-revalidate=600" },
         { "key": "Vercel-CDN-Cache-Control", "value": "max-age=86400, stale-while-revalidate=604800" }
@@ -68,6 +70,24 @@
       "source": "/start",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
+      "source": "/check-in",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
+      "source": "/whats-new",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
+      ]
+    },
+    {
+      "source": "/whats-new.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
       ]
     },
     {
