@@ -6,120 +6,118 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outputRoot = join(root, 'assets/social-campaign-2026/carousels');
 
 const palettes = [
-  { background: '#F7F4EE', ink: '#2C2218', accent: '#B96E4A', soft: '#E8D7C2' },
-  { background: '#DDE8DC', ink: '#2C2218', accent: '#4A6E4E', soft: '#F7F4EE' },
-  { background: '#B96E4A', ink: '#F7F4EE', accent: '#E8D7C2', soft: '#2C2218' },
-  { background: '#2C2218', ink: '#F7F4EE', accent: '#B8D4BB', soft: '#B96E4A' },
-  { background: '#F1E6D2', ink: '#2C2218', accent: '#4A6E4E', soft: '#B96E4A' }
+  { background: '#F7F4EE', ink: '#2C2218', accent: '#4A6E4E', rust: '#B96E4A' },
+  { background: '#F1E6D2', ink: '#2C2218', accent: '#4A6E4E', rust: '#B96E4A' },
+  { background: '#F7F4EE', ink: '#2C2218', accent: '#B96E4A', rust: '#4A6E4E' },
+  { background: '#E9EFE6', ink: '#2C2218', accent: '#4A6E4E', rust: '#B96E4A' }
 ];
+
+const line = (text, accent = false) => ({ text, accent });
 
 const carousels = [
   {
-    slug: '01-pick-the-anchors',
-    title: 'Pick the anchors',
+    slug: '01-you-already-did-the-hardest-part',
     slides: [
-      ["Monday doesn't need a perfect plan.", 'It just needs a rhythm.'],
-      ['Every week has a few things that don\'t move.', 'Those are your anchors.'],
-      ['Put the anchors in first.', 'Let the rest flex — a lesson can slide a day,', 'a morning can start slower.'],
-      ['In Grovio, your rhythm is a shape you return to —', 'not a schedule you have to keep up with.'],
-      ['Take the 2-minute check-in.', 'What does your homeschool need right now?', 'Link in bio.', 'grovio']
+      [line('You already did the hardest part.'), line('Deciding was the hard part.', true)],
+      [line('Now there are tools to help.'), line("You don't have to hold it all in your head.")],
+      [line('Begin with today,'), line('not every possible task.'), line('Five minutes a day. No streaks, no guilt.', true)],
+      [line("Maybe you're not failing."), line('Maybe you just need to see'), line("what's already working.", true)],
+      [line('Take the 2-minute check-in.'), line('What does your homeschool need right now?'), line('Link in bio.'), line('grovio')]
     ]
   },
   {
-    slug: '02-small-moments-are-the-portfolio',
-    title: 'Small moments are the portfolio',
+    slug: '02-your-co-op-one-place',
     slides: [
-      ["Portfolios don't grow from big projects.", 'They grow from little moments you actually captured.'],
-      ['It took about ten seconds,', "and now it won't get lost."],
-      ['What counts:', 'the drawing, the leaf,', 'the half-built project,', 'the question they asked.'],
-      ['In Grovio, a photo + one line', 'goes straight into your portfolio.', 'No scrapbook session. No guilt pile.'],
-      ['What small moment is worth keeping', 'at your house this week?', 'Save this for your next portfolio moment.', 'grovio']
+      [line('How many apps'), line('does your co-op live on?'), line('What if it was one?', true)],
+      [line('Tired of being stuck on social media'), line("because that's where your group talks?")],
+      [line('The Community Hub lives inside Grovio —'), line('separate from social media,', true), line('made for homeschool groups.')],
+      [line('One place for your co-op,'), line('your play group, your people.'), line("And it's free, always.", true)],
+      [line("When you're ready,"), line('host your homeschool there too.'), line('Take the 2-minute check-in — link in bio.'), line('grovio')]
     ]
   },
   {
-    slug: '03-close-the-week-in-5-minutes',
-    title: 'Close the week in 5 minutes',
+    slug: '03-planner-graveyard',
     slides: [
-      ['Friday Wrap-Up time.', 'My favorite five minutes', 'of the homeschool week.'],
-      ['1 — Note what actually happened.', 'Not what the plan said.'],
-      ['2 — One line on what worked.', '3 — Mark attendance', 'while you still remember it.'],
-      ['Records done while they\'re fresh.', 'Monday starts clean', 'instead of half-remembered.'],
-      ['Then the weekend is actually a weekend.', 'Try the Friday Wrap-Up in Grovio —', 'free to start.', 'grovio']
+      [line('Do you have a homeschool'), line('planner graveyard?', true)],
+      [line('Every new planner gave you hope'), line("you'd finally be organized.")],
+      [line('Neurotypical organization methods'), line("don't work for a neurodivergent brain.", true)],
+      [line('Grovio follows your real life —', true), line('a rhythm for flexible days,'), line('a schedule when you need exact times.')],
+      [line("You don't need to homeschool like everyone else."), line('You need a calmer way to see your own.'), line('Take the 2-minute check-in — link in bio.'), line('grovio')]
     ]
   },
   {
     slug: '04-your-homeschool-your-data',
-    title: 'Your homeschool, your data',
     slides: [
-      ['Your records stay on your device.', 'Until you say otherwise.'],
-      ['Most apps take your family\'s data', 'the moment you sign up.', "Grovio doesn't ask for an account at all."],
-      ['14 days of everything, free.', 'Your data lives on your device —', 'no cloud, no account, no sharing.'],
-      ['When you choose Premium,', "that's when your data is backed up —", 'because you chose it,', 'not because you downloaded an app.'],
-      ['A calmer place to keep it all —', "and it's yours to share", 'when you\'re ready.', 'Free to start.', 'grovio']
+      [line('Your records stay on your device.'), line('Until you say otherwise.', true)],
+      [line("Most apps take your family's data"), line('the moment you sign up.'), line("Grovio doesn't ask for an account at all.", true)],
+      [line('14 days of everything, free.'), line('Your data lives on your device —'), line('no cloud, no account, no sharing.')],
+      [line('Choose Premium when you want'), line('to keep the whole year —'), line('encrypted backup, exports,', true), line('and Friday Wrap-Ups you can edit.')],
+      [line('A calmer place to keep it all.'), line('Take the 2-minute check-in — link in bio.'), line('grovio')]
     ]
   }
 ];
 
 function escapeXml(value) {
-  return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
 }
 
-function fontSizeFor(lines) {
-  const longest = Math.max(...lines.map((line) => line.length));
-  if (longest > 63) return 42;
-  if (longest > 49) return 45;
-  if (longest > 39) return 52;
-  if (lines.length >= 5) return 50;
-  return 60;
-}
-
-function wrapLines(lines) {
+function wrapLines(items) {
   const wrapped = [];
-  const maxCharacters = 37;
-  for (const line of lines) {
-    const words = line.split(' ');
+  const maxCharacters = 30;
+  for (const item of items) {
+    const words = item.text.split(' ');
     let current = '';
     for (const word of words) {
       const candidate = current ? `${current} ${word}` : word;
       if (current && candidate.length > maxCharacters) {
-        wrapped.push(current);
+        wrapped.push({ text: current, accent: item.accent });
         current = word;
       } else {
         current = candidate;
       }
     }
-    if (current) wrapped.push(current);
+    if (current) wrapped.push({ text: current, accent: item.accent });
   }
   return wrapped;
 }
 
-function renderCard(lines, slideIndex, carouselIndex) {
-  const palette = palettes[(slideIndex + carouselIndex) % palettes.length];
-  const displayLines = wrapLines(lines);
-  const size = fontSizeFor(displayLines);
-  const lineHeight = Math.round(size * 1.18);
-  const blockHeight = displayLines.length * lineHeight;
-  const startY = Math.max(350, Math.round((1350 - blockHeight) / 2) - 20);
-  const isCta = slideIndex === 4;
-  const logo = isCta
-    ? `<text x="84" y="1192" fill="${palette.accent}" font-family="Avenir Next, Avenir, Arial, sans-serif" font-size="39" font-weight="800" letter-spacing="-1.8">grovio</text>`
-    : '';
-  const text = displayLines.map((line, index) => {
+function fontSizeFor(lines) {
+  const longest = Math.max(...lines.map((item) => item.text.length));
+  if (lines.length >= 8 || longest > 28) return 46;
+  if (lines.length >= 6 || longest > 23) return 54;
+  if (lines.length >= 5) return 60;
+  return 70;
+}
+
+function renderText(lines, size, startY, palette) {
+  const lineHeight = Math.round(size * 1.13);
+  return lines.map((item, index) => {
     const y = startY + index * lineHeight;
-    const emphasis = index === displayLines.length - 1 && displayLines.length <= 2;
-    return `<text x="84" y="${y}" fill="${palette.ink}" font-family="Georgia, Times New Roman, serif" font-size="${size}" font-weight="${emphasis ? 600 : 400}" font-style="${emphasis ? 'italic' : 'normal'}" letter-spacing="-1.25">${escapeXml(line)}</text>`;
+    const fill = item.accent ? palette.accent : palette.ink;
+    const style = item.accent ? 'italic' : 'normal';
+    return `<text x="540" y="${y}" text-anchor="middle" fill="${fill}" font-family="'Source Serif 4', Georgia, serif" font-size="${size}" font-weight="400" font-style="${style}" letter-spacing="-1.4">${escapeXml(item.text)}</text>`;
   }).join('\n    ');
+}
+
+function renderCard(items, slideIndex, carouselIndex) {
+  const palette = palettes[(slideIndex + carouselIndex) % palettes.length];
+  const isCta = slideIndex === 4;
+  const lines = wrapLines(isCta ? items.filter((item) => item.text !== 'grovio') : items);
+  const size = fontSizeFor(lines);
+  const lineHeight = Math.round(size * 1.13);
+  const blockHeight = (lines.length - 1) * lineHeight;
+  const startY = Math.round(640 - blockHeight / 2);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Grovio carousel card">
   <rect width="1080" height="1350" fill="${palette.background}"/>
-  <circle cx="1000" cy="104" r="145" fill="${palette.accent}" opacity="0.12"/>
-  <circle cx="930" cy="1190" r="220" fill="${palette.soft}" opacity="0.24"/>
-  <path d="M82 106 C152 72 214 77 254 112 C214 143 149 145 82 126 Z" fill="${palette.accent}" opacity="0.85"/>
-  <path d="M82 113 C134 122 186 117 226 97" fill="none" stroke="${palette.background}" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
-  <rect x="84" y="180" width="88" height="8" rx="4" fill="${palette.accent}"/>
-  ${text}
-  <rect x="84" y="1106" width="190" height="2" fill="${palette.accent}" opacity="0.7"/>
-  ${logo}
+  <line x1="492" y1="126" x2="588" y2="126" stroke="${palette.ink}" stroke-width="3" stroke-linecap="round"/>
+  ${renderText(lines, size, startY, palette)}
+  <line x1="492" y1="1108" x2="588" y2="1108" stroke="${palette.rust}" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  ${isCta ? `<text x="540" y="1202" text-anchor="middle" fill="${palette.accent}" font-family="Nunito, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-2">grovio</text>` : ''}
 </svg>`;
 }
 
