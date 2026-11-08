@@ -178,7 +178,12 @@
 
   function addPrivacyChoicesControl() {
     var footer = document.querySelector('footer.site-footer, footer.grovio-footer, footer.footer') || document.querySelector('footer');
-    if (!footer || footer.querySelector('[data-grovio-manage-consent]')) return;
+    if (!footer) return;
+    var existing = footer.querySelector('[data-grovio-manage-consent]');
+    if (existing) {
+      existing.addEventListener('click', showPreferences);
+      return;
+    }
     var control = document.createElement('button');
     control.type = 'button';
     control.className = 'grovio-consent-manage';

@@ -149,10 +149,13 @@ legend { max-width: 690px; padding: 0; font-family: 'Source Serif 4', Georgia, s
 .result-secondary p { margin: 0 0 5px; color: var(--checkin-faint); font-size: 12px; }
 .result-secondary a { color: var(--checkin-sage); font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; text-underline-offset: 3px; }
 .restart-button { margin-top: 28px; color: var(--checkin-muted); font-weight: 500; }
-.checkin-footer { display: flex; justify-content: center; gap: 11px; padding: 22px 20px 38px; color: var(--checkin-faint); font-size: 12px; }
+.checkin-footer { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 22px 20px 38px; color: var(--checkin-faint); font-size: 12px; }
 .checkin-footer a { color: inherit; text-decoration: none; }
-.checkin-footer a:first-child { color: var(--checkin-sage); font-family: Nunito, sans-serif; font-size: 16px; font-weight: 800; }
+.checkin-footer-privacy { padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; font: inherit; }
 .checkin-footer a:hover { color: var(--checkin-sage); text-decoration: underline; text-underline-offset: 3px; }
+.checkin-footer-privacy:hover { color: var(--checkin-sage); text-decoration: underline; text-underline-offset: 3px; }
+.checkin-footer-privacy:focus-visible { outline: 2px solid var(--checkin-sage); outline-offset: 3px; border-radius: 2px; }
+body.checkin-page .grovio-consent.is-compact { display: none; }
 [hidden] { display: none !important; }
 
 @media (max-width: 760px) {
