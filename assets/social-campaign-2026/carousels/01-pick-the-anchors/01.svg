@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Grovio carousel card">
+  <rect width="1080" height="1350" fill="#F7F4EE"/>
+  <circle cx="1000" cy="104" r="145" fill="#B96E4A" opacity="0.12"/>
+  <circle cx="930" cy="1190" r="220" fill="#E8D7C2" opacity="0.24"/>
+  <path d="M82 106 C152 72 214 77 254 112 C214 143 149 145 82 126 Z" fill="#B96E4A" opacity="0.85"/>
+  <path d="M82 113 C134 122 186 117 226 97" fill="none" stroke="#F7F4EE" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <rect x="84" y="180" width="88" height="8" rx="4" fill="#B96E4A"/>
+  <text x="84" y="584" fill="#2C2218" font-family="Georgia, Times New Roman, serif" font-size="60" font-weight="400" font-style="normal" letter-spacing="-1.25">Monday doesn't need a perfect plan.</text>
+    <text x="84" y="655" fill="#2C2218" font-family="Georgia, Times New Roman, serif" font-size="60" font-weight="600" font-style="italic" letter-spacing="-1.25">It just needs a rhythm.</text>
+  <rect x="84" y="1106" width="190" height="2" fill="#B96E4A" opacity="0.7"/>
+  
+</svg>
