@@ -7,9 +7,33 @@
        ──────────────────────────────────────────────────────────────────── -->
   <script>
   var ANDROID_LIVE = true;
-  var ANDROID_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.grovioapp.app';
-  var APP_STORE_URL = 'https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537';
+  var GROVIO_ONELINK_URL = 'https://grovio.onelink.me/7Juf';
   var KIT_FORM_ID = '9276539';
+
+  function buildGrovioOneLink() {
+    var source = new URLSearchParams(window.location.search);
+    var target = new URLSearchParams();
+    var mediaSource = source.get('utm_source') || 'website';
+    var campaign = source.get('utm_campaign') || 'website_download';
+    var channel = source.get('utm_medium') || 'organic';
+
+    target.set('pid', mediaSource);
+    target.set('c', campaign);
+    target.set('af_channel', channel);
+
+    [
+      ['utm_content', 'af_ad'],
+      ['utm_term', 'af_adset'],
+      ['video', 'af_sub1'],
+      ['creator', 'af_sub2'],
+      ['result', 'af_sub3']
+    ].forEach(function (mapping) {
+      var value = source.get(mapping[0]);
+      if (value) target.set(mapping[1], value);
+    });
+
+    return GROVIO_ONELINK_URL + '?' + target.toString();
+  }
 
   (function() {
     var ua = navigator.userAgent || navigator.vendor || '';
@@ -19,13 +43,14 @@
       isIOS = true;
     }
     var isAndroid = /android/i.test(ua);
+    var storeUrl = buildGrovioOneLink();
 
     if (isIOS) {
-      window.location.replace(APP_STORE_URL);
+      window.location.replace(storeUrl);
       return;
     }
     if (isAndroid && ANDROID_LIVE) {
-      window.location.replace(ANDROID_PLAY_URL);
+      window.location.replace(storeUrl);
       return;
     }
 
@@ -430,14 +455,14 @@
     <div class="tagline">Grow Simply. Homeschool Confidently.</div>
 
     <!-- ── DESKTOP VIEW ── -->
-    <h1 class="desktop-only">Get grovio on <em>your phone</em></h1>
-    <p class="lede desktop-only">The calm homeschool companion — plan with a schedule or rhythm, capture portfolio moments, and track attendance. Free to start, no credit card.</p>
+    <h1 class="desktop-only" id="get-title">Get grovio on <em>your phone</em></h1>
+    <p class="lede desktop-only" id="get-lede">The calm homeschool companion — plan with a schedule or rhythm, capture portfolio moments, and track attendance. Free to start, no credit card.</p>
 
     <!-- ───── PRIMARY: Store badges (desktop only) ───── -->
     <div class="badges desktop-only flex">
       <!-- App Store — always live -->
       <div class="badge-cell">
-        <a href="https://apps.apple.com/us/app/grovio-homeschool-portfolio/id6761112537" class="badge-link" aria-label="Download grovio on the App Store">
+        <a href="https://grovio.onelink.me/7Juf" data-store-link class="badge-link" aria-label="Download grovio on the App Store">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64" role="img" aria-hidden="true">
             <rect width="200" height="64" rx="11" fill="#000"/>
             <g fill="#fff">
@@ -451,7 +476,7 @@
 
       <!-- Google Play -->
       <div class="badge-cell android-live-only">
-        <a href="https://play.google.com/store/apps/details?id=com.grovioapp.app" class="badge-link" aria-label="Get grovio on Google Play">
+        <a href="https://grovio.onelink.me/7Juf" data-store-link class="badge-link" aria-label="Get grovio on Google Play">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64" role="img" aria-hidden="true">
             <rect width="200" height="64" rx="11" fill="#000"/>
             <g>
@@ -489,6 +514,41 @@
 
   </footer>
   </main>
+
+  <script>
+  (function() {
+    document.querySelectorAll('[data-store-link]').forEach(function (link) {
+      link.href = buildGrovioOneLink();
+    });
+
+    var resultMatch = /(?:^|[?&])result=([^&]+)/.exec(window.location.search);
+    var result = resultMatch ? decodeURIComponent(resultMatch[1]) : '';
+    var copy = {
+      visibility: {
+        title: 'Give the learning a place to land.',
+        lede: 'Download grovio free and save one learning moment today. Add a photo or a sentence, choose the subject, and you are done.'
+      },
+      rhythm: {
+        title: 'Find a rhythm that fits real life.',
+        lede: 'Download grovio free and try three simple anchors for tomorrow—without building another planner to maintain.'
+      },
+      records: {
+        title: 'Keep the record as you go.',
+        lede: 'Download grovio free and keep attendance and learning moments together, a little at a time.'
+      },
+      simplicity: {
+        title: 'Start with one calm place.',
+        lede: 'Download grovio free and begin with one learner, one plan item, or one moment. Nothing complicated to set up first.'
+      }
+    }[result];
+
+    if (!copy) return;
+    var title = document.getElementById('get-title');
+    var lede = document.getElementById('get-lede');
+    if (title) title.innerHTML = copy.title;
+    if (lede) lede.textContent = copy.lede;
+  }());
+  </script>
 
 </body>
 </html>
