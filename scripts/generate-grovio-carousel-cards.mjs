@@ -1,9 +1,10 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outputRoot = join(root, 'assets/social-campaign-2026/carousels');
+const logoMarkData = (await readFile(join(root, 'assets/grovio-mark.png'))).toString('base64');
 
 const palettes = [
   { background: '#F7F4EE', ink: '#2C2218', accent: '#4A6E4E', rust: '#B96E4A' },
@@ -122,7 +123,7 @@ function renderCard(data, slideIndex, carouselIndex) {
   const captionStart = Math.max(810, headlineStart + headlineHeight + 105);
   const logo = data.cta
     ? `<text x="540" y="1166" text-anchor="middle" fill="${palette.accent}" font-family="Nunito, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="-2.5">grovio</text>`
-    : `<text x="540" y="1166" text-anchor="middle" fill="${palette.accent}" font-family="'Source Serif 4', Georgia, serif" font-size="72" font-weight="600">g</text>`;
+    : `<image href="data:image/png;base64,${logoMarkData}" x="519" y="1113" width="42" height="54" preserveAspectRatio="xMidYMid meet"/>`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="Grovio carousel card">
   <rect width="1080" height="1350" fill="${palette.background}"/>
